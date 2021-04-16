@@ -1,0 +1,118 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Prose {
+  // Unset common styles left in place by WYSIWYG editor
+  $prose-overrides: 'box-sizing', 'color', 'font-family', 'font-size',
+    'font-style', 'font-weight', 'line-height', 'margin', 'padding',
+    'text-decoration', 'white-space';
+
+  @each $property in $prose-overrides {
+    [style*='#{$property}'] {
+      #{$property}: inherit !important;
+    }
+  }
+
+  > * + * {
+    margin-top: spacing(2);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-heading;
+    font-weight: 400;
+  }
+
+  > {
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: spacing(4);
+    }
+  }
+
+  h1 {
+    font-size: spacing(4); // 24
+    line-height: spacing(6); // 32
+  }
+
+  h2 {
+    font-size: spacing(3); // 24
+    line-height: spacing(4); // 32
+  }
+
+  h3 {
+    font-size: spacing(2.5); // 20
+    line-height: spacing(4); // 28
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: spacing(2); // 16
+    line-height: spacing(3); // 24
+  }
+
+  em {
+    font-style: italic;
+  }
+
+  li {
+    list-style-position: outside;
+    margin-left: spacing(4);
+  }
+
+  ol {
+    li {
+      list-style-type: decimal;
+
+      li {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+
+  a {
+    color: $color-primary-red;
+    text-decoration: underline;
+    transition: color $duration-standard $easing-standard;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-primary-purple;
+      transition-duration: $duration-shortest;
+    }
+  }
+
+  hr {
+    height: 0;
+    opacity: 0.5;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    margin-bottom: -1px;
+  }
+
+  // Last in the group for specificity reasons
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+.inverse {
+  a {
+    color: $color-common-white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-common-white;
+    }
+  }
+}

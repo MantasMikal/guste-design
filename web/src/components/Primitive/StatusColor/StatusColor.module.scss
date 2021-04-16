@@ -1,0 +1,10 @@
+@import 'settings';
+@import '_backline-mixins';
+
+// .StatusColor {}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    color: $value !important;
+  }
+}

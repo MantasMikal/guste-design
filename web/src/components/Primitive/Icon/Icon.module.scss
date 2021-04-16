@@ -1,0 +1,22 @@
+.Icon {
+  display: inline-block;
+  vertical-align: baseline;
+  font-style: normal;
+
+  svg {
+    vertical-align: bottom;
+    height: auto;
+    width: inherit;
+    fill: currentColor;
+  }
+}
+
+// Vertical alignment modifiers
+
+$vAlign-options: baseline bottom middle top;
+
+@each $vAlign in $vAlign-options {
+  .#{$vAlign} {
+    vertical-align: $vAlign;
+  }
+}

@@ -1,0 +1,22 @@
+@import 'settings';
+@import '_backline-mixins';
+
+// .DescriptionList {}
+
+.DescriptionListTerm,
+.DescriptionListDetails {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.DescriptionListTerm {
+  margin-right: spacing(0.5);
+
+  &::after {
+    content: ':';
+  }
+}
+
+.DescriptionListDetails {
+  font-weight: bold;
+}

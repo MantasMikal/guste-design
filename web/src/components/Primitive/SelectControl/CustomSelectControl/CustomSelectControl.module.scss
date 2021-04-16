@@ -1,0 +1,183 @@
+@import 'settings';
+@import '_backline-mixins';
+
+//
+// CUSTOM SELECT
+// =============
+// Quick CSS only custom select styling
+// Taken from: https://github.com/filamentgroup/select-css
+//
+
+// Container used for styling the custom select, the button class below adds the
+// bg gradient, corners, etc.
+.CustomSelectControl {
+  position: relative;
+  display: block;
+  padding: 0;
+  background-color: $color-primary-white;
+  border: 1px solid $color-common-grey75;
+  border-radius: $radius-small;
+
+  // This is the native select, we’re making everything but the text invisible
+  // so we can see the button styles in the wrapper
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    height: spacing(5) - 2;
+    padding: spacing(1) - 1 spacing(1.5) - 1;
+    line-height: spacing(3);
+    transition: all $duration-standard $easing-standard;
+    border-radius: $radius-small - 1;
+
+    &:hover,
+    &:focus,
+    &:active {
+      transition-duration: $duration-shortest;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 1px $color-common-grey50;
+    }
+
+    &:focus,
+    &:active {
+      box-shadow: 0 0 0 1px $color-primary-yellow,
+        0 0 0 4px rgba($color-primary-yellow, 0.3);
+    }
+  }
+
+  // Background colour gradient to sit behind custom arrow to avoid text
+  // clashing with arrow
+  &::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    right: 2px;
+    width: spacing(6);
+    background: $color-primary-white;
+    background: linear-gradient(
+      to right,
+      rgba($color-primary-white, 0),
+      $color-primary-white 40%
+    );
+    pointer-events: none;
+  }
+}
+
+.CustomSelectControlIndicator {
+  color: $color-primary-yellow;
+  position: absolute;
+  top: 50%;
+  right: spacing(0.75);
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+
+  svg {
+    fill: currentColor;
+  }
+}
+
+.multiple {
+  select {
+    height: inherit;
+  }
+
+  &::before,
+  &::after {
+    content: none;
+  }
+}
+
+//
+// Status modifiers
+//
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    border-color: $value !important;
+
+    select {
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: 0 0 0 1px $value !important;
+      }
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  border-color: $color-common-grey75 !important;
+
+  .CustomSelectControlIndicator {
+    color: $color-common-grey75 !important;
+  }
+
+  select {
+    color: $color-common-grey75 !important;
+    opacity: 1;
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none !important;
+    }
+  }
+}
+
+// ------------------------------------
+// START OF UGLY BROWSER-SPECIFIC HACKS
+// ------------------------------------
+
+// IE 10/11+ - This hides native dropdown button arrow so it will have the
+// custom appearance, IE 9 and earlier get a native select - targeting media
+// query hack via http://browserhacks.com/#hack-28f493d247a12ab654f6c3637f6978d5
+// - looking for better ways to achieve this targeting
+// The second rule removes the odd blue bg color behind the text in the select
+// button in IE 10/11 and sets the text color to match the focus style's -
+// fix via http://stackoverflow.com/questions/17553300/change-ie-background-color-on-unopened-focused-select-box
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .CustomSelectControl select::-ms-expand {
+    display: none;
+  }
+  .CustomSelectControl select:focus::-ms-value {
+    background: transparent;
+    color: $color-primary-black;
+  }
+}
+
+// FIREFOX won't let us hide the native select arrow, so we have to make it
+// wider than needed and clip it via overflow on the parent container.
+// The percentage width is a fallback since FF 4+ supports calc() so we can just
+// add a fixed amount of extra width to push the native arrow out of view.
+// We're applying this hack across all FF versions because all the previous
+// hacks were too fragile and complex. You might want to consider not using this
+// hack and using the native select arrow in FF. Note this makes the menus wider
+// than the select button because they display at the specified width and aren't
+// clipped. Targeting hack via http://browserhacks.com/#hack-758bff81c5c32351b02e10480b5ed48e
+
+// Show only the native arrow
+@-moz-document url-prefix() {
+  .CustomSelectControl {
+    overflow: hidden;
+    select {
+      width: 120%;
+      width: -moz-calc(100% + 3em);
+      width: calc(100% + 3em);
+      &:focus {
+        box-shadow: none !important;
+      }
+    }
+  }
+}
+
+// Firefox focus has odd artifacts around the text, this kills that.
+// See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-focusring
+.CustomSelectControl select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 $color-primary-black;
+}

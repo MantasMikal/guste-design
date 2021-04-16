@@ -1,0 +1,67 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.IconButton {
+  vertical-align: middle;
+  height: spacing(6);
+  min-width: spacing(6);
+  white-space: nowrap;
+  border-radius: $radius-small;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    outline: 0;
+  }
+}
+
+.IconButtonInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  svg {
+    vertical-align: top;
+  }
+}
+
+.IconButtonText {
+  margin-left: spacing(0.5);
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+.solid {
+  color: $color-common-white;
+  background-color: $color-primary-yellow;
+
+  &:focus,
+  &:hover {
+    color: $color-common-white;
+    background-color: $color-primary-red;
+  }
+  &:active {
+    background-color: $color-primary-red;
+  }
+}
+
+.small {
+  height: spacing(3);
+  min-width: spacing(3);
+}
+
+.increaseHitArea {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: spacing(-2);
+    right: spacing(-2);
+    bottom: spacing(-2);
+    left: spacing(-2);
+  }
+}

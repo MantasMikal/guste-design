@@ -1,0 +1,22 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.List {
+  > li {
+    margin-left: spacing(4);
+  }
+}
+
+.inline {
+  > li {
+    display: inline-block;
+    margin-left: 0;
+  }
+}
+
+.unstyled {
+  > li {
+    list-style: none;
+    margin-left: 0;
+  }
+}

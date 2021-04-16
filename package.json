@@ -1,0 +1,42 @@
+{
+  "private": false,
+  "name": "guste-design",
+  "version": "1.0.0",
+  "author": "Mantas Mikalauskas <mantas.codes@gmail.com>",
+  "engines": {
+    "node": ">=12.x"
+  },
+  "scripts": {
+    "clean": "lerna clean",
+    "deploy": "lerna run deploy",
+    "empty-cache": "lerna run empty-cache",
+    "init": "cd studio && sanity init && lerna run graphql-deploy && cd ..",
+    "storybook": "lerna run storybook --stream",
+    "graphql-deploy": "cd studio && npm run graphql-deploy && cd ..",
+    "lint": "lerna run lint --stream",
+    "fix": "lerna run fix --stream",
+    "test": "lerna run test --stream",
+    "build-storybook": "lerna run build-storybook",
+    "test-watch": "lerna run test-watch --stream",
+    "postinstall": "lerna bootstrap",
+    "sanity-deploy": "lerna run sanity-deploy",
+    "start": "lerna run empty-cache && lerna run start --parallel",
+    "start-web": "cd web && npm run start",
+    "start-studio": "cd studio && npm run start"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0",
+    "rimraf": "^3.0.2"
+  },
+  "keywords": [
+    "gatsby-starter",
+    "starter",
+    "picks",
+    "gatsby",
+    "sanity",
+    "template"
+  ],
+  "dependencies": {
+    "sass": "^1.32.8"
+  }
+}

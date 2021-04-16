@@ -1,0 +1,34 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.StepProgressItem {
+  flex: 1 0 auto;
+  transition: background-color $duration-standard $easing-standard;
+  text-align: center;
+  color: $color-primary-white;
+  background-color: $color-common-grey75;
+
+  & + & {
+    margin-left: 1px;
+  }
+}
+
+.complete {
+  background-color: $color-primary-red;
+}
+
+.current {
+  background-color: $color-primary-purple;
+}
+
+// .incomplete {}
+
+// Custom status
+
+.positive {
+  background-color: $color-status-success;
+}
+
+.negative {
+  background-color: $color-status-error;
+}

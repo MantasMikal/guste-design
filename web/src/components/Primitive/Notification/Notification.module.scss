@@ -1,0 +1,52 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Notification {
+  color: $color-common-grey25;
+  padding: spacing(2) spacing(2);
+  background-color: tint($color-common-grey75, 80%);
+  border-left: $radius-small solid $color-common-grey25;
+  border-radius: $radius-small;
+  display: flex;
+}
+
+.NotificationIcon {
+  margin-right: spacing(1);
+
+  @include mq($breakpoint-tablet) {
+    margin-right: spacing(2);
+  }
+}
+
+.NotificationContent {
+  flex: 1 1 auto;
+  min-width: 0;
+
+  a {
+    color: inherit;
+  }
+}
+
+.NotificationDismiss {
+  margin-left: spacing(1);
+
+  @include mq($breakpoint-tablet) {
+    margin-left: spacing(2);
+  }
+}
+
+.shadow {
+  box-shadow: shadow(4);
+}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    background-color: tint($value, 80%);
+    border-left-color: $value;
+    color: shade($value, 75%);
+
+    svg {
+      fill: $value !important;
+    }
+  }
+}

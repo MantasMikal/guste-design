@@ -1,0 +1,108 @@
+@import 'settings';
+@import '_backline-mixins';
+
+$toggle-control-height: spacing(4);
+$toggle-control-border: 2px;
+$toggle-control-diameter: $toggle-control-height - ($toggle-control-border * 2);
+
+.ToggleControl {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ToggleControlFrame {
+  display: block;
+  width: ($toggle-control-height * 2) - ($toggle-control-border * 2);
+  height: $toggle-control-height;
+  border-radius: $toggle-control-diameter * 0.5 + $toggle-control-border;
+  background-color: $color-common-grey75;
+  overflow: hidden;
+  transition: background-color 0.2s ease-out;
+
+  .ToggleControlInput:checked ~ & {
+    background-color: $color-primary-yellow;
+  }
+
+  &.labelled {
+    &::before,
+    &::after {
+      position: absolute;
+      top: 0;
+      height: $toggle-control-height;
+      width: 50%;
+      text-align: center;
+      line-height: $toggle-control-height;
+      color: $color-primary-white;
+      font-size: rem(12);
+      font-weight: bold;
+    }
+
+    &::before {
+      content: attr(data-text-unchecked);
+      right: 2px;
+    }
+
+    &::after {
+      content: attr(data-text-checked);
+      left: 2px;
+    }
+  }
+}
+
+.ToggleControlInput {
+  position: absolute;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.ToggleControlIndicator {
+  position: absolute;
+  top: $toggle-control-border;
+  left: $toggle-control-border;
+  z-index: 1;
+  display: block;
+  width: $toggle-control-diameter;
+  height: $toggle-control-diameter;
+  border-radius: 50%;
+  background-color: $color-primary-white;
+  transition: transform 0.2s ease-out;
+
+  .ToggleControlInput:checked ~ & {
+    transform: translateX(100%);
+  }
+}
+
+.ToggleControlSpinner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  color: $color-common-grey50;
+}
+
+.disabled {
+  cursor: not-allowed;
+
+  .ToggleControlFrame {
+    background-color: $color-common-grey75;
+  }
+  .ToggleControlIndicator {
+    opacity: 0.5;
+  }
+}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    .ToggleControlFrame {
+      box-shadow: 0 0 0 $toggle-control-border $value inset;
+    }
+    .ToggleControlInput:checked ~ .ToggleControlFrame {
+      background-color: $value !important;
+    }
+  }
+}

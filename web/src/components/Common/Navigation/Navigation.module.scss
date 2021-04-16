@@ -1,0 +1,165 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Root {
+  background-color: $color-primary-white;
+  position: fixed;
+  z-index: 300;
+  width: 100%;
+  padding: spacing(1) spacing(2);
+}
+
+// Branding
+
+.Branding {
+  font-size: inherit;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  transition: $duration-short $easing-standard;
+  width: 42px;
+  height: 42px;
+  order: 1;
+  & a {
+    display: block;
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    transition: $duration-short $easing-standard;
+  }
+}
+
+// Regular link
+
+.NavLink,
+.DropdownBtn {
+  display: block;
+  padding: 8px 14px;
+  color: $color-primary-black;
+
+  &.highlight {
+    color: $color-primary-purple;
+  }
+}
+
+.NavLink {
+  float: right;
+}
+
+// Nav toggle
+
+.ToggleNavButton {
+  display: none;
+}
+
+.ToggleNavButton {
+  &:hover {
+    svg path {
+      fill: $color-primary-red;
+      stroke: $color-primary-red;
+    }
+  }
+}
+
+// Dropdown
+
+.Dropdown {
+  float: right;
+
+  &:hover {
+    .DropdownBtn {
+      color: $color-primary-red;
+    }
+
+    .DropdownContent {
+      opacity: 1;
+    }
+  }
+}
+
+.DropdownBtn {
+  &:focus .DropdownContent,
+  &:active .DropdownContent {
+    opacity: 1;
+  }
+}
+
+.DropdownContent {
+  position: absolute;
+  z-index: 300;
+  top: 10px;
+  opacity: 0;
+}
+
+.DropdownLink {
+  float: none;
+  padding: spacing(1);
+  width: 100%;
+  text-align: left;
+  background-color: $color-primary-grey-light;
+
+  &:first-child {
+    border-radius: $radius-small $radius-small 0 0;
+  }
+
+  &:last-child {
+    border-radius: 0 0 $radius-small $radius-small;
+  }
+}
+
+// Mobile only styles
+
+@include mq(null, $breakpoint-mobileLandscape) {
+  .NavLink,
+  .Dropdown .DropdownBtn {
+    display: none;
+  }
+
+  .ToggleNavButton {
+    float: right;
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  .Root.showNav {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .Branding {
+      margin-bottom: spacing(1);
+    }
+
+    .NavLink,
+    .DropdownBtn {
+      float: none;
+      display: block;
+      text-align: left;
+      width: 100%;
+      border-radius: $radius-small;
+      &:hover {
+        background-color: $color-primary-red;
+        color: $color-primary-white;
+      }
+    }
+
+    .DropdownContent {
+      position: absolute;
+    }
+
+    .Dropdown:hover {
+      .DropdownBtn {
+        background-color: $color-primary-red;
+        color: $color-primary-white;
+      }
+
+      .DropdownContent {
+        position: relative;
+        top: 0;
+        margin: spacing(0.5) 0;
+      }
+    }
+  }
+}

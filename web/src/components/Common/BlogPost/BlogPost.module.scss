@@ -1,0 +1,67 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Root {
+  position: relative;
+  background-color: $color-primary-grey-light;
+}
+
+.Container {
+  position: relative;
+  background-color: $color-primary-white;
+  top: 0;
+  padding: spacing(1) spacing(2) spacing(6);
+  border-radius: $radius-small;
+  @include mq($breakpoint-desktop) {
+    padding: spacing(3) spacing(5) spacing(6);
+  }
+}
+
+.TitleWrapper {
+  position: relative;
+  margin-bottom: spacing(3);
+  margin-top: spacing(3);
+  padding: spacing(3) 0 0;
+
+  @include mq($breakpoint-tablet) {
+    padding: spacing(3) spacing(1) spacing(3);
+  }
+}
+
+.DateWrapper {
+  font-weight: 500;
+  display: inline-block;
+  color: $color-primary-black-light;
+  text-align: right;
+  line-height: 0;
+  margin-bottom: spacing(1);
+}
+
+.CategoryWrapper {
+  display: flex;
+  align-content: center;
+  & > div {
+    margin-right: spacing(1);
+  }
+}
+
+@include mq($breakpoint-tablet) {
+  .Container {
+    padding: spacing(3) spacing(15) spacing(6);
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Container {
+    top: spacing(-10);
+  }
+}
+
+.LoadingBar {
+  width: 10%;
+  height: 3px;
+  position: fixed;
+  top: 58px;
+  background-color: $color-primary-yellow;
+  z-index: 100;
+}

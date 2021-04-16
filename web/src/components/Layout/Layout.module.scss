@@ -1,0 +1,11 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Layout {
+  overflow: hidden;
+}
+
+.Content {
+  scroll-snap-type: y mandatory;
+  margin-top: 57px;
+}

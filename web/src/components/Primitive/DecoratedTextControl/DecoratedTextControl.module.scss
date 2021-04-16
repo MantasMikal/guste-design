@@ -1,0 +1,41 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.DecoratedTextControl {
+  position: relative;
+  color: inherit;
+}
+
+.DecoratedTextControlDecoration {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: spacing(6);
+  pointer-events: none;
+  overflow: hidden;
+
+  &:first-child {
+    left: 0;
+  }
+
+  &:last-child {
+    right: 0;
+  }
+
+  &.interactive {
+    pointer-events: auto;
+  }
+}
+
+.DecoratedTextControlControl {
+  .before & {
+    padding-left: spacing(6);
+  }
+
+  .after & {
+    padding-right: spacing(6);
+  }
+}

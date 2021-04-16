@@ -1,0 +1,49 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Toast {
+  position: fixed;
+  width: spacing(35);
+  transform: translateY(0%);
+  opacity: 1;
+  z-index: 1100;
+}
+
+.left {
+  left: spacing(2);
+}
+
+.center {
+  left: 50%;
+  margin-left: spacing(35 * -0.5);
+}
+
+.right {
+  right: spacing(2);
+}
+
+.top {
+  top: spacing(2);
+  animation: toast-pop-down $duration-longest 1 forwards $easing-standard;
+}
+
+.bottom {
+  bottom: spacing(2);
+  animation: toast-pop-up $duration-longest 1 forwards $easing-standard;
+}
+
+@keyframes toast-pop-down {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(-200%);
+  }
+}
+
+@keyframes toast-pop-up {
+  0%,
+  50% {
+    opacity: 0;
+    transform: translateY(200%);
+  }
+}

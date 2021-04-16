@@ -1,0 +1,8 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.CheckControlGroup {
+  > * + * {
+    margin-top: spacing(1);
+  }
+}

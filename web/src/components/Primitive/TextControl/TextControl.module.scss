@@ -1,0 +1,61 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.TextControl {
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: $color-common-white;
+  transition: all $duration-standard $easing-standard;
+  padding: spacing(1.5) - 1 spacing(2) - 1;
+  color: inherit;
+  line-height: spacing(3);
+  border: 1px solid $color-common-grey75;
+  background-clip: padding-box;
+  border-radius: $radius-small;
+
+  // &::placeholder {}
+
+  &:hover,
+  &:focus {
+    transition-duration: $duration-shortest;
+  }
+
+  &:hover {
+    border-color: $color-common-grey50;
+  }
+
+  &:focus {
+    border-color: $color-primary-red;
+    outline: 0;
+  }
+
+  &[type='date'] {
+    appearance: none;
+    height: spacing(6);
+  }
+}
+
+.multiLine {
+  height: auto;
+  resize: vertical;
+}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    border-color: $value !important;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  color: $color-common-grey75 !important;
+  border-color: $color-common-grey75 !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none !important;
+  }
+}

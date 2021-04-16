@@ -1,0 +1,173 @@
+@import 'settings';
+@import '_backline-mixins';
+
+// .Type {}
+
+.common {
+  min-height: spacing(2);
+}
+
+.display {
+  font-weight: bold;
+  font-family: $font-body;
+  font-size: spacing(4.5);
+  line-height: spacing(4.5);
+
+  @include mq($breakpoint-tabletLandscape) {
+    font-size: spacing(6); // 48
+    line-height: spacing(7); // 56
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(8); // 64
+    line-height: spacing(9); // 72
+  }
+}
+
+.title {
+  font-family: $font-body;
+  font-size: spacing(3); // 34
+  line-height: spacing(4); // 40
+  font-weight: 500;
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(3.5); // 34
+    line-height: spacing(4.5); // 40
+    font-weight: 500;
+  }
+
+  @include mq($breakpoint-desktopMedium) {
+    font-size: spacing(4); // 34
+    line-height: spacing(5); // 40
+    font-weight: 500;
+  }
+}
+
+.titleMedium {
+  font-family: $font-body;
+  font-size: spacing(3.5);
+  line-height: spacing(4.5);
+  font-weight: 500;
+
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(4.5); // 40
+    line-height: spacing(5.5); // 48
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(5.5); // 42
+    line-height: spacing(6.5); // 50
+  }
+}
+
+.titleLarge {
+  font-family: $font-body;
+  font-size: spacing(4);
+  line-height: spacing(5);
+  font-weight: 500;
+
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(4.5);
+    line-height: spacing(5.5);
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(6);
+    line-height: spacing(7);
+  }
+}
+
+.subtitle {
+  font-size: spacing(2);
+  line-height: spacing(2.5);
+
+  font-weight: 500;
+  font-family: $font-body;
+
+  @include mq($breakpoint-mobileLarge) {
+    font-size: spacing(2.5);
+    line-height: spacing(3);
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(4); // 48
+    line-height: spacing(5); // 56
+  }
+
+  @include mq($breakpoint-desktopLarge) {
+    font-size: spacing(5);
+    line-height: spacing(6);
+  }
+}
+
+.menu {
+  font-weight: 500;
+  font-size: spacing(2); // 16
+  line-height: spacing(3); // 24
+}
+
+.base {
+  font-size: spacing(2.25);
+  line-height: spacing(3);
+
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(2.5);
+    line-height: spacing(3.5);
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(3.2);
+    line-height: spacing(4.2);
+  }
+}
+
+.baseLarge {
+  font-size: spacing(3);
+  line-height: spacing(4);
+
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(3.5);
+    line-height: spacing(4.5);
+  }
+
+  @include mq($breakpoint-desktop) {
+    font-size: spacing(5);
+    line-height: spacing(6);
+  }
+}
+
+.baseSmall {
+  font-size: spacing(2.4); // 14
+  line-height: spacing(2.6); // 16
+}
+
+.small {
+  font-size: spacing(2); // 14
+  line-height: spacing(2.2); // 16
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.demi {
+  font-weight: 500;
+}
+
+.heavy {
+  font-weight: 600;
+}
+
+.padded {
+  padding-bottom: spacing(0.5);
+}
+
+// Modifiers
+
+.tight {
+  line-height: 1;
+}

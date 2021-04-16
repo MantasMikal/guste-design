@@ -1,0 +1,25 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Title {
+  margin-bottom: spacing(3);
+}
+
+.Body {
+  margin-bottom: spacing(6);
+}
+
+.BlockWrapper {
+  flex: 1 1 50%;
+  margin-right: spacing(3);
+
+  @include mq($breakpoint-tabletLandscape) {
+    margin-right: spacing(6);
+  }
+}
+
+.Form {
+  @include mq($breakpoint-tabletLandscape) {
+    max-width: 60%;
+  }
+}

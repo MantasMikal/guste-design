@@ -1,0 +1,113 @@
+@import 'settings';
+@import '_backline-mixins';
+
+@mixin modal-fade-in($duration: 1000, $delay: 0) {
+  animation: modal-fade-in ($duration * 1ms) ($delay * 1ms) $ease-out-cubic 1
+    forwards;
+  opacity: 0;
+}
+
+@mixin modal-fade-in-up($duration: 1000, $delay: 0) {
+  animation: modal-fade-in-up ($duration * 1ms) ($delay * 1ms) $ease-out-cubic 1
+    forwards;
+  opacity: 0;
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.ModalInner {
+  display: flex;
+  flex-direction: column;
+  max-width: spacing(60);
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+  padding: spacing(2) spacing(1);
+  justify-content: center;
+}
+
+.ModalBg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($color-primary-black, 0.2);
+  @include modal-fade-in(300);
+}
+
+.ModalPanel {
+  background: white;
+  border-radius: $radius-small;
+  overflow: hidden;
+  box-shadow: shadow(5);
+  display: flex;
+  flex-direction: column;
+  padding-left: spacing(2);
+  padding-right: spacing(2);
+  @include modal-fade-in-up(300, 100);
+}
+
+.ModalHeader {
+  padding-top: spacing(1.5);
+  padding-bottom: spacing(1.5);
+  margin-right: spacing(4);
+  font-weight: 600;
+  color: $color-primary-yellow;
+}
+
+.ModalPanelContent {
+  padding-bottom: spacing(2);
+  padding-top: spacing(6);
+
+  > * + * {
+    margin-top: spacing(2);
+  }
+}
+
+.ModalHeader + .ModalPanelContent {
+  border-top: 1px solid $color-primary-black;
+  padding-top: spacing(2);
+}
+
+.ModalClose {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: $color-primary-yellow;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// .ModalContent {}
+
+.ModalActions {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes modal-fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-in-up {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,107 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Root {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  animation: fadeIn $duration-short $easing-standard forwards;
+  @media (hover: hover) {
+    &:hover {
+      .Title {
+        color: $color-primary-red;
+        transition: $duration-shorter $easing-standard;
+      }
+    }
+  }
+}
+
+.LeadMediaThumb {
+  position: relative;
+}
+
+.Title {
+  transition: $duration-shorter $easing-standard;
+  padding-top: spacing(1);
+}
+
+.Excerpt {
+  & p {
+    margin: 0.5em 0;
+  }
+
+  & strong {
+    font-weight: 600;
+  }
+}
+
+.Details {
+  font-weight: 500;
+  display: inline-block;
+  // background-color: $color-primary-purple;
+  color: $color-primary-black-light;
+  // font-weight: 500;
+  // padding: spacing(0.5) spacing(1);
+  // border-radius: $radius-small;
+  text-align: right;
+  line-height: 0;
+  margin-bottom: spacing(1);
+}
+
+.CategoryWrapper {
+  display: flex;
+  align-content: center;
+  padding: 0 spacing(2);
+
+  & > div {
+    margin-right: spacing(1);
+  }
+}
+
+.surround {
+  &.Root {
+    border-radius: $radius-small;
+    border-radius: $radius-small;
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.16);
+    padding-bottom: spacing(2);
+  }
+
+  .Title {
+    padding-top: spacing(1);
+  }
+
+  .Title,
+  .Excerpt,
+  .Details {
+    padding-left: spacing(2);
+    padding-right: spacing(2);
+  }
+}
+
+.isDark {
+  &.Root {
+    background-color: $color-primary-black;
+  }
+
+  &.surround {
+    background-color: $color-primary-black-light;
+  }
+
+  .Details {
+    color: $color-primary-white;
+  }
+
+  .Title,
+  .Excerpt {
+    color: $color-primary-white;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

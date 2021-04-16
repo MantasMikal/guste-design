@@ -1,0 +1,34 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ScrollArea {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+}
+
+.horizontal {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.vertical {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.hideScrollbar {
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track,
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    -webkit-appearance: none;
+    display: none;
+  }
+
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+  }
+}

@@ -1,0 +1,18 @@
+$gap-list: (
+  'small': 1,
+  'medium': 2,
+  'large': 4
+);
+
+// .Stack {}
+
+@each $key, $value in $gap-list {
+  .#{$key} > * + * {
+    margin-top: spacing($value);
+  }
+}
+
+// :export {
+//   /* stylelint-disable-next-line property-no-unknown */
+//   gaps: map-keys($gap-list);
+// }

@@ -1,0 +1,27 @@
+@import 'settings';
+@import '_backline-mixins';
+
+// .Hide {}
+
+$HideWidths: (
+  tablet: $breakpoint-tablet,
+  desktop: $breakpoint-desktop
+);
+
+@each $key, $value in $HideWidths {
+  @include mq($value) {
+    .at-#{$key} {
+      display: none;
+    }
+  }
+
+  @include mq($max: $value - 1) {
+    .below-#{$key} {
+      display: none;
+    }
+  }
+}
+
+// :export {
+//   widths: $HideWidths;
+// }

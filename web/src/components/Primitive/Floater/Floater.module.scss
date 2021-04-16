@@ -1,0 +1,32 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Floater {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: spacing(2);
+}
+
+.left {
+  float: left;
+  margin-right: spacing(2);
+}
+
+.right {
+  float: right;
+  margin-left: spacing(2);
+}
+
+.small {
+  width: 50%;
+
+  @include mq($breakpoint-tablet) {
+    width: 33.33333%;
+  }
+}
+
+.medium {
+  @include mq($breakpoint-tablet) {
+    width: 66.66666%;
+  }
+}

@@ -1,0 +1,40 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.NativeSelectControl {
+  display: block;
+  width: 100%;
+  height: spacing(4);
+  border: 1px solid $color-common-grey75;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  transition: all $duration-standard $easing-standard;
+
+  &:hover,
+  &:focus {
+    transition-duration: $duration-shortest;
+  }
+
+  &:hover {
+    border-color: $color-common-grey50;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.multiple {
+  height: auto;
+  resize: vertical;
+  overflow-y: auto;
+}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    border-color: $value !important;
+  }
+}

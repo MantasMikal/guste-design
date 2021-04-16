@@ -1,0 +1,67 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.DotPagination {
+  text-align: center;
+}
+
+.DotPaginationList {
+  display: inline-block;
+}
+
+.DotPaginationItem {
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+
+  & + & {
+    margin-left: spacing(1);
+  }
+}
+
+.DotPaginationButton {
+  display: block;
+  position: relative;
+
+  // &.active {}
+
+  // Unset here so Inner element can show custom styles
+  &:focus {
+    outline: 0;
+  }
+
+  // Increased hit-area
+  &::after {
+    content: '';
+    position: absolute;
+    top: spacing(-0.5);
+    right: spacing(-0.5);
+    bottom: spacing(-0.5);
+    left: spacing(-0.5);
+    // outline: 1px solid lime; // Uncomment to debug
+  }
+}
+
+.DotPaginationButtonInner {
+  display: block;
+  width: spacing(2);
+  height: spacing(2);
+  transform: scale(0.8);
+  background-color: $color-common-grey75;
+  border-radius: 50%;
+  transition: all $duration-standard $easing-standard;
+
+  .active & {
+    background-color: $color-common-grey25;
+    transform: scale(1);
+    transition-duration: $duration-short;
+  }
+
+  .DotPaginationButton:hover & {
+    background-color: $color-common-grey25;
+  }
+
+  .DotPaginationButton:focus & {
+    background-color: $color-common-grey25;
+  }
+}

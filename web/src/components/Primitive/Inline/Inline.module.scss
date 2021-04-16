@@ -1,0 +1,26 @@
+@import 'settings';
+@import '_backline-mixins';
+
+$gap-list: (
+  'small': 0.5,
+  'medium': 1,
+  'large': 2
+);
+
+.Inline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shrink {
+  display: inline-flex;
+}
+
+@each $key, $value in $gap-list {
+  .#{$key} {
+    margin: spacing($value * -1);
+    & > * {
+      margin: spacing($value);
+    }
+  }
+}

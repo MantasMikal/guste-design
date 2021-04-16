@@ -1,0 +1,53 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ShrinkWrapItem {
+  display: table-cell;
+
+  &:not(:first-child) {
+    padding-left: spacing(0.5);
+
+    &.none {
+      padding-left: spacing(0);
+    }
+
+    &.comfortable {
+      padding-left: spacing(1);
+    }
+  }
+
+  &:not(:last-child) {
+    padding-right: spacing(0.5);
+
+    &.none {
+      padding-right: spacing(0);
+    }
+
+    &.comfortable {
+      padding-right: spacing(1);
+    }
+  }
+}
+
+.shrink {
+  // This will expand to fit the minimum width of its content
+  width: 1px;
+}
+
+.noWrap {
+  white-space: nowrap;
+}
+
+// vAlign
+
+.top {
+  vertical-align: top;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.bottom {
+  vertical-align: bottom;
+}

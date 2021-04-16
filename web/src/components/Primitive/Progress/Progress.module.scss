@@ -1,0 +1,35 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Progress {
+  position: relative;
+}
+
+.ProgressTrack {
+  overflow: hidden;
+  height: spacing(1);
+  background: $color-common-grey75;
+}
+
+.ProgressBar {
+  display: inline-block;
+  width: 0;
+  transition: width $duration-long $easing-standard;
+  height: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: $color-primary-yellow;
+  vertical-align: top;
+
+  &:nth-child(odd) {
+    background-color: $color-primary-red;
+  }
+
+  &:nth-child(even) {
+    background-color: $color-primary-yellow;
+  }
+
+  &:only-child {
+    background-color: $color-primary-yellow;
+  }
+}

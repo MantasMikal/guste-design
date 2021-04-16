@@ -1,0 +1,4 @@
+{
+  "packages": ["studio", "web"],
+  "version": "1.0.0"
+}

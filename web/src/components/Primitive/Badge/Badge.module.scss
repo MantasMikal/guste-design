@@ -1,0 +1,13 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Badge {
+  color: $color-primary-white;
+  border-radius: $radius-small;
+  padding: spacing(0.5) spacing(1);
+  line-height: 0;
+}
+
+.isInactive {
+  filter: saturate(0.2);
+}

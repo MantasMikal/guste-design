@@ -1,0 +1,143 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.CustomCheckControl {
+  display: inline-block;
+  position: relative;
+}
+
+.CustomCheckControlControl {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.CustomCheckControlIndicator {
+  position: relative;
+  display: inline-block;
+  width: spacing(4);
+  height: spacing(4);
+  background: $color-common-white;
+  vertical-align: middle;
+  border: 1px solid $color-common-grey75;
+  border-radius: $radius-small;
+  transition: all $duration-standard $easing-standard;
+
+  .CustomCheckControlControl:hover:not([disabled]) ~ &,
+  .CustomCheckControlControl:focus ~ & {
+    border-color: $color-common-grey50;
+    transition-duration: $duration-shortest;
+  }
+
+  .CustomCheckControlControl:checked ~ & {
+    border-color: $color-primary-yellow;
+  }
+
+  .CustomCheckControlControl:hover:not([disabled]):checked ~ &,
+  .CustomCheckControlControl:checked:focus ~ & {
+    border-color: $color-primary-yellow;
+    box-shadow: 0 0 0 1px $color-primary-yellow inset;
+  }
+
+  .CustomCheckControlControl:disabled ~ & {
+    opacity: 0.6;
+    border-color: $color-common-grey75;
+    cursor: not-allowed;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity $duration-long $easing-standard,
+      transform $duration-long cubic-bezier(0.6, 1.5, 0.8, 1.15);
+  }
+
+  .CustomCheckControlControl:checked ~ &::after {
+    opacity: 1;
+    transform: scale(1);
+    transition-duration: $duration-shortest;
+  }
+}
+
+//
+// CHECKBOX
+//
+
+.checkbox {
+  .CustomCheckControlIndicator::after {
+    top: 50%;
+    left: 50%;
+    margin-left: -4px;
+    margin-top: -8px;
+    width: 7px;
+    height: 14px;
+    transform: scale(0) rotate(45deg);
+    border-style: solid;
+    border-color: $color-primary-yellow;
+    border-width: 0 3px 3px 0;
+  }
+
+  .CustomCheckControlControl:checked ~ .CustomCheckControlIndicator::after {
+    transform: scale(1) rotate(45deg);
+  }
+  .CustomCheckControlControl:disabled ~ .CustomCheckControlIndicator::after {
+    border-color: $color-common-grey75;
+  }
+}
+
+//
+// RADIO
+//
+
+.radio {
+  .CustomCheckControlIndicator {
+    border-radius: 50%;
+  }
+  .CustomCheckControlIndicator::after {
+    top: 50%;
+    left: 50%;
+    width: spacing(2);
+    height: spacing(2);
+    margin-left: spacing(-1);
+    margin-top: spacing(-1);
+    border-radius: 50%;
+    background-color: $color-primary-yellow;
+  }
+  .CustomCheckControlControl:disabled .CustomCheckControlIndicator::after {
+    background-color: $color-common-grey75;
+  }
+}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    .CustomCheckControlIndicator {
+      border-color: $value;
+    }
+    .CustomCheckControlControl:hover:not([disabled])
+      ~ .CustomCheckControlIndicator,
+    .CustomCheckControlControl:focus ~ .CustomCheckControlIndicator {
+      border-color: $value;
+    }
+    .CustomCheckControlControl:checked ~ .CustomCheckControlIndicator {
+      border-color: $value;
+    }
+    .CustomCheckControlControl:hover:not([disabled]):checked
+      ~ .CustomCheckControlIndicator,
+    .CustomCheckControlControl:checked:focus ~ .CustomCheckControlIndicator {
+      border-color: $value;
+      box-shadow: 0 0 0 1px $value inset;
+    }
+  }
+  .checkbox.#{$key} {
+    .CustomCheckControlIndicator::after {
+      border-color: $value;
+    }
+  }
+  .radio.#{$key} {
+    .CustomCheckControlIndicator::after {
+      background-color: $value;
+    }
+  }
+}

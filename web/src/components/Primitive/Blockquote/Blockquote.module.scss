@@ -1,0 +1,25 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Blockquote {
+  font-style: normal;
+  border-left: 1px solid;
+  padding-left: spacing(2);
+}
+
+.BlockquoteQuote {
+  .quoteMarks & {
+    &::before {
+      content: open-quote;
+    }
+    &::after {
+      content: close-quote;
+    }
+  }
+}
+
+.BlockquoteCitation {
+  display: block;
+  margin-top: spacing(1);
+  font-style: normal;
+}

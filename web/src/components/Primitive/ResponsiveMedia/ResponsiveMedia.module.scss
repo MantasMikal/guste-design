@@ -1,0 +1,20 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ResponsiveMedia {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  width: 100%; // Maintain size when centered using flexbox
+
+  // Ensure content fill placeholder
+  & > * {
+    width: 100%;
+  }
+
+  // A little extra persuasion for responsive video
+  & > iframe {
+    position: absolute;
+    height: 100%;
+  }
+}

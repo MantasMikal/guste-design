@@ -1,0 +1,67 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ButtonStandard {
+  position: relative;
+  padding: spacing(1.5) spacing(6);
+  line-height: spacing(2.5);
+  font-weight: 500;
+  border-radius: $radius-small;
+  background-color: $color-primary-yellow;
+  color: $color-primary-black;
+  transition: all $duration-standard $easing-standard;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-primary-red;
+    color: $color-primary-white;
+    transition-duration: $duration-shortest;
+  }
+}
+
+.ButtonStandardSpinner {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading {
+  pointer-events: none;
+  .ButtonStandardContent {
+    transition-duration: $duration-shortest;
+    opacity: 0;
+  }
+
+  .ButtonStandardSpinner {
+    opacity: 1;
+    margin-left: spacing(0.5);
+  }
+}
+
+.disabled {
+  background-color: $color-common-grey50;
+}
+
+.small {
+  padding: spacing(1);
+  font-size: 1rem;
+  font-weight: 500;
+
+  @include mq($breakpoint-desktop) {
+    padding: spacing(1) spacing(2);
+  }
+}
+
+.large {
+  padding: spacing(2) spacing(5);
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  @include mq($breakpoint-desktop) {
+    padding: spacing(3) spacing(8);
+    font-size: 2rem;
+  }
+}

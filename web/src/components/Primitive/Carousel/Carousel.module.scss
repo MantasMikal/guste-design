@@ -1,0 +1,64 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Carousel {
+  position: relative;
+  ul,
+  li {
+    list-style: none;
+    &::before {
+      content: '';
+      display: none;
+    }
+  }
+
+  & > * {
+    outline: 0;
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+.Slide {
+  max-width: 495px;
+  margin: 20px 10px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.ControlIcon {
+  svg path {
+    transition: $duration-shortest $easing-standard;
+  }
+
+  &:hover svg path {
+    transition: $duration-shortest $easing-standard;
+    fill: $color-primary-red;
+  }
+}
+
+.Next {
+  position: absolute;
+  top: spacing(-2.8);
+  right: spacing(2.2);
+
+  @include mq($breakpoint-tablet) {
+    right: spacing(1);
+    top: spacing(-5);
+  }
+}
+
+.Back {
+  position: absolute;
+  top: spacing(-2.8);
+  right: spacing(9);
+
+  @include mq($breakpoint-tablet) {
+    right: spacing(7);
+    top: spacing(-5);
+  }
+}
+  
