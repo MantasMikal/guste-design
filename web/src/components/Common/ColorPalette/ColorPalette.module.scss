@@ -1,0 +1,23 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ColorPalette {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-end
+}
+
+.Color {
+  height: spacing(6);
+  width: spacing(6);
+  outline: $border-standard;
+  margin-top: 2px;
+}
+
+.Color:hover,
+.Color:focus,
+ .active {
+  outline: $border-standard;
+  outline-width: 3px;
+  z-index: 2;
+}

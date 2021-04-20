@@ -5,23 +5,28 @@ import createSchema from "part:@sanity/base/schema-creator";
 import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // We import object and document schemas
-import blockContent from "./blockContent";
-import blockText from "./blockText";
-import category from "./category";
-import companyInfo from "./companyInfo";
-import figure from "./figure";
-import mainImage from "./mainImage";
-import page from "./page";
-import post from "./post";
-import siteSettings from "./siteSettings";
-import slideshow from "./slideshow";
-import video from "./video";
-import grid from "./grid";
-import contentBlock from "./contentBlock";
-import location from "./location";
-import contact from "./contact";
-import home from "./home";
-import section from "./section";
+import category from "./documents/category";
+import page from "./pages/page";
+import post from "./documents/post";
+import siteSettings from "./documents/siteSettings";
+import companyInfo from "./documents/companyInfo";
+
+import blockContent from "./objects/blockContent";
+import blockText from "./objects/blockText";
+import contentBlock from "./objects/contentBlock";
+import section from "./objects/section";
+import openGraph from "./objects/openGraph";
+
+import contact from "./pages/contact";
+import home from "./pages/home";
+
+import figure from "./plugs/figure";
+import mainImage from "./plugs/mainImage";
+import slideshow from "./plugs/slideshow";
+import video from "./plugs/video";
+import grid from "./plugs/grid";
+import location from "./plugs/location";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -48,7 +53,7 @@ export default createSchema({
     contact,
     home,
     section,
-
+    openGraph,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

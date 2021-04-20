@@ -1,10 +1,10 @@
+const config = require('../config')
+const { siteUrl } = config.site
+
 async function createBlogPostPages(graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
     {
-      site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-        siteUrl
-      }
       post: allSanityPost(filter: { slug: { current: { ne: null } } }) {
         edges {
           node {
@@ -20,9 +20,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
   `)
 
   if (result.errors) throw result.errors
-
   const postEdges = (result.data.post || {}).edges || []
-  const siteUrl = result.data && result.data.site && result.data.site.siteUrl
 
   postEdges.forEach((edge, index) => {
     const { id, slug = {} } = edge.node
@@ -32,7 +30,7 @@ async function createBlogPostPages(graphql, actions, reporter) {
 
     createPage({
       path,
-      component: require.resolve('./src/templates/blog-post.js'),
+      component: require.resolve('./src/templates/blogPost.js'),
       context: { id, absolutePath }
     })
   })

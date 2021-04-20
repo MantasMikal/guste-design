@@ -13,10 +13,16 @@ $color-primary-purple: #c8167c;
 $color-primary-red: #e72568;
 $color-primary-yellow: #fbc87c;
 
+$color-primary-accent: #fbe462;
+$color-secondary-accent: #56b78f;
+
 $color-status-success: #33691e;
 $color-status-notice: #01579b;
 $color-status-warning: #ff6f00;
 $color-status-error: #b71c1c;
+
+
+$border-standard: 2px solid $color-primary-black;
 
 $color-status-list: (
   success: $color-status-success,

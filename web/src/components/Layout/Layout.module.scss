@@ -3,9 +3,11 @@
 
 .Layout {
   overflow: hidden;
+  margin: $layout-margin;
 }
 
 .Content {
   scroll-snap-type: y mandatory;
-  margin-top: 57px;
+  margin-top: spacing(6.5);
+  margin-bottom: spacing(1);
 }

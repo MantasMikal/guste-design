@@ -5,35 +5,29 @@ import classnames from 'classnames'
 import Type from 'Primitive/Type'
 import Icon from 'Primitive/Icon'
 import SmartLink from 'Primitive/SmartLink'
-import Image from 'Primitive/Image'
-import Container from 'Primitive/Container'
 
 import styles from './Navigation.module.scss'
 
-const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
+const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
   return (
-    <Container
-      gutter
-      as="nav"
-      className={classnames(styles.Root, showNav && styles.showNav)}
+    <div className={styles.Navigation}>
+    <nav
+      className={classnames(styles.Wrapper, showNav && styles.showNav)}
       id={id}
     >
-      <h1 hidden>{siteTitle}</h1>
-      <div className={styles.Branding}>
-        <SmartLink to="/">
-          <Image image={logo} className={styles.Logo} alt={siteTitle} />
-        </SmartLink>
-      </div>
+      <SmartLink className={styles.Branding} to="/">
+        <h1>{siteTitle}</h1>
+      </SmartLink>
       <Link className={styles.NavLink} to="/contact/">
         Contact
       </Link>
       <Link className={styles.NavLink} to="/blog/">
-        Blog
+        About
       </Link>
       <div className={styles.Dropdown}>
-        <SmartLink className={styles.DropdownBtn}>
+        <SmartLink to="/store" className={styles.DropdownBtn}>
           <Type as="span" size="menu">
-            SubNav
+            Store
           </Type>
         </SmartLink>
         <div className={styles.DropdownContent}>
@@ -41,7 +35,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
             className={classnames(styles.NavLink, styles.DropdownLink)}
             to="/"
           >
-            Sub Nav 1
+            Delivery & returns
           </Link>
           <Link
             className={classnames(styles.NavLink, styles.DropdownLink)}
@@ -57,9 +51,14 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
           </Link>
         </div>
       </div>
-      <Link className={styles.NavLink} to="/about/">
-        About
+            <Link className={styles.NavLink} to="/about/">
+        Gallery
       </Link>
+
+      <Link className={styles.NavLink} to="/projects/">
+        Projects
+      </Link>
+
       <button
         className={styles.ToggleNavButton}
         onClick={showNav ? onHideNav : onShowNav}
@@ -70,7 +69,8 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, logo, id }) => {
           <Icon a11yText="Open Menu" type="burger" width={24} height={24} />
         )}
       </button>
-    </Container>
+    </nav>
+    </div>
   )
 }
 

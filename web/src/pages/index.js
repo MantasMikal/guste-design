@@ -11,12 +11,6 @@ import BlockSection from 'Section/Block'
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      title
-      description
-      keywords
-    }
-
     home: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
       _rawSections(resolveReferences: { maxDepth: 10 })
       title
@@ -74,18 +68,11 @@ const IndexPage = (props) => {
     )
   }
 
-  const site = (data || {}).site
   const home = (data || {}).home
 
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
-
-  if (!site) {
-    throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-    )
-  }
 
   if (!home) {
     throw new Error(
@@ -97,12 +84,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      />
-      <h1 hidden>Welcome to {site.title}</h1>
+      <SEO />
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
       {_rawSections &&
         _rawSections.map((section) => (

@@ -1,32 +1,45 @@
 @import 'settings';
 @import '_backline-mixins';
 
-.Root {
-  background-color: $color-primary-white;
+.Navigation {
   position: fixed;
+  background-color: $color-primary-white;
   z-index: 300;
   width: 100%;
-  padding: spacing(1) spacing(2);
+  left: 0;
+}
+
+.Wrapper {
+  margin: 0 $layout-margin;
+  border: $border-standard;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    margin: 0 $layout-margin;
+    background-color: $color-primary-white;
+    height: spacing(1);
+    top: spacing(-1);
+    left: 0;
+  }
 }
 
 // Branding
 
 .Branding {
-  font-size: inherit;
   display: inline-block;
   position: relative;
-  vertical-align: middle;
-  transition: $duration-short $easing-standard;
-  width: 42px;
-  height: 42px;
   order: 1;
-  & a {
-    display: block;
-  }
+  vertical-align: middle;
+  color: $color-primary-black;
+  font-weight: 600;
+  padding: spacing(1) spacing(1);
 
-  &:hover {
-    transform: scale(1.2);
-    transition: $duration-short $easing-standard;
+  &:hover,
+  &:focus {
+    font-weight: 900;
+    transition: 0.1 $easing-standard;
   }
 }
 
@@ -35,11 +48,14 @@
 .NavLink,
 .DropdownBtn {
   display: block;
-  padding: 8px 14px;
+  padding: spacing(1) spacing(1);
   color: $color-primary-black;
+  text-transform: uppercase;
+  border-left: $border-standard;
 
-  &.highlight {
-    color: $color-primary-purple;
+  &:hover,
+  &:focus {
+    background-color: $color-primary-accent;
   }
 }
 
@@ -56,8 +72,8 @@
 .ToggleNavButton {
   &:hover {
     svg path {
-      fill: $color-primary-red;
-      stroke: $color-primary-red;
+      fill: $color-primary-accent;
+      stroke: $color-primary-accent;
     }
   }
 }
@@ -69,11 +85,12 @@
 
   &:hover {
     .DropdownBtn {
-      color: $color-primary-red;
+      background-color: $color-primary-accent;
     }
 
     .DropdownContent {
       opacity: 1;
+      pointer-events: all;
     }
   }
 }
@@ -88,8 +105,11 @@
 .DropdownContent {
   position: absolute;
   z-index: 300;
-  top: 10px;
+  top: 42px;
   opacity: 0;
+  pointer-events: none;
+  background-color: $color-primary-white;
+  border: $border-standard;
 }
 
 .DropdownLink {
@@ -97,14 +117,12 @@
   padding: spacing(1);
   width: 100%;
   text-align: left;
-  background-color: $color-primary-grey-light;
+  background-color: $color-primary-white;
+  border: none;
+  border-top: $border-standard;
 
   &:first-child {
-    border-radius: $radius-small $radius-small 0 0;
-  }
-
-  &:last-child {
-    border-radius: 0 0 $radius-small $radius-small;
+    border-top: none;
   }
 }
 
@@ -120,17 +138,13 @@
     float: right;
     display: block;
     position: absolute;
-    right: 15px;
-    top: 15px;
+    right: spacing(2);
+    top: spacing(1.1);
   }
 
-  .Root.showNav {
+  .Wrapper.showNav {
     display: flex;
     flex-direction: column-reverse;
-
-    .Branding {
-      margin-bottom: spacing(1);
-    }
 
     .NavLink,
     .DropdownBtn {
@@ -138,10 +152,10 @@
       display: block;
       text-align: left;
       width: 100%;
-      border-radius: $radius-small;
+      border: none;
+      border-top: $border-standard;
       &:hover {
-        background-color: $color-primary-red;
-        color: $color-primary-white;
+        background-color: $color-primary-accent;
       }
     }
 
@@ -151,14 +165,15 @@
 
     .Dropdown:hover {
       .DropdownBtn {
-        background-color: $color-primary-red;
-        color: $color-primary-white;
+        background-color: $color-primary-accent;
+        border-left: $border-standard;
       }
 
       .DropdownContent {
         position: relative;
         top: 0;
-        margin: spacing(0.5) 0;
+        border-right: 0;
+        border-top: 0;
       }
     }
   }
