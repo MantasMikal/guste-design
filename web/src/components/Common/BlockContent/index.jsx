@@ -10,6 +10,7 @@ import createGrid from './components/createGrid'
 import createFigure from './components/createFigure'
 import createSlideshow from './components/createSlideshow'
 import createMediaComponent from './components/createMedia'
+import createLine from './components/createLine'
 
 const serializers = {
   marks: {
@@ -90,6 +91,9 @@ const serializers = {
     },
     video(props) {
       return createMediaComponent(props.node)
+    },
+    line(props) {
+      return createLine(props.node)
     }
   }
 }

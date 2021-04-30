@@ -26,6 +26,7 @@ import slideshow from "./plugs/slideshow";
 import video from "./plugs/video";
 import grid from "./plugs/grid";
 import location from "./plugs/location";
+import line from './plugs/line'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -54,6 +55,7 @@ export default createSchema({
     home,
     section,
     openGraph,
+    line
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

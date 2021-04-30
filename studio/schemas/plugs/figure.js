@@ -31,6 +31,16 @@ export default {
       },
     },
     {
+      name: "border",
+      title: "Border",
+      type: "boolean",
+      description:
+        "Adds border around the image",
+      options: {
+        isHighlighted: true,
+      },
+    },
+    {
       name: "maxWidth",
       title: "Max width",
       type: "number",
