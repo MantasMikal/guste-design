@@ -1,11 +1,11 @@
 const config = require('../config')
 const { siteUrl } = config.site
 
-async function createBlogPostPages(graphql, actions, reporter) {
+async function createProjectPages(graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
     {
-      post: allSanityPost(filter: { slug: { current: { ne: null } } }) {
+      projects: allSanityProject(filter: { slug: { current: { ne: null } } }) {
         edges {
           node {
             id
@@ -20,24 +20,23 @@ async function createBlogPostPages(graphql, actions, reporter) {
   `)
 
   if (result.errors) throw result.errors
-  const postEdges = (result.data.post || {}).edges || []
+  const projectEdges = (result.data.projects || {}).edges || []
 
-  postEdges.forEach((edge, index) => {
+  projectEdges.forEach((edge, index) => {
     const { id, slug = {} } = edge.node
-    const path = `/blog/${slug.current}/`
+    const path = `/projects/${(slug.current)}/`
     const absolutePath = siteUrl + path
-    reporter.info(`Creating blog post page: ${path}`)
-
+    reporter.info(`Creating project page: ${path}`)
     createPage({
       path,
-      component: require.resolve('./src/templates/blogPost.js'),
+      component: require.resolve('./src/templates/project.js'),
       context: { id, absolutePath }
     })
   })
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  await createBlogPostPages(graphql, actions, reporter)
+  await createProjectPages(graphql, actions, reporter)
 }
 
 // Removes Mini-css errors

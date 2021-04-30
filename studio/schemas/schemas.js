@@ -7,7 +7,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // We import object and document schemas
 import category from "./documents/category";
 import page from "./pages/page";
-import post from "./documents/post";
+import project from "./documents/project";
 import siteSettings from "./documents/siteSettings";
 import companyInfo from "./documents/companyInfo";
 
@@ -43,7 +43,7 @@ export default createSchema({
     figure,
     mainImage,
     page,
-    post,
+    project,
     siteSettings,
     slideshow,
     video,

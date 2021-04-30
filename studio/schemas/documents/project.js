@@ -1,8 +1,8 @@
 import { FiFileText } from "react-icons/fi";
 
 export default {
-  name: "post",
-  title: "Blog Post",
+  name: "project",
+  title: "Project",
   type: "document",
   icon: FiFileText,
   fields: [
@@ -24,17 +24,9 @@ export default {
     },
     {
       name: "isFeatured",
-      title: "Is Featured",
-      description: "Will add post to the Featured Posts widget",
+      title: "Featured",
+      description: "Will be featured across the site",
       type: "boolean",
-    },
-    {
-      name: "category",
-      title: "Categories",
-      description:
-        "Can be more than one. First you have to create categories (Sidebar -> Categories)",
-      type: "array",
-      of: [{ type: "reference", to: { type: "category" } }],
     },
     {
       name: "publishedAt",
@@ -44,14 +36,11 @@ export default {
       type: "datetime",
     },
     {
-      name: "excerpt",
-      title: "Excerpt",
-      type: "blockText",
-    },
-    {
-      name: "mainImage",
-      title: "Main image",
-      type: "image",
+      name: 'mainImages',
+      title: 'Main images',
+      description: 'Main image of the document (thumbnail)',
+      type: 'array',
+      of: [{ type: 'figure' }]
     },
     {
       name: "body",
@@ -59,12 +48,12 @@ export default {
       type: "blockContent",
     },
     {
-      name: "similarPosts",
-      title: "Similar posts",
-      description: "Similar posts that will be added to the page",
-      type: "array",
-      of: [{ type: "reference", to: { type: "post" } }],
-    },
+      name: 'categories',
+      title: 'Categories',
+      description: 'Helps filter and categorize projects',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }]
+    }
   ],
   orderings: [
     {
@@ -88,15 +77,12 @@ export default {
     select: {
       title: "title",
       publishedAt: "publishedAt",
-      image: "mainImage",
+      image: "mainImages",
     },
     prepare({ title = "No title", publishedAt, image }) {
       return {
         title,
-        subtitle: publishedAt
-          ? new Date(publishedAt).toLocaleDateString()
-          : "Missing publishing date",
-        media: image,
+        image: Array.isArray(image) && image[0]
       };
     },
   },

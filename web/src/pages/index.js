@@ -6,7 +6,6 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Hero from 'Common/Hero'
-import BlogPostCarouselSection from 'Section/BlogPostCarousel'
 import BlockSection from 'Section/Block'
 
 export const query = graphql`
@@ -15,44 +14,6 @@ export const query = graphql`
       _rawSections(resolveReferences: { maxDepth: 10 })
       title
       subtitle
-      hero {
-        asset {
-          url
-          _id
-        }
-      }
-    }
-
-    posts: allSanityPost(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { isFeatured: { eq: true } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          isFeatured
-
-          category {
-            color {
-              hex
-            }
-            title
-          }
-          mainImage {
-            asset {
-              url
-              _id
-            }
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
     }
   }
 `
@@ -69,11 +30,6 @@ const IndexPage = (props) => {
   }
 
   const home = (data || {}).home
-
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
-    : []
-
   if (!home) {
     throw new Error(
       'Missing "Home content". Open the studio at http://localhost:3333 and add some content to "Pages/Home" and restart the development server.'
@@ -92,13 +48,6 @@ const IndexPage = (props) => {
             <BlockSection blockContent={section.body} title={section.title} />
           </div>
         ))}
-      {postNodes.length > 0 && (
-        <BlogPostCarouselSection
-          postNodes={postNodes}
-          browseMoreHref="/blog/"
-          title="Featured blog posts"
-        />
-      )}
     </Layout>
   )
 }

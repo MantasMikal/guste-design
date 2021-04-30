@@ -16,7 +16,8 @@
     "@sanity/desk-tool",
     "@sanity/dashboard",
     "dashboard-widget-netlify",
-    "@sanity/color-input"
+    "@sanity/color-input",
+    "asset-source-unsplash"
   ],
   "parts": [
     {

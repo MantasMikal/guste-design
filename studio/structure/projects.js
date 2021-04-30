@@ -1,11 +1,14 @@
 import S from "@sanity/desk-tool/structure-builder";
 import {
-  GoMegaphone as BlogIcon,
   GoChecklist as ApprovedIcon,
   GoEye as ReviewIcon,
   GoCircleSlash as RejectedIcon,
   GoArchive as AllIcon,
 } from "react-icons/go";
+
+import {
+  GiMoebiusTriangle as BlogIcon
+} from "react-icons/gi"
 
 import PreviewIFrame from "../components/previewIFrame";
 
@@ -17,48 +20,48 @@ export const icons = {
   AllIcon,
 };
 
-const blog = S.listItem()
-  .title("Blog")
+const projects = S.listItem()
+  .title("Projects")
   .icon(BlogIcon)
   .child(
     S.list()
       .title("Content")
       .items([
         S.listItem()
-          .title("Published posts")
-          .schemaType("post")
+          .title("Published projects")
+          .schemaType("project")
           .icon(BlogIcon)
           .child(
-            S.documentList("post")
-              .title("Published posts")
-              .menuItems(S.documentTypeList("post").getMenuItems())
-              // Only show posts with publish date earlier than now and that is not drafts
+            S.documentList("project")
+              .title("Published projects")
+              .menuItems(S.documentTypeList("project").getMenuItems())
+              // Only show projects with publish date earlier than now and that is not drafts
               .filter(
-                '_type == "post" && publishedAt < now() && !(_id in path("drafts.**"))'
+                '_type == "project" && publishedAt < now() && !(_id in path("drafts.**"))'
               )
               .child((documentId) =>
                 S.document()
                   .documentId(documentId)
-                  .schemaType("post")
+                  .schemaType("project")
                   .views([S.view.form(), PreviewIFrame()])
               )
           ),
-        S.documentTypeListItem("post")
-          .title("All posts")
+        S.documentTypeListItem("project")
+          .title("All projects")
           .icon(AllIcon),
         S.listItem()
-          .title("Posts by category")
+          .title("Project by category")
           .child(
             // List out all categories
             S.documentTypeList("category")
-              .title("Posts by category")
+              .title("Project by category")
               .child((catId) =>
                 // List out project documents where the _id for the selected
                 // category appear as a _ref in the project’s categories array
                 S.documentList()
-                  .schemaType("post")
-                  .title("Posts")
-                  .filter('_type == "post" && $catId in categories[]._ref')
+                  .schemaType("project")
+                  .title("Project")
+                  .filter('_type == "project" && $catId in categories[]._ref')
                   .params({ catId })
               )
           ),
@@ -67,4 +70,4 @@ const blog = S.listItem()
       ])
   );
 
-export default blog;
+export default projects;

@@ -1,0 +1,9 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.PageTitle {
+  padding: spacing(0.5);
+  border: $border-standard;
+  text-transform: uppercase;
+  margin-bottom: spacing(1);
+}

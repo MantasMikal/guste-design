@@ -140,6 +140,7 @@
     position: absolute;
     right: spacing(2);
     top: spacing(1.1);
+    z-index: 9999;
   }
 
   .Wrapper.showNav {

@@ -5,6 +5,7 @@ import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../libs/helpers'
 import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/MainLayout'
+import Projects from 'Section/Projects'
 
 export const query = graphql`
   query ProjectsPageQuery {
@@ -16,6 +17,16 @@ export const query = graphql`
         node {
           id
           publishedAt
+          title
+          slug {
+            current
+          }
+          mainImages {
+            asset {
+              url
+              _id
+            }
+          }
         }
       }
     }
@@ -24,7 +35,6 @@ export const query = graphql`
 
 const ProjectPage = (props) => {
   const { data, errors } = props
-
   if (errors) {
     return (
       <Layout>
@@ -37,9 +47,14 @@ const ProjectPage = (props) => {
     ? mapEdgesToNodes(data.projects).filter(filterOutDocsWithoutSlugs)
     : []
 
+  console.log(
+    '🚀 ~ file: projects.js ~ line 44 ~ ProjectPage ~ projectNodes',
+    projectNodes
+  )
   return (
     <Layout>
-      <SEO title='Projects'/>
+      <SEO title="Projects" />
+      {projectNodes && <Projects projects={projectNodes} />}
     </Layout>
   )
 }

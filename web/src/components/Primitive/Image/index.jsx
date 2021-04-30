@@ -9,11 +9,11 @@ import cfg from '../../../../../config'
 /**
  * Component to handle all types images with ratio support
  */
-const Image = ({ image, ratio, imgWrapperStyle, imgStyle, alt, ...other }) => {
+const Image = ({ image, ratio, imgWrapperStyle, maxWidth, imgStyle, alt, ...other }) => {
   if (!image) return null
   const imageData = getGatsbyImageData(
     image.asset,
-    { maxWidth: 700 },
+    { maxWidth: maxWidth, layout: 'fullWidth' },
     cfg.project
   )
   const altText = alt || image.alt || ''
