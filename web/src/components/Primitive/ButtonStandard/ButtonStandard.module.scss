@@ -3,19 +3,19 @@
 
 .ButtonStandard {
   position: relative;
-  padding: spacing(1.5) spacing(6);
+  padding: spacing(1) spacing(2);
   line-height: spacing(2.5);
   font-weight: 500;
-  border-radius: $radius-small;
-  background-color: $color-primary-yellow;
+  background-color: $color-primary-white;
   color: $color-primary-black;
   transition: all $duration-standard $easing-standard;
+  border: $border-standard;
 
   &:hover,
   &:focus,
   &:active {
-    background-color: $color-primary-red;
-    color: $color-primary-white;
+    background-color: $color-primary-accent;
+    color: $color-primary-black;
     transition-duration: $duration-shortest;
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import createGrid from './components/createGrid'
+import createLine from './components/createLine'
 import createMedia from './components/createMedia'
 
 /**
@@ -19,6 +20,8 @@ export default function createComponents(components) {
         return createMedia(component)
       case 'video':
         return createMedia(component)
+      case 'line':
+        return createLine(component)
       default:
         return <></>
     }

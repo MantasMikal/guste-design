@@ -1,11 +1,11 @@
 {
   "root": true,
   "api": {
-    "projectId": "21x74mcv",
+    "projectId": "uq1ipftd",
     "dataset": "production"
   },
   "project": {
-    "name": "Picks",
+    "name": "GUSTÉ",
     "basePath": "/"
   },
   "plugins": [
@@ -16,7 +16,8 @@
     "@sanity/desk-tool",
     "@sanity/dashboard",
     "dashboard-widget-netlify",
-    "@sanity/color-input"
+    "@sanity/color-input",
+    "asset-source-unsplash"
   ],
   "parts": [
     {

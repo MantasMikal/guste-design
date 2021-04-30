@@ -2,6 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react",
+    "target": "es2020",
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true,
     "paths": {
       "Primitive/*": ["./src/components/Primitive/*"],
       "Common/*": ["./src/components/Common/*"],
@@ -10,5 +13,6 @@
       "libs/*": ["./src/libs/*"],
       "hooks/*": ["./src/hooks/*"]
     }
-  }
+  },
+  "exclude": ["node_modules"]
 }

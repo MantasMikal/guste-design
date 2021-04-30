@@ -4,12 +4,11 @@ export default {
   name: "companyInfo",
   title: "Company Info",
   type: "document",
-
   icon: MdBusiness,
   fields: [
     {
       name: "instagramUrl",
-      title: "Instagram Page URL",
+      title: "Instagram URL",
       type: "url",
       validation: (Rule) =>
         Rule.uri({
@@ -19,7 +18,7 @@ export default {
     },
     {
       name: "youtubeUrl",
-      title: "Youtube Page URL",
+      title: "Youtube URL",
       type: "url",
       validation: (Rule) =>
         Rule.uri({
@@ -29,7 +28,7 @@ export default {
     },
     {
       name: "facebookUrl",
-      title: "Facebook Page URL",
+      title: "Facebook URL",
       type: "url",
       validation: (Rule) =>
         Rule.uri({
@@ -39,7 +38,7 @@ export default {
     },
     {
       name: "twitterUrl",
-      title: "Twitter pageURL",
+      title: "Twitter URL",
       type: "url",
       validation: (Rule) =>
         Rule.uri({

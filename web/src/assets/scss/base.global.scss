@@ -1,7 +1,7 @@
 @import '~backline-normalize/src/backline-normalize';
 @import 'settings';
 @import '_backline-mixins';
-@import url('https://use.typekit.net/rnl5jdi.css');
+@import url('https://use.typekit.net/ehl7qpa.css');
 
 body {
   font-size: spacing(2); // 16
@@ -16,7 +16,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background-color: $color-primary-grey-light;
+  background-color: $color-primary-white;
 }
 
 // Fix for using gatsby-image with react-medium-image
@@ -28,8 +28,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: $color-primary-yellow;
-  border-radius: $radius-small;
+  background-color: $color-primary-black;
 }
 
 button {
@@ -47,23 +46,24 @@ button {
   }
 }
 
+
 a {
-  color: $color-primary-purple;
+  color: $color-primary-accent;
   text-decoration: none;
 
   &:focus,
   &:hover {
-    color: $color-primary-red;
+    color: $color-primary-black;
     outline: 0;
   }
 
   &:active {
-    color: $color-primary-red;
+    color: $color-primary-black;
   }
 }
 
 *::selection {
-  background-color: $color-primary-red;
+  background-color: $color-primary-accent;
   color: white;
 }
 
@@ -86,7 +86,7 @@ ul {
   li {
     &:before {
       content: '';
-      background-color: $color-primary-purple;
+      background-color: $color-primary-accent;
       height: spacing(1);
       border-radius: 50%;
       vertical-align: middle;

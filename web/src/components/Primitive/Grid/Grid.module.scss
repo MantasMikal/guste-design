@@ -6,11 +6,11 @@
   grid-template-columns: 1fr 1fr;
   margin: auto;
   width: 100%;
-  margin: spacing(2) 0 spacing(2) 0;
   grid-column-gap: spacing(1);
 
   & > div {
     padding-bottom: spacing(1);
+    height: 100%;
   }
 
   &.centered {

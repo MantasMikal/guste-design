@@ -6,59 +6,14 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import SEO from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Hero from 'Common/Hero'
-import BlogPostCarouselSection from 'Section/BlogPostCarousel'
 import BlockSection from 'Section/Block'
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      title
-      description
-      keywords
-    }
-
     home: sanityHomePage(_id: { regex: "/(drafts.|)homePage/" }) {
       _rawSections(resolveReferences: { maxDepth: 10 })
       title
       subtitle
-      hero {
-        asset {
-          url
-          _id
-        }
-      }
-    }
-
-    posts: allSanityPost(
-      limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { isFeatured: { eq: true } }
-    ) {
-      edges {
-        node {
-          id
-          publishedAt
-          isFeatured
-
-          category {
-            color {
-              hex
-            }
-            title
-          }
-          mainImage {
-            asset {
-              url
-              _id
-            }
-          }
-          title
-          _rawExcerpt
-          slug {
-            current
-          }
-        }
-      }
     }
   }
 `
@@ -74,19 +29,7 @@ const IndexPage = (props) => {
     )
   }
 
-  const site = (data || {}).site
   const home = (data || {}).home
-
-  const postNodes = (data || {}).posts
-    ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
-    : []
-
-  if (!site) {
-    throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
-    )
-  }
-
   if (!home) {
     throw new Error(
       'Missing "Home content". Open the studio at http://localhost:3333 and add some content to "Pages/Home" and restart the development server.'
@@ -97,12 +40,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <SEO
-        title={site.title}
-        description={site.description}
-        keywords={site.keywords}
-      />
-      <h1 hidden>Welcome to {site.title}</h1>
+      <SEO />
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
       {_rawSections &&
         _rawSections.map((section) => (
@@ -110,13 +48,6 @@ const IndexPage = (props) => {
             <BlockSection blockContent={section.body} title={section.title} />
           </div>
         ))}
-      {postNodes.length > 0 && (
-        <BlogPostCarouselSection
-          postNodes={postNodes}
-          browseMoreHref="/blog/"
-          title="Featured blog posts"
-        />
-      )}
     </Layout>
   )
 }

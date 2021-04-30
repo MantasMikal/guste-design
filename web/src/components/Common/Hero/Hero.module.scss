@@ -5,27 +5,62 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  border: $border-standard;
 }
 
-.Content {
+.HeadWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 86.5vh;
+  position: relative;
+  @include mq($breakpoint-tablet) {
+    height: 100vh;
+  }
+}
+
+.Cursor {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
+  width: spacing(1.4);
+  height: spacing(1.4);
+  border: $border-standard;
+  border-radius: 50%;
+  z-index: 100;
+  pointer-events: none;
+
+  @media (hover: none) {
+    display: none;
+  }
+
 }
 
-.Title {
-  color: $color-primary-white;
-  font-size: 4.5vw;
-  line-height: 5vw;
+button.Restart  {
+  padding: 0 spacing(0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s $easing-standard;
+
+  &:hover,
+  &:focus {
+    animation: spin 0.2s forwards $easing-standard;
+  }
 }
 
-.Subtitle {
-  color: $color-primary-white;
+.Tools {
+  display: flex;
+  justify-content: flex-end;
+}
 
-  max-width: 50ch;
-  @include mq($breakpoint-desktop) {
-    font-size: 2.5vw;
-    line-height: 3vw;
+.ColorPalette {
+  transform: translate(0, -2px);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-45deg);
   }
 }

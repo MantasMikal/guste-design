@@ -1,4 +1,4 @@
-import { FaExternalLinkAlt, FaExternalLinkSquareAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaExternalLinkSquareAlt, FaLine } from "react-icons/fa";
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -110,6 +110,9 @@ export default {
     },
     {
       type: "video",
+    },
+    {
+      type: "line",
     },
   ],
 };
