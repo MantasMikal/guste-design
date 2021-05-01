@@ -44,3 +44,15 @@ export function formatDate(date) {
   const [{ value: mo }, , { value: da }, , { value: ye }] = dtf.formatToParts(d)
   return (date = `${da} ${mo} ${ye}`)
 }
+
+export const getAllPostCategories = (items) => {
+  let categories = []
+  for(let i = 0; i < items.length; i++) {
+    for(let j = 0; j < items[i].categories.length; j++) {
+      let category = items[i].categories[j].title
+      if(category && !categories.includes(category)) categories.push(category)
+    }
+  }
+
+  return categories
+}
