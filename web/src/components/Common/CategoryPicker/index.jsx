@@ -47,7 +47,7 @@ const CategoryPicker = ({
           categories.length > 0 &&
           categories.map((cat) => (
             <ButtonStandard
-              onClick={onClick}
+              onClick={() => onClick(cat)}
               key={cat}
               className={classNames(
                 styles.Category,

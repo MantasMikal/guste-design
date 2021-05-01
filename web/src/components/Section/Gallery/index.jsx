@@ -10,10 +10,24 @@ import CategoryPicker from 'Common/CategoryPicker'
 
 import styles from './Gallery.module.scss'
 
+const filterByCategory = (posts, category) => {
+  if (!category) return posts
+  let filteredPosts = []
+  for (let i = 0; i < posts.length; i++) {
+    for (let j = 0; j < posts[i].categories.length; j++) {
+      let postCategory = posts[i].categories[j].title
+      if (postCategory === category) filteredPosts.push(posts[i])
+    }
+  }
+
+  return filteredPosts
+}
+
 const Gallery = ({ posts }) => {
-  const allCategories = getAllPostCategories(posts)
+  const allCategories = ['All', ...getAllPostCategories(posts)]
   const [activeCategory, setActiveCategory] = useState(allCategories[0])
-  const galleryNodes = posts.map((post) => (
+  const filteredPosts = activeCategory === 'All' ? posts : filterByCategory(posts, activeCategory)
+  const galleryNodes = filteredPosts.map((post) => (
     <GalleryPostPreview
       key={post.id}
       className={styles.GalleryPostPreview}
