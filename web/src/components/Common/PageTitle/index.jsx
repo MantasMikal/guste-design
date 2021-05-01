@@ -7,7 +7,7 @@ import styles from './PageTitle.module.scss'
 
 const PageTitle = ({ title }) => (
   <div className={styles.PageTitle}>
-    <Type as="h2" size="base">
+    <Type as="h2" size="title">
       {title}
     </Type>
   </div>

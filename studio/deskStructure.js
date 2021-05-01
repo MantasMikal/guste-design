@@ -2,6 +2,7 @@ import S from "@sanity/desk-tool/structure-builder";
 import { MdBusiness, MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
 import { FaFile, FaPhone } from "react-icons/fa";
 import projects from "./structure/projects";
+import gallery from "./structure/gallery";
 
 const hiddenTypes = [
   "category",
@@ -13,7 +14,8 @@ const hiddenTypes = [
   "contactPage",
   "homePage",
   "blogPost",
-  "project"
+  "project",
+  "galleryPost"
 ];
 
 export default () =>
@@ -91,6 +93,7 @@ export default () =>
         )
         .icon(FaFile),
       projects,
+      gallery,
       ...S.documentTypeListItems().filter(
         (listItem) => !hiddenTypes.includes(listItem.getId())
       ),
