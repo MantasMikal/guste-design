@@ -1,0 +1,22 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.GalleryPostPreview {
+  position: relative;
+}
+
+.Header {
+  position: relative;
+}
+
+.CategoryPicker {
+  position: fixed;
+  right: spacing(1);
+  top: spacing(7.5);
+  bottom: 0;
+  z-index: 10;
+
+  @include mq($breakpoint-tablet) {
+    bottom: unset;
+  }
+}

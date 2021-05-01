@@ -25,21 +25,13 @@
 }
 
 .title {
+  font-size: spacing(2);
+  line-height: spacing(2.5);
   font-family: $font-body;
-  font-size: spacing(3); // 34
-  line-height: spacing(4); // 40
-  font-weight: 500;
 
-  @include mq($breakpoint-desktop) {
-    font-size: spacing(3.5); // 34
-    line-height: spacing(4.5); // 40
-    font-weight: 500;
-  }
-
-  @include mq($breakpoint-desktopMedium) {
-    font-size: spacing(4); // 34
-    line-height: spacing(5); // 40
-    font-weight: 500;
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(2.5);
+    line-height: spacing(3.5);
   }
 }
 
@@ -137,8 +129,12 @@
 }
 
 .small {
-  font-size: spacing(2); // 14
-  line-height: spacing(2.2); // 16
+  font-size: spacing(1.5);
+  line-height: spacing(2);
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(2);
+    line-height: spacing(2.2);
+  }
 }
 
 .italic {

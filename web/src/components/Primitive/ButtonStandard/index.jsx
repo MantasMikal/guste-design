@@ -2,10 +2,10 @@ import React from 'react'
 import { bool, node, string, oneOf } from 'prop-types'
 import classNames from 'classnames'
 
-import styles from './ButtonStandard.module.scss'
-
 import ButtonBase from 'Primitive/ButtonBase'
 import Spinner from 'Primitive/Spinner'
+
+import styles from './ButtonStandard.module.scss'
 
 /**
  * Basic button component, building on the ButtonBase component.
@@ -16,6 +16,7 @@ const ButtonStandard = ({
   disabled,
   loading,
   size,
+  noBorder,
   ...other
 }) => (
   <ButtonBase
@@ -24,6 +25,7 @@ const ButtonStandard = ({
       disabled && styles.disabled,
       loading && styles.loading,
       size && styles[size],
+      noBorder && styles.noBorder,
       className
     )}
     disabled={disabled}

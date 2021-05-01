@@ -51,7 +51,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           </Link>
         </div>
       </div>
-            <Link className={styles.NavLink} to="/about/">
+            <Link className={styles.NavLink} to="/gallery/">
         Gallery
       </Link>
 
