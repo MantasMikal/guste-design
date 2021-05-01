@@ -19,8 +19,14 @@
 
 .SimilarProductGrid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: spacing(1);
-  grid-template-columns: repeat(2, 1fr);
+
+  @include mq($breakpoint-mobileLandscape) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: spacing(1);
+  }
+  
   @include mq($breakpoint-desktop) {
     grid-template-columns: repeat(4, 1fr);
   }

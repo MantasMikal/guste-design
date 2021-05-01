@@ -1,15 +1,14 @@
 import React from 'react'
-import { array, string } from 'prop-types'
-import { mapEdgesToNodes } from 'libs/helpers'
+import { array, object } from 'prop-types'
 
 import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 import PageTitle from 'Common/PageTitle'
-import GridLayout from 'Primitive/GridLayout'
 import ProductPreview from 'Common/ProductPreview'
 
 import styles from './Product.module.scss'
 import ImageGallery from 'Common/ImageGallery'
+
 
 /**
  * Product view
@@ -21,14 +20,6 @@ const Product = ({ product, similarProducts }) => {
   )
   const { title, images } = product
 
-  const similarProductNodes = similarProducts.map((product) => (
-    <ProductPreview
-      key={product.id}
-      className={styles.ProductPreview}
-      {...product}
-    />
-  ))
-
   return (
     <Container className={styles.Product} size="full" as="section">
       <PageTitle title={title} />
@@ -37,16 +28,22 @@ const Product = ({ product, similarProducts }) => {
         <div></div>
       </div>
       <PageTitle title="Similar products" as="h3" />
-      <GridLayout
-        customGridClass={styles.SimilarProductGrid}
-        items={similarProductNodes}
-      />
+      <div className={styles.SimilarProductGrid}>
+        {similarProducts.map((product) => (
+          <ProductPreview
+            key={product.id}
+            className={styles.ProductPreview}
+            {...product}
+          />
+        ))}
+      </div>
     </Container>
   )
 }
 
 Product.propTypes = {
-  title: string
+  product: object,
+  similarProducts: array
 }
 
 export default Product
