@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { func, bool, string, object, node } from 'prop-types'
 import classnames from 'classnames'
 
@@ -11,21 +11,21 @@ import styles from './Navigation.module.scss'
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
   return (
     <div className={styles.Navigation}>
-    <nav
-      className={classnames(styles.Wrapper, showNav && styles.showNav)}
-      id={id}
-    >
-      <SmartLink className={styles.Branding} to="/">
-        <h1>{siteTitle}</h1>
-      </SmartLink>
-      <Link className={styles.NavLink} to="/contact/">
-        Contact
-      </Link>
-      <Link className={styles.NavLink} to="/blog/">
-        About
-      </Link>
-      <div className={styles.Dropdown}>
-        <SmartLink to="/store" className={styles.DropdownBtn}>
+      <nav
+        className={classnames(styles.Wrapper, showNav && styles.showNav)}
+        id={id}
+      >
+        <SmartLink className={styles.Branding} to="/">
+          <h1>{siteTitle}</h1>
+        </SmartLink>
+        <Link className={styles.NavLink} to="/contact/">
+          Contact
+        </Link>
+        <Link className={styles.NavLink} to="/blog/">
+          About
+        </Link>
+        {/* <div className={styles.Dropdown}>
+        <SmartLink onClick={handleClick} to="/store" className={styles.DropdownBtn}>
           <Type as="span" size="menu">
             Store
           </Type>
@@ -50,26 +50,29 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
             SubNav 3
           </Link>
         </div>
-      </div>
-            <Link className={styles.NavLink} to="/gallery/">
-        Gallery
-      </Link>
+      </div> */}
+        <Link className={styles.NavLink} to="/store/">
+          Store
+        </Link>
+        <Link className={styles.NavLink} to="/gallery/">
+          Gallery
+        </Link>
 
-      <Link className={styles.NavLink} to="/projects/">
-        Projects
-      </Link>
+        <Link className={styles.NavLink} to="/projects/">
+          Projects
+        </Link>
 
-      <button
-        className={styles.ToggleNavButton}
-        onClick={showNav ? onHideNav : onShowNav}
-      >
-        {showNav ? (
-          <Icon a11yText="Close" type="close" width={24} height={24} />
-        ) : (
-          <Icon a11yText="Open Menu" type="burger" width={24} height={24} />
-        )}
-      </button>
-    </nav>
+        <button
+          className={styles.ToggleNavButton}
+          onClick={showNav ? onHideNav : onShowNav}
+        >
+          {showNav ? (
+            <Icon a11yText="Close" type="close" width={24} height={24} />
+          ) : (
+            <Icon a11yText="Open Menu" type="burger" width={24} height={24} />
+          )}
+        </button>
+      </nav>
     </div>
   )
 }

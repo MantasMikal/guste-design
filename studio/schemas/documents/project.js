@@ -82,7 +82,7 @@ export default {
     prepare({ title = "No title", publishedAt, image }) {
       return {
         title,
-        image: Array.isArray(image) && image[0]
+        media: Array.isArray(image) && image[0]
       };
     },
   },
