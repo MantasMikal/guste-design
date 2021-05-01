@@ -5,16 +5,17 @@ import Type from 'Primitive/Type'
 
 import styles from './PageTitle.module.scss'
 
-const PageTitle = ({ title }) => (
+const PageTitle = ({ title, as }) => (
   <div className={styles.PageTitle}>
-    <Type as="h2" size="title">
+    <Type as={as || "h2"} size="title">
       {title}
     </Type>
   </div>
 )
 
 PageTitle.propTypes = {
-  title: string.isRequired
+  title: string.isRequired,
+  as: string
 }
 
 export default PageTitle

@@ -1,0 +1,34 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ProductPreview {
+  display: block;
+  border: $border-standard;
+  @media (hover: hover) {
+    &:hover {
+      .Details {
+        background-color: $color-primary-accent;
+        transition: $duration-shorter $easing-standard;
+      }
+    }
+  }
+}
+
+.Details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: $color-primary-black;
+  border-top: $border-standard;
+  transition: $duration-shorter $easing-standard;
+  text-transform: uppercase;
+}
+
+.Price, .Title {
+  padding: spacing(0.5);
+}
+
+.Price {
+  border-left: $border-standard;
+}

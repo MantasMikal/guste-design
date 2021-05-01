@@ -23,6 +23,10 @@ export function getGalleryUrl(slug) {
   return `/gallery/${slug.current || slug}/`
 }
 
+export function getProductUrl(slug) {
+  return `/store/${slug.current || slug}/`
+}
+
 export function buildImageObj(source) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id }

@@ -1,0 +1,28 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Product {
+  position: relative;
+}
+
+.Wrapper {
+  display: block;
+
+  margin-bottom: spacing(1);
+  @include mq($breakpoint-tablet) {
+    display: flex;
+    & > div {
+      flex: 1 1 50%;
+    } 
+  }
+}
+
+.SimilarProductGrid {
+  display: grid;
+  gap: spacing(1);
+  grid-template-columns: repeat(2, 1fr);
+  @include mq($breakpoint-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+

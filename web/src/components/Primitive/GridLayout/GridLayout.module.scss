@@ -1,0 +1,16 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  @include mq($breakpoint-mobileLandscape) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

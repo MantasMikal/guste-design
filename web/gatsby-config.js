@@ -9,6 +9,12 @@ module.exports = {
     siteUrl: config.site.siteUrl,
     description: config.site.description
   },
+  flags: {
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true,
+    DEV_SSR: false,
+    PARALLEL_SOURCING: false
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-sass',
@@ -63,6 +69,16 @@ module.exports = {
         token: process.env.SANITY_TOKEN,
         watchMode: true,
         overlayDrafts: true
+      }
+    },
+    {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        shopName: process.env.GATSBY_SHOP_NAME,
+        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+        paginationSize: 5,
+        verbose: false,
+        apiVersion: '2020-10'
       }
     },
     {
