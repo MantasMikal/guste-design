@@ -47,7 +47,7 @@
 .small {
   padding: spacing(0.3) spacing(0.5);
   @include mq($breakpoint-tablet) {
-    padding: spacing(0.5) spacing(1);
+    padding: spacing(0.4) spacing(1);
   }
 }
 
