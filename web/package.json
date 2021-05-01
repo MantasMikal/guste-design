@@ -6,7 +6,22 @@
 	"engines": {
 		"node": "<=14.x.x",
 		"npm": "<=6.x.x"
-	},	
+	},
+	"scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop -H 0.0.0.0 -p 8000",
+    "empty-cache": "gatsby clean",
+    "now-build": "npm run build",
+    "now-dev": "npm run build",
+    "start": "npm run develop",
+    "lint": "npx eslint './**/*.{js,jsx}' --fix",
+    "fix": "prettier-eslint --write $PWD/'**/*.{js,jsx,css,scss}'",
+    "coverage": "jest --coverage",
+    "test": "jest",
+    "watch-tests": "jest --coverage --watch --verbose",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },	
 	"dependencies": {
 		"@sanity/block-content-to-react": "^2.0.7",
 		"@sanity/image-url": "^0.140.22",
