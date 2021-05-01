@@ -1,10 +1,7 @@
-import { FaImage } from "react-icons/fa";
-
 export default {
   name: "galleryPost",
   title: "Gallery Post",
   type: "document",
-  icon: FaImage,
   fields: [
     {
       name: "title",
@@ -59,12 +56,12 @@ export default {
     select: {
       title: "title",
       publishedAt: "publishedAt",
-      image: "mainImages",
+      image: "mainImage",
     },
     prepare({ title = "No title", publishedAt, image }) {
       return {
         title,
-        image: Array.isArray(image) && image[0]
+        media: image
       };
     },
   },
