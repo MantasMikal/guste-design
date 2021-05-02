@@ -29,11 +29,6 @@ const CategoryPicker = ({ categories, onClick, activeCategory, className }) => {
   const handleCategoryClick = (cat) => {
     onClick(cat)
     setShowFilter({ show: showFilter.show, wasClicked: true })
-    typeof window !== 'undefined' &&
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      })
   }
 
   const handleShowFilter = () => {

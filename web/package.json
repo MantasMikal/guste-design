@@ -45,6 +45,7 @@
 		"gatsby-plugin-sass": "^4.4.0",
 		"gatsby-plugin-sharp": "^3.4.0",
 		"gatsby-plugin-sitemap": "^4.0.0",
+		"gatsby-plugin-use-query-params": "^1.0.1",
 		"gatsby-source-sanity": "^7.0.4",
 		"gatsby-source-shopify": "^4.4.0",
 		"gatsby-transformer-sharp": "^3.4.0",
@@ -60,6 +61,7 @@
 		"react-scroll-percentage": "^4.2.0",
 		"react-spring": "^9.1.2",
 		"shopify-buy": "^2.11.0",
+		"use-query-params": "^1.2.2",
 		"validate-prop-types": "^1.0.3"
 	},
 	"devDependencies": {

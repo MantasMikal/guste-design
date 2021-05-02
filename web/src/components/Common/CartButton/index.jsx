@@ -7,6 +7,8 @@ import { FaShoppingCart } from 'react-icons/fa'
 import StoreContext from 'Context/StoreContext'
 import ButtonStandard from 'Primitive/ButtonStandard'
 import Type from 'Primitive/Type'
+import ModalWithTrigger from 'Primitive/ModalWithTrigger'
+import Cart from 'Common/Cart'
 
 import styles from './CartButton.module.scss'
 
@@ -22,18 +24,25 @@ const useQuantity = () => {
 const CartButton = ({ className }) => {
   const [hasItems, quantity] = useQuantity()
   return (
-    <ButtonStandard
-      className={classNames(styles.CartButton, className)}
-      size="small"
-      noBorder
+    <ModalWithTrigger
+      heading="Cart"
+      ariaLabel="Cart"
+      trigger={
+        <ButtonStandard
+          className={classNames(styles.CartButton, className)}
+          size="small"
+          noBorder
+        >
+          <Type size="small">CART</Type>
+          <div className={styles.Cart}>
+            <FaShoppingCart />
+            {hasItems && <span className={styles.ItemCount}>{quantity}</span>}
+          </div>
+        </ButtonStandard>
+      }
     >
-      <Type size="small">CART</Type>
-
-      <div className={styles.Cart}>
-        <FaShoppingCart />
-        {hasItems && <span className={styles.ItemCount}>{quantity}</span>}
-      </div>
-    </ButtonStandard>
+      <Cart />
+    </ModalWithTrigger>
   )
 }
 

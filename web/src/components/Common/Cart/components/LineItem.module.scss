@@ -1,0 +1,64 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.LineItem {
+  border: $border-standard;
+  margin-bottom: spacing(1);
+}
+
+.Wrapper {
+  display: flex;
+}
+
+.Title {
+  border-bottom: $border-standard;
+  padding: spacing(0.5);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    &:hover,
+    &:focus {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.ImageWrapper {
+  flex: 1 1 25%;
+  position: relative;
+  border-right: $border-standard;
+
+  // aspect-ratio: 1;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 80px;
+
+  @include mq($breakpoint-mobileLarge) {
+    min-height: 150px;
+  }
+}
+
+.Details {
+  flex: 1 1 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-left: none;
+}
+
+.Options {
+  padding: spacing(1);
+}
+
+.Price {
+  display: flex;
+  justify-content: space-between;
+  padding: spacing(1);
+  border-top: $border-standard;
+}

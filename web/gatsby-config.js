@@ -94,9 +94,11 @@ module.exports = {
         display: 'standalone'
       }
     },
+    'gatsby-plugin-use-query-params',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline'
+    
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
     //   options: {

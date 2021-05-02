@@ -60,3 +60,10 @@ export const getAllPostCategories = (items) => {
 
   return categories
 }
+
+export function getCurrencySymbol (code) {
+  const currencyMap = {
+    GBP: '£'
+  }
+  return currencyMap[code]
+}

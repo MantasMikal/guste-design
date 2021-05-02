@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom'
 import { bool, func, node, string } from 'prop-types'
 import useEscapeKey from 'hooks/useEscapeKey'
 import useOutsideClick from 'hooks/useOutsideClick'
+import { CgClose } from 'react-icons/cg'
 
 import FocusTrap from 'focus-trap-react'
 
@@ -10,6 +11,7 @@ import styles from './Modal.module.scss'
 
 import VisuallyHidden from '../VisuallyHidden'
 import IconButton from '../IconButton'
+import PageTitle from 'Common/PageTitle/index'
 
 /**
  * A static modal overlay which uses an \`open\` prop to show/hide.
@@ -60,7 +62,7 @@ const Modal = ({
                 </button>
               </VisuallyHidden>
             )}
-            {onClose && (
+            {onClose && !heading && (
               <div className={styles.ModalClose}>
                 <IconButton
                   type="button"
@@ -70,7 +72,17 @@ const Modal = ({
                 />
               </div>
             )}
-            {heading && <h4 className={styles.ModalHeader}>{heading}</h4>}
+            {heading && (
+              <PageTitle title={heading}>
+                <IconButton
+                  small
+                  customIcon={<CgClose size="1.2em" />}
+                  onClick={handleClose}
+                  a11yText="Close Modal"
+                  className={styles.CloseBtn}
+                />
+              </PageTitle>
+            )}
             <div className={styles.ModalPanelContent}>
               <div className={styles.ModalContent}>{children}</div>
               {actions && <div className={styles.ModalActions}>{actions}</div>}

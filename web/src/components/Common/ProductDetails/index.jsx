@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react'
-import { string, array } from 'prop-types'
+import { string, object } from 'prop-types'
 import classNames from 'classnames'
 import isEqual from 'lodash.isEqual'
 import find from 'lodash.find'
@@ -179,7 +179,7 @@ const ProductDetails = ({ product, className }) => {
 }
 
 ProductDetails.propTypes = {
-  products: array.isRequired,
+  product: object.isRequired,
   className: string
 }
 

@@ -5,7 +5,6 @@ import { defaultColors } from './defaultColors'
 
 import styles from './GugisHead.module.scss'
 
-
 const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange, ...props }) => {
   const [isWide, setWide] = useState(false)
   const [linesAnimation, setlinesAnimation] = useState(false)

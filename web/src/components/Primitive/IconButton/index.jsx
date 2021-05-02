@@ -55,7 +55,7 @@ IconButton.propTypes = {
   a11yText: string,
   children: string,
   className: string,
-  icon: string.isRequired,
+  icon: string,
   iconHeight: number,
   iconWidth: number,
   increaseHitArea: bool,
