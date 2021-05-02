@@ -1,0 +1,32 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.CartButton span {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-left: spacing(0.5);
+  }
+}
+
+.Cart {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ItemCount {
+  position: absolute;
+  font-size: 10px;
+  bottom: spacing(-1);
+  right: spacing(-1);
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  background-color: $color-primary-accent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

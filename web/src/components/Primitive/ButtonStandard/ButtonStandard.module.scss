@@ -3,7 +3,7 @@
 
 .ButtonStandard {
   position: relative;
-  padding: spacing(1) spacing(2);
+  padding: spacing(1.1) spacing(2);
   line-height: spacing(2.5);
   font-weight: 500;
   background-color: $color-primary-white;
@@ -60,6 +60,10 @@
     padding: spacing(3) spacing(8);
     font-size: 2rem;
   }
+}
+
+.highlight {
+  background-color: $color-primary-accent;
 }
 
 .noBorder {

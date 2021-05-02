@@ -20,15 +20,14 @@ const createFigure = (figure) => {
     imgCmp = (
       <img
         src={asset.url}
-        alt={alt || ' '}
-        style={{ width: '100%' }}
-        key={figure.asset._id}
+        alt={alt || ''}
+        style={styles}
       />
     )
   }
 
   return (
-    <div key={figure._key} style={{ maxWidth: maxWidth }}>
+    <div key={figure._key} style={{ maxWidth: maxWidth, marginBottom: '10px' }}>
       {!isZoomable ? imgCmp : <Zoomable>{imgCmp}</Zoomable>}
     </div>
   )

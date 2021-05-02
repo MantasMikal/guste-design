@@ -9,6 +9,12 @@ module.exports = {
     siteUrl: config.site.siteUrl,
     description: config.site.description
   },
+  flags: {
+    FAST_DEV: true,
+    PARALLEL_SOURCING: true,
+    DEV_SSR: false,
+    PARALLEL_SOURCING: false
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-sass',
@@ -66,6 +72,16 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        shopName: process.env.GATSBY_SHOP_NAME,
+        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+        paginationSize: 5,
+        verbose: false,
+        apiVersion: '2020-10'
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: config.site.siteTitle,
@@ -78,9 +94,11 @@ module.exports = {
         display: 'standalone'
       }
     },
+    'gatsby-plugin-use-query-params',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline'
+    
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
     //   options: {

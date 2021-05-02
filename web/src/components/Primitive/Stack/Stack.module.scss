@@ -1,7 +1,10 @@
+@import 'settings';
+@import '_backline-mixins';
+
 $gap-list: (
   'small': 1,
   'medium': 2,
-  'large': 4
+  'large': 3
 );
 
 // .Stack {}

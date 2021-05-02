@@ -9,7 +9,7 @@ import styles from './CustomSelectControl.module.scss'
 import Icon from '../../Icon'
 import NativeSelectControl from '../NativeSelectControl'
 
-const CustomSelectControl = ({ disabled, multiple, status, ...other }) => {
+const CustomSelectControl = ({ disabled, multiple, status, className, ...other }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
 
@@ -19,12 +19,13 @@ const CustomSelectControl = ({ disabled, multiple, status, ...other }) => {
         styles.CustomSelectControl,
         multiple && styles.multiple,
         derivedStatus && styles[derivedStatus],
-        disabled && styles.disabled
+        disabled && styles.disabled,
+        className
       )}
     >
       {!multiple && (
         <div className={styles.CustomSelectControlIndicator} aria-hidden>
-          <Icon type="expand-more" a11yText="" />
+          <Icon type="expand-more" width={24} height={24} a11yText="" />
         </div>
       )}
       <NativeSelectControl

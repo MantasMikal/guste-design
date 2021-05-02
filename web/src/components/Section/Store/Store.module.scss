@@ -1,0 +1,37 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.StorePostPreview {
+  position: relative;
+}
+
+.Header {
+  position: relative;
+}
+
+.FloatingControls {
+  position: fixed;
+  right: spacing(1);
+  top: spacing(7);
+  bottom: 0;
+  z-index: 10;
+}
+
+.CartButton {
+  position: relative;
+  border: $border-standard;
+  top: 2px;
+}
+
+@include mq($breakpoint-tablet) {
+  .FloatingControls {
+    bottom: unset;
+    display: flex;
+    top: spacing(7.5);
+  }
+
+  .CartButton {
+    left: 2px;
+    top: unset;
+  }
+}

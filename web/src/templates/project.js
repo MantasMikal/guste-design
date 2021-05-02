@@ -30,7 +30,7 @@ export const query = graphql`
 const ProjectTemplate = (props) => {
   const { data, errors, pageContext } = props
   const project = data && data.project
-  const metaImage = project && project.metaImages && mainImages[0].asset.url
+  const metaImage = project && project.mainImages && project.mainImages[0].asset.url
   return (
     <Layout>
       {project && (

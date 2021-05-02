@@ -24,7 +24,7 @@ async function createProjectPages(graphql, actions, reporter) {
 
   projectEdges.forEach((edge, index) => {
     const { id, slug = {} } = edge.node
-    const path = `/projects/${(slug.current)}/`
+    const path = `/projects/${slug.current}/`
     const absolutePath = siteUrl + path
     reporter.info(`Creating project page: ${path}`)
     createPage({
@@ -35,8 +35,92 @@ async function createProjectPages(graphql, actions, reporter) {
   })
 }
 
+async function createProductPages(graphql, actions, reporter) {
+  const { createPage } = actions
+  const result = await graphql(`
+    {
+      products: allShopifyProduct {
+        edges {
+          node {
+            variants {
+              availableForSale
+              compareAtPrice
+              id
+              price
+              priceV2 {
+                amount
+                currencyCode
+              }
+              requiresShipping
+              selectedOptions {
+                name
+                value
+              }
+              shopifyId
+              sku
+              title
+              weightUnit
+              weight
+            }
+            id
+            title
+            description
+            descriptionHtml
+            handle
+            productType
+            images {
+              id
+              originalSrc
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED)
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const productEdges = (result.data.products || {}).edges || []
+
+  const getProductsWithCategories = (category, products, thisProduct) => {
+    return products.filter(
+      (prod, _) =>
+        category === prod.node.productType &&
+        thisProduct.node.id !== prod.node.id
+    )
+  }
+
+  productEdges.forEach((edge) => {
+    const id = edge.node.id
+    const handle = edge.node.handle
+    const path = `/store/${handle}/`
+    reporter.info(`Creating product page: ${path}`)
+
+    const similarProducts = getProductsWithCategories(
+      edge.node.productType,
+      productEdges,
+      edge
+    )
+      .sort(() => Math.random() - 0.5)
+      .splice(0, 4)
+      .map(edge => edge.node)
+
+    createPage({
+      path,
+      component: require.resolve('./src/templates/product.js'),
+      context: { id, handle, similarProducts }
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createProjectPages(graphql, actions, reporter)
+  await createProductPages(graphql, actions, reporter)
 }
 
 // Removes Mini-css errors

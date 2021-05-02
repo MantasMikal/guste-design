@@ -1,0 +1,36 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Product {
+  position: relative;
+}
+
+.Wrapper {
+  display: block;
+  @include mq($breakpoint-tablet) {
+    display: flex;
+    & > div {
+      flex: 1 1 50%;
+    } 
+  }
+}
+
+.ProductDetails {
+  margin-bottom: spacing(2);
+}
+
+.SimilarProductGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: spacing(1);
+
+  @include mq($breakpoint-mobileLandscape) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: spacing(1);
+  }
+  
+  @include mq($breakpoint-desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+

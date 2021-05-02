@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { array } from 'prop-types'
 import { getAllPostCategories } from 'libs/helpers'
 
+
 import GalleryPostPreview from 'Common/GalleryPostPreview'
 import Container from 'Primitive/Container'
 import MasonryLayout from 'Primitive/MasonryLayout'
@@ -23,12 +24,16 @@ const filterByCategory = (posts, category) => {
   return filteredPosts
 }
 
+
+const MemoGalleryPostPreview = React.memo(GalleryPostPreview)
+
 const Gallery = ({ posts }) => {
   const allCategories = ['All', ...getAllPostCategories(posts)]
   const [activeCategory, setActiveCategory] = useState(allCategories[0])
+
   const filteredPosts = activeCategory === 'All' ? posts : filterByCategory(posts, activeCategory)
   const galleryNodes = filteredPosts.map((post) => (
-    <GalleryPostPreview
+    <MemoGalleryPostPreview
       key={post.id}
       className={styles.GalleryPostPreview}
       {...post}

@@ -1,0 +1,61 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ProductInformation {
+  border: $border-standard;
+  padding: spacing(2);
+}
+
+.Gallery {
+  margin-bottom: spacing(1);
+}
+
+.SelectControl {
+  margin-right: spacing(2);
+  min-width: 130px;
+}
+
+.Options {
+  display: flex;
+}
+
+.Option {
+  display: block;
+}
+
+.Quantity {
+  max-width: 130px;
+  margin-bottom: spacing(3);
+}
+
+button.BuyButton {
+  // margin-top: spacing(3);
+  text-transform: uppercase;
+}
+
+div.Description {
+  border-top: $border-standard;
+  margin-top: spacing(3);
+  padding: spacing(2) 0;
+}
+
+@include mq($breakpoint-tablet) {
+  .ProductDetails {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .ProductInformation {
+    padding: spacing(3);
+  }
+
+  .Gallery {
+    margin-right: spacing(1);
+  }
+
+  .Gallery,
+  .ProductInformation {
+    flex: 1 1 50%;
+    margin-bottom: 0;
+  }
+}

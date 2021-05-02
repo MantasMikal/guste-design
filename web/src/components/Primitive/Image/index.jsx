@@ -11,11 +11,18 @@ import cfg from '../../../../../config'
  */
 const Image = ({ image, ratio, imgWrapperStyle, maxWidth, imgStyle, alt, ...other }) => {
   if (!image) return null
-  const imageData = getGatsbyImageData(
-    image.asset,
-    { maxWidth: maxWidth, layout: 'fullWidth' },
-    cfg.project
-  )
+  let imageData = {}
+
+  if(image.localFile) {
+    imageData = image.localFile.childImageSharp.gatsbyImageData
+  } else {
+    imageData = getGatsbyImageData(
+      image.asset,
+      { maxWidth: maxWidth, layout: 'fullWidth' },
+      cfg.project
+    )
+  }
+
   const altText = alt || image.alt || ''
 
   if (ratio) {

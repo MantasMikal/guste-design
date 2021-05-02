@@ -1,0 +1,26 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ImageGallery {
+ position: relative;
+}
+
+.MainImage {
+  border: $border-standard;
+  margin-bottom: spacing(1);
+}
+
+.Images {
+  display: grid;
+  gap: spacing(1);
+  grid-template-columns: repeat(5, 1fr);
+
+  @include mq($breakpoint-tabletLandscape) {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 100px));
+  }
+}
+
+.ImageWrapper {
+  display: block;
+  border: $border-standard;
+}

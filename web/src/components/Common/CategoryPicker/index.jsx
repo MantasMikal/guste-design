@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
+import { arrayOf, func, string } from 'prop-types'
 import {
   FaFilter,
   FaArrowRight,
@@ -8,25 +8,53 @@ import {
   FaArrowUp
 } from 'react-icons/fa'
 import classNames from 'classnames'
+import debounce from 'libs/debounce'
 
 import ButtonStandard from 'Primitive/ButtonStandard'
 import Type from 'Primitive/Type'
 
 import styles from './CategoryPicker.module.scss'
-import { arrayOf, bool, func, string } from 'prop-types'
 
-const CategoryPicker = ({
-  categories,
-  onClick,
-  activeCategory,
-  isOpen,
-  className
-}) => {
-  const [open, setOpen] = useState(isOpen || true)
+const CategoryPicker = ({ categories, onClick, activeCategory, className }) => {
+  const [showFilter, setShowFilter] = useState({
+    show: true,
+    wasClicked: false
+  })
+
+  const handleScrollFilter = (state) => {
+    if (state !== showFilter.show)
+      setShowFilter({ wasClicked: false, show: state })
+  }
+
+  const handleCategoryClick = (cat) => {
+    onClick(cat)
+    setShowFilter({ show: showFilter.show, wasClicked: true })
+  }
+
+  const handleShowFilter = () => {
+    setShowFilter({ wasClicked: true, show: true })
+  }
+
+  const handleHideFilter = () => {
+    setShowFilter({ wasClicked: true, show: false })
+  }
+
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      const show = window.scrollY > 60
+      handleScrollFilter(!show)
+    }, 15)
+
+    document.addEventListener('scroll', handleScroll)
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
+  }, [showFilter])
+
   return (
     <div className={classNames(styles.CategoryPicker, className)}>
       <ButtonStandard
-        onClick={() => setOpen(!open)}
+        onClick={showFilter.show ? handleHideFilter : handleShowFilter}
         className={styles.Toggle}
         size="small"
         noBorder
@@ -35,19 +63,27 @@ const CategoryPicker = ({
 
         <FaFilter size="0.9em" />
         <span className={styles.ArrowDesktop}>
-          {open ? <FaArrowRight size="0.6em" /> : <FaArrowLeft size="0.6em" />}
+          {showFilter.show ? (
+            <FaArrowRight size="0.6em" />
+          ) : (
+            <FaArrowLeft size="0.6em" />
+          )}
         </span>
         <span className={styles.ArrowMobile}>
-          {open ? <FaArrowUp size="0.6em" /> : <FaArrowDown size="0.6em" />}
+          {showFilter.show ? (
+            <FaArrowUp size="0.6em" />
+          ) : (
+            <FaArrowDown size="0.6em" />
+          )}
         </span>
       </ButtonStandard>
       <div className={styles.Categories}>
-        {open &&
+        {showFilter.show &&
           categories &&
           categories.length > 0 &&
           categories.map((cat) => (
             <ButtonStandard
-              onClick={() => onClick(cat)}
+              onClick={() => handleCategoryClick(cat)}
               key={cat}
               className={classNames(
                 styles.Category,
@@ -68,7 +104,6 @@ CategoryPicker.propTypes = {
   categories: arrayOf(string),
   onClick: func,
   activeCategory: string,
-  isOpen: bool,
   className: string
 }
 

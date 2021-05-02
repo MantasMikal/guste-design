@@ -15,6 +15,7 @@ const IconButton = ({
   children,
   className,
   icon,
+  customIcon,
   iconHeight,
   iconWidth,
   increaseHitArea,
@@ -35,12 +36,16 @@ const IconButton = ({
     {...other}
   >
     <div className={styles.IconButtonInner}>
-      <Icon
-        type={icon}
-        height={iconHeight}
-        width={iconWidth}
-        a11yText={a11yText}
-      />
+      {customIcon ? (
+        customIcon
+      ) : (
+        <Icon
+          type={icon}
+          height={iconHeight}
+          width={iconWidth}
+          a11yText={a11yText}
+        />
+      )}
       {children && <span className={styles.IconButtonText}>{children}</span>}
     </div>
   </SmartLink>
@@ -50,7 +55,7 @@ IconButton.propTypes = {
   a11yText: string,
   children: string,
   className: string,
-  icon: string.isRequired,
+  icon: string,
   iconHeight: number,
   iconWidth: number,
   increaseHitArea: bool,

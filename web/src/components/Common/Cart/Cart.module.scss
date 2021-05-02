@@ -1,0 +1,39 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Cart {
+  position: relative;
+}
+
+.Summary {
+  min-width: 200px;
+  border: $border-standard;
+  padding: spacing(1);
+
+  margin-top: spacing(2);
+
+  & > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.NoItems {
+  text-align: center;
+}
+
+.Taxes {
+  border-bottom: $border-standard;
+  padding: spacing(0.5) 0;
+}
+
+.Total {
+  margin-top: spacing(1);
+  font-size: 24px;
+}
+
+.CheckoutButton {
+  margin-top: spacing(1);
+  float: right;
+  text-transform: uppercase;
+}

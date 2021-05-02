@@ -9,14 +9,15 @@ import styles from './DescriptionList.module.scss'
 const DescriptionList = ({ items }) => (
   <dl className={styles.DescriptionList}>
     {Object.entries(items).map((item, i) => {
-      const [term, details] = item
+      const [name, details] = item
+      console.log("🚀 ~ file: index.jsx ~ line 13 ~ {Object.entries ~ item", item)
 
       return (
         <div
           className={styles.DescriptionListItem}
           key={`DescriptionListItem${i}`}
         >
-          <dt className={styles.DescriptionListTerm}>{term}</dt>
+          <dt className={styles.DescriptionListTerm}>{name}</dt>
           <dd className={styles.DescriptionListDetails}>{details}</dd>
         </div>
       )
