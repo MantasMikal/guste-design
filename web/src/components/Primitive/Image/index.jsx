@@ -5,11 +5,12 @@ import { getGatsbyImageData } from 'gatsby-source-sanity'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 import cfg from '../../../../../config'
+import { oneOf } from 'prop-types'
 
 /**
  * Component to handle all types images with ratio support
  */
-const Image = ({ image, ratio, imgWrapperStyle, maxWidth, imgStyle, alt, ...other }) => {
+const Image = ({ image, ratio, imgWrapperStyle, maxWidth, imgStyle, alt, layout = 'fullWidth', ...other }) => {
   if (!image) return null
   let imageData = {}
 
@@ -18,7 +19,7 @@ const Image = ({ image, ratio, imgWrapperStyle, maxWidth, imgStyle, alt, ...othe
   } else {
     imageData = getGatsbyImageData(
       image.asset,
-      { maxWidth: maxWidth, layout: 'fullWidth', placeholder: 'blurred' },
+      { maxWidth: maxWidth, layout: layout, placeholder: 'blurred' },
       cfg.project
     )
   }
@@ -55,6 +56,7 @@ Image.propTypes = {
   ratio: number,
   imgWrapperStyle: object,
   imgStyle: object,
+  layout: oneOf(['fullWidth', 'constrained', 'fixed']),
   alt: string
 }
 

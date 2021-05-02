@@ -23,6 +23,10 @@
   top: 2px;
 }
 
+.Banner {
+  margin-bottom: spacing(1);
+}
+
 @include mq($breakpoint-tablet) {
   .FloatingControls {
     bottom: unset;

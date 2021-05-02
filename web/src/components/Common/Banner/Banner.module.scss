@@ -1,0 +1,21 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Banner {
+  position: relative;
+  border: $border-standard;
+}
+
+// .DesktopImage {
+//   display: none;
+//   @include mq($breakpoint-mobileLandscape) {
+//     display: block;
+//   }
+// }
+
+// .MobileImage {
+//   display: block;
+//   @include mq($breakpoint-mobileLandscape) {
+//     display: none;
+//   }
+// }

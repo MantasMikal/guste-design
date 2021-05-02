@@ -28,6 +28,8 @@ import grid from "./plugs/grid";
 import location from "./plugs/location";
 import line from './plugs/line'
 import galleryPost from "./documents/galleryPost";
+import store from "./pages/store";
+import banner from "./objects/banner";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -57,7 +59,9 @@ export default createSchema({
     section,
     openGraph,
     line,
-    galleryPost
+    galleryPost,
+    store,
+    banner
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

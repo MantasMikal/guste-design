@@ -8,12 +8,15 @@ import GridLayout from 'Primitive/GridLayout'
 import PageTitle from 'Common/PageTitle'
 import CategoryPicker from 'Common/CategoryPicker'
 import CartButton from 'Common/CartButton'
+import Banner from 'Common/Banner'
 
 import styles from './Store.module.scss'
 
 const MemoProductPreview = React.memo(ProductPreview)
 
-const Store = ({ products }) => {
+const Store = ({ products, page }) => {
+  console.log('LOG', page)
+  const {banner} = page
   const allCategories = ['All', ...getAllProductCategories(products)]
   const [activeCategory, setActiveCategory] = useState(allCategories[0])
   const [queryCat, setQueryCat] = useQueryParam('category', StringParam)
@@ -60,6 +63,7 @@ const Store = ({ products }) => {
           />
         </div>
       </div>
+      <Banner {...banner} className={styles.Banner} />
       <GridLayout customGridClass={styles.Grid} items={galleryNodes} />
     </Container>
   )

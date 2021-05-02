@@ -1,7 +1,7 @@
 var config = {
   site: {
-    siteTitle: "GUSTE.DESIGN - LOREM IPSUM",
-    shortName: "GUSTE.DESIGN",
+    siteTitle: "GUSTÉ.DESIGN",
+    shortName: "GUSTÉ.DESIGN",
     siteUrl: "https://guste.design",
     bgColor: "#ffffff",
     themeColor: "#000000",
