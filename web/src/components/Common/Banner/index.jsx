@@ -11,6 +11,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 
 const Banner = ({ desktopImages, mobileImages, className }) => {
   const isTablet = useMedia('(min-width: 960px)')
+
   return (
     <div className={classNames(styles.Banner, className)}>
       <CarouselProvider
@@ -27,7 +28,7 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
             desktopImages.map((img, i) => (
               <Slide key={`DesktopImage-${i}`} index={i}>
                 <div className={styles.DesktopImage}>
-                  <Image image={img} ratio={7 / 20} />
+                  <Image image={img} ratio={1 / 3} />
                 </div>
               </Slide>
             ))}
