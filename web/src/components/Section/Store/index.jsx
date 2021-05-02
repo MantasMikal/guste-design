@@ -6,6 +6,7 @@ import Container from 'Primitive/Container'
 import GridLayout from 'Primitive/GridLayout'
 import PageTitle from 'Common/PageTitle'
 import CategoryPicker from 'Common/CategoryPicker'
+import CartButton from 'Common/CartButton'
 
 import styles from './Store.module.scss'
 
@@ -16,7 +17,7 @@ const Store = ({ products }) => {
     activeCategory === 'All'
       ? products
       : filterByCategory(products, activeCategory)
-  
+
   const galleryNodes = filteredProducts.map((product) => (
     <ProductPreview
       key={product.id}
@@ -24,7 +25,7 @@ const Store = ({ products }) => {
       {...product}
     />
   ))
-  console.log("🚀 ~ file: index.jsx ~ line 29 ~ Store ~ filteredProducts", filteredProducts)
+
   const handleCategorySelect = (category) => {
     setActiveCategory(category)
   }
@@ -33,12 +34,15 @@ const Store = ({ products }) => {
     <Container className={styles.Store} as="section">
       <div className={styles.Header}>
         <PageTitle title="Store" />
-        <CategoryPicker
-          className={styles.CategoryPicker}
-          categories={allCategories}
-          onClick={handleCategorySelect}
-          activeCategory={activeCategory}
-        />
+        <div className={styles.FloatingControls}>
+          <CartButton className={styles.CartButton}/>
+          <CategoryPicker
+            className={styles.CategoryPicker}
+            categories={allCategories}
+            onClick={handleCategorySelect}
+            activeCategory={activeCategory}
+          />
+        </div>
       </div>
       <GridLayout customGridClass={styles.Grid} items={galleryNodes} />
     </Container>
@@ -50,7 +54,6 @@ Store.propTypes = {
 }
 
 export default Store
-
 
 const filterByCategory = (products, category) => {
   if (!category) return products

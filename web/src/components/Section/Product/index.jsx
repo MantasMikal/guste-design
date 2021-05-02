@@ -5,28 +5,23 @@ import Container from 'Primitive/Container'
 import Type from 'Primitive/Type'
 import PageTitle from 'Common/PageTitle'
 import ProductPreview from 'Common/ProductPreview'
+import ProductDetails from 'Common/ProductDetails'
+import CartButton from 'Common/CartButton'
 
 import styles from './Product.module.scss'
-import ImageGallery from 'Common/ImageGallery'
 
 
 /**
  * Product view
  */
 const Product = ({ product, similarProducts }) => {
-  console.log(
-    '🚀 ~ file: index.jsx ~ line 18 ~ Product ~ similarProducts',
-    similarProducts
-  )
-  const { title, images } = product
-
+  const { title } = product
   return (
-    <Container className={styles.Product} size="full" as="section">
-      <PageTitle title={title} />
-      <div className={styles.Wrapper}>
-        <ImageGallery images={images} />
-        <div></div>
-      </div>
+    <Container className={styles.Product} as="section">
+      <PageTitle title={title}>
+        <CartButton />
+      </PageTitle>
+      <ProductDetails product={product} className={styles.ProductDetails}/>
       <PageTitle title="Similar products" as="h3" />
       <div className={styles.SimilarProductGrid}>
         {similarProducts.map((product) => (

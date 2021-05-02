@@ -9,8 +9,8 @@ const gaps = ['small', 'medium', 'large']
 /**
  * A wrapper component which evenly vertically-spaces its children.
  */
-const Stack = ({ children, gap }) => (
-  <div className={classNames(styles.Stack, gap && styles[gap])}>{children}</div>
+const Stack = ({ children, gap, className }) => (
+  <div className={classNames(styles.Stack, gap && styles[gap], className)}>{children}</div>
 )
 
 Stack.defaultProps = {

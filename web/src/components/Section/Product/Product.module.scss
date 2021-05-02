@@ -7,14 +7,16 @@
 
 .Wrapper {
   display: block;
-
-  margin-bottom: spacing(1);
   @include mq($breakpoint-tablet) {
     display: flex;
     & > div {
       flex: 1 1 50%;
     } 
   }
+}
+
+.ProductDetails {
+  margin-bottom: spacing(2);
 }
 
 .SimilarProductGrid {

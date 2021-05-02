@@ -3,26 +3,29 @@ import { graphql } from 'gatsby'
 import Product from 'Section/Product'
 import SEO from '../components/seo'
 import Layout from '../containers/MainLayout'
+import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
 
 const ProductTemplate = (props) => {
   const { data } = props
   const product = data && data.product
   const { similarProducts } = props.pageContext
-  const {title, description, images} = product
+  const { title, description, images } = product
   return (
-    <Layout>
-      {product && (
-        <SEO
-          title={title}
-          description={description}
-          image={images[0].originalSrc}
-        />
-      )}
+    <StoreContextProvider>
+      <Layout>
+        {product && (
+          <SEO
+            title={title}
+            description={description}
+            image={images[0].originalSrc}
+          />
+        )}
 
-      {product && (
-        <Product product={product} similarProducts={similarProducts} />
-      )}
-    </Layout>
+        {product && (
+          <Product product={product} similarProducts={similarProducts} />
+        )}
+      </Layout>
+    </StoreContextProvider>
   )
 }
 

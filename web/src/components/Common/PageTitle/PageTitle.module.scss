@@ -6,4 +6,7 @@
   border: $border-standard;
   text-transform: uppercase;
   margin-bottom: spacing(1);
+
+  display: flex;
+  justify-content: space-between;
 }

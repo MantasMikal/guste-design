@@ -5,11 +5,14 @@ import Type from 'Primitive/Type'
 
 import styles from './PageTitle.module.scss'
 
-const PageTitle = ({ title, as }) => (
+const PageTitle = ({ title, children, as }) => (
   <div className={styles.PageTitle}>
     <Type as={as || "h2"} size="title">
       {title}
     </Type>
+    <div className={styles.Nav}>
+      {children}
+    </div>
   </div>
 )
 

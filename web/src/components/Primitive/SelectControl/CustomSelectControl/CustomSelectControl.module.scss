@@ -15,8 +15,7 @@
   display: block;
   padding: 0;
   background-color: $color-primary-white;
-  border: 1px solid $color-common-grey75;
-  border-radius: $radius-small;
+  border: $border-standard;
 
   // This is the native select, we’re making everything but the text invisible
   // so we can see the button styles in the wrapper
@@ -68,7 +67,7 @@
 }
 
 .CustomSelectControlIndicator {
-  color: $color-primary-yellow;
+  color: $color-primary-black;
   position: absolute;
   top: 50%;
   right: spacing(0.75);

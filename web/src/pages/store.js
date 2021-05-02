@@ -4,6 +4,7 @@ import { mapEdgesToNodes } from '../libs/helpers'
 import SEO from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Store from 'Section/Store'
+import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
 
 const StorePage = () => {
   const { products } = useStaticQuery(
@@ -42,10 +43,12 @@ const StorePage = () => {
 
   const productNodes = products ? mapEdgesToNodes(products) : []
   return (
-    <Layout>
-      <SEO title="Store" />
-      {productNodes && <Store products={productNodes} />}
-    </Layout>
+    <StoreContextProvider>
+      <Layout>
+        <SEO title="Store" />
+        {productNodes && <Store products={productNodes} />}
+      </Layout>
+    </StoreContextProvider>
   )
 }
 

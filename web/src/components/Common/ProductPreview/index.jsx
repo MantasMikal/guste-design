@@ -28,7 +28,7 @@ const ProductPreview = ({ images, title, handle, variants, className }) => {
 ProductPreview.propTypes = {
   images: array.isRequired,
   title: string.isRequired,
-  slug: string.isRequired,
+  handle: string.isRequired,
   variants: array.isRequired,
   className: string
 }

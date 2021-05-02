@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { array } from 'prop-types'
+import classNames from 'classnames'
 
 import Image from 'Primitive/Image'
 
 import styles from './ImageGallery.module.scss'
 
-const ImageGallery = ({ images }) => {
+const ImageGallery = ({ images, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
-    <div className={styles.ImageGallery}>
+    <div className={classNames(styles.ImageGallery, className)}>
       <div className={styles.MainImage}>
         <MemoImage image={images[currentIndex]} ratio={1} />
       </div>
