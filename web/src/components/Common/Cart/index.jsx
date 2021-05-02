@@ -23,11 +23,13 @@ const Cart = ({}) => {
 
   return (
     <div className={styles.Cart}>
-      {
-        lineItems.length > 0 ? lineItems : <Type size='base' className={styles.NoItems}>
-          The cart is empty 
+      {lineItems.length > 0 ? (
+        lineItems
+      ) : (
+        <Type size="base" className={styles.NoItems}>
+          The cart is empty
         </Type>
-      }
+      )}
 
       <Type size="base" className={styles.Summary}>
         <div>
@@ -37,7 +39,7 @@ const Cart = ({}) => {
             {checkout.subtotalPrice}
           </p>
         </div>
-        <div className={styles.Taxes}> 
+        <div className={styles.Taxes}>
           <p>Taxes</p>
           <p>
             {symbol}
@@ -52,7 +54,11 @@ const Cart = ({}) => {
           </p>
         </div>
       </Type>
-      <ButtonStandard highlight className={styles.CheckoutButton}>
+      <ButtonStandard
+        onClick={handleCheckout}
+        highlight
+        className={styles.CheckoutButton}
+      >
         Checkout
       </ButtonStandard>
     </div>

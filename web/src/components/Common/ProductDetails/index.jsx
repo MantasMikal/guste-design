@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useContext } from 'react'
 import { string, object } from 'prop-types'
 import classNames from 'classnames'
-import isEqual from 'lodash.isEqual'
+import isEqual from 'lodash.isequal'
 import find from 'lodash.find'
 
 import styles from './ProductDetails.module.scss'

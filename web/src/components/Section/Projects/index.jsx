@@ -3,10 +3,11 @@ import { array } from 'prop-types'
 
 import ProjectPreview from 'Common/ProjectPreview'
 import Container from 'Primitive/Container'
-import MasonryLayout from 'Primitive/MasonryLayout'
+import GridLayout from 'Primitive/GridLayout'
 import PageTitle from 'Common/PageTitle'
 
 import styles from './Projects.module.scss'
+
 
 const Projects = ({ projects }) => {
   const projectNodes = projects.map((project) => (
@@ -24,7 +25,7 @@ const Projects = ({ projects }) => {
       as="section"
     >
       <PageTitle title='Projects' />
-      <MasonryLayout items={projectNodes} gap={10} />
+      <GridLayout items={projectNodes} customGridClass={styles.Grid} />
     </Container>
   )
 }
