@@ -4,3 +4,14 @@
 .BlogPostPreview {
   margin: 0 spacing(1);
 }
+
+
+.Grid {
+  display: grid;
+  gap: spacing(1.2);
+  grid-template-columns: 1fr;
+
+  @include mq($breakpoint-mobileLandscape) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

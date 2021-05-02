@@ -27,7 +27,7 @@ const StorePage = () => {
                 originalSrc
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(layout: CONSTRAINED)
+                    gatsbyImageData(layout: CONSTRAINED placeholder: BLURRED)
                   }
                 }
               }

@@ -11,9 +11,8 @@ module.exports = {
   },
   flags: {
     FAST_DEV: true,
-    PARALLEL_SOURCING: true,
+    PARALLEL_SOURCING: false,
     DEV_SSR: false,
-    PARALLEL_SOURCING: false
   },
   plugins: [
     {
@@ -76,9 +75,8 @@ module.exports = {
       options: {
         shopName: process.env.GATSBY_SHOP_NAME,
         accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
-        paginationSize: 5,
-        verbose: false,
-        apiVersion: '2020-10'
+        paginationSize: 4,
+        verbose: true,
       }
     },
     {
