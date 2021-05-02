@@ -1,5 +1,6 @@
 import BaseBlockContent from '@sanity/block-content-to-react'
 import React from 'react'
+import classNames from 'classnames'
 
 import Type from 'Primitive/Type'
 import Blockquote from 'Primitive/Blockquote'
@@ -11,6 +12,8 @@ import createFigure from './components/createFigure'
 import createSlideshow from './components/createSlideshow'
 import createMediaComponent from './components/createMedia'
 import createLine from './components/createLine'
+
+import styles from './BlockContent.module.scss'
 
 const serializers = {
   marks: {
@@ -100,7 +103,7 @@ const serializers = {
 
 const BlockContent = ({ blocks, className }) => (
   <BaseBlockContent
-    className={className}
+    className={classNames(styles.BlockContent, className)}
     blocks={blocks}
     serializers={serializers}
   />

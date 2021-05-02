@@ -7,9 +7,25 @@ import Store from 'Section/Store'
 import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
 
 const StorePage = () => {
-  const { products } = useStaticQuery(
+  const { products, page } = useStaticQuery(
     graphql`
       query {
+        page: sanityStorePage(_id: { regex: "/(drafts.|)storePage/" }) {
+          banner {
+            mobileImages {
+              asset {
+                url
+                _id
+              }
+            }
+            desktopImages {
+              asset {
+                url
+                _id
+              }
+            }
+          }
+        }
         products: allShopifyProduct(
           sort: { fields: [createdAt], order: DESC }
         ) {
@@ -27,7 +43,7 @@ const StorePage = () => {
                 originalSrc
                 localFile {
                   childImageSharp {
-                    gatsbyImageData(layout: CONSTRAINED placeholder: BLURRED)
+                    gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
                   }
                 }
               }
@@ -40,13 +56,12 @@ const StorePage = () => {
       }
     `
   )
-
   const productNodes = products ? mapEdgesToNodes(products) : []
   return (
     <StoreContextProvider>
       <Layout>
         <SEO title="Store" />
-        {productNodes && <Store products={productNodes} />}
+        {productNodes && <Store products={productNodes} page={page}/>}
       </Layout>
     </StoreContextProvider>
   )
