@@ -1,33 +1,42 @@
 import React from 'react'
 
-import { graphql } from 'gatsby'
-import BlockSection from 'Section/Block'
-import GraphQLErrorList from '../components/graphql-error-list'
+import { graphql, useStaticQuery } from 'gatsby'
+import About from 'Section/About'
 import SEO from '../components/seo'
 import Layout from '../containers/MainLayout'
+import { mapEdgesToNodes } from 'libs/helpers'
 
-export const query = graphql`
-  query AboutPageQuery {
-    page: sanityPage(_id: { regex: "/(drafts.|)about/" }) {
-      id
-      title
-      _rawBody(resolveReferences: { maxDepth: 5 })
-    }
-  }
-`
-
-const AboutPage = (props) => {
-  const { data, errors } = props
-
-  if (errors) {
-    return (
-      <Layout>
-        <GraphQLErrorList errors={errors} />
-      </Layout>
-    )
-  }
-
-  const page = data && data.page
+const AboutPage = () => {
+  const { page, instagram } = useStaticQuery(
+    graphql`
+      query {
+        page: sanityAboutPage(_id: { regex: "/(drafts.|)aboutPage/" }) {
+          id
+          _rawBio(resolveReferences: { maxDepth: 5 })
+          _rawBody(resolveReferences: { maxDepth: 5 })
+          mainImage {
+            asset {
+              url
+              _id
+            }
+          }
+        }
+        instagram: allInstagramContent(limit: 4) {
+          edges {
+            node {
+              caption
+              media_url
+              localImage {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  )
 
   if (!page) {
     throw new Error(
@@ -37,8 +46,11 @@ const AboutPage = (props) => {
 
   return (
     <Layout>
-      <SEO title={page.title} slug="/about" />
-      <BlockSection title={page.title} blockContent={page._rawBody || []} />
+      <SEO title="About" slug="/about" />
+      <About
+        {...page}
+        instagramPosts={instagram && mapEdgesToNodes(instagram)}
+      />
     </Layout>
   )
 }

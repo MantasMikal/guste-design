@@ -21,7 +21,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <Link className={styles.NavLink} to="/contact/">
           Contact
         </Link>
-        <Link className={styles.NavLink} to="/blog/">
+        <Link className={styles.NavLink} to="/about/">
           About
         </Link>
         {/* <div className={styles.Dropdown}>
@@ -57,7 +57,6 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <Link className={styles.NavLink} to="/gallery/">
           Gallery
         </Link>
-
         <Link className={styles.NavLink} to="/projects/">
           Projects
         </Link>

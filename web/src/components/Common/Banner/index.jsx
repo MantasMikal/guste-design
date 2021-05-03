@@ -9,9 +9,10 @@ import Image from 'Primitive/Image'
 import styles from './Banner.module.scss'
 import 'pure-react-carousel/dist/react-carousel.es.css'
 
+const MemoImage = React.memo(Image)
+
 const Banner = ({ desktopImages, mobileImages, className }) => {
   const isTablet = useMedia('(min-width: 960px)')
-
   return (
     <div className={classNames(styles.Banner, className)}>
       <CarouselProvider
@@ -28,7 +29,7 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
             desktopImages.map((img, i) => (
               <Slide key={`DesktopImage-${i}`} index={i}>
                 <div className={styles.DesktopImage}>
-                  <Image image={img} ratio={1 / 4} />
+                  <MemoImage image={img} ratio={1 / 4} />
                 </div>
               </Slide>
             ))}
@@ -36,7 +37,7 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
             mobileImages.map((img, i) => (
               <Slide key={`MobileImage-${i}`} index={i}>
                 <div className={styles.MobileImage}>
-                  <Image image={img} ratio={1} />
+                  <MemoImage image={img} ratio={1} />
                 </div>
               </Slide>
             ))}

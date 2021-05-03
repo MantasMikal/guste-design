@@ -1,6 +1,6 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdBusiness, MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
-import { FaFile, FaPhone, FaStore } from "react-icons/fa";
+import { FaPhone, FaStore } from "react-icons/fa";
 import { GrDocumentText } from "react-icons/gr";
 import projects from "./structure/projects";
 import gallery from "./structure/gallery";
@@ -18,6 +18,7 @@ const hiddenTypes = [
   "project",
   "galleryPost",
   "storePage",
+  "aboutPage"
 ];
 
 export default () =>
@@ -80,8 +81,8 @@ export default () =>
                 .child(
                   S.editor()
                     .id("aboutPage")
-                    .schemaType("page")
-                    .documentId("about")
+                    .schemaType("aboutPage")
+                    .documentId("aboutPage")
                 )
                 .icon(MdInfoOutline),
               S.listItem()

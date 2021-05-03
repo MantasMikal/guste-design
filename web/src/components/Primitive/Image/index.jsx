@@ -10,12 +10,23 @@ import { oneOf } from 'prop-types'
 /**
  * Component to handle all types images with ratio support
  */
-const Image = ({ image, ratio, imgWrapperStyle, maxWidth, imgStyle, alt, layout = 'fullWidth', ...other }) => {
+const Image = ({
+  image,
+  ratio,
+  imgWrapperStyle,
+  maxWidth,
+  imgStyle,
+  alt,
+  layout = 'fullWidth',
+  ...other
+}) => {
   if (!image) return null
   let imageData = {}
 
-  if(image.localFile) {
+  if (image.localFile) {
     imageData = image.localFile.childImageSharp.gatsbyImageData
+  } else if (image.localImage) {
+    imageData = image.localImage.childImageSharp.gatsbyImageData
   } else {
     imageData = getGatsbyImageData(
       image.asset,

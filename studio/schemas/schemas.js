@@ -10,15 +10,19 @@ import page from "./pages/page";
 import project from "./documents/project";
 import siteSettings from "./documents/siteSettings";
 import companyInfo from "./documents/companyInfo";
+import galleryPost from "./documents/galleryPost";
 
 import blockContent from "./objects/blockContent";
 import blockText from "./objects/blockText";
 import contentBlock from "./objects/contentBlock";
 import section from "./objects/section";
 import openGraph from "./objects/openGraph";
+import banner from "./objects/banner";
 
 import contact from "./pages/contact";
 import home from "./pages/home";
+import store from "./pages/store";
+import aboutPage from "./pages/aboutPage";
 
 import figure from "./plugs/figure";
 import mainImage from "./plugs/mainImage";
@@ -27,9 +31,6 @@ import video from "./plugs/video";
 import grid from "./plugs/grid";
 import location from "./plugs/location";
 import line from './plugs/line'
-import galleryPost from "./documents/galleryPost";
-import store from "./pages/store";
-import banner from "./objects/banner";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -61,7 +62,8 @@ export default createSchema({
     line,
     galleryPost,
     store,
-    banner
+    banner,
+    aboutPage
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

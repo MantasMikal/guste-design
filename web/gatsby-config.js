@@ -92,6 +92,12 @@ module.exports = {
         display: 'standalone'
       }
     },
+    {
+      resolve: `gatsby-source-instagram-all`,
+      options: {
+        access_token: process.env.INSTAGRAM_TOKEN
+      }
+    },
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
