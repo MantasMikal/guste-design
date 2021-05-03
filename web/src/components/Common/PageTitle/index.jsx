@@ -8,7 +8,7 @@ import styles from './PageTitle.module.scss'
 
 const PageTitle = ({ title, children, as, className }) => (
   <div className={classNames(styles.PageTitle, className)}>
-    <Type as={as || 'h2'} size="title">
+    <Type as={as || 'h2'} size="titleMedium">
       {title}
     </Type>
     <div className={styles.Nav}>{children}</div>
