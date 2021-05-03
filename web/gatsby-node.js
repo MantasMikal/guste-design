@@ -27,11 +27,11 @@ async function createProjectPages(graphql, actions, reporter) {
     const path = `/projects/${slug.current}/`
     const absolutePath = siteUrl + path
     const prev = edge.previous
-      ? `/project/${edge.previous.slug.current}/`
-      : `/project/${projectEdges[projectEdges.length - 1].node.slug.current}`
+      ? `/projects/${edge.previous.slug.current}/`
+      : `/projects/${projectEdges[projectEdges.length - 1].node.slug.current}`
     const next = edge.next
-      ? `/project/${edge.next.slug.current}/`
-      : `/project/${projectEdges[0].node.slug.current}`
+      ? `/projects/${edge.next.slug.current}/`
+      : `/projects/${projectEdges[0].node.slug.current}`
     const nextTitle = edge.next ? edge.next.title : null
     const prevTitle = edge.previous ? edge.previous.title : null
 

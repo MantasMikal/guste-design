@@ -1,5 +1,5 @@
 <p align="center">
-   <img width="300" src='https://i.imgur.com/GhcxkhC.png'>
+   <img width="300" src='https://guste.design/icons/icon-512x512.png'>
 </p>
 <p align="center">
 Graphic designer store/portfolio made with Gatsby, Sanity, Netlify and Shopify 🐱‍🚀

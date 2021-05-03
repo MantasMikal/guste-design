@@ -8,10 +8,20 @@
 }
 
 .Color {
-  height: spacing(6);
-  width: spacing(6);
+  height: spacing(3.5);
+  width: spacing(3.5);
   outline: $border-standard;
   margin-top: 2px;
+
+  @include mq($breakpoint-mobileLarge) {
+    height: spacing(5);
+    width: spacing(5);
+  }
+
+  @include mq($breakpoint-tablet) {
+    height: spacing(6);
+    width: spacing(6);
+  }
 }
 
 .Color:hover,

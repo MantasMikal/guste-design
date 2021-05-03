@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 86.5vh;
+  height: 80vh;
   position: relative;
   @include mq($breakpoint-tablet) {
     height: 100vh;
@@ -41,6 +41,13 @@ button.Restart  {
   justify-content: center;
   align-items: center;
   transition: 0.2s $easing-standard;
+  font-size: 0.8em;
+  margin-right: spacing(0.2);
+
+  @include mq($breakpoint-mobileLarge) {
+    font-size: 1.1em;
+    margin-right: 0;
+  }
 
   &:hover,
   &:focus {
