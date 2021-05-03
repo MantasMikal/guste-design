@@ -46,6 +46,7 @@
 		"gatsby-plugin-sharp": "^3.4.0",
 		"gatsby-plugin-sitemap": "^4.0.0",
 		"gatsby-plugin-use-query-params": "^1.0.1",
+		"gatsby-plugin-web-font-loader": "^1.0.4",
 		"gatsby-source-instagram-all": "^4.0.0",
 		"gatsby-source-sanity": "^7.0.4",
 		"gatsby-source-shopify": "^4.4.0",

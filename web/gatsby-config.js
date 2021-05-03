@@ -12,7 +12,7 @@ module.exports = {
   flags: {
     FAST_DEV: true,
     PARALLEL_SOURCING: false,
-    DEV_SSR: false,
+    DEV_SSR: false
   },
   plugins: [
     {
@@ -76,7 +76,7 @@ module.exports = {
         shopName: process.env.GATSBY_SHOP_NAME,
         accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
         paginationSize: 4,
-        verbose: true,
+        verbose: true
       }
     },
     {
@@ -98,11 +98,19 @@ module.exports = {
         access_token: process.env.INSTAGRAM_TOKEN
       }
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        typekit: {
+          id: process.env.TYPEKIT_ID
+        }
+      }
+    },
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline'
-    
+
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
     //   options: {
