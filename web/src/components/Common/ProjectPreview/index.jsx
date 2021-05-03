@@ -15,7 +15,7 @@ const ProjectPreview = ({ slug, mainImages, title, className }) => {
       className={classNames(styles.ProjectPreview, className)}
       to={getProjectUrl(slug.current)}
     >
-      <MultiImage images={mainImages} alt={title} />
+      <MultiImage images={mainImages} alt={title} maxWidth={600} />
       <div className={styles.Details}>
         <Type as="h3" size="title" className={styles.Title}>
           {title}

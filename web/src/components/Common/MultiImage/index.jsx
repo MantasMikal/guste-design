@@ -6,18 +6,18 @@ import Image from 'Primitive/Image'
 
 import styles from './MultiImage.module.scss'
 
-const MultiImage = ({ images, skipAmount = 10, size = 'landscape' }) => {
+const MultiImage = ({ images, skipAmount = 10, size = 'landscape', ...other }) => {
   const isSSR = typeof window === 'undefined' 
   const isTouch = !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
-  
+
   if (isTouch) {
-    return <MemoImage image={images[0]} />
+    return <MemoImage image={images[0]} {...other}/>
   } else {
-    return <Multi images={images} skipAmount={skipAmount} size={size} />
+    return <Multi images={images} skipAmount={skipAmount} size={size} {...other}/>
   }
 }
 
-const Multi = ({ images, skipAmount, size }) => {
+const Multi = ({ images, skipAmount, size, ...other }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [move, setMove] = useState(skipAmount)
 
@@ -46,7 +46,7 @@ const Multi = ({ images, skipAmount, size }) => {
             )}
             key={`MultiImage-${i}`}
           >
-            <MemoImage image={img} />
+            <MemoImage image={img} {...other} />
           </div>
         ))}
     </div>
