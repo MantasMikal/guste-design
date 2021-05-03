@@ -29,8 +29,11 @@ export const query = graphql`
 
 const ProjectTemplate = (props) => {
   const { data, errors, pageContext } = props
+  const { nextProject, prevProject } = pageContext
+  console.log("🚀 ~ file: project.js ~ line 33 ~ ProjectTemplate ~ pageContext", pageContext)
   const project = data && data.project
-  const metaImage = project && project.mainImages && project.mainImages[0].asset.url
+  const metaImage =
+    project && project.mainImages && project.mainImages[0].asset.url
   return (
     <Layout>
       {project && (
@@ -46,7 +49,14 @@ const ProjectTemplate = (props) => {
         </Container>
       )}
 
-      {project && <Project {...project} url={pageContext.absolutePath} />}
+      {project && (
+        <Project
+          {...project}
+          url={pageContext.absolutePath}
+          next={nextProject}
+          prev={prevProject}
+        />
+      )}
     </Layout>
   )
 }

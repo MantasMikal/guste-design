@@ -15,8 +15,7 @@ import styles from './Store.module.scss'
 const MemoProductPreview = React.memo(ProductPreview)
 
 const Store = ({ products, page }) => {
-  console.log('LOG', page)
-  const {banner} = page
+  const { banner } = page
   const allCategories = ['All', ...getAllProductCategories(products)]
   const [activeCategory, setActiveCategory] = useState(allCategories[0])
   const [queryCat, setQueryCat] = useQueryParam('category', StringParam)
@@ -28,14 +27,6 @@ const Store = ({ products, page }) => {
     activeCategory === 'All'
       ? products
       : filterByCategory(products, activeCategory)
-
-  const galleryNodes = filteredProducts.map((product) => (
-    <MemoProductPreview
-      key={product.id}
-      className={styles.ProductPreview}
-      {...product}
-    />
-  ))
 
   const handleCategorySelect = (category) => {
     setActiveCategory(category)
@@ -64,7 +55,16 @@ const Store = ({ products, page }) => {
         </div>
       </div>
       <Banner {...banner} className={styles.Banner} />
-      <GridLayout customGridClass={styles.Grid} items={galleryNodes} />
+      <GridLayout
+        customGridClass={styles.Grid}
+        items={filteredProducts.map((product) => (
+          <MemoProductPreview
+            key={product.id}
+            className={styles.ProductPreview}
+            {...product}
+          />
+        ))}
+      />
     </Container>
   )
 }
@@ -77,8 +77,8 @@ export default Store
 
 /**
  * Filters products by category
- * @param {Object} products 
- * @param {String} category 
+ * @param {Object} products
+ * @param {String} category
  * @returns filtered products
  */
 const filterByCategory = (products, category) => {
@@ -93,8 +93,8 @@ const filterByCategory = (products, category) => {
 
 /**
  * Collects categories from products
- * @param {Object} products 
- * @returns 
+ * @param {Object} products
+ * @returns
  */
 const getAllProductCategories = (products) => {
   let categories = []

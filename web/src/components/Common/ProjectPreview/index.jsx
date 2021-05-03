@@ -17,7 +17,7 @@ const ProjectPreview = ({ slug, mainImages, title, className }) => {
     >
       <MultiImage images={mainImages} alt={title} />
       <div className={styles.Details}>
-        <Type as="h3" size="base" className={styles.Title}>
+        <Type as="h3" size="title" className={styles.Title}>
           {title}
         </Type>
       </div>

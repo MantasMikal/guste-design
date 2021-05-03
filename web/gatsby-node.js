@@ -26,11 +26,30 @@ async function createProjectPages(graphql, actions, reporter) {
     const { id, slug = {} } = edge.node
     const path = `/projects/${slug.current}/`
     const absolutePath = siteUrl + path
+    const prev = edge.previous
+      ? `/project/${edge.previous.slug.current}/`
+      : `/project/${projectEdges[projectEdges.length - 1].node.slug.current}`
+    const next = edge.next
+      ? `/project/${edge.next.slug.current}/`
+      : `/project/${projectEdges[0].node.slug.current}`
+    const nextTitle = edge.next ? edge.next.title : null
+    const prevTitle = edge.previous ? edge.previous.title : null
+
+    const nextProject = {
+      url: next,
+      title: nextTitle
+    }
+
+    const prevProject = {
+      url: prev,
+      title: prevTitle
+    }
+
     reporter.info(`Creating project page: ${path}`)
     createPage({
       path,
       component: require.resolve('./src/templates/project.js'),
-      context: { id, absolutePath }
+      context: { id, absolutePath, nextProject, prevProject }
     })
   })
 }
@@ -108,7 +127,7 @@ async function createProductPages(graphql, actions, reporter) {
     )
       .sort(() => Math.random() - 0.5)
       .splice(0, 4)
-      .map(edge => edge.node)
+      .map((edge) => edge.node)
 
     createPage({
       path,

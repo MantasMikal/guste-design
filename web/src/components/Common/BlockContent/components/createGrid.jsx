@@ -24,7 +24,8 @@ export function createGrid(component) {
     ...rowTemplate,
     ...rowGap,
     ...colGap,
-    ...margin
+    ...margin,
+    marginBottom: '10px'
   }
 
   const gridComponents = gridMedia.map((item) => {

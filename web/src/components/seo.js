@@ -32,11 +32,11 @@ function SEO({ description, lang, meta, keywords, title, image }) {
         
         const og = data.site.openGraph
         const siteTitle = data.site.title
-        const pageTitle = title | siteTitle || og.title
+        const pageTitle = title || siteTitle || og.title
         const metaDescription = description || og.description
         const metaImage = image ? image : og.image
         const metaKeywords = keywords || og.keywords
-        console.log('TITLE', title, data)
+
         return (
           <Helmet
             htmlAttributes={{
