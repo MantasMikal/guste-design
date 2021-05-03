@@ -39,10 +39,6 @@ const ProjectPage = () => {
     ? mapEdgesToNodes(projects).filter(filterOutDocsWithoutSlugs)
     : []
 
-  console.log(
-    '🚀 ~ file: projects.js ~ line 44 ~ ProjectPage ~ projectNodes',
-    projectNodes
-  )
   return (
     <Layout>
       <SEO title="Projects" />

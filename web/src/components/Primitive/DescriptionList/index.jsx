@@ -10,7 +10,6 @@ const DescriptionList = ({ items }) => (
   <dl className={styles.DescriptionList}>
     {Object.entries(items).map((item, i) => {
       const [name, details] = item
-      console.log("🚀 ~ file: index.jsx ~ line 13 ~ {Object.entries ~ item", item)
 
       return (
         <div

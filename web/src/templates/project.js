@@ -30,7 +30,6 @@ export const query = graphql`
 const ProjectTemplate = (props) => {
   const { data, errors, pageContext } = props
   const { nextProject, prevProject } = pageContext
-  console.log("🚀 ~ file: project.js ~ line 33 ~ ProjectTemplate ~ pageContext", pageContext)
   const project = data && data.project
   const metaImage =
     project && project.mainImages && project.mainImages[0].asset.url

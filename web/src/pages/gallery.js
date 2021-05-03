@@ -37,10 +37,6 @@ const GalleryPage = (props) => {
 
   const galleryNodes = gallery ? mapEdgesToNodes(gallery) : []
 
-  console.log(
-    '🚀 ~ file: projects.js ~ line 44 ~ GalleryPage ~ galleryNodes',
-    galleryNodes
-  )
   return (
     <Layout>
       <SEO title="Gallery" />

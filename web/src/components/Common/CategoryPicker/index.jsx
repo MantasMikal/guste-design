@@ -22,6 +22,7 @@ const CategoryPicker = ({ categories, onClick, activeCategory, className }) => {
   })
 
   const handleScrollFilter = (state) => {
+    if(showFilter.wasClicked) return
     if (state !== showFilter.show)
       setShowFilter({ wasClicked: false, show: state })
   }
