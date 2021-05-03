@@ -1,0 +1,58 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Title {
+  margin-bottom: spacing(3);
+}
+
+.BioText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: spacing(2);
+}
+
+.BioImage,
+.BioText {
+  border: $border-standard;
+  margin-bottom: spacing(1);
+}
+
+.InstagramPosts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: spacing(1);
+}
+
+.InstagramPost {
+  border: $border-standard;
+  display: block;
+
+  & > div:first-child {
+    display: block;
+  } 
+}
+
+.Body {
+  margin-bottom: spacing(1);
+}
+
+@include mq($breakpoint-tablet) {
+  .Bio {
+    display: flex;
+  }
+
+  .InstagramPosts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .BioImage,
+  .BioText {
+    flex: 1 1 50%;
+    border: $border-standard;
+  }
+
+  .BioImage {
+    margin-right: spacing(1);
+  }
+}

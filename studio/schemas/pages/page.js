@@ -1,13 +1,18 @@
 export default {
-  name: "page",
+  name: "aboutPage",
   title: "Page",
   type: "document",
   liveEdit: true,
   fields: [
     {
-      name: "title",
-      title: "Title",
-      type: "string",
+      name: "mainImage",
+      title: "Main image",
+      type: "figure",
+    },
+    {
+      name: "bio",
+      title: "Bio",
+      type: "blockContent",
     },
     {
       name: "body",
