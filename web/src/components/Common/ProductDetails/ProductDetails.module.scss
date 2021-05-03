@@ -49,13 +49,23 @@ div.Description {
   }
 
   .Gallery {
-    flex: 1 1 40%;
+    flex: 1 1 35%;
     margin-right: spacing(1);
     margin-bottom: 0;
   }
 
   .ProductInformation {
-    flex: 1 1 60%;
+    flex: 1 1 65%;
     margin-bottom: 0;
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .Gallery {
+    flex: 1 1 40%;
+  }
+
+  .ProductInformation {
+    flex: 1 1 60%;
   }
 }
