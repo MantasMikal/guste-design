@@ -9,7 +9,7 @@ const NotFoundPage = () => (
     <SEO title="404: Not found" slug={'/404'} />
     <Container size="wide" center gutter spacious as="section">
       <div style={{ marginTop: '80px' }} />
-      <Type as="h1" size="display">
+      <Type as="h2" size="display">
         Not found
       </Type>
       <Type as="p" size="baseLarge">
