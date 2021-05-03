@@ -3,6 +3,7 @@ import { array } from 'prop-types'
 import classNames from 'classnames'
 
 import Image from 'Primitive/Image'
+import Zoomable from 'Primitive/Zoomable'
 
 import styles from './ImageGallery.module.scss'
 
@@ -11,7 +12,9 @@ const ImageGallery = ({ images, className }) => {
   return (
     <div className={classNames(styles.ImageGallery, className)}>
       <div className={styles.MainImage}>
-        <MemoImage image={images[currentIndex]} ratio={1} />
+        <Zoomable>
+          <MemoImage image={images[currentIndex]} ratio={1} />
+        </Zoomable>
       </div>
       <div className={styles.Images}>
         {images &&

@@ -29,7 +29,6 @@
 }
 
 button.BuyButton {
-  // margin-top: spacing(3);
   text-transform: uppercase;
 }
 
@@ -50,12 +49,13 @@ div.Description {
   }
 
   .Gallery {
+    flex: 1 1 40%;
     margin-right: spacing(1);
+    margin-bottom: 0;
   }
 
-  .Gallery,
   .ProductInformation {
-    flex: 1 1 50%;
+    flex: 1 1 60%;
     margin-bottom: 0;
   }
 }
