@@ -14,7 +14,7 @@ const Image = ({
   image,
   ratio,
   imgWrapperStyle,
-  maxWidth,
+  width,
   imgStyle,
   alt,
   layout = 'fullWidth',
@@ -30,7 +30,7 @@ const Image = ({
   } else {
     imageData = getGatsbyImageData(
       image.asset,
-      { maxWidth: maxWidth, layout: layout, placeholder: 'blurred' },
+      { width: width || 800, layout: layout, placeholder: 'blurred' },
       cfg.project
     )
   }
