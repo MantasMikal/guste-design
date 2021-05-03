@@ -1,25 +1,69 @@
 @import 'settings';
 @import '_backline-mixins';
 
+@mixin modal-fade-in($duration: 1000, $delay: 0) {
+  animation: modal-fade-in ($duration * 1ms) ($delay * 1ms) $ease-out-cubic 1
+    forwards;
+  opacity: 0;
+}
+
+.Contact {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.Background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($color-primary-black, 0.7);
+  @include modal-fade-in(300);
+}
+
+.ContactContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: $color-primary-white;
+}
+
+.ContactInner {
+  text-align: center;
+}
+
 .Title {
-  margin-bottom: spacing(3);
+  margin-bottom: spacing(2);
+  font-size: spacing(9);
+  line-height: spacing(10);
 }
 
-.Body {
-  margin-bottom: spacing(6);
-}
+.Social {
+  display: flex;
+  align-items: center;
+  & a {
+    display: block;
+    color: $color-primary-white;
+    &:hover,
+    &:focus {
+      color: $color-primary-accent;
+    }
 
-.BlockWrapper {
-  flex: 1 1 50%;
-  margin-right: spacing(3);
-
-  @include mq($breakpoint-tabletLandscape) {
-    margin-right: spacing(6);
+    &:not(:last-child) {
+      margin-right: spacing(2);
+    }
   }
 }
 
-.Form {
-  @include mq($breakpoint-tabletLandscape) {
-    max-width: 60%;
+@keyframes modal-fade-in {
+  100% {
+    opacity: 1;
   }
 }

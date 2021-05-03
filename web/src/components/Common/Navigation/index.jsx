@@ -7,6 +7,7 @@ import Icon from 'Primitive/Icon'
 import SmartLink from 'Primitive/SmartLink'
 
 import styles from './Navigation.module.scss'
+import Contact from 'Section/Contact'
 
 const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
   return (
@@ -18,9 +19,13 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <SmartLink className={styles.Branding} to="/">
           <h1>{siteTitle}</h1>
         </SmartLink>
-        <Link className={styles.NavLink} to="/contact/">
-          Contact
-        </Link>
+        <Contact
+          trigger={
+            <Link className={styles.NavLink} to="#">
+              Contact
+            </Link>
+          }
+        />
         <Link className={styles.NavLink} to="/about/">
           About
         </Link>
