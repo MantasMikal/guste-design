@@ -11,7 +11,7 @@ const Zoomable = ({ children }) => {
   return (
     <Zoom
       transitionDuration={200}
-      overlayBgColorEnd="rgba(255, 255, 255, 0.8)"
+      overlayBgColorEnd="rgba(0, 0, 0, 0.6)"
       overlayBgColorStart="rgba(0, 0, 0, 0)"
       zoomMargin={20}
     >
