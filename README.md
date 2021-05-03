@@ -2,7 +2,10 @@
    <img width="300" src='https://guste.design/icons/icon-512x512.png'>
 </p>
 <p align="center">
-Graphic designer store/portfolio made with Gatsby, Sanity, Netlify and Shopify 🐱‍🚀
+Graphic designer store/portfolio built with Gatsby, Sanity, Netlify and Shopify 🐱‍🚀
+</p>
+<p align="center">
+Site is based on <a href='https://github.com/MantasMikal/gatsby-starter-picks'>gatsby-starter-picks</a> template
 </p>
 <p align='center'>
 <a href='https://guste.design'>https://guste.design</a>
