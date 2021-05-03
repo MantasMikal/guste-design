@@ -112,14 +112,9 @@
   font-size: spacing(3);
   line-height: spacing(4);
 
-  @include mq($breakpoint-tablet) {
-    font-size: spacing(3.5);
-    line-height: spacing(4.5);
-  }
-
   @include mq($breakpoint-desktop) {
-    font-size: spacing(5);
-    line-height: spacing(6);
+    font-size: spacing(4);
+    line-height: spacing(4.5);
   }
 }
 

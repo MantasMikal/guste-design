@@ -15,7 +15,7 @@ import createLine from './components/createLine'
 
 import styles from './BlockContent.module.scss'
 
-const serializers = {
+const serializers = (baseFontSize) => ({
   marks: {
     button: ({ mark, children }) => {
       return (
@@ -76,7 +76,7 @@ const serializers = {
         default:
           if (props.children.length > 1 || props.children[0] !== '') {
             return (
-              <Type as="p" size="base">
+              <Type as="p" size={baseFontSize || 'base'}>
                 {props.children}
               </Type>
             )
@@ -99,13 +99,13 @@ const serializers = {
       return createLine(props.node)
     }
   }
-}
+})
 
-const BlockContent = ({ blocks, className }) => (
+const BlockContent = ({ blocks, baseFontSize, className }) => (
   <BaseBlockContent
     className={classNames(styles.BlockContent, className)}
     blocks={blocks}
-    serializers={serializers}
+    serializers={serializers(baseFontSize)}
   />
 )
 

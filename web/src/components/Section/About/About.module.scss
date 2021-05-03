@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: spacing(2);
+  padding: spacing(4);
 }
 
 .BioImage,
@@ -30,20 +30,24 @@
 
   & > div:first-child {
     display: block;
-  } 
+  }
 }
 
 .Body {
   margin-bottom: spacing(1);
 }
 
-@include mq($breakpoint-tablet) {
+@include mq($breakpoint-tabletLandscape) {
   .Bio {
     display: flex;
   }
 
   .InstagramPosts {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .BioText {
+    padding: spacing(4);
   }
 
   .BioImage,
@@ -54,5 +58,17 @@
 
   .BioImage {
     margin-right: spacing(1);
+  }
+}
+
+@include mq($breakpoint-desktop) {
+  .BioText {
+    padding: spacing(8);
+  }
+}
+
+@include mq($breakpoint-desktopLarge) {
+  .BioText {
+    padding: spacing(10);
   }
 }

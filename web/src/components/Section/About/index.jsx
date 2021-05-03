@@ -19,10 +19,12 @@ const About = ({ _rawBody, _rawBio, mainImage, instagramPosts }) => {
       <div className={styles.Bio}>
         <Image className={styles.BioImage} image={mainImage} />
         <div className={styles.BioText}>
-          <BlockContent blocks={_rawBio} />
+          <BlockContent blocks={_rawBio} baseFontSize='baseLarge'/>
         </div>
       </div>
-      <BlockContent className={styles.Body} blocks={_rawBody} />
+      <div className={styles.Body}>
+        <BlockContent blocks={_rawBody} />
+      </div>
       <PageTitle title="Instagram" as="h3" />
       <div className={styles.InstagramPosts}>
         {instagramPosts &&
