@@ -7,6 +7,16 @@ import Image from 'Primitive/Image'
 import styles from './MultiImage.module.scss'
 
 const MultiImage = ({ images, skipAmount = 10, size = 'landscape' }) => {
+  const isTouch = matchMedia('(hover: none), (pointer: coarse)').matches
+
+  if (isTouch) {
+    return <MemoImage image={images[0]} />
+  } else {
+    return <Multi images={images} skipAmount={skipAmount} size={size} />
+  }
+}
+
+const Multi = ({ images, skipAmount, size }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [move, setMove] = useState(skipAmount)
 
@@ -21,7 +31,10 @@ const MultiImage = ({ images, skipAmount = 10, size = 'landscape' }) => {
   }
   const isActive = (i, id) => i == id || (i == 0 && i != id)
   return (
-    <div className={classNames(styles.MultiImage, styles[size])} onMouseMove={handleHover}>
+    <div
+      className={classNames(styles.MultiImage, styles[size])}
+      onMouseMove={handleHover}
+    >
       {images &&
         images.length > 0 &&
         images.map((img, i) => (
