@@ -38,6 +38,7 @@ const Hero = () => {
   })
 
   const handleColorChange = (part) => {
+    console.log('Changing color', part)
     if (!currentColor) return
     setPartColors({
       ...partColors,
