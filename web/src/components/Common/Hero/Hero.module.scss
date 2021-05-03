@@ -16,7 +16,7 @@
   height: 80vh;
   position: relative;
   @include mq($breakpoint-tablet) {
-    height: 90vh;
+    height: 85vh;
   }
 }
 
@@ -58,6 +58,7 @@ button.Restart  {
 .Tools {
   display: flex;
   justify-content: flex-end;
+  
 }
 
 .ColorPalette {
