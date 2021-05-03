@@ -28,7 +28,7 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
             desktopImages.map((img, i) => (
               <Slide key={`DesktopImage-${i}`} index={i}>
                 <div className={styles.DesktopImage}>
-                  <Image image={img} ratio={1 / 3} />
+                  <Image image={img} ratio={1 / 4} />
                 </div>
               </Slide>
             ))}
