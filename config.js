@@ -6,7 +6,7 @@ var config = {
     bgColor: "#ffffff",
     themeColor: "#000000",
     favIcon: "src/assets/favicon.png",
-    description: "To be adedd...",
+    description: "A Lithuanian creative and work-driven Graphic Designer & Artist",
   },
   project: {
     projectId: "uq1ipftd",
