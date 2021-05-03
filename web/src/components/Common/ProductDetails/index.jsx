@@ -114,7 +114,7 @@ const ProductDetails = ({ product, className }) => {
     <div className={classNames(styles.ProductDetails, className)}>
       <ImageGallery className={styles.Gallery} images={images} />
       <Stack className={styles.ProductInformation}>
-        <Type size="titleMedium">{price}</Type>
+        <Type size="titleLarge">{price}</Type>
         <div className={styles.Options}>
           {options.map(
             ({ id, name, values }, index) =>

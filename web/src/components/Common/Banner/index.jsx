@@ -24,7 +24,7 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
         interval={5000}
         className={styles.Carousel}
       >
-        <Slider moveThreshold={0.05} className={styles.Slider}>
+        <Slider className={styles.Slider}>
           {isTablet &&
             desktopImages.map((img, i) => (
               <Slide key={`DesktopImage-${i}`} index={i}>

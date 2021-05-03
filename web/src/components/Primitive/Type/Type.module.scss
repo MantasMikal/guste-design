@@ -17,15 +17,10 @@
     font-size: spacing(6); // 48
     line-height: spacing(7); // 56
   }
-
-  @include mq($breakpoint-desktop) {
-    font-size: spacing(8); // 64
-    line-height: spacing(9); // 72
-  }
 }
 
 .title {
-  font-size: spacing(1.9);
+  font-size: spacing(2.1);
   line-height: 1;
   font-family: $font-body;
 }

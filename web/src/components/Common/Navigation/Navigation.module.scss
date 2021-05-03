@@ -38,8 +38,8 @@
 
   &:hover,
   &:focus {
-    font-weight: 900;
     transition: 0.1 $easing-standard;
+    text-decoration: underline;
   }
 }
 
