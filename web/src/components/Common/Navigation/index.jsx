@@ -21,7 +21,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         </SmartLink>
         <Contact
           trigger={
-            <Link className={styles.NavLink} to="#">
+            <Link className={styles.NavLink}>
               Contact
             </Link>
           }

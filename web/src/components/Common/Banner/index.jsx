@@ -12,11 +12,11 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 const MemoImage = React.memo(Image)
 
 const Banner = ({ desktopImages, mobileImages, className }) => {
-  const isTablet = useMedia('(min-width: 760px)')
+  // const isTablet = useMedia('(min-width: 760px)')
   return (
     <div className={classNames(styles.Banner, className)}>
       <CarouselProvider
-        naturalSlideWidth={isTablet ? 1000 : 500}
+        naturalSlideWidth={600}
         naturalSlideHeight={500}
         totalSlides={desktopImages.length}
         isIntrinsicHeight
@@ -25,22 +25,21 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
         className={styles.Carousel}
       >
         <Slider className={styles.Slider}>
-          {isTablet &&
-            desktopImages.map((img, i) => (
-              <Slide key={`DesktopImage-${i}`} index={i}>
-                <div className={styles.DesktopImage}>
-                  <MemoImage image={img} ratio={1 / 4} />
-                </div>
-              </Slide>
-            ))}
-          {!isTablet &&
+          {desktopImages.map((img, i) => (
+            <Slide key={`DesktopImage-${i}`} index={i}>
+              <div className={styles.DesktopImage}>
+                <MemoImage image={img} ratio={1 / 4} />
+              </div>
+            </Slide>
+          ))}
+          {/* {!isTablet &&
             mobileImages.map((img, i) => (
               <Slide key={`MobileImage-${i}`} index={i}>
                 <div className={styles.MobileImage}>
                   <MemoImage image={img} ratio={1 / 2} />
                 </div>
               </Slide>
-            ))}
+            ))} */}
         </Slider>
       </CarouselProvider>
     </div>

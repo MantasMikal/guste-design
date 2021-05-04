@@ -11,7 +11,7 @@ const MultiImage = ({ images, skipAmount = 12, size = 'landscape', ...other }) =
   const isTouch = !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
 
   if (isTouch) {
-    return <MemoImage image={images[0]} {...other}/>
+    return <MemoImage ratio={9/16} image={images[0]} {...other}/>
   } else {
     return <Multi images={images} skipAmount={skipAmount} size={size} {...other}/>
   }

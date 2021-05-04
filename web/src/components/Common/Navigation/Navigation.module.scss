@@ -69,15 +69,6 @@
   display: none;
 }
 
-.ToggleNavButton {
-  &:hover {
-    svg path {
-      fill: $color-primary-accent;
-      stroke: $color-primary-accent;
-    }
-  }
-}
-
 // Dropdown
 
 .Dropdown {

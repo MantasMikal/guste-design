@@ -21,6 +21,7 @@
   position: relative;
   border: $border-standard;
   top: 2px;
+  margin-left: spacing(6);
 }
 
 .Banner {
@@ -37,5 +38,6 @@
   .CartButton {
     left: 2px;
     top: unset;
+    margin-left: auto;
   }
 }

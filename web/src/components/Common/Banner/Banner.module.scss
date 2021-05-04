@@ -2,8 +2,13 @@
 @import '_backline-mixins';
 
 .Banner {
+  display: none;
   position: relative;
   border: $border-standard;
+
+  @include mq($breakpoint-tablet) {
+    display: block;
+  }
 }
 
 // .DesktopImage {

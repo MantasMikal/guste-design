@@ -14,7 +14,7 @@ import ButtonStandard from 'Primitive/ButtonStandard'
 const Footer = ({ social, logo, siteTitle }) => {
   return (
     <Container as="footer" gutter className={styles.Footer}>
-      <Type size="base" className={styles.CopyRight}>
+      <Type size="small" className={styles.CopyRight}>
         © {new Date().getFullYear()} GUSTÉ.DESIGN. {' '}
         <span>All rights reserved </span>
         <br />
