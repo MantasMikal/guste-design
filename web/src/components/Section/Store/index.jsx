@@ -45,7 +45,9 @@ const Store = ({ products, page }) => {
       <div className={styles.Header}>
         <PageTitle title="Store" />
         <div className={styles.FloatingControls}>
-          <CartButton className={styles.CartButton} />
+          <div className={styles.Cart}>
+            <CartButton className={styles.CartButton} />
+          </div>
           <CategoryPicker
             className={styles.CategoryPicker}
             categories={allCategories}

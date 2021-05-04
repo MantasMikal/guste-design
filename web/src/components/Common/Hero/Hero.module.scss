@@ -17,6 +17,7 @@
   position: relative;
   @include mq($breakpoint-tablet) {
     height: 85vh;
+    top: -25px;
   }
 }
 
@@ -57,7 +58,7 @@ button.Restart  {
 .Instructions {
   text-align: right;
   padding-right: spacing(1);
-  min-height: 20px;
+  height: 20px;
 }
 
 .Tools {

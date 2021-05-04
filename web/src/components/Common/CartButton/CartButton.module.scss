@@ -29,4 +29,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  animation: scaleIn $duration-standard $easing-standard forwards;
+}
+
+@keyframes scaleIn {
+  0%{
+    transform: scale(3);
+  }
+
+  100%{
+    transform: scale(1);
+  }
 }

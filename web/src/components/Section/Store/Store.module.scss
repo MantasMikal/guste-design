@@ -18,10 +18,14 @@
 }
 
 .CartButton {
-  position: relative;
   border: $border-standard;
-  top: 2px;
-  margin-left: spacing(6);
+}
+
+.Cart {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  top: spacing(0.5)
 }
 
 .Banner {
@@ -35,7 +39,7 @@
     top: spacing(7.5);
   }
 
-  .CartButton {
+  .Cart {
     left: 2px;
     top: unset;
     margin-left: auto;

@@ -8,12 +8,12 @@
   font-size: inherit;
   background-color: $color-common-white;
   transition: all $duration-standard $easing-standard;
-  padding: spacing(1.5) - 1 spacing(2) - 1;
+  padding: spacing(1) - 2 spacing(1) - 2;
   color: inherit;
   line-height: spacing(3);
-  border: 1px solid $color-common-grey75;
+  border: $border-standard;
   background-clip: padding-box;
-  border-radius: $radius-small;
+  border-radius: 0;
 
   // &::placeholder {}
 
@@ -27,7 +27,7 @@
   }
 
   &:focus {
-    border-color: $color-primary-red;
+    border-color: $color-primary-accent;
     outline: 0;
   }
 

@@ -48,28 +48,28 @@ const Contact = ({ onClose, open }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <HiOutlineMail size="2em" />
+                  <HiOutlineMail size="2.5em" />
                 </SmartLink>
                 <SmartLink
                   href="https://www.instagram.com/guste.design"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GrInstagram size="1.5em" />
+                  <GrInstagram size="2em" />
                 </SmartLink>
                 <SmartLink
                   href="https://www.behance.net/GusteDesign"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <SiBehance size="2em" />
+                  <SiBehance size="2.5em" />
                 </SmartLink>
                 <SmartLink
                   href="https://www.linkedin.com/in/guste-vasil/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaLinkedinIn size="1.7em" />
+                  <FaLinkedinIn size="2em" />
                 </SmartLink>
               </div>
             </div>

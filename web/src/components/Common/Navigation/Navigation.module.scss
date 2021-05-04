@@ -35,7 +35,8 @@
   color: $color-primary-black;
   font-weight: 600;
   padding: spacing(1) spacing(1);
-
+  letter-spacing: 1px;
+  
   &:hover,
   &:focus {
     transition: 0.1 $easing-standard;

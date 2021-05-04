@@ -38,6 +38,24 @@ div.Description {
   padding: spacing(2) 0;
 }
 
+.QuantityControl {
+  display: flex;
+  input {
+    min-width: 50px;
+  }
+
+  button {
+    border: $border-standard;
+
+    &:first-child {
+      margin-right: spacing(0.5);
+    }
+    &:last-child {
+      margin-left: spacing(0.5);
+    }
+  }
+}
+
 @include mq($breakpoint-tablet) {
   .ProductDetails {
     display: flex;

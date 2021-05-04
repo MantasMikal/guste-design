@@ -108,7 +108,7 @@
 }
 
 .small {
-  font-size: spacing(1.5);
+  font-size: spacing(1.7);
   line-height: spacing(2);
   @include mq($breakpoint-tablet) {
     font-size: spacing(2);

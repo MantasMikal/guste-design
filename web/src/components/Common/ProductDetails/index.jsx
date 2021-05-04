@@ -12,6 +12,9 @@ import Type from 'Primitive/Type'
 import Stack from 'Primitive/Stack'
 import Prose from 'Primitive/Prose'
 import ButtonStandard from 'Primitive/ButtonStandard'
+import TextControl from 'Primitive/TextControl'
+import IconButton from 'Primitive/IconButton'
+import { HiOutlineMinus, HiOutlinePlus } from 'react-icons/hi'
 
 const ProductDetails = ({ product, className }) => {
   const {
@@ -148,7 +151,18 @@ const ProductDetails = ({ product, className }) => {
             <Type as="label" size="small" htmlFor="Quantity">
               Quantity
             </Type>
-            <SelectControl onChange={handleQuantityChange} name={'Quantity'}>
+            <div className={styles.QuantityControl}>
+              <IconButton onClick={() =>setQuantity(quantity > 1 ? quantity - 1 : 1)} customIcon={<HiOutlineMinus />} a11Text="-1" />
+              <TextControl
+                name="quantity"
+                defaultValue={quantity}
+                type="text"
+                onChange={handleQuantityChange}
+                value={quantity}
+              />
+              <IconButton onClick={() => setQuantity(quantity + 1)} customIcon={<HiOutlinePlus />} a11Text="+1" />
+            </div>
+            {/* <SelectControl onChange={handleQuantityChange} name={'Quantity'}>
               {Array(5)
                 .fill()
                 .map((_, i) => (
@@ -160,7 +174,7 @@ const ProductDetails = ({ product, className }) => {
                     {i + 1}
                   </option>
                 ))}
-            </SelectControl>
+            </SelectControl> */}
           </div>
         )}
         <ButtonStandard
