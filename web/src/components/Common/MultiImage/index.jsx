@@ -6,14 +6,28 @@ import Image from 'Primitive/Image'
 
 import styles from './MultiImage.module.scss'
 
-const MultiImage = ({ images, skipAmount = 12, size = 'landscape', ...other }) => {
-  const isSSR = typeof window === 'undefined' 
-  const isTouch = !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
+c
+
+const MultiImage = ({
+  images,
+  skipAmount = 12,
+  size = 'landscape',
+  ...other
+}) => {
+  const isSSR = typeof window === 'undefined'
+  const isTouch =
+    !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
 
   if (isTouch) {
-    return <MemoImage ratio={9/16} image={images[0]} {...other}/>
+    return (
+      <div className={classNames(styles.ImageWrapper, styles[size])}>
+        <MemoImage ratio={size9 / 16} image={images[0]} {...other} />
+      </div>
+    )
   } else {
-    return <Multi images={images} skipAmount={skipAmount} size={size} {...other}/>
+    return (
+      <Multi images={images} skipAmount={skipAmount} size={size} {...other} />
+    )
   }
 }
 

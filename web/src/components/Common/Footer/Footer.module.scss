@@ -5,13 +5,11 @@
   padding-top: spacing(2);
   padding-bottom: spacing(2);
   border: $border-standard;
-  position: relative;
-  // display: flex;
-  // align-content: center;
-  // justify-content: center;
-  // flex-direction: column;
-  overflow: hidden;
   text-align: center;
   color: $color-primary-black;
-  transition: $duration-shortest;
+}
+
+.Mantas {
+  display: block;
+  margin-top: spacing(0.5);
 }

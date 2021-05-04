@@ -17,7 +17,7 @@ const Footer = ({ social, logo, siteTitle }) => {
       <Type size="small" className={styles.CopyRight}>
         © {new Date().getFullYear()} GUSTÉ.DESIGN {' '}
         <br />
-        <span>
+        <span className={styles.Mantas}>
           Crafted by{' '}
           <SmartLink href="https://github.com/MantasMikal" target="__blank">
             Mantas
