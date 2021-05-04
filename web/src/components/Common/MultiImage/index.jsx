@@ -6,6 +6,12 @@ import Image from 'Primitive/Image'
 
 import styles from './MultiImage.module.scss'
 
+const sizeMap = {
+  'portrait': 3/1,
+  'square': 1,
+  'landscape': 9/16
+}
+
 const MultiImage = ({
   images,
   skipAmount = 12,
@@ -20,7 +26,7 @@ const MultiImage = ({
     return <MemoImage image={images[0]} {...other} />
   } else {
     return (
-      <Multi images={images} skipAmount={skipAmount} size={size} {...other} />
+      <Multi images={images} skipAmount={skipAmount} ratio={sizeMap[size]} {...other} />
     )
   }
 }
