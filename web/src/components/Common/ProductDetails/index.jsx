@@ -162,19 +162,6 @@ const ProductDetails = ({ product, className }) => {
               />
               <IconButton onClick={() => setQuantity(quantity + 1)} customIcon={<HiOutlinePlus />} a11Text="+1" />
             </div>
-            {/* <SelectControl onChange={handleQuantityChange} name={'Quantity'}>
-              {Array(5)
-                .fill()
-                .map((_, i) => (
-                  <option
-                    value={i + 1}
-                    key={`Quantity-${i + 1}`}
-                    className={styles.Option}
-                  >
-                    {i + 1}
-                  </option>
-                ))}
-            </SelectControl> */}
           </div>
         )}
         <ButtonStandard

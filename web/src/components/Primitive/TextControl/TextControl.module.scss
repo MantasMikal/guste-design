@@ -20,14 +20,7 @@
   &:hover,
   &:focus {
     transition-duration: $duration-shortest;
-  }
-
-  &:hover {
-    border-color: $color-common-grey50;
-  }
-
-  &:focus {
-    border-color: $color-primary-accent;
+    background-color: $color-primary-accent;
     outline: 0;
   }
 

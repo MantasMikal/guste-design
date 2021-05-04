@@ -25,7 +25,7 @@
 
 .Quantity {
   max-width: 130px;
-  margin-bottom: spacing(3);
+  margin-bottom: spacing(1);
 }
 
 button.BuyButton {
@@ -40,12 +40,21 @@ div.Description {
 
 .QuantityControl {
   display: flex;
+  align-items: center;
+
   input {
-    min-width: 50px;
+    min-width: 40px;
   }
 
   button {
     border: $border-standard;
+    max-height: 40px;
+    max-width: 40px;
+  
+    &:hover,
+    &:hover {
+      background-color: $color-primary-accent;
+    }
 
     &:first-child {
       margin-right: spacing(0.5);
