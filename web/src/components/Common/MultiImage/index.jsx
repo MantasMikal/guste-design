@@ -6,8 +6,6 @@ import Image from 'Primitive/Image'
 
 import styles from './MultiImage.module.scss'
 
-c
-
 const MultiImage = ({
   images,
   skipAmount = 12,
@@ -21,7 +19,7 @@ const MultiImage = ({
   if (isTouch) {
     return (
       <div className={classNames(styles.ImageWrapper, styles[size])}>
-        <MemoImage ratio={size9 / 16} image={images[0]} {...other} />
+        <MemoImage image={images[0]} {...other} />
       </div>
     )
   } else {
