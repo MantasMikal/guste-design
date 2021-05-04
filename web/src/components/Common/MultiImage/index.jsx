@@ -18,7 +18,7 @@ const MultiImage = ({
 
   if (isTouch) {
     return (
-      <div className={classNames(styles.ImageWrapper, styles[size])}>
+      <div className={classNames(styles.MultiImage, styles[size])}>
         <MemoImage image={images[0]} {...other} />
       </div>
     )
