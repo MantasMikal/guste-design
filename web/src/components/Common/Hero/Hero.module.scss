@@ -32,7 +32,6 @@
   @media (hover: none) {
     display: none;
   }
-
 }
 
 button.Restart  {
@@ -55,10 +54,15 @@ button.Restart  {
   }
 }
 
+.Instructions {
+  text-align: right;
+  padding-right: spacing(1);
+  min-height: 20px;
+}
+
 .Tools {
   display: flex;
   justify-content: flex-end;
-  
 }
 
 .ColorPalette {

@@ -15,8 +15,7 @@ const Footer = ({ social, logo, siteTitle }) => {
   return (
     <Container as="footer" gutter className={styles.Footer}>
       <Type size="small" className={styles.CopyRight}>
-        © {new Date().getFullYear()} GUSTÉ.DESIGN. {' '}
-        <span>All rights reserved </span>
+        © {new Date().getFullYear()} GUSTÉ.DESIGN {' '}
         <br />
         <span>
           Crafted by{' '}
