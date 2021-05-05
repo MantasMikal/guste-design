@@ -110,8 +110,8 @@ module.exports = {
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-offline'
-
+    'gatsby-plugin-offline',
+    'gatsby-plugin-preact'
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
     //   options: {

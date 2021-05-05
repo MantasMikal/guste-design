@@ -1,5 +1,5 @@
 import React from 'react'
-import { string } from 'prop-types'
+import { object, string } from 'prop-types'
 import classNames from 'classnames'
 
 import Type from 'Primitive/Type'
@@ -14,11 +14,11 @@ import styles from './Video.module.scss'
  * Video embed component wrapper
  */
 
-const Video = ({ videoType, videoId, caption, className, ...other }) => {
+const Video = ({ videoType, videoId, caption, className, style, ...other }) => {
   switch (videoType) {
     case 'youtube':
       return (
-        <div className={classNames(styles.Video, className)}>
+        <div className={classNames(styles.Video, className)} style={style}>
           <ResponsiveMedia ratio={9 / 16}>
             <YouTubeEmbed
               {...other}
@@ -37,7 +37,7 @@ const Video = ({ videoType, videoId, caption, className, ...other }) => {
 
     case 'vimeo':
       return (
-        <div className={classNames(styles.Video, className)}>
+        <div className={classNames(styles.Video, className)} style={style}>
           <ResponsiveMedia ratio={9 / 16}>
             <VimeoEmbed
               {...other}
@@ -63,6 +63,7 @@ Video.propTypes = {
   videoType: string,
   videoId: string,
   caption: string,
+  style: object,
   alt: string
 }
 

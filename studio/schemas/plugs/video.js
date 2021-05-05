@@ -50,6 +50,16 @@ export default {
         isHighlighted: true,
       },
     },
+    {
+      name: "border",
+      title: "Border",
+      type: "boolean",
+      description:
+        "Adds border around the image",
+      options: {
+        isHighlighted: true,
+      },
+    },
   ],
   preview: {
     prepare({ title = "Video" }) {
