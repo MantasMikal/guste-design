@@ -152,7 +152,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 // Removes Mini-css errors
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-  if (stage === 'develop' || stage === 'build-html') {
+  if (stage === 'develop' || stage === 'build-javascript') {
     const config = getConfig()
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === 'MiniCssExtractPlugin'
