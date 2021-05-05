@@ -23,8 +23,8 @@
 
 .Cursor {
   position: absolute;
-  width: spacing(1.4);
-  height: spacing(1.4);
+  width: spacing(1.5);
+  height: spacing(1.5);
   border: $border-standard;
   border-radius: 50%;
   z-index: 100;
@@ -35,8 +35,18 @@
   }
 }
 
-button.Restart  {
-  padding: 0 spacing(0.5);
+.Tooltip {
+  display: none;
+  position: absolute;
+  bottom: spacing(-2.5);
+  width: 100px;
+  z-index: 100;
+}
+
+button.Restart,
+button.Clear {
+  position: relative;
+  padding: 0 spacing(0.5) 0 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,14 +54,34 @@ button.Restart  {
   font-size: 0.8em;
   margin-right: spacing(0.2);
 
-  @include mq($breakpoint-mobileLarge) {
+  @include mq($breakpoint-mobileLarge + 8) {
     font-size: 1.1em;
     margin-right: 0;
   }
 
+  &:hover {
+    .Tooltip {
+      display: block;
+    }
+  }
+}
+
+button.Restart  {
   &:hover,
   &:focus {
-    animation: spin 0.2s forwards $easing-standard;
+    svg {
+      animation: spin 0.2s forwards $easing-standard;
+    }
+  }
+}
+
+button.Clear {
+  &:hover,
+  &:focus {
+    svg {
+      transform: scale(1.1);
+      transition: 0.2s $easing-standard;
+    }
   }
 }
 

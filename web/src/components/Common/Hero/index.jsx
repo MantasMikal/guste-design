@@ -2,11 +2,12 @@ import React, { useState, useCallback } from 'react'
 import { string } from 'prop-types'
 import { useSpring, to } from 'react-spring'
 import { VscDebugRestart } from 'react-icons/vsc'
+import {GrClear} from 'react-icons/gr'
 import useLocalStorage from 'hooks/useLocalStorage'
 import Container from 'Primitive/Container'
 import GugisHead from 'Common/GugisHead'
 import ColorPalette from 'Common/ColorPalette'
-import { defaultColors } from 'Common/GugisHead/defaultColors'
+import { defaultColors, clearedColors } from 'Common/GugisHead/defaultColors'
 
 import styles from './Hero.module.scss'
 import ButtonBase from 'Primitive/ButtonBase'
@@ -65,6 +66,10 @@ const Hero = () => {
     setPartColors(defaultColors)
   }
 
+  const handleClear = () => {
+    setPartColors(clearedColors)
+  }
+
   return (
     <div
       className={styles.Hero}
@@ -77,18 +82,26 @@ const Hero = () => {
     >
       <div
         id="cursor"
-        className={styles.Cursor}
+        id="cursor" className={styles.Cursor}
         style={{
           backgroundColor: currentColor
         }}
       />
       <div className={styles.ToolBar}>
         <div className={styles.Tools}>
+        <ButtonBase
+            className={styles.Clear}
+            onClick={() => handleClear()}
+          >
+            <GrClear size="2em" />
+            <span className={styles.Tooltip}>Clear colors</span>
+          </ButtonBase>
           <ButtonBase
             className={styles.Restart}
             onClick={() => handleRestart()}
           >
             <VscDebugRestart size="2.5em" />
+            <span className={styles.Tooltip}>Restart</span>
           </ButtonBase>
           <ColorPalette
             className={styles.ColorPalette}
