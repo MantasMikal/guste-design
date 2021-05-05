@@ -16,7 +16,7 @@
     align-items: center;
     color: $color-primary-black;
 
-    font-size: spacing(4);
+    font-size: spacing(3);
 
     &:first-child svg {
       margin-right: spacing(0.5);
@@ -28,6 +28,10 @@
     &:hover,
     &:focus {
       color: $color-primary-accent;
+    }
+
+    @include mq($breakpoint-tablet) {
+      font-size: spacing(4);
     }
   }
 }

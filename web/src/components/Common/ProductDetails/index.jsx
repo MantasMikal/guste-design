@@ -156,9 +156,11 @@ const ProductDetails = ({ product, className }) => {
               <TextControl
                 name="quantity"
                 defaultValue={quantity}
-                type="text"
+                type="number"
                 onChange={handleQuantityChange}
                 value={quantity}
+                min={1}
+                max={10}
               />
               <IconButton onClick={() => setQuantity(quantity + 1)} customIcon={<HiOutlinePlus />} a11Text="+1" />
             </div>

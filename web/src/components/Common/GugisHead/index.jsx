@@ -1,17 +1,25 @@
 import classNames from 'classnames'
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { animated as a } from 'react-spring'
 import { defaultColors } from './defaultColors'
 
 import styles from './GugisHead.module.scss'
 
-const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange, ...props }) => {
+const GugisHead = ({
+  pupilInterp,
+  partColors = defaultColors,
+  handleColorChange,
+  ...props
+}) => {
   const [isWide, setWide] = useState(false)
   const [linesAnimation, setlinesAnimation] = useState(false)
 
   return (
     <svg
-      className={classNames(styles.GugisHead, linesAnimation && styles.linesAnimation)}
+      className={classNames(
+        styles.GugisHead,
+        linesAnimation && styles.linesAnimation
+      )}
       viewBox="0 0 1500 1500"
       {...props}
     >
@@ -63,9 +71,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
             className={['head__st0', styles.RightLineOne, styles.Line].join(' ')}
           /> */}
       <g id="head__EARS">
-        <g
-          onClick={() => handleColorChange('ear1')}
-        >
+        <g onClick={() => handleColorChange('ear1')}>
           <path
             fill={partColors.ear1}
             d="M306.1 777.5c17 96 31 188.6 41.5 277.4-9.9 33.9-65 33.9-72.1-9.2.2-83.3-32.7-126.2-54.2-210.7-19.2-78.5 40.6-117 84.7-58l.1.5z"
@@ -107,10 +113,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__NOSE_MIDDLE"
-        onClick={() => handleColorChange('nose')}
-      >
+      <g id="head__NOSE_MIDDLE" onClick={() => handleColorChange('nose')}>
         <g>
           <path
             fill={partColors.nose}
@@ -134,10 +137,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
         </g>
       </g>
       <g id="head__HEART_NOSE">
-        <g
-          id="head__XMLID_24_"
-          onClick={() => handleColorChange('noseMid')}
-        >
+        <g id="head__XMLID_24_" onClick={() => handleColorChange('noseMid')}>
           <path
             fill={partColors.noseMid}
             d="M803.2 946.6c7.4 7.9 9 19.5 8.4 29.9-1.1 17.7-8.2 35.2-18.3 49.6-9.3 13.3-22.5 25.7-38.5 28.1-4 .6-8.1.6-12.4-.2-11.5-2.1-21-10.5-28.6-18.9-11.8-13.2-20.2-29.9-23.8-47.2-2.8-13.5-3.3-30.6 6.8-41.4 3.5-2.8 7.2-5.4 11.3-7.3 7.7-3.5 15.8-3.6 22.9 1.2 3.8 2.5 7 5.8 10.1 9.2 2.2 2.4 4.6 6.8 8.2 7.3 3.5.5 6.3-3.6 8.4-5.8 5.2-5.5 10.4-11.7 18-13.8 10.1-2.7 20 3.2 27.5 9.3z"
@@ -148,10 +148,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__RIGHT_EYE_CONTUR"
-        onClick={() => handleColorChange('eyeR')}
-      >
+      <g id="head__RIGHT_EYE_CONTUR" onClick={() => handleColorChange('eyeR')}>
         <g>
           <path
             fill={partColors.eyeR}
@@ -163,10 +160,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__LEFT_EYE_CONTUR"
-        onClick={() => handleColorChange('eyeL')}
-      >
+      <g id="head__LEFT_EYE_CONTUR" onClick={() => handleColorChange('eyeL')}>
         <g>
           <path
             fill={partColors.eyeL}
@@ -197,27 +191,19 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
       <a.circle
         cx={521.7}
         cy={802.9}
-        r={isWide ? 19 : 15}
+        r={isWide ? 20 : 15}
         onClick={() => setWide(!isWide)}
         transform={pupilInterp}
-        
-        className={classNames(
-          'stroke',
-          isWide ? styles.eyeWide : styles.eye,
-        )}
+        className={classNames('stroke', styles.eye)}
         id="head__RIGHT_EYE_PUPIL"
       />
       <a.circle
         cx={978.2}
         cy={802.4}
         onClick={() => setWide(!isWide)}
-        r={isWide ? 19 : 15}
+        r={isWide ? 20 : 15}
         transform={pupilInterp}
-        className={[
-          'stroke',
-          isWide ? styles.eyeWide : styles.eye,
-          'EYE'
-        ].join(' ')}
+        className={classNames('stroke', styles.eye)}
         id="head__RGHT_EYE_PUPIL"
       />
       <g id="head__TOP_SECOND_RIGHT_EYE">
@@ -318,19 +304,13 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__LEFT_CIRCLE"
-        onClick={() => handleColorChange('circL')}
-      >
+      <g id="head__LEFT_CIRCLE" onClick={() => handleColorChange('circL')}>
         <g id="head__XMLID_32_">
           <circle fill={partColors.circL} cx={578.8} cy={983.4} r={40.8} />
           <circle className="head__st4" cx={578.8} cy={983.4} r={40.8} />
         </g>
       </g>
-      <g
-        id="head__RIGHT_CIRCLE"
-        onClick={() => handleColorChange('circR')}
-      >
+      <g id="head__RIGHT_CIRCLE" onClick={() => handleColorChange('circR')}>
         <g id="head__XMLID_17_">
           <path
             fill={partColors.circR}
@@ -342,10 +322,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__RIGHT_CHEAK"
-        onClick={() => handleColorChange('cheekR')}
-      >
+      <g id="head__RIGHT_CHEAK" onClick={() => handleColorChange('cheekR')}>
         <g id="head__XMLID_29_">
           <path
             fill={partColors.cheekR}
@@ -357,10 +334,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__LEFT_CHEAK"
-        onClick={() => handleColorChange('cheekL')}
-      >
+      <g id="head__LEFT_CHEAK" onClick={() => handleColorChange('cheekL')}>
         <g id="head__XMLID_19_">
           <path
             fill={partColors.cheekL}
@@ -372,10 +346,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__BOTTOM_CIRCLE"
-        onClick={() => handleColorChange('circBot')}
-      >
+      <g id="head__BOTTOM_CIRCLE" onClick={() => handleColorChange('circBot')}>
         <g id="head__XMLID_26_">
           <path
             fill={partColors.circBot}
@@ -391,10 +362,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__BOTTOM_LIPS"
-        onClick={() => handleColorChange('lipsBot')}
-      >
+      <g id="head__BOTTOM_LIPS" onClick={() => handleColorChange('lipsBot')}>
         <g id="head__XMLID_22_">
           <path
             fill={partColors.lipsBot}
@@ -406,10 +374,7 @@ const GugisHead = ({ pupilInterp, partColors = defaultColors, handleColorChange,
           />
         </g>
       </g>
-      <g
-        id="head__TOP_LIPS"
-        onClick={() => handleColorChange('lipsTop')}
-      >
+      <g id="head__TOP_LIPS" onClick={() => handleColorChange('lipsTop')}>
         <g id="head__XMLID_20_">
           <path
             fill={partColors.lipsTop}

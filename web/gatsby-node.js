@@ -7,6 +7,16 @@ async function createProjectPages(graphql, actions, reporter) {
     {
       projects: allSanityProject(filter: { slug: { current: { ne: null } } }) {
         edges {
+          next {
+            slug {
+              current
+            }
+          }
+          previous {
+            slug {
+              current
+            }
+          }
           node {
             id
             publishedAt
@@ -22,27 +32,25 @@ async function createProjectPages(graphql, actions, reporter) {
   if (result.errors) throw result.errors
   const projectEdges = (result.data.projects || {}).edges || []
 
-  projectEdges.forEach((edge, index) => {
+  projectEdges.forEach((edge) => {
     const { id, slug = {} } = edge.node
-    const path = `/projects/${slug.current}/`
+    const base = `/projects/`
+    const path = `${base}${slug.current}/`
     const absolutePath = siteUrl + path
+
     const prev = edge.previous
-      ? `/projects/${edge.previous.slug.current}/`
-      : `/projects/${projectEdges[projectEdges.length - 1].node.slug.current}`
+      ? `${edge.previous.slug.current}`
+      : `${projectEdges[projectEdges.length - 1].node.slug.current}`
     const next = edge.next
-      ? `/projects/${edge.next.slug.current}/`
-      : `/projects/${projectEdges[0].node.slug.current}`
-    const nextTitle = edge.next ? edge.next.title : null
-    const prevTitle = edge.previous ? edge.previous.title : null
+      ? `${edge.next.slug.current}`
+      : `${projectEdges[0].node.slug.current}`
 
     const nextProject = {
-      url: next,
-      title: nextTitle
+      url: `${base}${next}`
     }
 
     const prevProject = {
-      url: prev,
-      title: prevTitle
+      url: `${base}${prev}`
     }
 
     reporter.info(`Creating project page: ${path}`)
@@ -144,7 +152,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 // Removes Mini-css errors
 exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-  if (stage === 'develop') {
+  if (stage === 'develop' || stage === 'build-html') {
     const config = getConfig()
     const miniCssExtractPlugin = config.plugins.find(
       (plugin) => plugin.constructor.name === 'MiniCssExtractPlugin'
