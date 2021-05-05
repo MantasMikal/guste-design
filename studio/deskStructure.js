@@ -34,15 +34,15 @@ export default () =>
             .documentId("siteSettings")
         )
         .icon(MdSettings),
-      S.listItem()
-        .title("Company Info")
-        .child(
-          S.editor()
-            .id("companyInfo")
-            .schemaType("companyInfo")
-            .documentId("companyInfo")
-        )
-        .icon(MdBusiness),
+      // S.listItem()
+      //   .title("Company Info")
+      //   .child(
+      //     S.editor()
+      //       .id("companyInfo")
+      //       .schemaType("companyInfo")
+      //       .documentId("companyInfo")
+      //   )
+      //   .icon(MdBusiness),
       S.listItem()
         .title("Pages")
         .child(
