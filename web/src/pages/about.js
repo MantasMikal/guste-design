@@ -2,7 +2,7 @@ import React from 'react'
 
 import { graphql, useStaticQuery } from 'gatsby'
 import About from 'Section/About'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import { mapEdgesToNodes } from 'libs/helpers'
 
@@ -46,7 +46,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <SEO title="About" slug="/about" />
+      <Seo title="About" slug="/about" />
       <About
         {...page}
         instagramPosts={instagram && mapEdgesToNodes(instagram)}

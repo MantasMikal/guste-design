@@ -8,7 +8,7 @@ import Type from 'Primitive/Type'
 import styles from './Cart.module.scss'
 import ButtonStandard from 'Primitive/ButtonStandard'
 
-const Cart = ({}) => {
+const Cart = () => {
   const {
     store: { checkout }
   } = useContext(StoreContext)

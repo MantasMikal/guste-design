@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { VscTrash } from 'react-icons/vsc'
-import PropTypes from 'prop-types'
+import { object } from 'prop-types'
 import StoreContext from 'Context/StoreContext'
 import { getCurrencySymbol } from 'libs/helpers'
 import IconButton from 'Primitive/IconButton'
@@ -71,6 +71,8 @@ const LineItem = ({ item }) => {
   )
 }
 
-LineItem.propTypes = {}
+LineItem.propTypes = {
+  item: object.isRequired
+}
 
 export default LineItem

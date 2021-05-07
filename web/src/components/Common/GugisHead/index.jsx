@@ -12,14 +12,10 @@ const GugisHead = ({
   ...props
 }) => {
   const [isWide, setWide] = useState(false)
-  const [linesAnimation, setlinesAnimation] = useState(false)
 
   return (
     <svg
-      className={classNames(
-        styles.GugisHead,
-        linesAnimation && styles.linesAnimation
-      )}
+      className={classNames(styles.GugisHead)}
       viewBox="0 0 1500 1500"
       {...props}
     >
@@ -28,48 +24,6 @@ const GugisHead = ({
           '.head__st4{fill:none}.head__st4,.stroke{stroke:#000;stroke-width:17.1304;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}'
         }
       </style>
-      {/* <path
-            d='M58.5 1085.8l91.4-90.1'
-            id='head__BOTTOM_LEFT_LINE'
-            className={['head__st0', styles.LeftLineOne, styles.Line].join(' ')}
-          />
-          <path
-            fill='none'
-            stroke='#000'
-            strokeWidth={16.017}
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeMiterlimit={10}
-            d='M149.9 898.2H54'
-            id='head__MIDDLE_LEFT_LINE'
-            className={[styles.LeftLineTwo, styles.Line].join(' ')}
-          />
-          <path
-            d='M58.5 710.5l91.4 90.2'
-            id='head__TOP_LEFT_LINE'
-            className={['head__st0', styles.LeftLineThree, styles.Line].join(' ')}
-          />
-          <path
-            d='M1441.5 1089.5l-91.4-90.2'
-            id='head__BOTTOM_RIGHT_LINE'
-            className={['head__st0', styles.RightLineThree, styles.Line].join(' ')}
-          /> */}
-      {/* <path
-            fill='none'
-            stroke='#000'
-            strokeWidth={15.725}
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeMiterlimit={10}
-            d='M1350.1 901.8h96'
-            id='head__MIDDLE_RIGHT_LINE'
-            className={['head__st0', styles.LeftLineTwo, styles.Line].join(' ')}
-          />
-          <path
-            d='M1441.5 710.5l-91.4 90.2'
-            id='head__TOP_RIGHT_LINE'
-            className={['head__st0', styles.RightLineOne, styles.Line].join(' ')}
-          /> */}
       <g id="head__EARS">
         <g onClick={() => handleColorChange('ear1')}>
           <path

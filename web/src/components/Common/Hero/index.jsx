@@ -1,8 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useCallback } from 'react'
 import { string } from 'prop-types'
 import { useSpring, to } from 'react-spring'
 import { VscDebugRestart } from 'react-icons/vsc'
-import {GrClear} from 'react-icons/gr'
+import { GrClear } from 'react-icons/gr'
 import useLocalStorage from 'hooks/useLocalStorage'
 import Container from 'Primitive/Container'
 import GugisHead from 'Common/GugisHead'
@@ -21,8 +22,7 @@ const COLORS = [
   '#CD4592',
   '#58B789',
   '#277FC3',
-  '#6164AB',
-  
+  '#6164AB'
 ]
 
 const instructionTextMap = {
@@ -39,9 +39,12 @@ const Hero = () => {
     ...defaultColors
   })
 
-  const onMove = useCallback(({ clientX: x, clientY: y }) => {
-    set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] })
-  }, [])
+  const onMove = useCallback(
+    ({ clientX: x, clientY: y }) => {
+      set({ xy: [x - window.innerWidth / 2, y - window.innerHeight / 2] })
+    },
+    [set]
+  )
 
   const pupilInterp = to([st, xy], (o, xy) => {
     return `translate(${xy[0] / 25},${xy[1] / 20 + o / 8})`
@@ -82,17 +85,14 @@ const Hero = () => {
     >
       <div
         id="cursor"
-        id="cursor" className={styles.Cursor}
+        className={styles.Cursor}
         style={{
           backgroundColor: currentColor
         }}
       />
       <div className={styles.ToolBar}>
         <div className={styles.Tools}>
-        <ButtonBase
-            className={styles.Clear}
-            onClick={() => handleClear()}
-          >
+          <ButtonBase className={styles.Clear} onClick={() => handleClear()}>
             <GrClear size="2em" />
             <span className={styles.Tooltip}>Clear colors</span>
           </ButtonBase>
@@ -110,7 +110,7 @@ const Hero = () => {
             activeColor={currentColor}
           />
         </div>
-        <Type size='base' className={styles.Instructions}>
+        <Type size="base" className={styles.Instructions}>
           {instructionTextMap[instructionStep]}
         </Type>
       </div>
@@ -119,7 +119,6 @@ const Hero = () => {
           <GugisHead
             pupilInterp={pupilInterp}
             partColors={partColors}
-            currentColor={currentColor}
             handleColorChange={handleColorChange}
           />
         </div>

@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
 const detailsQuery = graphql`
-  query SEOQuery {
+  query SeoQuery {
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
       openGraph {
@@ -21,7 +21,7 @@ const detailsQuery = graphql`
   }
 `
 
-function SEO({ description, lang, meta, keywords, title, image }) {
+function Seo({ description, lang, meta, keywords, title, image }) {
   return (
     <StaticQuery
       query={detailsQuery}
@@ -98,13 +98,13 @@ function SEO({ description, lang, meta, keywords, title, image }) {
   )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: 'en',
   meta: [],
   keywords: []
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.array,
@@ -112,4 +112,4 @@ SEO.propTypes = {
   title: PropTypes.string
 }
 
-export default SEO
+export default Seo

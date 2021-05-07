@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../libs/helpers'
 
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Projects from 'Section/Projects'
 
@@ -41,7 +41,7 @@ const ProjectPage = () => {
 
   return (
     <Layout>
-      <SEO title="Projects" />
+      <Seo title="Projects" />
       {projectNodes && <Projects projects={projectNodes} />}
     </Layout>
   )

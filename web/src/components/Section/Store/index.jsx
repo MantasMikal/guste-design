@@ -11,17 +11,17 @@ import CartButton from 'Common/CartButton'
 import Banner from 'Common/Banner'
 
 import styles from './Store.module.scss'
-
-const MemoProductPreview = React.memo(ProductPreview)
+import { useMemo } from 'react'
 
 const Store = ({ products, page }) => {
   const { banner } = page
-  const allCategories = ['All', ...getAllProductCategories(products)]
+  const allCategories = useMemo(() => ['All', ...getAllProductCategories(products)], [products])
   const [activeCategory, setActiveCategory] = useState(allCategories[0])
   const [queryCat, setQueryCat] = useQueryParam('category', StringParam)
+  
   useEffect(() => {
     setActiveCategory(queryCat || allCategories[0])
-  })
+  }, [queryCat, allCategories])
 
   const filteredProducts =
     activeCategory === 'All'
@@ -60,7 +60,7 @@ const Store = ({ products, page }) => {
       <GridLayout
         customGridClass={styles.Grid}
         items={filteredProducts.map((product) => (
-          <MemoProductPreview
+          <ProductPreview
             key={product.id}
             className={styles.ProductPreview}
             {...product}
@@ -99,6 +99,7 @@ const filterByCategory = (products, category) => {
  * @returns
  */
 const getAllProductCategories = (products) => {
+  console.log("🚀 ~ file: index.jsx ~ line 101 ~ getAllProductCategories ~ products", products)
   let categories = []
   for (let i = 0; i < products.length; i++) {
     let category = products[i].productType

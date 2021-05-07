@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { func, bool, string, object, node } from 'prop-types'
 import classnames from 'classnames'
 

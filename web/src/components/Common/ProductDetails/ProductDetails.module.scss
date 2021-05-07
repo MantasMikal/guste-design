@@ -24,8 +24,19 @@
 }
 
 .Quantity {
-  max-width: 130px;
+  min-width: 130px;
+  max-width: 150px;
   margin-bottom: spacing(1);
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
 }
 
 button.BuyButton {
@@ -50,7 +61,7 @@ div.Description {
     border: $border-standard;
     max-height: 40px;
     max-width: 40px;
-  
+
     &:hover,
     &:hover {
       background-color: $color-primary-accent;
@@ -61,6 +72,10 @@ div.Description {
     }
     &:last-child {
       margin-left: spacing(0.5);
+    }
+
+    &:disabled {
+      background-color: $color-common-grey75;
     }
   }
 }

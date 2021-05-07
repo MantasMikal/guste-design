@@ -46,7 +46,7 @@ const CartButton = ({ className }) => {
   )
 }
 
-const propTypes = {
+CartButton.propTypes = {
   className: string
 }
 

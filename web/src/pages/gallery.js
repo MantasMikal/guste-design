@@ -2,7 +2,7 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { mapEdgesToNodes } from '../libs/helpers'
 
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Gallery from 'Section/Gallery'
 
@@ -39,7 +39,7 @@ const GalleryPage = (props) => {
 
   return (
     <Layout>
-      <SEO title="Gallery" />
+      <Seo title="Gallery" />
       {galleryNodes && <Gallery posts={galleryNodes} />}
     </Layout>
   )

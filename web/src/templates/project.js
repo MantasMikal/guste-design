@@ -4,7 +4,7 @@ import Container from 'Primitive/Container'
 import GraphQLErrorList from '../components/graphql-error-list'
 import { getProjectUrl } from 'libs/helpers'
 import Project from 'Section/Project'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 
 export const query = graphql`
@@ -36,7 +36,7 @@ const ProjectTemplate = (props) => {
   return (
     <Layout>
       {project && (
-        <SEO
+        <Seo
           title={project.title}
           image={metaImage}
           slug={getProjectUrl(project.slug.current)}

@@ -21,12 +21,6 @@ const CategoryPicker = ({ categories, onClick, activeCategory, className }) => {
     wasClicked: false
   })
 
-  const handleScrollFilter = (state) => {
-    if(showFilter.wasClicked) return
-    if (state !== showFilter.show)
-      setShowFilter({ wasClicked: false, show: state })
-  }
-
   const handleCategoryClick = (cat) => {
     onClick(cat)
     setShowFilter({ show: showFilter.show, wasClicked: true })
@@ -41,6 +35,12 @@ const CategoryPicker = ({ categories, onClick, activeCategory, className }) => {
   }
 
   useEffect(() => {
+    const handleScrollFilter = (state) => {
+      if (showFilter.wasClicked) return
+      if (state !== showFilter.show)
+        setShowFilter({ wasClicked: false, show: state })
+    }
+
     const handleScroll = debounce(() => {
       const show = window.scrollY > 60
       handleScrollFilter(!show)

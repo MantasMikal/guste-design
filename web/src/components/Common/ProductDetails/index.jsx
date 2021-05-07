@@ -23,6 +23,7 @@ const ProductDetails = ({ product, className }) => {
     variants,
     descriptionHtml,
     productType,
+    maxQuantity=10,
     variants: [initialVariant],
     priceRange: { minVariantPrice }
   } = product
@@ -51,7 +52,7 @@ const ProductDetails = ({ product, className }) => {
         }
       })
     },
-    [client.product, productVariant.shopifyId, variants]
+    [client.product, productVariant.shopifyId]
   )
 
   useEffect(() => {
@@ -59,7 +60,7 @@ const ProductDetails = ({ product, className }) => {
   }, [productVariant, checkAvailability, product.shopifyId])
 
   const handleQuantityChange = ({ target }) => {
-    setQuantity(target.value)
+    setQuantity(parseInt(target.value))
   }
 
   const handleOptionChange = (optionIndex, { target }) => {
@@ -82,6 +83,9 @@ const ProductDetails = ({ product, className }) => {
     setAddedToCart(true)
     window.scrollTo(0, 0)
     addVariantToCart(productVariant.shopifyId, quantity)
+    setTimeout(() => {
+      setAddedToCart(false)
+    }, 1000);
   }
 
   /*
@@ -152,7 +156,13 @@ const ProductDetails = ({ product, className }) => {
               Quantity
             </Type>
             <div className={styles.QuantityControl}>
-              <IconButton onClick={() =>setQuantity(quantity > 1 ? quantity - 1 : 1)} customIcon={<HiOutlineMinus />} a11Text="-1" />
+              <IconButton
+                onClick={() =>
+                  setQuantity(parseInt(quantity > 1 ? quantity - 1 : 1))
+                }
+                customIcon={<HiOutlineMinus />}
+                a11Text="-1"
+              />
               <TextControl
                 name="quantity"
                 defaultValue={quantity}
@@ -162,7 +172,12 @@ const ProductDetails = ({ product, className }) => {
                 min={1}
                 max={10}
               />
-              <IconButton onClick={() => setQuantity(quantity + 1)} customIcon={<HiOutlinePlus />} a11Text="+1" />
+              <IconButton
+                onClick={() => setQuantity(parseInt(quantity + 1))}
+                customIcon={<HiOutlinePlus />}
+                a11Text="+1"
+                disabled={quantity >= maxQuantity}
+              />
             </div>
           </div>
         )}

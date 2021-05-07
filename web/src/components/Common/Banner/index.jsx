@@ -2,8 +2,6 @@ import React from 'react'
 import { array, string } from 'prop-types'
 import classNames from 'classnames'
 import { CarouselProvider, Slider, Slide } from 'pure-react-carousel'
-
-import useMedia from 'hooks/useMedia'
 import Image from 'Primitive/Image'
 
 import styles from './Banner.module.scss'
@@ -11,8 +9,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 
 const MemoImage = React.memo(Image)
 
-const Banner = ({ desktopImages, mobileImages, className }) => {
-  // const isTablet = useMedia('(min-width: 760px)')
+const Banner = ({ desktopImages, className }) => {
   return (
     <div className={classNames(styles.Banner, className)}>
       <CarouselProvider
@@ -32,14 +29,6 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
               </div>
             </Slide>
           ))}
-          {/* {!isTablet &&
-            mobileImages.map((img, i) => (
-              <Slide key={`MobileImage-${i}`} index={i}>
-                <div className={styles.MobileImage}>
-                  <MemoImage image={img} ratio={1 / 2} />
-                </div>
-              </Slide>
-            ))} */}
         </Slider>
       </CarouselProvider>
     </div>

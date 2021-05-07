@@ -9,6 +9,7 @@ const ColorPalette = ({ colors, onColorClick, activeColor, className}) => {
     <div className={classNames(styles.ColorPalette, className)}>
       {colors.map((color, i) => (
         <button
+          type="button" aria-label="Select color"
           onClick={() => onColorClick(color)}
           style={{ backgroundColor: `${color}` }}
           key={`COLOR-${i}`}

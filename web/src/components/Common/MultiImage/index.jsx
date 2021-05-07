@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+
 import React, { useState } from 'react'
 import classNames from 'classnames'
 import { array, number, oneOf } from 'prop-types'
@@ -23,7 +25,7 @@ const MultiImage = ({
     !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
 
   if (isTouch) {
-    return <MemoImage image={images[0]} ratio={sizeMap[size]} {...other} />
+    return <MemoImage className={styles.Image} image={images[0]} ratio={sizeMap[size]}  {...other} />
   } else {
     return (
       <Multi images={images} skipAmount={skipAmount} size={size}  {...other} />
@@ -44,7 +46,7 @@ const Multi = ({ images, skipAmount, size, ...other }) => {
       setMove(skipAmount)
     }
   }
-  const isActive = (i, id) => i == id || (i == 0 && i != id)
+  const isActive = (i, id) => i === id || (i === 0 && i !== id)
   return (
     <div
       className={classNames(styles.MultiImage, styles[size])}
@@ -60,7 +62,7 @@ const Multi = ({ images, skipAmount, size, ...other }) => {
             )}
             key={`MultiImage-${i}`}
           >
-            <MemoImage image={img} {...other} />
+            <MemoImage className={styles.Image} image={img} {...other} />
           </div>
         ))}
     </div>

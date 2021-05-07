@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { mapEdgesToNodes } from '../libs/helpers'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Store from 'Section/Store'
 import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
@@ -60,7 +60,7 @@ const StorePage = () => {
   return (
     <StoreContextProvider>
       <Layout>
-        <SEO title="Store" />
+        <Seo title="Store" />
         {productNodes && <Store products={productNodes} page={page}/>}
       </Layout>
     </StoreContextProvider>

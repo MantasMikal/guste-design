@@ -1,9 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from '../libs/helpers'
 
 import GraphQLErrorList from '../components/graphql-error-list'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Hero from 'Common/Hero'
 import BlockSection from 'Section/Block'
@@ -40,7 +39,7 @@ const IndexPage = (props) => {
 
   return (
     <Layout>
-      <SEO />
+      <Seo />
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
       {_rawSections &&
         _rawSections.map((section) => (

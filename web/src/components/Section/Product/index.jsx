@@ -2,7 +2,6 @@ import React from 'react'
 import { array, object } from 'prop-types'
 
 import Container from 'Primitive/Container'
-import Type from 'Primitive/Type'
 import PageTitle from 'Common/PageTitle'
 import ProductPreview from 'Common/ProductPreview'
 import ProductDetails from 'Common/ProductDetails'

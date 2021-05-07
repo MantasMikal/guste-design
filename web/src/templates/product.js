@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Product from 'Section/Product'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
 
@@ -14,7 +14,7 @@ const ProductTemplate = (props) => {
     <StoreContextProvider>
       <Layout>
         {product && (
-          <SEO
+          <Seo
             title={title}
             description={description}
             image={images[0].originalSrc}

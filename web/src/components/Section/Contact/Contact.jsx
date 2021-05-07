@@ -39,7 +39,7 @@ const Contact = ({ onClose, open }) => {
         <div className={styles.Background}>
           <div className={styles.ContactContent}>
             <div className={styles.ContactInner} ref={ref}>
-              <h2 className={styles.Title} tabIndex={1} size="titleLarge">
+              <h2 className={styles.Title} size="titleLarge">
                 Hi!
               </h2>
               <div className={styles.Social}>
