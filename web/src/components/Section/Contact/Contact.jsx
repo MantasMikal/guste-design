@@ -17,7 +17,8 @@ import styles from './Contact.module.scss'
 
 const Contact = ({ onClose, open }) => {
   const ref = useRef()
-  const handleClose = () => {
+  const handleClose = (e) => {
+    e.preventDefault()
     open && onClose && onClose()
   }
 
