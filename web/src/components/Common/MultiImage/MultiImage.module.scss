@@ -19,6 +19,11 @@
   z-index: 0;
 }
 
+.SoloImage {
+  & > div:first-child {
+    max-width: unset !important;
+  }
+}
 
 .Image {
   width: 100%;

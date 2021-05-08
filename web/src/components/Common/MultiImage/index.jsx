@@ -25,7 +25,7 @@ const MultiImage = ({
     !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
 
   if (isTouch) {
-    return <MemoImage className={styles.Image} image={images[0]} ratio={sizeMap[size]}  {...other} />
+    return <Image className={styles.SoloImage} image={images[0]} ratio={sizeMap[size]}  {...other} />
   } else {
     return (
       <Multi images={images} skipAmount={skipAmount} size={size}  {...other} />
