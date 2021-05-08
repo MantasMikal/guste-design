@@ -4,6 +4,7 @@ import { string } from 'prop-types'
 import { useSpring, to } from 'react-spring'
 import { VscDebugRestart } from 'react-icons/vsc'
 import { GrClear } from 'react-icons/gr'
+import classNames from 'classnames'
 import useLocalStorage from 'hooks/useLocalStorage'
 import Container from 'Primitive/Container'
 import GugisHead from 'Common/GugisHead'
@@ -92,12 +93,12 @@ const Hero = () => {
       />
       <div className={styles.ToolBar}>
         <div className={styles.Tools}>
-          <ButtonBase className={styles.Clear} onClick={() => handleClear()}>
+          <ButtonBase className={classNames(styles.Clear, instructionStep === 2 && styles.showIntro)} onClick={() => handleClear()}>
             <GrClear size="2em" />
             <span className={styles.Tooltip}>Clear colors</span>
           </ButtonBase>
           <ButtonBase
-            className={styles.Restart}
+            className={classNames(styles.Restart, instructionStep === 2 && styles.showIntro)}
             onClick={() => handleRestart()}
           >
             <VscDebugRestart size="2.5em" />
