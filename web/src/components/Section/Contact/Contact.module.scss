@@ -25,6 +25,7 @@
   left: 0;
   background: rgba($color-primary-black, 0.8);
   @include modal-fade-in(300);
+  pointer-events: none;
 }
 
 .ContactContent {
