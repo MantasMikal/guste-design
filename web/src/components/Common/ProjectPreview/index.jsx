@@ -15,7 +15,7 @@ const ProjectPreview = ({ slug, mainImages, title, className }) => {
       className={classNames(styles.ProjectPreview, className)}
       to={getProjectUrl(slug.current)}
     >
-      <MultiImage images={mainImages} alt={title} width={1000} layout='constrained' />
+      <MultiImage ratio={9/16} images={mainImages} alt={title} width={1000} />
       <div className={styles.Details}>
         <Type as="h3" size="title" className={styles.Title}>
           {title}

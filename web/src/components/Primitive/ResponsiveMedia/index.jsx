@@ -15,10 +15,11 @@ const formatRatio = (ratio) => {
  * Handles img, video as well as iframe for media
  * like embedded videos.
  */
-const ResponsiveMedia = ({ children, className, ratio }) => (
+const ResponsiveMedia = ({ children, className, ratio, ...other }) => (
   <div
     className={classNames(styles.ResponsiveMedia, className)}
     style={{ paddingBottom: `${formatRatio(ratio)}%` }}
+    {...other}
   >
     {children}
   </div>

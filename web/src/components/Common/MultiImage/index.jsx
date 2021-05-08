@@ -2,22 +2,17 @@
 
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import { array, number, oneOf } from 'prop-types'
+import { array, number } from 'prop-types'
 
 import Image from 'Primitive/Image'
+import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './MultiImage.module.scss'
-
-const sizeMap = {
-  'portrait': 3/1,
-  'square': 1,
-  'landscape': 9/16
-}
 
 const MultiImage = ({
   images,
   skipAmount = 12,
-  size = 'landscape',
+  ratio = 1,
   ...other
 }) => {
   const isSSR = typeof window === 'undefined'
@@ -25,15 +20,15 @@ const MultiImage = ({
     !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
 
   if (isTouch) {
-    return <Image className={styles.SoloImage} image={images[0]} ratio={sizeMap[size]}  {...other} />
+    return <Image image={images[0]} ratio={ratio}  {...other} />
   } else {
     return (
-      <Multi images={images} skipAmount={skipAmount} size={size}  {...other} />
+      <Multi images={images} skipAmount={skipAmount} ratio={ratio}  {...other} />
     )
   }
 }
 
-const Multi = ({ images, skipAmount, size, ...other }) => {
+const Multi = ({ images, skipAmount, ratio, ...other }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [move, setMove] = useState(skipAmount)
 
@@ -48,8 +43,8 @@ const Multi = ({ images, skipAmount, size, ...other }) => {
   }
   const isActive = (i, id) => i === id || (i === 0 && i !== id)
   return (
-    <div
-      className={classNames(styles.MultiImage, styles[size])}
+    <ResponsiveMedia
+      ratio={ratio}
       onMouseMove={handleHover}
     >
       {images &&
@@ -65,7 +60,7 @@ const Multi = ({ images, skipAmount, size, ...other }) => {
             <MemoImage className={styles.Image} image={img} {...other} />
           </div>
         ))}
-    </div>
+    </ResponsiveMedia>
   )
 }
 
@@ -74,7 +69,7 @@ const MemoImage = React.memo(Image)
 MultiImage.propTypes = {
   images: array.isRequired,
   skipAmount: number,
-  sizes: oneOf(['landscape', 'square', 'portrait'])
+  ratio: number
 }
 
 export default MultiImage
