@@ -107,6 +107,13 @@ module.exports = {
         }
       }
     },
+  {
+    resolve: `gatsby-plugin-nprogress`,
+    options: {
+      color: `#56b78f`,
+      showSpinner: true,
+    },
+  },
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
