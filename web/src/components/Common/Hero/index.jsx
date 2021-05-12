@@ -79,8 +79,8 @@ const Hero = () => {
       className={styles.Hero}
       onMouseMove={(e) => {
         const cursor = document && document.getElementById('cursor')
-        cursor.style.left = `${e.pageX - 16 - 3}px`
-        cursor.style.top = `${e.pageY - 70 - 5}px`
+        cursor.style.left = `${e.pageX - 15}px`
+        cursor.style.top = `${e.pageY - 67}px`
         onMove(e)
       }}
     >
