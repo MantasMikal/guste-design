@@ -26,7 +26,7 @@ const AboutPage = () => {
             node {
               caption
               media_url
-              localImage {
+              localFile {
                 childImageSharp {
                   gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
                 }

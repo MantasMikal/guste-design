@@ -4,10 +4,10 @@ import { array, object } from 'prop-types'
 import BlockContent from 'Common/BlockContent'
 import Container from 'Primitive/Container'
 import Image from 'Primitive/Image'
-
-import styles from './About.module.scss'
 import PageTitle from 'Common/PageTitle'
 import SmartLink from 'Primitive/SmartLink'
+
+import styles from './About.module.scss'
 
 /**
  * About page
@@ -35,7 +35,7 @@ const About = ({ _rawBody, _rawBio, mainImage, instagramPosts }) => {
               className={styles.InstagramPost}
               href="https://instagram.com/guste.design"
             >
-              <Image image={post} alt={post.caption} />
+              <Image image={post} ratio={1} alt={post.caption} />
             </SmartLink>
           ))}
       </div>
