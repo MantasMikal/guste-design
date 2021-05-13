@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import doge from 'ascii-doge'
 import { graphql, StaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
@@ -33,7 +34,7 @@ const LayoutContainer = (props) => {
   function handleHideNav() {
     setShowNav(false)
   }
-
+  console.log(doge.toString())
   return (
     <StaticQuery
       query={query}
