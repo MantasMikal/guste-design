@@ -12,7 +12,9 @@ Site is based on <a href='https://github.com/MantasMikal/gatsby-starter-picks'>g
 </p>
 <br>
 <p align="center">
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9e513f12-786c-4fe0-b714-41a3370cbfc3/deploy-status)](https://app.netlify.com/sites/guste-design/deploys)
+   <a href="https://app.netlify.com/sites/guste-design/deploys">
+      <img src="https://api.netlify.com/api/v1/badges/9e513f12-786c-4fe0-b714-41a3370cbfc3/deploy-status" />
+   </a>
 <p>
 
 
