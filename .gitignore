@@ -117,3 +117,5 @@ package_lock.json
 .env.development
 .env.production
 .DS_Store
+# Local Netlify folder
+.netlify
