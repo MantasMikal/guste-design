@@ -11,7 +11,6 @@ const transporter = nodemailer.createTransport(
 );
 
 exports.handler = async function (event) {
-  console.log(`Sending PDF report to ${email}`);
   console.log(event.queryStringParameters)
   const { email } = event.queryStringParameters
 
