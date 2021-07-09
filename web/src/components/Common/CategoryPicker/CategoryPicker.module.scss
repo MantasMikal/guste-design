@@ -47,7 +47,7 @@ span.ArrowMobile {
   display: inline;
 }
 
-@include mq($breakpoint-tablet) {
+@include mq($breakpoint-tabletLandscape) {
   .CategoryPicker {
     display: flex;
     align-items: center;
