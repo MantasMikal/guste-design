@@ -22,6 +22,9 @@ const ProjectPage = () => {
               slug {
                 current
               }
+              categories {
+                title
+              }
               mainImages {
                 asset {
                   url

@@ -4,7 +4,7 @@
 	"version": "1.0.0",
 	"author": "Mantas Mikalauskas <mantas.codes@gmail.com>",
 	"engines": {
-		"node": "<=14.x.x",
+		"node": "<=16.x.x",
 		"npm": "<=7.x.x"
 	},
 	"scripts": {
@@ -27,13 +27,11 @@
 		"@sanity/image-url": "^0.140.22",
 		"@svgr/webpack": "^5.5.0",
 		"@testing-library/react": "^11.2.6",
-		"ascii-doge": "^1.0.0",
 		"backline-mixins": "^1.0.3",
 		"backline-normalize": "^1.0.1",
 		"browser-monads": "^1.0.0",
 		"classnames": "^2.3.1",
 		"dotenv": "^9.0.2",
-		"email-templates": "^8.0.6",
 		"focus-trap-react": "^8.5.0",
 		"gatsby": "^3.5.0",
 		"gatsby-alias-imports": "^1.0.6",
@@ -57,9 +55,6 @@
 		"lodash.find": "^4.6.0",
 		"lodash.isequal": "^4.5.0",
 		"lodash.reduce": "^4.6.0",
-		"nodemailer": "^6.6.0",
-		"nodemailer-mailgun-transport": "^2.1.3",
-		"pug": "^3.0.2",
 		"pure-react-carousel": "^1.27.6",
 		"query-string": "^7.0.0",
 		"react": "^17.0.2",
@@ -70,8 +65,7 @@
 		"react-scroll-percentage": "^4.2.0",
 		"react-spring": "^9.1.2",
 		"shopify-buy": "^2.11.0",
-		"use-query-params": "^1.2.2",
-		"validate-prop-types": "^1.0.3"
+		"use-query-params": "^1.2.2"
 	},
 	"devDependencies": {
 		"gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { array } from 'prop-types'
 import { useQueryParam, StringParam } from 'use-query-params'
-
+import { useMemo } from 'react'
 import ProductPreview from 'Common/ProductPreview'
 import Container from 'Primitive/Container'
 import GridLayout from 'Primitive/GridLayout'
@@ -11,7 +11,7 @@ import CartButton from 'Common/CartButton'
 import Banner from 'Common/Banner'
 
 import styles from './Store.module.scss'
-import { useMemo } from 'react'
+
 
 const Store = ({ products, page }) => {
   const { banner } = page
@@ -99,7 +99,6 @@ const filterByCategory = (products, category) => {
  * @returns
  */
 const getAllProductCategories = (products) => {
-  console.log("🚀 ~ file: index.jsx ~ line 101 ~ getAllProductCategories ~ products", products)
   let categories = []
   for (let i = 0; i < products.length; i++) {
     let category = products[i].productType

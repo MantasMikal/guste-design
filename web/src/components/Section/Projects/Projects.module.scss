@@ -15,3 +15,23 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.Header {
+  position: relative;
+}
+
+.FloatingControls {
+  position: fixed;
+  right: spacing(1);
+  top: spacing(7);
+  bottom: 0;
+  z-index: 10;
+}
+
+@include mq($breakpoint-tablet) {
+  .FloatingControls {
+    bottom: unset;
+    display: flex;
+    top: spacing(7.5);
+  }
+}
