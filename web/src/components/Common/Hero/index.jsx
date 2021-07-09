@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useCallback } from 'react'
 import { string } from 'prop-types'
-import { useSpring, to } from 'react-spring'
+import { useSpring, to, config } from 'react-spring'
 import { VscDebugRestart } from 'react-icons/vsc'
 import { GrClear } from 'react-icons/gr'
 import classNames from 'classnames'
@@ -35,7 +35,7 @@ const instructionTextMap = {
 const Hero = () => {
   const [instructionStep, setInstructionStep] = useState(0)
   const [currentColor, setCurrentColor] = useState('white')
-  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0], default: { immediate: true } }))
+  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0], config: { mass: 1, tension: 350, friction: 15, precision: 0.1 }}))
   const [partColors, setPartColors] = useLocalStorage('colors', {
     ...defaultColors
   })
