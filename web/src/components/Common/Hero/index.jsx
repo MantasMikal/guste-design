@@ -35,7 +35,7 @@ const instructionTextMap = {
 const Hero = () => {
   const [instructionStep, setInstructionStep] = useState(0)
   const [currentColor, setCurrentColor] = useState('white')
-  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0] }))
+  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0], default: { immediate: true } }))
   const [partColors, setPartColors] = useLocalStorage('colors', {
     ...defaultColors
   })
