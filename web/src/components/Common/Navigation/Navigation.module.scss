@@ -120,7 +120,7 @@
 
 // Mobile only styles
 
-@include mq(null, $breakpoint-mobileLandscape) {
+@include mq(null, $breakpoint-tablet) {
   .NavLink,
   .Dropdown .DropdownBtn {
     display: none;

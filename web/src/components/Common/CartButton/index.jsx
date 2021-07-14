@@ -35,7 +35,7 @@ const CartButton = ({ className }) => {
         >
           <Type size="small">CART</Type>
           <div className={styles.Cart}>
-            <FaShoppingCart />
+            <FaShoppingCart size='1em' />
             {hasItems && <span className={styles.ItemCount}>{quantity}</span>}
           </div>
         </ButtonStandard>

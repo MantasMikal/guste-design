@@ -76,7 +76,7 @@ module.exports = {
       options: {
         shopName: process.env.GATSBY_SHOP_NAME,
         accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
-        paginationSize: 4,
+        paginationSize: 30,
         verbose: true
       }
     },

@@ -102,7 +102,7 @@ TextControl.propTypes = {
   autoComplete: oneOfType([bool, string]),
   className: string,
   controlRef: oneOfType([func, object]),
-  defaultValue: string,
+  defaultValue: oneOfType([string, number]),
   disabled: bool,
   form: string,
   id: string,
@@ -122,7 +122,7 @@ TextControl.propTypes = {
   status: oneOf(['none', 'error', 'notice', 'success', 'warning']),
   tabIndex: number,
   type: string,
-  value: string
+  value:  oneOfType([string, number])
 }
 
 export default TextControl

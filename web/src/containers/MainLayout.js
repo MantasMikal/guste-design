@@ -3,6 +3,7 @@ import { graphql, StaticQuery } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
+import { createStore, Provider } from '../store'
 
 const query = graphql`
   query SiteTitleQuery {
@@ -24,6 +25,7 @@ const query = graphql`
     }
   }
 `
+
 
 const LayoutContainer = (props) => {
   const [showNav, setShowNav] = useState(false)
@@ -55,7 +57,7 @@ const LayoutContainer = (props) => {
         const { site } = data
 
         return (
-          <>
+          <Provider createStore={createStore}>
             <Helmet>
               <link rel="preconnect" href="https://use.typekit.net" />
             </Helmet>
@@ -68,7 +70,7 @@ const LayoutContainer = (props) => {
               social={social}
               logo={site && site.logo}
             />
-          </>
+          </Provider>
         )
       }}
     />

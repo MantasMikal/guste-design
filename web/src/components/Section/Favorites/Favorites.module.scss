@@ -1,0 +1,17 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Favorites {
+  height: 100%;
+}
+.Header {
+  position: relative;
+}
+
+.Empty {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}

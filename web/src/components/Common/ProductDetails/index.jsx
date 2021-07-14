@@ -23,7 +23,7 @@ const ProductDetails = ({ product, className }) => {
     variants,
     descriptionHtml,
     productType,
-    maxQuantity=10,
+    maxQuantity = 10,
     variants: [initialVariant],
     priceRange: { minVariantPrice }
   } = product
@@ -85,7 +85,7 @@ const ProductDetails = ({ product, className }) => {
     addVariantToCart(productVariant.shopifyId, quantity)
     setTimeout(() => {
       setAddedToCart(false)
-    }, 1000);
+    }, 1000)
   }
 
   /*
@@ -126,7 +126,7 @@ const ProductDetails = ({ product, className }) => {
           {options.map(
             ({ id, name, values }, index) =>
               name !== 'Title' && (
-                <div className={styles.SelectControl}>
+                <div key={`Select-${id}`} className={styles.SelectControl}>
                   <Type as="label" size="small" htmlFor={name}>
                     {name}
                   </Type>
@@ -161,7 +161,6 @@ const ProductDetails = ({ product, className }) => {
                   setQuantity(parseInt(quantity > 1 ? quantity - 1 : 1))
                 }
                 customIcon={<HiOutlineMinus />}
-                a11Text="-1"
               />
               <TextControl
                 name="quantity"
@@ -175,7 +174,6 @@ const ProductDetails = ({ product, className }) => {
               <IconButton
                 onClick={() => setQuantity(parseInt(quantity + 1))}
                 customIcon={<HiOutlinePlus />}
-                a11Text="+1"
                 disabled={quantity >= maxQuantity}
               />
             </div>

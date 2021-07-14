@@ -2,6 +2,7 @@
 @import '_backline-mixins';
 
 .ProductPreview {
+  position: relative;
   display: flex;
   flex-direction: column;
 
@@ -12,6 +13,12 @@
         background-color: $color-primary-accent;
         transition: $duration-shorter $easing-standard;
       }
+
+      button.HeartBtn {
+        visibility: visible;
+        transition: $duration-shorter $easing-standard;
+      }
+
     }
   }
 }
@@ -42,6 +49,40 @@
     position: absolute;
     height: 100%;
     border-right: $border-standard;
+  }
+}
+
+button.HeartBtn {
+  visibility:hidden;
+  position: absolute;
+  right: spacing(1);
+  top: spacing(1);
+  z-index: 4;
+  color: $color-primary-white;
+  transition: $duration-shorter $easing-standard;
+  outline: none !important;
+  border: none;
+  svg { 
+    width: 2.2em;
+    path {
+    stroke: $color-primary-black;
+    stroke-width: 2em;
+  }}
+
+  &:hover,
+  &:focus {
+    color: $color-primary-red;
+    outline: none !important;
+  }
+
+  &.favorite {
+    color: $color-primary-red;
+    visibility: visible;
+  }
+
+
+  @media (hover: none) {
+    visibility:visible !important;
   }
 }
 
