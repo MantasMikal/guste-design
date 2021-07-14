@@ -65,7 +65,8 @@
 		"react-scroll-percentage": "^4.2.0",
 		"react-spring": "^9.1.2",
 		"shopify-buy": "^2.11.0",
-		"use-query-params": "^1.2.2"
+		"use-query-params": "^1.2.2",
+		"zustand": "^3.5.7"
 	},
 	"devDependencies": {
 		"gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.22",

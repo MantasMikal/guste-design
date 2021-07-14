@@ -23,6 +23,7 @@ import contact from "./pages/contact";
 import home from "./pages/home";
 import store from "./pages/store";
 import aboutPage from "./pages/aboutPage";
+import productPage from "./pages/productPage";
 
 import figure from "./plugs/figure";
 import mainImage from "./plugs/mainImage";
@@ -63,7 +64,8 @@ export default createSchema({
     galleryPost,
     store,
     banner,
-    aboutPage
+    aboutPage,
+    productPage
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

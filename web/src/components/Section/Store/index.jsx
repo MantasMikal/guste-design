@@ -11,14 +11,18 @@ import CartButton from 'Common/CartButton'
 import Banner from 'Common/Banner'
 
 import styles from './Store.module.scss'
-
+import IconButton from 'Primitive/IconButton'
+import { FaHeart } from 'react-icons/fa'
 
 const Store = ({ products, page }) => {
   const { banner } = page
-  const allCategories = useMemo(() => ['All', ...getAllProductCategories(products)], [products])
+  const allCategories = useMemo(
+    () => ['All', ...getAllProductCategories(products)],
+    [products]
+  )
   const [activeCategory, setActiveCategory] = useState(allCategories[0])
   const [queryCat, setQueryCat] = useQueryParam('category', StringParam)
-  
+
   useEffect(() => {
     setActiveCategory(queryCat || allCategories[0])
   }, [queryCat, allCategories])
@@ -45,8 +49,16 @@ const Store = ({ products, page }) => {
       <div className={styles.Header}>
         <PageTitle title="Store" />
         <div className={styles.FloatingControls}>
-          <div className={styles.Cart}>
-            <CartButton className={styles.CartButton} />
+          <div className={styles.ControlsWrapper}>
+            <IconButton
+              small
+              className={styles.Favorites}
+              customIcon={<FaHeart size="1em" />}
+              to="/favorites"
+            />
+            <div className={styles.Cart}>
+              <CartButton className={styles.CartButton} />
+            </div>
           </div>
           <CategoryPicker
             className={styles.CategoryPicker}

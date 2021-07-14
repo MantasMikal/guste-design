@@ -14,7 +14,7 @@ const Stack = ({ children, gap, className }) => (
 )
 
 Stack.defaultProps = {
-  gap: 'medium'
+  gap: 'small'
 }
 
 Stack.propTypes = {

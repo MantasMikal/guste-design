@@ -12,35 +12,87 @@
 .FloatingControls {
   position: fixed;
   right: spacing(1);
-  top: spacing(7);
+  top: spacing(7.5);
+  max-height: 100px;
   bottom: 0;
   z-index: 10;
+  @include mq(null, $breakpoint-tabletLandscape) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
 }
 
-.CartButton {
+.CategoryPicker {
+  position: relative;
+  top: -2px;
+}
+
+button.CartButton {
   border: $border-standard;
+
+  @include mq($breakpoint-tabletLandscape) {
+    height: 100%;
+  }
+}
+
+.ControlsWrapper {
+  display: flex;
+}
+
+a.Favorites {
+  position:relative;
+  display: block;
+  height: 32px;
+  width: 32px;
+  background-color: $color-common-white;
+  border: $border-standard;
+  margin-right: -2px;
+  color: $color-primary-red;
+  @include mq($breakpoint-tabletLandscape) {
+    height: 40px;
+    width: 40px;
+    margin-right: -5px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary-accent;
+  }
 }
 
 .Cart {
   position: relative;
-  display: flex;
-  justify-content: flex-end;
-  top: spacing(0.5)
+ 
+  button {
+    min-height: 32px;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    top: spacing(0.5);
+    button {
+      min-height: 40px;
+    }
+  }
 }
 
 .Banner {
   margin-bottom: spacing(1);
 }
 
-@include mq($breakpoint-tablet) {
+@include mq($breakpoint-tabletLandscape) {
   .FloatingControls {
     bottom: unset;
     display: flex;
     top: spacing(7.5);
   }
 
+  .CategoryPicker {
+    top: 0px;
+  }
+
   .Cart {
-    left: 2px;
+    left: 3px;
     top: unset;
     margin-left: auto;
   }

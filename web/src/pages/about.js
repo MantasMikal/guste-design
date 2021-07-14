@@ -21,19 +21,6 @@ const AboutPage = () => {
             }
           }
         }
-        instagram: allInstagramContent(limit: 4) {
-          edges {
-            node {
-              caption
-              media_url
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-                }
-              }
-            }
-          }
-        }
       }
     `
   )

@@ -8,6 +8,7 @@ import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
 const ProductTemplate = (props) => {
   const { data } = props
   const product = data && data.product
+  const page = data && data.page
   const { similarProducts } = props.pageContext
   const { title, description, images } = product
   return (
@@ -22,7 +23,7 @@ const ProductTemplate = (props) => {
         )}
 
         {product && (
-          <Product product={product} similarProducts={similarProducts} />
+          <Product page={page} product={product} similarProducts={similarProducts} />
         )}
       </Layout>
     </StoreContextProvider>
@@ -31,6 +32,9 @@ const ProductTemplate = (props) => {
 
 export const query = graphql`
   query($handle: String!) {
+    page: sanityProductPage(_id: { regex: "/(drafts.|)productPage/" }) {
+      _rawInformation(resolveReferences: { maxDepth: 10 })
+    }
     product: shopifyProduct(handle: { eq: $handle }) {
       id
       title
