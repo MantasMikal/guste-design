@@ -13,7 +13,7 @@
   position: fixed;
   right: spacing(1);
   top: spacing(7.5);
-  max-height: 100px;
+  max-height: 400px;
   bottom: 0;
   z-index: 10;
   @include mq(null, $breakpoint-tabletLandscape) {
