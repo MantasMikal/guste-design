@@ -31,7 +31,7 @@ const Favorites = () => {
           ))}
         />
       ) : (
-        <Type className={styles.Empty} size="base">Empty. Go add some stuff! 😎</Type>
+        <Type className={styles.Empty} size="base">Empty.<br /> Go add some stuff! 😎</Type>
       )}
     </Container>
   )
