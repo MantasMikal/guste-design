@@ -115,7 +115,7 @@ module.exports = {
     },
   },
     'gatsby-plugin-use-query-params',
-    'gatsby-plugin-sitemap',
+    'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline',
     // {
