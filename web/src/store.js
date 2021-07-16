@@ -5,7 +5,6 @@ import createContext from 'zustand/context'
 const { Provider, useStore } = createContext()
 
 const findItemById = (itemToFind, items) => {
-
   if (!items || !itemToFind) return -1
   let index = -1
   items.forEach((item, i) => {
@@ -25,11 +24,8 @@ export const createStore = () =>
           set(({ favorites }) => {
             const existId = findItemById(favorite, favorites)
             if (existId > -1) {
-              const deleted = [favorite, ...favorites].filter(
-                (item) => favorite.id !== item.id
-              )
               return {
-                favorites: deleted
+                favorites: favorites.filter((item) => item.id !== favorite.id)
               }
             }
             return {

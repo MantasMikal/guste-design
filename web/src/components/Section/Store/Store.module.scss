@@ -41,7 +41,7 @@ button.CartButton {
 }
 
 a.Favorites {
-  position:relative;
+  position: relative;
   display: block;
   height: 32px;
   width: 32px;
@@ -54,6 +54,13 @@ a.Favorites {
     width: 40px;
     margin-right: -5px;
   }
+  svg {
+    stroke: $color-common-black;
+    stroke-width: 4em;
+    paint-order: stroke;
+    width: 1.3em;
+    height: 1.1em;
+  }
 
   &:hover,
   &:focus {
@@ -63,7 +70,7 @@ a.Favorites {
 
 .Cart {
   position: relative;
- 
+
   button {
     min-height: 32px;
   }

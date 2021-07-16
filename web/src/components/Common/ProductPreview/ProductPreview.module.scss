@@ -73,13 +73,12 @@ button.HeartBtn {
   &:hover,
   &:focus {
     transition: $duration-shorter $easing-standard;
-    color: rgba($color-primary-red, 0.3);
     outline: none !important;
   }
 
   &.favorite {
     color: $color-primary-red;
-    transition: $duration-shorter $easing-standard;
+    transition: $duration-shorter $easing-standard; 
     visibility: visible;
   }
 
