@@ -2,18 +2,12 @@
 @import 'settings';
 @import '_backline-mixins';
 
-// html,
-// #___gatsby {
-//   display: flex;
-//   min-height: 100%;
-// }
-
-// body,
-// #___gatsby,
-// #gatsby-focus-wrapper {
-//   min-height: 100%;
-//   flex-grow: 1;
-// }
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  min-height: 100%;
+}
 
 body {
   font-size: spacing(2); // 16
