@@ -181,7 +181,6 @@ const ProductDetails = ({ product, className }) => {
         )}
         <ButtonStandard
           disabled={!available || adding}
-          disabled
           className={styles.BuyButton}
           onClick={handleAddToCart}
         >
