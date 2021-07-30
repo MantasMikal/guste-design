@@ -180,13 +180,12 @@ const ProductDetails = ({ product, className }) => {
           </div>
         )}
         <ButtonStandard
-          // disabled={!available || adding}
+          disabled={!available || adding}
           disabled
           className={styles.BuyButton}
           onClick={handleAddToCart}
         >
-          {/* {isAddedToCart ? 'Added!' : 'Add to cart'} */}
-          CLOSED
+          {isAddedToCart ? 'Added!' : 'Add to cart'}
         </ButtonStandard>
         <div className={styles.Description}>
           <Prose dangerousHtml={descriptionHtml} />
