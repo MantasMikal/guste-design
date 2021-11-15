@@ -71,15 +71,15 @@ module.exports = {
         overlayDrafts: true
       }
     },
-    {
-      resolve: 'gatsby-source-shopify',
-      options: {
-        shopName: process.env.GATSBY_SHOP_NAME,
-        accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
-        paginationSize: 30,
-        verbose: true
-      }
-    },
+    // {
+    //   resolve: 'gatsby-source-shopify',
+    //   options: {
+    //     shopName: process.env.GATSBY_SHOP_NAME,
+    //     accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
+    //     paginationSize: 30,
+    //     verbose: true
+    //   }
+    // },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -118,11 +118,11 @@ module.exports = {
     'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-offline',
-    // {
-    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-    //   options: {
-    //     devMode: true
-    //   }
-    // }
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+      options: {
+        devMode: true
+      }
+    }
   ]
 }
