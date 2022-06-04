@@ -118,6 +118,16 @@
   }
 }
 
+.smaller {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+
+  @include mq($breakpoint-tablet) {
+    font-size: 15px;
+  }
+}
+
 .italic {
   font-style: italic;
 }

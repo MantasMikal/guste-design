@@ -70,6 +70,13 @@ const serializers = (baseFontSize) => ({
             </Type>
           )
 
+        case '15px':
+          return (
+            <Type as="p" size="smaller" padded>
+              {props.children}
+            </Type>
+          )
+
         case 'blockquote':
           return <Blockquote quoteMarks>{props.children}</Blockquote>
 
