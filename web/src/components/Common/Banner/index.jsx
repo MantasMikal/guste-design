@@ -10,7 +10,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 const MemoImage = React.memo(Image)
 
 const Banner = ({ desktopImages, className }) => {
-  if(desktopImages?.length === 0) return null
+  if(!desktopImages || desktopImages?.length === 0) return null
   return (
     <div className={classNames(styles.Banner, className)}>
       <CarouselProvider
@@ -23,7 +23,7 @@ const Banner = ({ desktopImages, className }) => {
         className={styles.Carousel}
       >
         <Slider className={styles.Slider}>
-          {desktopImages.map((img, i) => (
+          {desktopImages?.map((img, i) => (
             <Slide key={`DesktopImage-${i}`} index={i}>
               <div className={styles.DesktopImage}>
                 <MemoImage image={img} ratio={1 / 4} />

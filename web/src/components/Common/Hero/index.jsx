@@ -3,6 +3,7 @@ import React, { useState, useCallback } from 'react'
 import { string } from 'prop-types'
 import { useSpring, to, config } from 'react-spring'
 import { VscDebugRestart } from 'react-icons/vsc'
+import { RiRestartLine } from 'react-icons/ri'
 import { GrClear } from 'react-icons/gr'
 import classNames from 'classnames'
 import useLocalStorage from 'hooks/useLocalStorage'
@@ -35,7 +36,11 @@ const instructionTextMap = {
 const Hero = () => {
   const [instructionStep, setInstructionStep] = useState(0)
   const [currentColor, setCurrentColor] = useState('white')
-  const [{ st, xy }, set] = useSpring(() => ({ st: 0, xy: [0, 0], config: { mass: 1, tension: 350, friction: 15, precision: 0.1 }}))
+  const [{ st, xy }, set] = useSpring(() => ({
+    st: 0,
+    xy: [0, 0],
+    config: { mass: 1, tension: 350, friction: 15, precision: 0.1 }
+  }))
   const [partColors, setPartColors] = useLocalStorage('colors', {
     ...defaultColors
   })
@@ -93,15 +98,24 @@ const Hero = () => {
       />
       <div className={styles.ToolBar}>
         <div className={styles.Tools}>
-          <ButtonBase className={classNames(styles.Clear, instructionStep === 2 && styles.showIntro)} onClick={() => handleClear()}>
+          <ButtonBase
+            className={classNames(
+              styles.Clear,
+              instructionStep === 2 && styles.showIntro
+            )}
+            onClick={() => handleClear()}
+          >
             <GrClear size="2em" />
             <span className={styles.Tooltip}>Clear colors</span>
           </ButtonBase>
           <ButtonBase
-            className={classNames(styles.Restart, instructionStep === 2 && styles.showIntro)}
+            className={classNames(
+              styles.Restart,
+              instructionStep === 2 && styles.showIntro
+            )}
             onClick={() => handleRestart()}
           >
-            <VscDebugRestart size="2.5em" />
+            <RiRestartLine size="2.5em" />
             <span className={styles.Tooltip}>Restart</span>
           </ButtonBase>
           <ColorPalette
