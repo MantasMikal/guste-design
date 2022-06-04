@@ -23,7 +23,7 @@ export default {
       // you want and decide how you want to deal with it where you want to
       // use your content.
       styles: [
-        { title: "15px", value: "15px" },
+        { title: "Small", value: "small" },
         { title: "Normal", value: "normal" },
         { title: "H2", value: "h2" },
         { title: "H3", value: "h3" },

@@ -15,7 +15,7 @@ const Banner = ({ desktopImages, className }) => {
       <CarouselProvider
         naturalSlideWidth={600}
         naturalSlideHeight={500}
-        totalSlides={desktopImages.length}
+        totalSlides={desktopImages?.length}
         isIntrinsicHeight
         isPlaying
         interval={5000}
