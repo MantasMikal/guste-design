@@ -26,6 +26,6 @@
     "start-studio": "cd studio && npm run start"
   },
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "lerna": "^5.0.0"
   }
 }

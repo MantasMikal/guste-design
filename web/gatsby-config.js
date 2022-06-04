@@ -117,12 +117,12 @@ module.exports = {
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-      options: {
-        devMode: true
-      }
-    }
+    // 'gatsby-plugin-offline',
+    // {
+    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
+    //   options: {
+    //     devMode: true
+    //   }
+    // }
   ]
 }
