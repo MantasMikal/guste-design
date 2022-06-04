@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  font-weight: 400;
 }
 
 .Toggle {
@@ -32,6 +33,7 @@
   display: flex;
   flex-direction: column;
   justify-content: left;
+  font-weight: 400;
 }
 
 .Category {
@@ -41,6 +43,7 @@
   margin-top: -2px;
   border: $border-standard;
   text-align: left;
+  font-weight: 400;
 }
 
 span.ArrowDesktop {
