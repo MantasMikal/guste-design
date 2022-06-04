@@ -9,21 +9,18 @@ import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './MultiImage.module.scss'
 
-const MultiImage = ({
-  images,
-  skipAmount = 12,
-  ratio = 1,
-  ...other
-}) => {
+const MultiImage = ({ images, skipAmount = 12, ratio = 1, ...other }) => {
   const isSSR = typeof window === 'undefined'
   const isTouch =
     !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
 
-  if (isTouch) {
-    return <Image image={images[0]} ratio={ratio}  {...other} />
+  if (images?.length === 0) return null
+
+  if (isTouch || images?.length === 1) {
+    return <Image image={images[0]} ratio={ratio} {...other} />
   } else {
     return (
-      <Multi images={images} skipAmount={skipAmount} ratio={ratio}  {...other} />
+      <Multi images={images} skipAmount={skipAmount} ratio={ratio} {...other} />
     )
   }
 }
@@ -36,17 +33,14 @@ const Multi = ({ images, skipAmount, ratio, ...other }) => {
   const handleHover = () => {
     setMove((prevState) => prevState - 1)
     if (move <= 0) {
-      const imageIdx = currentIndex < images.length - 1 ? currentIndex + 1 : 0
+      const imageIdx = currentIndex < images?.length - 1 ? currentIndex + 1 : 0
       setCurrentIndex(imageIdx)
       setMove(skipAmount)
     }
   }
   const isActive = (i, id) => i === id || (i === 0 && i !== id)
   return (
-    <ResponsiveMedia
-      ratio={ratio}
-      onMouseMove={handleHover}
-    >
+    <ResponsiveMedia ratio={ratio} onMouseMove={handleHover}>
       {images &&
         images.length > 0 &&
         images.map((img, i) => (

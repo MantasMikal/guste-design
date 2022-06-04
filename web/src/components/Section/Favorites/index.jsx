@@ -27,11 +27,19 @@ const Favorites = () => {
               key={favorite.id}
               className={styles.ProductPreview}
               {...favorite}
+              media={favorite?.images?.map((img) => ({
+                preview: {
+                  image: img
+                }
+              }))}
             />
           ))}
         />
       ) : (
-        <Type className={styles.Empty} size="base">Empty.<br /> Go add some stuff! 😎</Type>
+        <Type className={styles.Empty} size="base">
+          Empty.
+          <br /> Go add some stuff! 😎
+        </Type>
       )}
     </Container>
   )

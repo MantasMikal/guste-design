@@ -39,8 +39,8 @@ export const createStore = () =>
         removeAll: () => set({ favorites: new Set() })
       }),
       {
-        name: 'favorites', // unique name
-        getStorage: () => localStorage // (optional) by default the 'localStorage' is used
+        name: 'APP', // unique name
+        getStorage: () => sessionStorage // (optional) by default the 'localStorage' is used
       }
     )
   )
