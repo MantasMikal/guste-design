@@ -10,6 +10,7 @@
   color: $color-primary-black;
   transition: all $duration-standard $easing-standard;
   border: $border-standard;
+  font-weight: 400;
 
   &:hover,
   &:focus {
