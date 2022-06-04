@@ -60,7 +60,7 @@ const CategoryPicker = ({ categories, onClick, activeCategory, className }) => {
         size="small"
         noBorder
       >
-        <Type size="small">Categories</Type>
+        <Type className={styles.Label} size="small">Categories</Type>
 
         <FaFilter size="0.9em" />
         <span className={styles.ArrowDesktop}>
