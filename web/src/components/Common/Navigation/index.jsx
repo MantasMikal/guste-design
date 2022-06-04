@@ -30,7 +30,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           About
         </Link>
         {/* <div className={styles.Dropdown}>
-        <SmartLink onClick={handleClick} to="/store" className={styles.DropdownBtn}>
+        <SmartLink onClick={} to="/store" className={styles.DropdownBtn}>
           <Type as="span" size="menu">
             Store
           </Type>
@@ -56,9 +56,9 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           </Link>
         </div>
       </div> */}
-        {/* <Link className={styles.NavLink} to="/store">
+        <Link className={styles.NavLink} to="/store">
           Store
-        </Link> */}
+        </Link>
         <Link className={styles.NavLink} to="/gallery">
           Gallery
         </Link>

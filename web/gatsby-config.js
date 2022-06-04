@@ -57,9 +57,7 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
+
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-sanity',
@@ -71,15 +69,16 @@ module.exports = {
         overlayDrafts: true
       }
     },
-    // {
-    //   resolve: 'gatsby-source-shopify',
-    //   options: {
-    //     shopName: process.env.GATSBY_SHOP_NAME,
-    //     accessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
-    //     paginationSize: 30,
-    //     verbose: true
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-shopify',
+      options: {
+        storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
+        password: process.env.SHOPIFY_APP_PASSWORD,
+        downloadImages: true,
+        paginationSize: 30,
+        verbose: true
+      }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -107,16 +106,19 @@ module.exports = {
         }
       }
     },
-  {
-    resolve: `gatsby-plugin-nprogress`,
-    options: {
-      color: `#56b78f`,
-      showSpinner: true,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#56b78f`,
+        showSpinner: true
+      }
     },
-  },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-advanced-sitemap',
-    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-robots-txt'
     // 'gatsby-plugin-offline',
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',

@@ -13,9 +13,14 @@ import IconButton from 'Primitive/IconButton'
 import { useStore } from '../../../store'
 
 const ProductPreview = (props) => {
-  const { id, images, title, handle, variants, className } = props
+console.log("🚀 ~ file: index.jsx ~ line 16 ~ ProductPreview ~ props", props)
+  const { id, media, title, handle, variants, className } = props
   const { price } = variants[0]
   const { toggleFavorite, doesExist } = useStore(state => state, shallow)
+  const images = media?.map((img) => img?.preview?.image).filter(Boolean)
+  console.log("🚀 ~ file: index.jsx ~ line 21 ~ ProductPreview ~ images", images)
+
+
   const handleClickFavorite = (e) => {
     e.preventDefault()
     toggleFavorite({

@@ -18,7 +18,7 @@ import { HiOutlineMinus, HiOutlinePlus } from 'react-icons/hi'
 
 const ProductDetails = ({ product, className }) => {
   const {
-    images,
+    media,
     options,
     variants,
     descriptionHtml,
@@ -27,6 +27,8 @@ const ProductDetails = ({ product, className }) => {
     variants: [initialVariant],
     priceRange: { minVariantPrice }
   } = product
+
+  const images = media?.map((img) => img?.image).filter(Boolean)
 
   const [variant, setVariant] = useState({ ...initialVariant })
   const [quantity, setQuantity] = useState(1)
@@ -180,12 +182,12 @@ const ProductDetails = ({ product, className }) => {
           </div>
         )}
         <ButtonStandard
-          disabled={true || !available || adding}
+          disabled={!available || adding}
           className={styles.BuyButton}
           onClick={handleAddToCart}
         >
-          Store is closed. Contact me!
-          {/* {isAddedToCart ? 'Added!' : 'Add to cart'} */}
+          {/* Store is closed. Contact me! */}
+          {isAddedToCart ? 'Added!' : 'Add to cart'}
         </ButtonStandard>
         <div className={styles.Description}>
           <Prose dangerousHtml={descriptionHtml} />

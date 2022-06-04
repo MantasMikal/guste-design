@@ -4,7 +4,7 @@ import Context from '.'
 
 const client = Client.buildClient({
   storefrontAccessToken: process.env.GATSBY_SHOPIFY_ACCESS_TOKEN,
-  domain: `${process.env.GATSBY_SHOP_NAME}.myshopify.com`
+  domain: process.env.GATSBY_SHOPIFY_STORE_URL
 })
 
 const StoreContextProvider = ({ children }) => {

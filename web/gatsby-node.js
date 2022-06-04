@@ -74,10 +74,10 @@ async function createProductPages(graphql, actions, reporter) {
               compareAtPrice
               id
               price
-              priceV2 {
-                amount
-                currencyCode
-              }
+              # priceV2 {
+              #   amount
+              #   currencyCode
+              # }
               requiresShipping
               selectedOptions {
                 name
@@ -95,12 +95,22 @@ async function createProductPages(graphql, actions, reporter) {
             descriptionHtml
             handle
             productType
-            images {
-              id
-              originalSrc
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED)
+            media {
+              preview {
+                ... on ShopifyMediaPreviewImage {
+                  image {
+                    originalSrc
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData(
+                          layout: CONSTRAINED
+                          placeholder: BLURRED
+                          width: 500
+                          height: 500
+                        )
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -147,7 +157,7 @@ async function createProductPages(graphql, actions, reporter) {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createProjectPages(graphql, actions, reporter)
-  // await createProductPages(graphql, actions, reporter)
+  await createProductPages(graphql, actions, reporter)
 }
 
 // Removes Mini-css errors
