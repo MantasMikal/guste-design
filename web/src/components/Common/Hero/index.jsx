@@ -115,7 +115,7 @@ const Hero = () => {
             )}
             onClick={() => handleRestart()}
           >
-            <RiRestartLine size="2.5em" />
+            <RiRestartLine size="2.2em" />
             <span className={styles.Tooltip}>Restart</span>
           </ButtonBase>
           <ColorPalette
