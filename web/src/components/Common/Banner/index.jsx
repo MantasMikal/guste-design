@@ -10,6 +10,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 const MemoImage = React.memo(Image)
 
 const Banner = ({ desktopImages, className }) => {
+  if(desktopImages?.length === 0) return null
   return (
     <div className={classNames(styles.Banner, className)}>
       <CarouselProvider
