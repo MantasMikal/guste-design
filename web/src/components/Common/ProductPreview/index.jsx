@@ -16,7 +16,7 @@ const ProductPreview = (props) => {
   const { price } = variants[0]
   const { toggleFavorite, doesExist } = useStore(state => state, shallow)
   const images = media?.map((img) => img?.preview?.image).filter(Boolean)
-  console.log("🚀 ~ file: index.jsx ~ line 19 ~ ProductPreview ~ images", images)
+
 
   const handleClickFavorite = (e) => {
     e.preventDefault()
