@@ -5,7 +5,7 @@ import FocusTrap from 'focus-trap-react'
 import useEscapeKey from 'hooks/useEscapeKey'
 import useOutsideClick from 'hooks/useOutsideClick'
 
-import { FaLinkedinIn } from 'react-icons/fa'
+import { FaLinkedinIn, FaPinterest } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiBehance } from 'react-icons/si'
@@ -71,6 +71,13 @@ const Contact = ({ onClose, open }) => {
                   rel="noopener noreferrer"
                 >
                   <FaLinkedinIn size="2em" />
+                </SmartLink>
+                <SmartLink
+                  href="https://www.pinterest.com/gustedesign/_saved/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaPinterest size="2em" />
                 </SmartLink>
               </div>
             </div>
