@@ -4,9 +4,9 @@ var config = {
     shortName: "GUSTÉ.DESIGN",
     siteUrl: "https://guste.design",
     bgColor: "#ffffff",
-    themeColor: "#000000",
+    themeColor: "#ffffff",
     favIcon: "src/assets/favicon.png",
-    description: "A Lithuanian creative and work-driven Graphic Designer & Artist",
+    description: "Gusté is a graphic designer and artist focusing on logo and identity design, packaging as well as original art creation.",
   },
   project: {
     projectId: "uq1ipftd",

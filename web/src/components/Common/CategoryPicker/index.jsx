@@ -61,7 +61,6 @@ const CategoryPicker = ({ categories, onClick, activeCategory, className }) => {
         noBorder
       >
         <Type className={styles.Label} size="small">Categories</Type>
-
         <FaFilter size="0.9em" />
         <span className={styles.ArrowDesktop}>
           {showFilter.show ? (
