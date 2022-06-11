@@ -8,20 +8,24 @@ import Zoomable from 'Primitive/Zoomable'
 
 import styles from './GalleryPostPreview.module.scss'
 import PinterestPin from 'Primitive/PinterestPin'
+import useHasMounted from 'hooks/useHasMounted'
 
 const GalleryPostPreview = ({ mainImage, title, className }) => {
+  const hasMounted = useHasMounted()
   return (
     <div className={classNames(styles.GalleryPostPreview, className)}>
       <Zoomable>
         <Image image={mainImage} alt={title} />
       </Zoomable>
-      <PinterestPin
-        slug="gallery"
-        description={title}
-        imageUrl={mainImage?.asset?.url}
-        pinType="buttonPin"
-        className={styles.PinterestPin}
-      />
+      {hasMounted && (
+        <PinterestPin
+          slug="gallery"
+          description={title}
+          imageUrl={mainImage?.asset?.url}
+          pinType="buttonPin"
+          className={styles.PinterestPin}
+        />
+      )}
       <div className={styles.Details}>
         <Type as="h3" size="title" className={styles.Title}>
           {title}
