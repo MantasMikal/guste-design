@@ -11,13 +11,12 @@ import PinterestPin from 'Primitive/PinterestPin'
 import useHasMounted from 'hooks/useHasMounted'
 
 const GalleryPostPreview = ({ mainImage, title, className }) => {
-  const hasMounted = useHasMounted()
   return (
     <div className={classNames(styles.GalleryPostPreview, className)}>
       <Zoomable>
         <Image image={mainImage} alt={title} />
       </Zoomable>
-      {hasMounted && (
+      {/* {hasMounted && (
         <PinterestPin
           slug="gallery"
           description={title}
@@ -25,7 +24,7 @@ const GalleryPostPreview = ({ mainImage, title, className }) => {
           pinType="buttonPin"
           className={styles.PinterestPin}
         />
-      )}
+      )} */}
       <div className={styles.Details}>
         <Type as="h3" size="title" className={styles.Title}>
           {title}
