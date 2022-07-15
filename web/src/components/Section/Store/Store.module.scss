@@ -43,17 +43,19 @@ button.CartButton {
 a.Favorites {
   position: relative;
   display: block;
-  height: 32px;
-  width: 32px;
+  height: 1.9rem;
+  width: 1.9rem;
   background-color: $color-common-white;
   border: $border-standard;
   margin-right: -2px;
   color: $color-primary-red;
+
   @include mq($breakpoint-tabletLandscape) {
-    height: 40px;
-    width: 40px;
+    height: 2.4rem;
+    width: 2.4rem;
     margin-right: -5px;
   }
+
   svg {
     stroke: $color-common-black;
     stroke-width: 4em;
@@ -72,13 +74,13 @@ a.Favorites {
   position: relative;
 
   button {
-    min-height: 32px;
+    min-height: 1.9rem;
   }
 
   @include mq($breakpoint-tabletLandscape) {
     top: spacing(0.5);
     button {
-      min-height: 40px;
+      height: 2.4rem;
     }
   }
 }

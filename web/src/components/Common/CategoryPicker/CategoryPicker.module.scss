@@ -19,7 +19,7 @@
     text-transform: uppercase;
 
     & > div:not(:last-child) {
-      margin-right: spacing(0.5);
+      margin-right: spacing(0.5); 
     }
   }
 
@@ -64,7 +64,7 @@ span.ArrowMobile {
     align-items: center;
     flex-direction: row;
     border: $border-standard;
-    height: 40px;
+    height: 2.4rem;
     background-color: $color-primary-white;
   }
 

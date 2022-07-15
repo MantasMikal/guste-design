@@ -99,19 +99,6 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-pinterest`,
-      options: {
-        // If you just want to use the default, you can set this to `true`, defaults to `false`
-        // This sets the data-pin-hover attribute in the script
-        saveButton: {
-          // Set to true to hide the text and display only a round P button
-          round: true, // default
-          // Set to true to display a bigger button
-          tall: true, // default
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         typekit: {
