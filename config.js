@@ -1,6 +1,6 @@
 var config = {
   site: {
-    siteTitle: "GUSTÉ.DESIGN",
+    siteTitle: "GUSTÉ.DESIGN | Gustė Vasiliauskaitė",
     shortName: "GUSTÉ.DESIGN",
     siteUrl: "https://guste.design",
     bgColor: "#ffffff",

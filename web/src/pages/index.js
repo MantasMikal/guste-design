@@ -47,8 +47,8 @@ const IndexPage = (props) => {
   const { description } = openGraph
   return (
     <Layout>
-      <Seo />
-      <h1 hidden>{site.title}</h1>
+      <Seo title='GUSTE.DESIGN | Gustė Vasiliauskaitė' />
+      <h1 hidden>{site.title} | Gustė Vasiliauskaitė</h1>
       <p hidden>{description}</p>
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
       {_rawSections &&
