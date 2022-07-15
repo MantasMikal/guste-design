@@ -9,7 +9,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css'
 
 const MemoImage = React.memo(Image)
 
-const Banner = ({ desktopImages, className }) => {
+const Banner = ({ desktopImages, mobileImages, className }) => {
   if(!desktopImages || desktopImages?.length === 0) return null
   return (
     <div className={classNames(styles.Banner, className)}>
@@ -28,6 +28,9 @@ const Banner = ({ desktopImages, className }) => {
               <div className={styles.DesktopImage}>
                 <MemoImage image={img} ratio={1 / 4} />
               </div>
+              {mobileImages[i] && <div className={styles.MobileImage}>
+                <MemoImage image={mobileImages[i]} ratio={1} />
+              </div>}
             </Slide>
           ))}
         </Slider>
