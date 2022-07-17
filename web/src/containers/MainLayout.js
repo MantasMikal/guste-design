@@ -26,7 +26,6 @@ const query = graphql`
   }
 `
 
-
 const LayoutContainer = (props) => {
   const [showNav, setShowNav] = useState(false)
   function handleShowNav() {
@@ -59,7 +58,17 @@ const LayoutContainer = (props) => {
         return (
           <Provider createStore={createStore}>
             <Helmet>
-              <link rel="preconnect" href="https://use.typekit.net" />
+              {/* <link rel="preconnect" href="https://use.typekit.net" /> */}
+              <link rel="preconnect" href="https://fonts.googleapis.com" />
+              <link
+                rel="preconnect"
+                href="https://fonts.gstatic.com"
+                crossOrigin="true"
+              />
+              <link
+                href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;300;400;500;600;700;800;900&display=swap"
+                rel="stylesheet"
+              />
             </Helmet>
             <Layout
               {...props}

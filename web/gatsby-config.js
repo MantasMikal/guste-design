@@ -99,14 +99,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        typekit: {
-          id: process.env.TYPEKIT_ID
-        }
-      }
-    },
-    {
       resolve: `gatsby-plugin-nprogress`,
       options: {
         color: `#56b78f`,
