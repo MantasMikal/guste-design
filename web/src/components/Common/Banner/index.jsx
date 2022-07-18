@@ -19,9 +19,9 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
   })
 
   useEffect(() => {
-    if(!instanceRef || desktopImages.length < 1) return
+    if(!instanceRef || desktopImages?.length <= 1) return
     const timeout = setTimeout(() => {
-      instanceRef.next()
+      instanceRef.current?.next()
     }, 3000)
     return () => clearTimeout(timeout)
   }, [desktopImages, instanceRef])
