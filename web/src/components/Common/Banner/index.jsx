@@ -22,9 +22,9 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
     if(!instanceRef || desktopImages.length < 1) return
     const timeout = setTimeout(() => {
       instanceRef.next()
-    }, 5000)
+    }, 3000)
     return () => clearTimeout(timeout)
-  }, [desktopImages])
+  }, [desktopImages, instanceRef])
 
   if (!desktopImages || desktopImages?.length === 0) return null
   return (
