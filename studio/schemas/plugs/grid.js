@@ -32,7 +32,7 @@ export default {
     },
     {
       name: "colTemplate",
-      title: "Column Template",
+      title: "Desktop Column Template",
       description:
         'E.g.: "1fr 2fr". Defines size of columns in the grid. Will have only one column on mobile. Available units: px, em, %, fr, rem (you can mix them).  Read more: https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns',
       type: "string",
