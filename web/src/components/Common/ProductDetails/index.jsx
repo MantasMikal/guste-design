@@ -187,7 +187,7 @@ const ProductDetails = ({ product, className }) => {
           onClick={handleAddToCart}
         >
           {/* Store is closed. Contact me! */}
-          {isAddedToCart ? 'Added!' : 'Add to cart'}
+          {!available ? "SOLD OUT" : isAddedToCart ? 'Added!' : 'Add to cart'}
         </ButtonStandard>
         <div className={styles.Description}>
           <Prose dangerousHtml={descriptionHtml} />
