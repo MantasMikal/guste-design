@@ -1,7 +1,8 @@
 import React from 'react'
-import { object, node, bool } from 'prop-types'
+import { object, node, bool, string } from 'prop-types'
 import classNames from 'classnames'
 import styles from './Grid.module.scss'
+import PageTitle from 'Common/PageTitle'
 
 /**
  * Used by portable text editor for grid customisation
@@ -9,19 +10,54 @@ import styles from './Grid.module.scss'
  * TODO:
  * This can be improved so we don't pass inline styles directly
  */
-const Grid = ({ style, centered, children }) => {
+
+// I think this is nasty
+const Grid = ({ id, title, options, centered, children }) => {
+  const className = classNames(styles.Grid, centered && styles.centered)
   return (
-    <div
-      className={classNames(styles.Grid, centered && styles.centered)}
-      style={style}
-    >
-      {children}
+    <div>
+      {options && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: `<style> 
+            #${id} {
+              margin: ${options.margin || '0'};
+              grid-row-gap: ${options.gridRowGap || '0px'};
+              grid-column-gap: ${options.gridColumnGap || '0px'};
+              margin-bottom: 8px;
+            }
+            @media screen and (min-width: 48em) {
+              #${id} {
+                grid-template-columns: ${
+                  options.gridTabletTemplateColumns || '1fr 1fr'
+                };
+                grid-template-rows: ${options.gridTabletTemplateRows || 'auto'};
+              }
+            }
+            @media screen and (min-width: 80em) {
+              #${id} {
+                grid-template-columns: ${
+                  options.gridTemplateColumns || '1fr 1fr'
+                };
+                grid-template-rows: ${options.gridTemplateRows || 'auto'};
+              }
+            }
+          </style>`
+          }}
+        />
+      )}
+      {title && <PageTitle as='h2' title={title} /> }
+      <div id={id} className={className}>
+        {children}
+      </div>
     </div>
   )
 }
 
 Grid.propTypes = {
-  style: object,
+  id: string.isRequired,
+  title: string,
+  options: object,
   children: node,
   centered: bool
 }

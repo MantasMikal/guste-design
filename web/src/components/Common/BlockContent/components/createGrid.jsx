@@ -6,26 +6,15 @@ export function createGrid(component) {
   const gridMedia = component.gridMedia
   if (!gridMedia) return <> </>
 
-  const colTemplate = component.colTemplate && {
-    gridTemplateColumns: `${component.colTemplate}`
-  }
-
-  const rowTemplate = component.rowTemplate && {
-    gridTemplateRows: `${component.rowTemplate}`
-  }
-
-  const rowGap = component.rowGap && { gridRowGap: `${component.rowGap}` }
-  const colGap = component.colGap && { gridColumnGap: `${component.colGap}` }
-  const margin = component.margin && { margin: component.margin }
   const centered = component.centered && component.centered
-
   const styles = {
-    ...colTemplate,
-    ...rowTemplate,
-    ...rowGap,
-    ...colGap,
-    ...margin,
-    marginBottom: '10px'
+    margin: component.margin || '0',
+    gridTemplateColumns: component.colTemplate || '1fr 1fr',
+    gridTemplateRows: component.rowTemplate || 'auto',
+    gridTabletTemplateColumns: component.colTemplateTablet || '1fr 1fr',
+    gridTabletTemplateRows: component.rowTemplateTablet || 'auto',
+    gridRowGap: component.rowGap || '0px',
+    gridColumnGap: component.colGap || '0px'
   }
 
   const gridComponents = gridMedia.map((item) => {
@@ -34,7 +23,13 @@ export function createGrid(component) {
 
   return (
     gridComponents && (
-      <Grid style={styles} centered={centered} key={component._key}>
+      <Grid
+        id={`grid_${component._key}`}
+        title={component?.title}
+        options={styles}
+        centered={centered}
+        key={component._key}
+      >
         {gridComponents}
       </Grid>
     )

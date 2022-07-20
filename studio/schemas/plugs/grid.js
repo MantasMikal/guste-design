@@ -25,6 +25,12 @@ export default {
       },
     },
     {
+      name: "title",
+      title: "Title",
+      description: "Adds a title",
+      type: "string",
+    },
+    {
       name: "colTemplate",
       title: "Column Template",
       description:
@@ -33,9 +39,19 @@ export default {
     },
     {
       name: "rowTemplate",
-      title: "Row Template",
+      title: "Desktop Row Template",
       description:
         "Same as column template, just for rows - leave empty for automatic rows",
+      type: "string",
+    },
+    {
+      name: "colTemplateTablet",
+      title: "Tablet Column Template",
+      type: "string",
+    },
+    {
+      name: "rowTemplateTablet",
+      title: "Tablet Row Template",
       type: "string",
     },
     {
