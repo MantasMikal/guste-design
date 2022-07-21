@@ -23,6 +23,7 @@
 		"build-storybook": "build-storybook"
 	},
 	"dependencies": {
+		"@pronestor/react-zoom-pan-pinch": "^2.3.0",
 		"@sanity/block-content-to-react": "^3.0.0",
 		"@sanity/image-url": "^1.0.1",
 		"@svgr/webpack": "^6.2.1",

@@ -8,6 +8,7 @@
 .MainImage {
   border: $border-standard;
   margin-bottom: spacing(1);
+  aspect-ratio: 1;
 }
 
 .Images {
@@ -20,7 +21,15 @@
   }
 }
 
+
+
 .ImageWrapper {
   display: block;
   border: $border-standard;
+
+  &.active {
+    transform: scale(1.02);
+    outline: 3px solid $color-primary-accent;
+    transition: $easing-standard $duration-short;
+  }
 }

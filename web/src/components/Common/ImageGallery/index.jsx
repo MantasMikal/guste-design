@@ -1,34 +1,49 @@
 import React, { useState } from 'react'
 import { array } from 'prop-types'
-import classNames from 'classnames'
+import cn from 'classnames'
 
 import Image from 'Primitive/Image'
-import Zoomable from 'Primitive/Zoomable'
+import {
+  TransformComponent,
+  TransformWrapper
+} from '@pronestor/react-zoom-pan-pinch'
 
 import styles from './ImageGallery.module.scss'
 
 const ImageGallery = ({ images, className }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   return (
-    <div className={classNames(styles.ImageGallery, className)}>
-      <div className={styles.MainImage}>
-        <Zoomable>
-          <MemoImage image={images[currentIndex]} ratio={1} />
-        </Zoomable>
-      </div>
-      <div className={styles.Images}>
-        {images &&
-          images.length > 0 &&
-          images.map((img, i) => (
-            <button
-              className={styles.ImageWrapper}
-              onClick={() => setCurrentIndex(i)}
-              key={`ImageGallery-${i}`}
-            >
-              <MemoImage image={img} ratio={1} />
-            </button>
-          ))}
-      </div>
+    <div className={cn(styles.ImageGallery, className)}>
+      <TransformWrapper initialScale={1}>
+        {({ resetTransform }) => (
+          <>
+            <div className={styles.MainImage}>
+              <TransformComponent>
+                <MemoImage image={images[currentIndex]} ratio={1} />
+              </TransformComponent>
+            </div>
+            <div className={styles.Images}>
+              {images &&
+                images.length > 0 &&
+                images.map((img, i) => (
+                  <button
+                    className={cn(
+                      styles.ImageWrapper,
+                      currentIndex === i && styles.active
+                    )}
+                    onClick={() => {
+                      resetTransform()
+                      setCurrentIndex(i)
+                    }}
+                    key={`ImageGallery-${i}`}
+                  >
+                    <MemoImage image={img} ratio={1} />
+                  </button>
+                ))}
+            </div>
+          </>
+        )}
+      </TransformWrapper>
     </div>
   )
 }
