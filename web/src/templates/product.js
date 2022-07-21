@@ -86,9 +86,11 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 2000
+                  width: 1500
                   layout: CONSTRAINED
                   placeholder: BLURRED
+                  sizes: "1500px"
+                  quality: 99
                 )
               }
             }
