@@ -22,8 +22,8 @@ const Grid = ({ id, title, options, centered, children }) => {
             __html: `<style> 
             #${id} {
               margin: ${options.margin || '0'};
-              grid-row-gap: ${options.gridRowGap || '0px'};
-              grid-column-gap: ${options.gridColumnGap || '0px'};
+              grid-row-gap: ${options.gridRowGap || '8px'};
+              grid-column-gap: ${options.gridColumnGap || '8px'};
               margin-bottom: 8px;
             }
             @media screen and (min-width: 48em) {

@@ -4,6 +4,7 @@ import Grid from 'Primitive/Grid'
 
 export function createGrid(component) {
   const gridMedia = component.gridMedia
+  console.log("🚀 ~ file: createGrid.jsx ~ line 7 ~ createGrid ~ component", component)
   if (!gridMedia) return <> </>
 
   const centered = component.centered && component.centered
@@ -13,8 +14,8 @@ export function createGrid(component) {
     gridTemplateRows: component.rowTemplate || 'auto',
     gridTabletTemplateColumns: component.colTemplateTablet || '1fr 1fr',
     gridTabletTemplateRows: component.rowTemplateTablet || 'auto',
-    gridRowGap: component.rowGap || '0px',
-    gridColumnGap: component.colGap || '0px'
+    gridRowGap: component.rowGap || '8px',
+    gridColumnGap: component.colGap || '8px'
   }
 
   const gridComponents = gridMedia.map((item) => {
