@@ -3,7 +3,6 @@ import classNames from 'classnames'
 import { string } from 'prop-types'
 
 import reduce from 'lodash.reduce'
-import { FaShoppingCart } from 'react-icons/fa'
 import StoreContext from 'Context/StoreContext'
 import ButtonStandard from 'Primitive/ButtonStandard'
 import Type from 'Primitive/Type'
@@ -11,6 +10,7 @@ import ModalWithTrigger from 'Primitive/ModalWithTrigger'
 import Cart from 'Common/Cart'
 
 import styles from './CartButton.module.scss'
+import Icon from 'Primitive/Icon'
 
 const useQuantity = () => {
   const {
@@ -35,7 +35,13 @@ const CartButton = ({ className }) => {
         >
           <Type size="small">CART</Type>
           <div className={styles.Cart}>
-            <FaShoppingCart size='1em' />
+            <Icon
+              className={styles.Icon}
+              width={21}
+              height={16}
+              type="store"
+              a11yText="Cart"
+            />
             {hasItems && <span className={styles.ItemCount}>{quantity}</span>}
           </div>
         </ButtonStandard>
