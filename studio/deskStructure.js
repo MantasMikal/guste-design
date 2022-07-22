@@ -19,8 +19,7 @@ const hiddenTypes = [
   "galleryPost",
   "storePage",
   "aboutPage",
-  "productPage",
-  "returnsPage",
+  "productPage"
 ];
 
 export default () =>
@@ -94,15 +93,6 @@ export default () =>
                     .id("aboutPage")
                     .schemaType("aboutPage")
                     .documentId("aboutPage")
-                )
-                .icon(MdInfoOutline),
-                S.listItem()
-                .title("Shipping and Returns")
-                .child(
-                  S.editor()
-                    .id("returnsPage")
-                    .schemaType("returnsPage")
-                    .documentId("returnsPage")
                 )
                 .icon(MdInfoOutline),
               S.listItem()

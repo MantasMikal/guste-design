@@ -1,9 +1,11 @@
 import React from 'react'
-import { func, bool, string, object, node, number } from 'prop-types'
+import { func, bool, string, object, node } from 'prop-types'
 import classnames from 'classnames'
+
 import Type from 'Primitive/Type'
 import Icon from 'Primitive/Icon'
 import SmartLink from 'Primitive/SmartLink'
+
 import styles from './Navigation.module.scss'
 import Contact from 'Section/Contact'
 
@@ -15,68 +17,17 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         id={id}
       >
         <SmartLink className={styles.Branding} to="/">
-          <div className={styles.Logo}>
-            <Icon width={20} height={26} type="gugis" a11yText="Gugis" />
-          </div>
           <h1>{siteTitle}</h1>
         </SmartLink>
-
         <Contact
           trigger={
-            <Link
-              className={styles.NavLink}
-              iconWidth={25}
-              iconHeight={16}
-              icon="mail"
-            >
+            <Link className={styles.NavLink}>
               Contact
             </Link>
           }
         />
-        <Link
-          className={styles.NavLink}
-          to="/about"
-          iconWidth={22}
-          iconHeight={18}
-          icon="about"
-        >
+        <Link className={styles.NavLink} to="/about">
           About
-        </Link>
-        <Link
-          className={styles.NavLink}
-          to="/gallery"
-          iconWidth={22}
-          iconHeight={24}
-          icon="grid"
-        >
-          Gallery
-        </Link>
-        <Link
-          className={styles.NavLink}
-          to="/projects"
-          iconWidth={18}
-          iconHeight={20}
-          icon="projects"
-        >
-          Projects
-        </Link>
-        <Link
-          className={styles.NavLink}
-          to="/services"
-          iconWidth={25}
-          iconHeight={24}
-          icon="services"
-        >
-          Services
-        </Link>
-        <Link
-          className={styles.NavLink}
-          to="/store"
-          iconWidth={25}
-          iconHeight={20}
-          icon="store"
-        >
-          Store
         </Link>
         {/* <div className={styles.Dropdown}>
         <SmartLink onClick={} to="/store" className={styles.DropdownBtn}>
@@ -105,6 +56,15 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           </Link>
         </div>
       </div> */}
+        <Link className={styles.NavLink} to="/store">
+          Store
+        </Link>
+        <Link className={styles.NavLink} to="/gallery">
+          Gallery
+        </Link>
+        <Link className={styles.NavLink} to="/projects">
+          Projects
+        </Link>
 
         <button
           className={styles.ToggleNavButton}
@@ -122,9 +82,6 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
 }
 
 Navigation.propTypes = {
-  icon: string,
-  iconWidth: number,
-  iconHeight: number,
   onHideNav: func,
   onShowNav: func,
   showNav: bool,
@@ -135,25 +92,13 @@ Navigation.propTypes = {
 
 export default Navigation
 
-const Link = ({
-  children,
-  to,
-  className,
-  highlight,
-  icon,
-  iconWidth,
-  iconHeight,
-  ...other
-}) => (
+const Link = ({ children, to, className, highlight, ...other }) => (
   <SmartLink
     className={classnames(className, highlight && styles.highlight)}
     to={to}
     {...other}
   >
-    <div className={styles.Icon}>
-      <Icon className={styles.IconInner} width={iconWidth} height={iconHeight} type={icon} a11yText="" />
-    </div>
-    <Type className={styles.NavLinkInner} as="span" size="menu">
+    <Type as="span" size="menu">
       {children}
     </Type>
   </SmartLink>

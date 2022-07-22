@@ -2,108 +2,15 @@
 @import '_backline-mixins';
 
 .Footer {
-  display: flex;
-  flex-direction: column;
-  gap: spacing(1);
-
-  svg,
-  a {
-    color: $color-common-black;
-  }
-}
-
-.LinkIcon {
-  margin-right: spacing(0.7);
-}
-
-.CraftedBy span {
-  color: $color-secondary-accent;
-}
-
-.NavLink,
-.Social a,
-.CraftedBy {
-  cursor: pointer;
-  transition: all $easing-standard $duration-shortest;
-
-  &:hover,
-  &:focus,
-  &:active {
-    transition: all $easing-standard $duration-shortest;
-    background-color: $color-primary-accent;
-  }
-}
-
-.NavLink,
-.Social,
-.CraftedBy,
-.Copyright {
-  border: 2px solid $color-common-black;
+  padding-top: spacing(2);
+  padding-bottom: spacing(2);
+  // margin-bottom: spacing(1);
+  border: $border-standard;
   text-align: center;
-  padding: spacing(1);
+  color: $color-primary-black;
 }
 
-.Social {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  overflow: hidden;
-  padding: 0;
-  height: 44px;
-
-  a {
-    position: relative;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: spacing(1);
-  }
-
-  & > * + * {
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      width: 2px;
-      height: 120px;
-      border-left: 2px solid $color-primary-black;
-    }
-  }
-}
-
-@include mq($breakpoint-tabletLandscape) {
-  .NavLink,
-  .Social,
-  .CraftedBy,
-  .Copyright {
-    border: 0;
-  }
-
-  .Social {
-    height: 100%;
-    border-right: 2px solid $color-common-black;
-
-    a {
-      display: flex;
-      aspect-ratio: 1;
-      width: 3em;
-    }
-  }
-
-  .Footer {
-    flex-direction: row;
-    align-items: center;
-    border: 2px solid $color-common-black;
-    height: 44px;
-    gap: 0;
-
-    & > * + * {
-      border-left: 2px solid $color-common-black;
-    }
-  }
-
-  .CraftedBy {
-    margin-left: auto;
-  }
+.Mantas {
+  display: block;
+  margin-top: spacing(0.5);
 }

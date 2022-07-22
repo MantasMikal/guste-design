@@ -14,7 +14,6 @@ const Layout = ({
   showNav,
   siteTitle,
   social,
-  shippingAndReturns,
   logo
 }) => {
   return (
@@ -34,12 +33,7 @@ const Layout = ({
       <div className={styles.Content} id="content">
         {children}
       </div>
-      <Footer
-        shippingAndReturns={shippingAndReturns}
-        social={social}
-        logo={logo}
-        siteTitle={siteTitle}
-      />
+      <Footer social={social} logo={logo} siteTitle={siteTitle} />
     </div>
   )
 }

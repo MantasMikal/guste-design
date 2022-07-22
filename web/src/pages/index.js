@@ -36,7 +36,6 @@ const IndexPage = (props) => {
 
   const home = (data || {}).home
   const site = (data || {}).site
-
   if (!home) {
     throw new Error(
       'Missing "Home content". Open the studio at http://localhost:3333 and add some content to "Pages/Home" and restart the development server.'
@@ -48,7 +47,7 @@ const IndexPage = (props) => {
   const { description } = openGraph
   return (
     <Layout>
-      <Seo title="GUSTE.DESIGN | Gustė Vasiliauskaitė" />
+      <Seo title='GUSTE.DESIGN | Gustė Vasiliauskaitė' />
       <h1 hidden>{site.title} | Gustė Vasiliauskaitė</h1>
       <p hidden>{description}</p>
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
