@@ -70,6 +70,20 @@ const serializers = (baseFontSize) => ({
             </Type>
           )
 
+        case 'large':
+          return (
+            <Type as="p" size="baseLarge" padded>
+              {props.children}
+            </Type>
+          )
+
+        case 'larger':
+          return (
+            <Type as="p" size="titleLarge" padded>
+              {props.children}
+            </Type>
+          )
+
         case 'small':
           return (
             <Type as="p" size="small" padded style={{ lineHeight: '1.6' }}>

@@ -1,4 +1,25 @@
-import { FaExternalLinkAlt, FaExternalLinkSquareAlt, FaLine } from "react-icons/fa";
+import {
+  FaExternalLinkAlt,
+  FaExternalLinkSquareAlt,
+  FaLine,
+} from "react-icons/fa";
+import React from "react";
+
+const baseLargeFontRender = (props) => {
+  return (
+    <span style={{ fontSize: "20px", fontWeight: "normal" }}>
+      {props.children}
+    </span>
+  );
+};
+
+const baseLargerFontRender = (props) => {
+  return (
+    <span style={{ fontSize: "24px", fontWeight: "normal" }}>
+      {props.children}
+    </span>
+  );
+};
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -25,6 +46,16 @@ export default {
       styles: [
         { title: "Small", value: "small" },
         { title: "Normal", value: "normal" },
+        {
+          title: "Large",
+          value: "large",
+          blockEditor: { render: baseLargeFontRender },
+        },
+        {
+          title: "Larger",
+          value: "larger",
+          blockEditor: { render: baseLargerFontRender },
+        },
         { title: "H2", value: "h2" },
         { title: "H3", value: "h3" },
         { title: "H4", value: "h4" },
@@ -117,6 +148,6 @@ export default {
     },
     {
       type: "projectSlideshow",
-    }
+    },
   ],
 };
