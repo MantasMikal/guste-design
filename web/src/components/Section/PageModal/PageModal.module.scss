@@ -1,0 +1,141 @@
+@import 'settings';
+@import '_backline-mixins';
+
+@mixin modal-fade-in($duration: 1000, $delay: 0) {
+  animation: modal-fade-in ($duration * 1ms) ($delay * 1ms) $ease-out-cubic 1
+    forwards;
+  opacity: 0;
+}
+
+.PageModal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.Background {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($color-primary-black, 0.8);
+  @include modal-fade-in(300);
+}
+
+.PageModalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  max-height: calc(
+    100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom)
+  );
+  color: $color-primary-white;
+  padding: spacing(2);
+}
+
+.PageModalInner {
+  border: 2px solid $color-common-black;
+  background-color: $color-common-white;
+  display: grid;
+  grid-template-columns: 1fr;
+  // overflow-y: auto;
+  height: 100%;
+  color: $color-common-black;
+  position: relative;
+
+  & > .Image {
+    border-bottom: 2px solid $color-common-black;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  @include mq($breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    max-width: $breakpoint-desktop;
+    max-height: 80vh;
+
+    & > .Image {
+      border-right: 2px solid $color-common-black;
+    }
+  }
+}
+
+
+.Image {
+  // height: 0;
+  // padding-bottom: 100%;
+}
+
+.Content {
+  padding: spacing(2);
+  height: 100%;
+  overflow-y: scroll;
+
+  @include mq($breakpoint-desktop) {
+    padding: spacing(4);
+  }
+}
+
+.Title {
+  margin-bottom: spacing(2);
+  font-size: spacing(9);
+  line-height: spacing(10);
+  outline: 0 !important;
+}
+
+.Social {
+  display: flex;
+  align-items: center;
+  & a {
+    display: block;
+    color: $color-primary-white;
+    &:hover,
+    &:focus {
+      color: $color-primary-accent;
+    }
+
+    &:not(:last-child) {
+      margin-right: spacing(2);
+    }
+  }
+}
+
+.Close {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  top: spacing(-1);
+  right: spacing(-1);
+  background-color: $color-common-white;
+  padding: spacing(0.2);
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid $color-common-black;
+  transition: all $easing-standard $duration-shorter;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-primary-accent;
+    transition: all $easing-standard $duration-shorter;
+  }
+}
+
+@keyframes modal-fade-in {
+  100% {
+    opacity: 1;
+  }
+}

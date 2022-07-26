@@ -13,8 +13,11 @@
   margin: 0 $layout-margin;
   border: $border-standard;
 
+  display: flex;
+  flex-direction: row-reverse;
+
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     margin: 0 $layout-margin;
@@ -28,19 +31,32 @@
 // Branding
 
 .Branding {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   order: 1;
   vertical-align: middle;
   color: $color-primary-black;
   font-weight: 600;
-  padding: spacing(1) spacing(1);
+  // padding: spacing(1) spacing(1);
   letter-spacing: 1px;
-  
+  margin-right: auto;
+
   &:hover,
   &:focus {
     transition: 0.1 $easing-standard;
     text-decoration: underline;
+  }
+}
+
+.Logo {
+  padding: spacing(1) spacing(1.5);
+  border-right: 2px solid $color-common-black;
+  margin-right: spacing(1);
+
+  svg {
+    animation: spin 3s linear infinite;
   }
 }
 
@@ -61,9 +77,30 @@
   }
 }
 
+.NavLinkInner {
+  svg {
+    margin-right: spacing(1);
+  }
+}
+
 .NavLink {
   float: right;
   font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Icon {
+  margin-right: spacing(0.8);
+}
+
+.Icon,
+.IconInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // Nav toggle
@@ -120,9 +157,14 @@
   }
 }
 
+.Branding {
+  display: flex;
+  flex-grow: 0;
+}
+
 // Mobile only styles
 
-@include mq(null, $breakpoint-tablet) {
+@include mq(null, $breakpoint-tabletLandscape) {
   .NavLink,
   .Dropdown .DropdownBtn {
     display: none;
@@ -137,6 +179,35 @@
     z-index: 9999;
   }
 
+  .Logo {
+    width: 2.8rem;
+  }
+
+  .NavLink {
+    overflow: hidden;
+    .Icon {
+      width: 2.3rem;
+      
+      position: relative;
+      margin-right: spacing(0.5);
+
+      .IconInner {
+        position: relative;
+        left: -0.3em;
+      }
+      
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 2px;
+        height: 120px;
+        border-right: 2px solid $color-primary-black;
+      }
+    }
+  }
+
   .Wrapper.showNav {
     display: flex;
     flex-direction: column-reverse;
@@ -144,7 +215,9 @@
     .NavLink,
     .DropdownBtn {
       float: none;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       text-align: left;
       width: 100%;
       border: none;
@@ -171,5 +244,15 @@
         border-top: 0;
       }
     }
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
   }
 }

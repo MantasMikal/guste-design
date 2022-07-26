@@ -23,6 +23,18 @@ const query = graphql`
       youtubeUrl
       instagramUrl
     }
+
+    shippingAndReturns: sanityReturnsPage(
+      _id: { regex: "/(drafts.|)returnsPage/" }
+    ) {
+      _rawBody(resolveReferences: { maxDepth: 10 })
+      mainImage {
+        asset {
+          url
+          _id
+        }
+      }
+    }
   }
 `
 
@@ -53,7 +65,7 @@ const LayoutContainer = (props) => {
             }
           : {}
 
-        const { site } = data
+        const { site, shippingAndReturns } = data || {}
 
         return (
           <Provider createStore={createStore}>
@@ -78,6 +90,7 @@ const LayoutContainer = (props) => {
               siteTitle={site && site.title}
               social={social}
               logo={site && site.logo}
+              shippingAndReturns={shippingAndReturns}
             />
           </Provider>
         )
