@@ -9,7 +9,7 @@ import styles from './Banner.module.scss'
 const MemoImage = React.memo(Image)
 
 const Banner = ({ desktopImages, mobileImages, className }) => {
-  
+  const hasNoMobileImages = !mobileImages || mobileImages.length === 0
   const [sliderRef, instanceRef] = useKeenSlider({
     slides: {
       perView: 1,
@@ -28,7 +28,7 @@ const Banner = ({ desktopImages, mobileImages, className }) => {
 
   if (!desktopImages || desktopImages?.length === 0) return null
   return (
-    <div className={classNames(styles.Banner, className)}>
+    <div className={classNames(styles.Banner, hasNoMobileImages, hasNoMobileImages && styles.desktopImagesOnMobile, className)}>
       <div ref={sliderRef} className={classNames('keen-slider', styles.Carousel)}>
         {desktopImages?.map((img, i) => (
           <div className={classNames('keen-slider__slide')} key={`DesktopImage-${i}`} index={i}>

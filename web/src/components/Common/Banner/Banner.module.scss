@@ -20,3 +20,10 @@
     display: none;
   }
 }
+
+
+.Banner.desktopImagesOnMobile {
+  .DesktopImage {
+    display: block !important;
+  }
+}

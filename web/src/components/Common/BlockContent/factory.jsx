@@ -7,6 +7,7 @@ import createMedia from './components/createMedia'
  * Used to create components coming from CMS
  */
 export default function createComponents(components) {
+  console.log("🚀 ~ file: factory.jsx ~ line 10 ~ createComponents ~ components", components)
   if (!components) {
     return <> </>
   }
@@ -22,6 +23,8 @@ export default function createComponents(components) {
         return createMedia(component)
       case 'line':
         return createLine(component)
+      case 'projectSlideshow':
+        return createMedia(component)
       default:
         return <></>
     }

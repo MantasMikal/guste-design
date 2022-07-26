@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1865.88 1300"><defs><style>.cls-1{fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:99.21px;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path d="M1766.67,99.21V1200.79H99.21V99.21H1766.67M1865.88,0H0V1300H1865.88V0Z"/><polyline class="cls-1" points="1783.85 76.97 932.94 790.96 82.04 76.97"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1501 1500">
+  <defs>
+    <style>
+      .cls-1,
+      .cls-2 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 113.39px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path d="M1387.61,340.5v819H113.39v-819H1387.61M1501,227.11H0V1272.89H1501V227.11Z" />
+      <polyline class="cls-1" points="1435.01 289.03 750.5 863.39 65.99 289.03" />
+    </g>
+  </g>
+</svg>

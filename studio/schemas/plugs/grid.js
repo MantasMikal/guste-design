@@ -69,10 +69,30 @@ export default {
       type: "string",
     },
     {
-      name: "centered",
-      title: "Centered",
-      description: "Centers the items in the grid",
-      type: "boolean",
+      name: "justifyContent",
+      title: "Align horizontally",
+      description: "Align the items in the grid horizontally",
+      type: "string",
+      options: {
+        list: [
+          { title: "Left", value: "flex-start" },
+          { title: "Center", value: "center" },
+          { title: "Right", value: "flex-end" },
+        ]
+      }
+    },
+    {
+      name: "alignItems",
+      title: "Align vertically",
+      description: "Align the items in the grid vertically",
+      type: "string",
+      options: {
+        list: [
+          { title: "Left", value: "flex-start" },
+          { title: "Center", value: "center" },
+          { title: "Right", value: "flex-end" },
+        ]
+      }
     },
     {
       name: "margin",

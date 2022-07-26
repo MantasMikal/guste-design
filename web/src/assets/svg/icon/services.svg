@@ -1,9 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1615.43 1298.44">
-  <g data-name="Layer 2">
-    <g data-name="Layer 1">
-      <path d="M1514.41 339.69v857.73H101V339.69h1413.41m101-101H0v1059.75h1615.43V238.67Z" style="fill:#1d1d1b"/>
-      <path style="stroke-miterlimit:10;fill:none;stroke:#1d1d1b;stroke-width:101.02px" d="M513.6 324.73V50.51h588.24v274.22"/>
-      <path d="M317.84 291.54v933.6m979.75-933.6v933.6" style="fill:none;stroke:#1d1d1b;stroke-width:101.02px;stroke-linejoin:round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 1500">
+  <defs>
+    <style>
+      .cls-1,
+      .cls-2,
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-1,
+      .cls-2 {
+        stroke: #000;
+        stroke-width: 113.39px;
+      }
+
+      .cls-1 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <path d="M1386.61,458.72V1216H113.39V458.72H1386.61M1500,345.33H0v984.05H1500V345.33Z" />
+      <polyline class="cls-1" points="476.9 425.25 476.9 170.62 1023.1 170.62 1023.1 425.25" />
+      <line class="cls-2" x1="295.13" y1="394.43" x2="295.13" y2="1261.32" />
+      <line class="cls-2" x1="1204.87" y1="394.43" x2="1204.87" y2="1261.32" />
+      <rect class="cls-3" width="1500" height="1500" />
     </g>
   </g>
 </svg>

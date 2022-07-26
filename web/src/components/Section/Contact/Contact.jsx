@@ -5,7 +5,7 @@ import FocusTrap from 'focus-trap-react'
 import useEscapeKey from 'hooks/useEscapeKey'
 import useOutsideClick from 'hooks/useOutsideClick'
 
-import { FaLinkedinIn, FaPinterest } from 'react-icons/fa'
+import { FaLinkedinIn, FaPinterest, FaPinterestP } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiBehance } from 'react-icons/si'
@@ -56,7 +56,7 @@ const Contact = ({ onClose, open }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <GrInstagram size="2em" />
+                  <GrInstagram size="1.8em" />
                 </SmartLink>
                 <SmartLink
                   href="https://www.behance.net/GusteDesign"
@@ -77,7 +77,7 @@ const Contact = ({ onClose, open }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <FaPinterest size="2em" />
+                  <FaPinterestP size="1.8em" />
                 </SmartLink>
               </div>
             </div>

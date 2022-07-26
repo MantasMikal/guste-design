@@ -115,5 +115,8 @@ export default {
     {
       type: "line",
     },
+    {
+      type: "projectSlideshow",
+    }
   ],
 };

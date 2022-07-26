@@ -104,6 +104,9 @@ const serializers = (baseFontSize) => ({
     },
     line(props) {
       return createLine(props.node)
+    },
+    projectSlideshow(props) {
+      return createMediaComponent(props.node)
     }
   }
 })

@@ -25,8 +25,8 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           trigger={
             <Link
               className={styles.NavLink}
-              iconWidth={25}
-              iconHeight={16}
+              iconWidth={24}
+              iconHeight={24}
               icon="mail"
             >
               Contact
@@ -36,8 +36,8 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <Link
           className={styles.NavLink}
           to="/about"
-          iconWidth={22}
-          iconHeight={18}
+          iconWidth={24}
+          iconHeight={24}
           icon="about"
         >
           About
@@ -45,7 +45,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <Link
           className={styles.NavLink}
           to="/gallery"
-          iconWidth={22}
+          iconWidth={24}
           iconHeight={24}
           icon="grid"
         >
@@ -54,8 +54,8 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <Link
           className={styles.NavLink}
           to="/projects"
-          iconWidth={18}
-          iconHeight={20}
+          iconWidth={24}
+          iconHeight={24}
           icon="projects"
         >
           Projects
@@ -63,7 +63,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <Link
           className={styles.NavLink}
           to="/services"
-          iconWidth={25}
+          iconWidth={24}
           iconHeight={24}
           icon="services"
         >
@@ -72,8 +72,8 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         <Link
           className={styles.NavLink}
           to="/store"
-          iconWidth={25}
-          iconHeight={20}
+          iconWidth={24}
+          iconHeight={24}
           icon="store"
         >
           Store
@@ -151,8 +151,14 @@ const Link = ({
     {...other}
   >
     <div className={styles.Icon}>
-      <Icon className={styles.IconInner} width={iconWidth} height={iconHeight} type={icon} a11yText="" />
-    </div>
+      <Icon
+        className={styles.IconInner}
+        width={iconWidth}
+        height={iconHeight}
+        type={icon}
+        a11yText=""
+      />
+    </div>{' '}
     <Type className={styles.NavLinkInner} as="span" size="menu">
       {children}
     </Type>

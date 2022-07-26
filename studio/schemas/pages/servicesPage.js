@@ -1,18 +1,13 @@
 export default {
-  name: "aboutPage",
+  name: "servicesPage",
   title: "Page",
   type: "document",
   liveEdit: true,
   fields: [
     {
-      name: "mainImage",
-      title: "Main image",
-      type: "figure",
-    },
-    {
-      name: "bio",
-      title: "Bio",
-      type: "blockContent",
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
       name: "body",
@@ -20,4 +15,11 @@ export default {
       type: "blockContent",
     },
   ],
+  preview: {
+    prepare() {
+      return {
+        title: "Services",
+      };
+    },
+  },
 };

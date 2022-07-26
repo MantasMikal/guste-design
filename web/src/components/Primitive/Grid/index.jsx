@@ -12,7 +12,7 @@ import PageTitle from 'Common/PageTitle'
  */
 
 // I think this is nasty
-const Grid = ({ id, title, options, centered, children }) => {
+const Grid = ({ id, title, options, itemOptions, centered, children }) => {
   const className = classNames(styles.Grid, centered && styles.centered)
   return (
     <div>
@@ -42,11 +42,17 @@ const Grid = ({ id, title, options, centered, children }) => {
                 grid-template-rows: ${options.gridTemplateRows || 'auto'};
               }
             }
+            #${id} > * {
+              display: flex;
+              flex-direction: column;
+              justify-content: ${itemOptions.justifyContent || 'flex-start'};
+              align-items: ${itemOptions.alignItems || 'flex-start'};
+            }
           </style>`
           }}
         />
       )}
-      {title && <PageTitle as='h2' title={title} /> }
+      {title && <PageTitle as="h2" title={title} />}
       <div id={id} className={className}>
         {children}
       </div>

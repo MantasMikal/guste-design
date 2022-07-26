@@ -7,7 +7,6 @@ export function createGrid(component) {
   console.log("🚀 ~ file: createGrid.jsx ~ line 7 ~ createGrid ~ component", component)
   if (!gridMedia) return <> </>
 
-  const centered = component.centered && component.centered
   const styles = {
     margin: component.margin || '0',
     gridTemplateColumns: component.colTemplate || '1fr 1fr',
@@ -15,7 +14,12 @@ export function createGrid(component) {
     gridTabletTemplateColumns: component.colTemplateTablet || '1fr 1fr',
     gridTabletTemplateRows: component.rowTemplateTablet || 'auto',
     gridRowGap: component.rowGap || '8px',
-    gridColumnGap: component.colGap || '8px'
+    gridColumnGap: component.colGap || '8px',
+  }
+
+  const itemStyles = {
+    justifyContent: component.justifyContent || 'flex-start',
+    alignItems: component.alignItems || 'flex-start'
   }
 
   const gridComponents = gridMedia.map((item) => {
@@ -28,7 +32,7 @@ export function createGrid(component) {
         id={`grid_${component._key}`}
         title={component?.title}
         options={styles}
-        centered={centered}
+        itemOptions={itemStyles}
         key={component._key}
       >
         {gridComponents}

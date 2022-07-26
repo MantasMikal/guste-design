@@ -2,6 +2,7 @@ import React from 'react'
 import createVideo from './createVideo'
 import createFigure from './createFigure'
 import createContentBlock from './createContentBlock'
+import createProjectSlideshow from './createProjectSlideshow'
 
 export const createMediaComponent = (component) => {
   switch (component._type) {
@@ -16,6 +17,9 @@ export const createMediaComponent = (component) => {
 
     case 'contentBlock':
       return createContentBlock(component)
+
+    case 'projectSlideshow':
+      return createProjectSlideshow(component)
 
     default:
       return <> </>

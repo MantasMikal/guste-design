@@ -2,7 +2,7 @@ import React from 'react'
 
 import SmartLink from 'Primitive/SmartLink'
 import Container from 'Primitive/Container'
-import { FaLinkedinIn, FaPinterest } from 'react-icons/fa'
+import { FaLinkedinIn, FaPinterest, FaPinterestP } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiBehance } from 'react-icons/si'
@@ -35,35 +35,35 @@ const Footer = ({ shippingAndReturns }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <HiOutlineMail size="2em" />
+          <Icon type='mail' width={24} height={24} />
         </SmartLink>
         <SmartLink
           href="https://www.instagram.com/guste.design"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <GrInstagram size="1.5em" />
+          <GrInstagram size="1.3em" />
         </SmartLink>
         <SmartLink
           href="https://www.behance.net/GusteDesign"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <SiBehance size="2em" />
+          <SiBehance size="1.5em" />
         </SmartLink>
         <SmartLink
           href="https://www.linkedin.com/in/guste-vasil/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedinIn size="1.8em" />
+          <FaLinkedinIn size="1.4em" />
         </SmartLink>
         <SmartLink
           href="https://www.pinterest.com/gustedesign/_saved/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaPinterest size="1.7em" />
+          <FaPinterestP size="1.4em" />
         </SmartLink>
       </div>
       <SmartLink
