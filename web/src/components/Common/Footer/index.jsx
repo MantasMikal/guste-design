@@ -59,7 +59,7 @@ const Footer = ({ shippingAndReturns }) => {
           <FaLinkedinIn size="1.4em" />
         </SmartLink>
         <SmartLink
-          href="https://www.pinterest.com/gustedesign/_saved/"
+          href="https://www.pinterest.com/gustedesign/"
           target="_blank"
           rel="noopener noreferrer"
         >
