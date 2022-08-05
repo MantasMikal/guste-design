@@ -6,6 +6,7 @@ import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Hero from 'Common/Hero'
 import BlockSection from 'Section/Block'
+import BlockContent from 'Common/BlockContent'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -35,6 +36,7 @@ const IndexPage = (props) => {
   }
 
   const home = (data || {}).home
+  console.log('home', home)
   const site = (data || {}).site
 
   if (!home) {
@@ -54,9 +56,7 @@ const IndexPage = (props) => {
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
       {_rawSections &&
         _rawSections.map((section) => (
-          <div key={section._key}>
-            <BlockSection blockContent={section.body} title={section.title} />
-          </div>
+          <BlockContent blocks={section.body} key={section._id} />
         ))}
     </Layout>
   )
