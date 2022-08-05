@@ -22,6 +22,7 @@ const detailsQuery = graphql`
 `
 
 function Seo({ description, lang, meta, keywords, title, image }) {
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -34,9 +35,8 @@ function Seo({ description, lang, meta, keywords, title, image }) {
         const siteTitle = data.site.title
         const pageTitle = title || siteTitle || og.title
         const metaDescription = description || og.description
-        const metaImage = image ? image : og.image
+        const metaImage = image ? image : og.image.asset.url
         const metaKeywords = keywords || og.keywords
-
         return (
           <Helmet
             htmlAttributes={{
