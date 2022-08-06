@@ -6,7 +6,7 @@ const createContentBlock = (block) => {
   const padding = block.padding ? { padding: `${block.padding}` } : null
   const border = block.border ? { border: `${block.border}` } : null
   const textAlign = block.textAlign ? { textAlign: `${block.textAlign}` } : null
-  const backgroundColor = block.backgroundColor ? { backgroundColor: `${block.backgroundColor}` } : null
+  const backgroundColor = block?.backgroundColor?.hex ? { backgroundColor: `${block.backgroundColor.hex}` } : null
   const styles = Object.assign({}, padding, margin, border, textAlign, backgroundColor, {
     width: '100%'
   })

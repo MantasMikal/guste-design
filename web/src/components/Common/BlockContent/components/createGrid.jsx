@@ -4,7 +4,6 @@ import Grid from 'Primitive/Grid'
 
 export function createGrid(component) {
   const gridMedia = component.gridMedia
-  console.log("🚀 ~ file: createGrid.jsx ~ line 7 ~ createGrid ~ component", component)
   if (!gridMedia) return <> </>
 
   const styles = {
