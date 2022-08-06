@@ -6,6 +6,7 @@
   border: 2px solid $color-common-black;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .Title {
@@ -18,6 +19,8 @@
   height: 100%;
   left: 0;
   top: 0;
+  object-fit: cover;
+  object-position: center;
 }
 
 .Content {
