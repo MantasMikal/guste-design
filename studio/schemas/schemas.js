@@ -35,6 +35,7 @@ import line from './plugs/line'
 import returns from "./pages/returns";
 import servicesPage from "./pages/servicesPage";
 import projectSlideshow from "./plugs/projectSlideshow";
+import newsletter from "./plugs/newsletter";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -71,7 +72,8 @@ export default createSchema({
     productPage,
     returns,
     servicesPage,
-    projectSlideshow
+    projectSlideshow,
+    newsletter
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

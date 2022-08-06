@@ -25,6 +25,11 @@ export default {
       type: "image",
     },
     {
+      name: "newsletterSignup",
+      title: "Newsletter",
+      type: "newsletterSignup", 
+    },
+    {
       name: "sections",
       title: "Sections",
       type: "array",

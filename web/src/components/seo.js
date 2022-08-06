@@ -30,7 +30,7 @@ function Seo({ description, lang, meta, keywords, title, image }) {
         if (!data.site) {
           return
         }
-        
+
         const og = data.site.openGraph
         const siteTitle = data.site.title
         const pageTitle = title || siteTitle || og.title
