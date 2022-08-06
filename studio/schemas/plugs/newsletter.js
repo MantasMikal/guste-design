@@ -18,5 +18,10 @@ export default {
       name: "bgImage",
       title: "Background Image",
     },
+    {
+      type: "image",
+      name: "bgImageMobile",
+      title: "Mobile Background Image",
+    },
   ],
 };

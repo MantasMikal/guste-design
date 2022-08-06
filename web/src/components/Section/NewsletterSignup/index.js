@@ -11,7 +11,7 @@ import { useState } from 'react'
 
 import styles from './NewsletterSignup.module.scss'
 
-const NewsletterSignup = ({ title, subtitle, bgImage }) => {
+const NewsletterSignup = ({ title, subtitle, bgImage, bgImageMobile }) => {
   const [formState, setFormState] = useState(null)
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -37,6 +37,7 @@ const NewsletterSignup = ({ title, subtitle, bgImage }) => {
   return (
     <div className={styles.NewsletterSignup}>
       <Image image={bgImage} className={styles.Image} />
+      <Image image={bgImageMobile} className={styles.MobileImage} />
       <Container gutter center size="large" className={styles.Content}>
         <Type as="h2" size="titleLarge" className={styles.Title}>
           {title}
