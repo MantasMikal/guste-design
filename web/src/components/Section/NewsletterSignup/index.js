@@ -36,9 +36,7 @@ const NewsletterSignup = ({ title, subtitle, bgImage }) => {
 
   return (
     <div className={styles.NewsletterSignup}>
-      <div className={styles.Image}>
-        <Image image={bgImage} />
-      </div>
+      <Image image={bgImage} className={styles.Image} />
       <Container gutter center size="large" className={styles.Content}>
         <Type as="h2" size="titleLarge" className={styles.Title}>
           {title}
