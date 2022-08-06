@@ -73,7 +73,7 @@ const NewsletterSignup = ({ title, subtitle, bgImage }) => {
         )}
         {formState === 'error' && (
           <Type className={styles.Error}>
-            Oh no... There was an error. Try again later!
+            Brr, an error. Try again later! 🙂
           </Type>
         )}
       </Container>

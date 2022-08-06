@@ -149,5 +149,8 @@ export default {
     {
       type: "projectSlideshow",
     },
+    {
+      type: "newsletterSignup"
+    }
   ],
 };

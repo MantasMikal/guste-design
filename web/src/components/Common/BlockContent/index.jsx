@@ -12,6 +12,7 @@ import createFigure from './components/createFigure'
 import createSlideshow from './components/createSlideshow'
 import createMediaComponent from './components/createMedia'
 import createLine from './components/createLine'
+import createNewsletterSignup from './components/createNewsletterSignup'
 
 import styles from './BlockContent.module.scss'
 
@@ -121,6 +122,9 @@ const serializers = (baseFontSize) => ({
     },
     projectSlideshow(props) {
       return createMediaComponent(props.node)
+    },
+    newsletterSignup(props) {
+      return createNewsletterSignup(props.node)
     }
   }
 })

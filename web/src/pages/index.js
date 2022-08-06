@@ -6,7 +6,6 @@ import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Hero from 'Common/Hero'
 import BlockContent from 'Common/BlockContent'
-import NewsletterSignup from 'Section/NewsletterSignup'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -14,16 +13,6 @@ export const query = graphql`
       _rawSections(resolveReferences: { maxDepth: 10 })
       title
       subtitle
-      newsletterSignup {
-        title
-        subtitle
-        bgImage {
-          asset {
-            url
-            _id
-          }
-        }
-      }
     }
     site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
       title
@@ -55,11 +44,7 @@ const IndexPage = (props) => {
     )
   }
 
-  const { hero, title, subtitle, _rawSections, newsletterSignup } = home
-  console.log(
-    '🚀 ~ file: index.js ~ line 48 ~ IndexPage ~ newsletterSignup',
-    newsletterSignup
-  )
+  const { hero, title, subtitle, _rawSections } = home
   const { openGraph } = site
   const { description } = openGraph
   return (
@@ -68,7 +53,6 @@ const IndexPage = (props) => {
       <h1 hidden>{site.title} | Gustė Vasiliauskaitė</h1>
       <p hidden>{description}</p>
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
-      {newsletterSignup && <NewsletterSignup {...newsletterSignup} />}
       {_rawSections &&
         _rawSections.map((section) => (
           <BlockContent blocks={section.body} key={section._id} />
