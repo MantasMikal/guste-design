@@ -10,7 +10,7 @@
 }
 
 .Title {
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .Image {
@@ -31,8 +31,10 @@
 .Content {
   color: $color-common-black;
   z-index: 1;
-  padding-top: spacing(2);
-  padding-bottom: spacing(2);
+  // padding: 2em spacing(8);
+  padding-top: spacing(6);
+  padding-bottom: spacing(6);
+  // background-color: $color-primary-accentS;
 
   & > * + * {
     margin-top: spacing(1);
@@ -71,7 +73,7 @@
   }
 
   .Content {
-    padding: spacing(10) 4em;
+    padding: spacing(18) 4em;
   }
 
   .Field {

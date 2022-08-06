@@ -39,6 +39,11 @@ export default {
       type: "string",
     },
     {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'color',
+    },
+    {
       name: "padding",
       title: "Padding",
       description:
