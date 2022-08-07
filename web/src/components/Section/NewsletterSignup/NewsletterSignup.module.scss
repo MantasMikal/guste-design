@@ -7,11 +7,10 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background-color: #f2f2f2;
 }
 
 .Title {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .Image {
@@ -20,6 +19,11 @@
 
 .Image,
 .MobileImage {
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
   object-fit: cover;
   object-position: center;
 }
@@ -27,9 +31,8 @@
 .Content {
   color: $color-common-black;
   z-index: 1;
-  padding-top: spacing(6);
-  padding-bottom: spacing(0);
-  padding-left: spacing(6);
+  padding-top: spacing(8);
+  padding-bottom: spacing(8);
 
   & > * + * {
     margin-top: spacing(1);
@@ -54,10 +57,6 @@
 }
 
 @include mq($breakpoint-tablet) {
-  .NewsletterSignup {
-    flex-direction: row;
-  }
-
   .Form {
     display: flex;
     align-items: center;
@@ -69,16 +68,6 @@
 
   .Image {
     display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    img {
-      object-fit: contain;
-      object-position: center;
-    }
   }
 
   .Content {
