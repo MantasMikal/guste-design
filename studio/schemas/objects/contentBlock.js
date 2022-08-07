@@ -13,6 +13,11 @@ export default {
       type: "blockContent",
     },
     {
+      name: 'maxWidth',
+      title: 'Max Width',
+      type: 'string',
+    },
+    {
       name: "textAlign",
       title: "Text Align",
       type: "string",
