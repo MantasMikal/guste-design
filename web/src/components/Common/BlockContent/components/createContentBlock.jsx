@@ -8,13 +8,15 @@ const createContentBlock = (block) => {
   const textAlign = block.textAlign ? { textAlign: `${block.textAlign}` } : null
   const backgroundColor = block?.backgroundColor?.hex ? { backgroundColor: `${block.backgroundColor.hex}` } : null
   const maxWidth = block.maxWidth ? { maxWidth: `${block.maxWidth}` } : null
-  const styles = Object.assign({}, padding, margin, border, textAlign, backgroundColor, maxWidth, {
+  const styles = Object.assign({}, padding, margin, border, textAlign, backgroundColor, {
     width: '100%'
   })
 
+  const contentStyles = Object.assign({}, maxWidth)
+
   return (
     <div key={block._key} style={styles}>
-      <BlockContent blocks={block.contentBlock} />
+      <BlockContent style={contentStyles} blocks={block.contentBlock} />
     </div>
   )
 }

@@ -37,10 +37,10 @@ const NewsletterSignup = ({ title, subtitle, bgImage, bgImageMobile }) => {
   return (
     <div className={styles.NewsletterSignup}>
       <Container gutter center size="large" className={styles.Content}>
-        <Type as="h2" size="titleLarge" className={styles.Title}>
+        <Type as="h2" size='baseLarge' className={styles.Title}>
           {title}
         </Type>
-        <Type as="p" size="titleMedium" className={styles.Subtitle}>
+        <Type as="p" size="small" className={styles.Subtitle}>
           {subtitle}
         </Type>
         {formState === 'success' ? (

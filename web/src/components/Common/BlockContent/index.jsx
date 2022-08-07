@@ -46,41 +46,41 @@ const serializers = (baseFontSize) => ({
       switch (props.node.style) {
         case 'title':
           return (
-            <Type as="h2" size="display" padded>
+            <Type as="h2" size="display" light  padded>
               {props.children}
             </Type>
           )
         case 'h2':
           return (
-            <Type as="h2" size="titleLarge" padded>
+            <Type as="h2" size="titleLarge" light padded>
               {props.children}
             </Type>
           )
 
         case 'h3':
           return (
-            <Type as="h3" size="titleMedium" padded>
+            <Type as="h3" size="titleMedium" light padded>
               {props.children}
             </Type>
           )
 
         case 'h4':
           return (
-            <Type as="h4" size="title" padded>
+            <Type as="h4" size="title" light padded>
               {props.children}
             </Type>
           )
 
         case 'large':
           return (
-            <Type as="p" size="baseLarge" padded>
+            <Type as="p" size="baseLarge" light padded>
               {props.children}
             </Type>
           )
 
         case 'larger':
           return (
-            <Type as="p" size="titleLarge" padded>
+            <Type as="p" size="titleLarge" light padded>
               {props.children}
             </Type>
           )
@@ -129,12 +129,14 @@ const serializers = (baseFontSize) => ({
   }
 })
 
-const BlockContent = ({ blocks, baseFontSize, className }) => (
-  <BaseBlockContent
+const BlockContent = ({ blocks, baseFontSize, className, style }) => (
+  <div style={style}> <BaseBlockContent
     className={classNames(styles.BlockContent, className)}
     blocks={blocks}
     serializers={serializers(baseFontSize)}
   />
+  </div>
+ 
 )
 
 export default BlockContent
