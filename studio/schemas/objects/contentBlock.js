@@ -13,6 +13,11 @@ export default {
       type: "blockContent",
     },
     {
+      name: 'maxWidth',
+      title: 'Max Width',
+      type: 'string',
+    },
+    {
       name: "textAlign",
       title: "Text Align",
       type: "string",
@@ -37,6 +42,11 @@ export default {
       description:
         'Used to create space around elements, outside of any defined borders. Setting this to "auto" will center it. More info: https://www.w3schools.com/css/css_margin.asp',
       type: "string",
+    },
+    {
+      name: 'backgroundColor',
+      title: 'Background Color',
+      type: 'color',
     },
     {
       name: "padding",

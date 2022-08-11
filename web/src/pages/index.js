@@ -6,6 +6,7 @@ import Seo from '../components/seo'
 import Layout from '../containers/MainLayout'
 import Hero from 'Common/Hero'
 import BlockContent from 'Common/BlockContent'
+import VisuallyHidden from 'Primitive/VisuallyHidden'
 
 export const query = graphql`
   query IndexPageQuery {
@@ -49,9 +50,11 @@ const IndexPage = (props) => {
   const { description } = openGraph
   return (
     <Layout>
-      <Seo title="GUSTE.DESIGN | Gustė Vasiliauskaitė" />
-      <h1 hidden>{site.title} | Gustė Vasiliauskaitė</h1>
-      <p hidden>{description}</p>
+      <Seo title="Home" />
+      <VisuallyHidden>
+        <h1>{site.title} | Gustė Vasiliauskaitė</h1>
+        <p>{description}</p>
+      </VisuallyHidden>
       {home && <Hero heroImage={hero} title={title} subtitle={subtitle} />}
       {_rawSections &&
         _rawSections.map((section) => (
