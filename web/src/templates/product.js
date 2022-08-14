@@ -57,10 +57,6 @@ export const query = graphql`
         id
         title
         price
-        # priceV2 {
-        #   amount
-        #   currencyCode
-        # }
         availableForSale
         shopifyId
         selectedOptions {

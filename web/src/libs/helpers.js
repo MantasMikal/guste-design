@@ -63,7 +63,8 @@ export const getAllPostCategories = (items) => {
 
 export function getCurrencySymbol (code) {
   const currencyMap = {
-    GBP: '£'
+    EUR: '€',
+    GBP: '£',
   }
   return currencyMap[code]
 }
