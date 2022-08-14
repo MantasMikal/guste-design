@@ -44,7 +44,7 @@ const ProjectPage = () => {
 
   return (
     <Layout>
-      <Seo title="Projects" />
+      <Seo title="Projects" description='Illustration | Logo & Brand Identity | Packaging | Web Design' />
       {projectNodes && <Projects projects={projectNodes} />}
     </Layout>
   )

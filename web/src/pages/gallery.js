@@ -39,7 +39,7 @@ const GalleryPage = (props) => {
 
   return (
     <Layout>
-      <Seo title="Gallery" />
+      <Seo title="Gallery" description='Painting | Illustration | Sculpture | Drawing' />
       {galleryNodes && <Gallery posts={galleryNodes} />}
     </Layout>
   )

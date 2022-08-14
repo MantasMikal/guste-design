@@ -46,7 +46,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <Seo title="About" slug="/about" />
+      <Seo title="About" description='Gusté is a creative chef who loves ratatouille with spices of art, design, and everything that stimulates her gustátory sensations.' slug="/about" />
       <About
         {...page}
         instagramPosts={instagram && mapEdgesToNodes(instagram)}

@@ -39,7 +39,7 @@ const ServicesPage = () => {
 
   return (
     <Layout>
-      <Seo title="Services" slug="/services" />
+      <Seo title="Services" description='Brand identity | Print | Illustration | Art' slug="/services" />
       <Services
         {...page}
         instagramPosts={instagram && mapEdgesToNodes(instagram)}

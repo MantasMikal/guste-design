@@ -69,7 +69,7 @@ const StorePage = () => {
   return (
     <StoreContextProvider>
       <Layout>
-        <Seo title="Store" />
+        <Seo title="Store" description='Gusté merges art & design to add a personal touch to your home.' />
         {productNodes && <Store products={productNodes} page={page} />}
       </Layout>
     </StoreContextProvider>
