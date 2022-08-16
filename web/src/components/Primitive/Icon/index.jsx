@@ -1,5 +1,5 @@
 import React from 'react'
-import { number, oneOf, string } from 'prop-types'
+import { number, oneOf, string, object } from 'prop-types'
 import classNames from 'classnames'
 
 import svgDimensionsFormatter from 'libs/svg-dimensions-formatter'
@@ -23,7 +23,7 @@ export const types = svgs
  * attribute. If the icon is purely decorational, or is described by text
  * directly next to it, then a blank string can be passed as a11yText to
  */
-const Icon = ({ a11yText, className, type, height, width, vAlign }) => {
+const Icon = ({ a11yText, className, type, height, width, vAlign, style }) => {
   const SvgType = svgs(`./${type}.svg`).default
 
   const targetDimensions = { width, height }
@@ -46,7 +46,8 @@ const Icon = ({ a11yText, className, type, height, width, vAlign }) => {
       })}
       style={{
         width: `${ratioDimensions.width}px`,
-        height: `${ratioDimensions.height}px`
+        height: `${ratioDimensions.height}px`,
+        ...style
       }}
     >
       <SvgType />
@@ -60,6 +61,7 @@ Icon.propTypes = {
   type: oneOf(types).isRequired,
   height: number,
   width: number,
+  style: object,
   vAlign: oneOf(vAligns)
 }
 
