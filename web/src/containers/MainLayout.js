@@ -61,10 +61,11 @@ const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
 
     window.addEventListener('mousemove', handleMouseMove)
     window.addEventListener('touchmove', handleTouch)
-
+    window.addEventListener('scroll', handleDelete)
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
       window.removeEventListener('touchmove', handleTouch)
+      window.removeEventListener('scroll', handleDelete)
       clearTimeout(inactiveTimeout)
       clearInterval(inactiveInterval)
     }
