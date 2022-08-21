@@ -57,8 +57,10 @@ const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
         const animationDelay = Math.floor(Math.random() * 100)
         const size = Math.floor(Math.random() * (120 - 20 + 1)) + 20
   
-       // get top and left from scroll po
-        const top = Math.floor(Math.random() * (scrollTop - 20)) + (scrollTop + innerHeight) + 20
+
+        // get top position from scroll to scroll + height of window
+        const top = Math.floor(Math.random() * (innerHeight - size - scrollTop + 1)) + scrollTop
+
         const left = Math.floor(Math.random() * (innerWidth - size - 20 + 1)) + scrollLeft + 20
 
         const color = COLORS[Math.floor(Math.random() * COLORS.length)]
