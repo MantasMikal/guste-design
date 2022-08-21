@@ -12,6 +12,7 @@ import GugisSilhouette from 'Common/GugisSilhouette'
 const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
   const [isInactive, setIsInactive] = useState(false)
   const [objects, setObjects] = useState([])
+  console.log("🚀 ~ file: MainLayout.js ~ line 15 ~ useSpawnGugisWhenInactive ~ objects", objects)
 
   const COLORS = [
     '#FFE000',
@@ -50,10 +51,16 @@ const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
     const inactiveInterval = setInterval(() => {
       if (isInactive && objects.length < max) {
         const { innerWidth, innerHeight } = window
+        const { scrollTop, scrollLeft } = document.body
+
         const animationDelay = Math.floor(Math.random() * 100)
         const size = Math.floor(Math.random() * (120 - 20 + 1)) + 20
-        const left = Math.floor(Math.random() * (innerWidth + 100)) - 100
-        const top = Math.floor(Math.random() * (innerHeight + 100)) - 100
+
+
+        // Get top and left + scroll position
+        const top = Math.floor(Math.random() * (innerHeight - size - 20 + 1)) + 20 + scrollTop
+        const left = Math.floor(Math.random() * (innerWidth - size - 20 + 1)) + 20 + scrollLeft
+
         const color = COLORS[Math.floor(Math.random() * COLORS.length)]
         setObjects([...objects, { left, top, size, color, animationDelay }])
       }
