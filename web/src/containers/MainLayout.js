@@ -52,13 +52,14 @@ const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
       if (isInactive && objects.length < max) {
         const { innerWidth, innerHeight } = window
         const { scrollTop, scrollLeft } = document.body
+        console.log("🚀 ~ file: MainLayout.js ~ line 55 ~ inactiveInterval ~ scrollTop", scrollTop, innerHeight)
 
         const animationDelay = Math.floor(Math.random() * 100)
         const size = Math.floor(Math.random() * (120 - 20 + 1)) + 20
   
        // get top and left from scroll po
-        const top = Math.floor(Math.random() * (innerHeight - size - scrollTop - 20 + 1)) + scrollTop + 20
-        const left = Math.floor(Math.random() * (innerWidth - size - scrollLeft - 20 + 1)) + scrollLeft + 20
+        const top = Math.floor(Math.random() * (scrollTop - 20)) + (scrollTop + innerHeight) + 20
+        const left = Math.floor(Math.random() * (innerWidth - size - 20 + 1)) + scrollLeft + 20
 
         const color = COLORS[Math.floor(Math.random() * COLORS.length)]
         setObjects([...objects, { left, top, size, color, animationDelay }])
