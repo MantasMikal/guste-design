@@ -1,10 +1,11 @@
 import React from 'react'
 import Zoomable from 'Primitive/Zoomable'
 import Image from 'Primitive/Image'
+import SmartLink from 'Primitive/SmartLink'
 
 const createFigure = (figure) => {
   if (!figure || !figure.asset || !figure.asset.mimeType) return null
-  const { isZoomable, asset, alt, maxWidth } = figure
+  const { isZoomable, asset, alt, maxWidth, imageURL } = figure
 
   const border = figure.border ? { border: `2px solid black` } : null
   const styles = {
@@ -13,23 +14,25 @@ const createFigure = (figure) => {
     ...border
   }
 
-  let imgCmp = (
-    <Image image={figure} imgWrapperStyle={styles} />
-  )
+  let imgCmp = <Image image={figure} imgWrapperStyle={styles} />
   if (asset.mimeType === 'image/gif') {
-    imgCmp = (
-      <img
-        src={asset.url}
-        alt={alt || ''}
-        style={styles}
-      />
-    )
+    imgCmp = <img src={asset.url} alt={alt || ''} style={styles} />
   }
 
+  const WrapperEl = imageURL ? SmartLink : 'div'
+
   return (
-    <div key={figure._key} style={{ maxWidth: maxWidth, marginBottom: '10px' }}>
-      {!isZoomable ? imgCmp : <Zoomable>{imgCmp}</Zoomable>}
-    </div>
+    <WrapperEl
+      {...(imageURL && {
+        href: imageURL,
+        style: { display: 'block' },
+        className: 'image-hover'
+      })}
+      key={figure._key}
+      style={{ maxWidth: maxWidth, marginBottom: '10px' }}
+    >
+      {imageURL || !isZoomable ? imgCmp : <Zoomable>{imgCmp}</Zoomable>}
+    </WrapperEl>
   )
 }
 

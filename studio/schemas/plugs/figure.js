@@ -7,6 +7,14 @@ export default {
   },
   fields: [
     {
+      name: 'imageURL',
+      title: 'URL',
+      type: 'string',
+      options: {
+        isHighlighted: true,
+      },
+    },
+    {
       name: "alt",
       title: "Alternative text (for screen readers)",
       type: "string",
@@ -22,6 +30,7 @@ export default {
         isHighlighted: true,
       },
     },
+
     {
       name: "isZoomable",
       title: "Can be zoomed?",

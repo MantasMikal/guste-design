@@ -48,6 +48,9 @@ const Grid = ({ id, title, options, itemOptions, centered, children }) => {
               justify-content: ${itemOptions.justifyContent || 'flex-start'};
               align-items: ${itemOptions.alignItems || 'flex-start'};
             }
+            #${id} > a {
+              margin-bottom: 0 !important;
+            }
           </style>`
           }}
         />

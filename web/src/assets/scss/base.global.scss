@@ -67,6 +67,24 @@ a {
   }
 }
 
+.image-hover {
+  &, img {
+    transition: transform $easing-standard $duration-shorter;
+  }
+
+  &:hover img {
+    transform: scale(1.01);
+
+    transition: transform $easing-standard $duration-shorter;
+  }
+
+  &:active img {
+    transform: scale(1);
+
+    transition: transform $easing-standard $duration-shorter;
+  }
+}
+
 *::selection {
   background-color: $color-primary-accent;
   color: white;
