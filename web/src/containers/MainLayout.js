@@ -12,7 +12,6 @@ import GugisSilhouette from 'Common/GugisSilhouette'
 const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
   const [isInactive, setIsInactive] = useState(false)
   const [objects, setObjects] = useState([])
-  console.log("🚀 ~ file: MainLayout.js ~ line 15 ~ useSpawnGugisWhenInactive ~ objects", objects)
 
   const COLORS = [
     '#FFE000',
@@ -52,7 +51,6 @@ const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
       if (isInactive && objects.length < max) {
         const { innerWidth, innerHeight } = window
         const { scrollTop, scrollLeft } = document.body
-        console.log("🚀 ~ file: MainLayout.js ~ line 55 ~ inactiveInterval ~ scrollTop", scrollTop, innerHeight)
 
         const animationDelay = Math.floor(Math.random() * 100)
         const size = Math.floor(Math.random() * (120 - 20 + 1)) + 20
@@ -121,7 +119,7 @@ const LayoutContainer = (props) => {
   const { objects } = useSpawnGugisWhenInactive({
     delay: 1000,
     inactiveTime: 1000 * 60,
-    max: 500
+    max: 100
   })
 
   function handleShowNav() {
