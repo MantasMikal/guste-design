@@ -45,6 +45,10 @@ const ProductDetails = ({ product, className }) => {
   const checkAvailability = useCallback(
     (productId) => {
       client.product.fetch(productId).then((fetchedProduct) => {
+        if (!fetchedProduct) {
+          setAvailable(false)
+          return
+        }
         // this checks the currently selected variant for availability
         const result = fetchedProduct.variants.filter(
           (variant) => variant.id === productVariant.shopifyId
@@ -123,7 +127,9 @@ const ProductDetails = ({ product, className }) => {
     <div className={classNames(styles.ProductDetails, className)}>
       <ImageGallery className={styles.Gallery} images={images} />
       <Stack className={styles.ProductInformation}>
-        <Type className={styles.Price} size="titleLarge">{price}</Type>
+        <Type className={styles.Price} size="titleLarge">
+          {price}
+        </Type>
         <div className={styles.Options}>
           {options.map(
             ({ id, name, values }, index) =>
@@ -187,7 +193,7 @@ const ProductDetails = ({ product, className }) => {
           onClick={handleAddToCart}
         >
           {/* Store is closed. Contact me! */}
-          {!available ? "SOLD OUT" : isAddedToCart ? 'Added!' : 'Add to cart'}
+          {!available ? 'SOLD OUT' : isAddedToCart ? 'Added!' : 'Add to cart'}
         </ButtonStandard>
         <div className={styles.Description}>
           <Prose dangerousHtml={descriptionHtml} />

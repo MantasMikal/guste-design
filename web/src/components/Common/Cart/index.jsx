@@ -20,7 +20,6 @@ const Cart = () => {
     <LineItem key={item.id.toString()} item={item} />
   ))
   const symbol = getCurrencySymbol(checkout.currencyCode)
-
   return (
     <div className={styles.Cart}>
       {lineItems.length > 0 ? (
@@ -36,21 +35,21 @@ const Cart = () => {
           <p>Subtotal</p>
           <p>
             {symbol}
-            {checkout.subtotalPrice}
+            {checkout.subtotalPriceV2.amount}
           </p>
         </div>
         <div className={styles.Taxes}>
           <p>Taxes</p>
           <p>
             {symbol}
-            {checkout.totalTax}
+            {checkout.totalTaxV2.amount}
           </p>
         </div>
         <div className={styles.Total}>
           <p>Total</p>
           <p>
             {symbol}
-            {checkout.totalPrice}
+            {checkout.totalPriceV2.amount}
           </p>
         </div>
       </Type>

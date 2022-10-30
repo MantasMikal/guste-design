@@ -32,7 +32,6 @@ const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
     }
 
     const handleMouseMove = throttle(() => {
-      console.log('Mouse moved')
       isInactive && setIsInactive(false)
       handleDelete()
     }, 50)
