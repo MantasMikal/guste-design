@@ -10,6 +10,9 @@
   justify-content: center;
   align-items: center;
   padding: spacing(4);
+  & > div {
+    max-width: 50ch;
+  }
 }
 
 .BioImage,
