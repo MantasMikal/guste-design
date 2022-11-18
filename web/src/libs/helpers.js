@@ -19,6 +19,10 @@ export function getProjectUrl(slug) {
   return `/projects/${slug.current || slug}/`
 }
 
+export function getPostUrl(slug) {
+  return `/blog/${slug.current || slug}/`
+}
+
 export function getGalleryUrl(slug) {
   return `/gallery/${slug.current || slug}/`
 }

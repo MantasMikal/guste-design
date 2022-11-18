@@ -1,7 +1,7 @@
 @import 'settings';
 @import '_backline-mixins';
 
-.ProjectPreview {
+.PostPreview {
   display: block;
   border: $border-standard;
   @media (hover: hover) {
@@ -14,10 +14,24 @@
   }
 }
 
+.Title {
+  border-bottom: $border-standard;
+  padding-bottom: spacing(1);
+  margin-bottom: spacing(0.5);
+}
+
+.Description {
+  text-transform: none;
+}
+
 .Details {
   padding: spacing(1);
   color: $color-primary-black;
   border-top: $border-standard;
   transition: $duration-shorter $easing-standard;
   text-transform: uppercase;
+
+  & > * + * {
+    padding-top: spacing(0.5);
+  }
 }

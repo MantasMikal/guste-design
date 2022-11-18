@@ -1,9 +1,10 @@
 import S from "@sanity/desk-tool/structure-builder";
-import { MdBusiness, MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
+import { MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
 import { FaBriefcase, FaPhone, FaStore } from "react-icons/fa";
 import { GrDocumentText } from "react-icons/gr";
 import projects from "./structure/projects";
 import gallery from "./structure/gallery";
+import posts from "./structure/posts";
 
 const hiddenTypes = [
   "category",
@@ -21,7 +22,8 @@ const hiddenTypes = [
   "aboutPage",
   "productPage",
   "returnsPage",
-  "servicesPage"
+  "servicesPage",
+  "post"
 ];
 
 export default () =>
@@ -79,7 +81,7 @@ export default () =>
                     .documentId("storePage")
                 )
                 .icon(FaStore),
-                S.listItem()
+              S.listItem()
                 .title("Base product")
                 .child(
                   S.editor()
@@ -97,7 +99,7 @@ export default () =>
                     .documentId("aboutPage")
                 )
                 .icon(MdInfoOutline),
-                S.listItem()
+              S.listItem()
                 .title("Services")
                 .child(
                   S.editor()
@@ -106,7 +108,7 @@ export default () =>
                     .documentId("servicesPage")
                 )
                 .icon(FaBriefcase),
-                S.listItem()
+              S.listItem()
                 .title("Shipping and Returns")
                 .child(
                   S.editor()
@@ -130,13 +132,14 @@ export default () =>
                     .id("privacyStatement")
                     .schemaType("page")
                     .documentId("privacyStatement")
-                ),
+                )
             ])
         )
         .icon(GrDocumentText),
       projects,
+      posts,
       gallery,
       ...S.documentTypeListItems().filter(
-        (listItem) => !hiddenTypes.includes(listItem.getId())
-      ),
+        listItem => !hiddenTypes.includes(listItem.getId())
+      )
     ]);

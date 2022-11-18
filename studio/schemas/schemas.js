@@ -11,6 +11,7 @@ import project from "./documents/project";
 import siteSettings from "./documents/siteSettings";
 import companyInfo from "./documents/companyInfo";
 import galleryPost from "./documents/galleryPost";
+import post from "./documents/post";
 
 import blockContent from "./objects/blockContent";
 import blockText from "./objects/blockText";
@@ -73,7 +74,8 @@ export default createSchema({
     returns,
     servicesPage,
     projectSlideshow,
-    newsletter
+    newsletter,
+    post
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),

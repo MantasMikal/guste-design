@@ -1,0 +1,36 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.BlogPostPreview {
+  margin: 0 spacing(1);
+}
+
+.Grid {
+  display: grid;
+  gap: spacing(1.2);
+  grid-template-columns: 1fr;
+
+  @include mq($breakpoint-mobileLandscape) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.Header {
+  position: relative;
+}
+
+.FloatingControls {
+  position: fixed;
+  right: spacing(1);
+  top: spacing(7.5);
+  bottom: 0;
+  z-index: 10;
+}
+
+@include mq($breakpoint-tablet) {
+  .FloatingControls {
+    bottom: unset;
+    display: flex;
+    top: spacing(7.5);
+  }
+}

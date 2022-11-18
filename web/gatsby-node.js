@@ -1,6 +1,67 @@
 const config = require('../config')
 const { siteUrl } = config.site
 
+async function createBlogPages(graphql, actions, reporter) {
+  const { createPage } = actions
+  const result = await graphql(`
+    {
+      blogPosts: allSanityPost(filter: { slug: { current: { ne: null } } }) {
+        edges {
+          next {
+            slug {
+              current
+            }
+          }
+          previous {
+            slug {
+              current
+            }
+          }
+          node {
+            id
+            publishedAt
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+  const blogPostsEdges = (result.data.blogPosts || {}).edges || []
+
+  blogPostsEdges.forEach((edge) => {
+    const { id, slug = {} } = edge.node
+    const base = `/blog/`
+    const path = `${base}${slug.current}/`
+    const absolutePath = siteUrl + path
+
+    const prev = edge.previous
+      ? `${edge.previous.slug.current}`
+      : `${blogPostsEdges[blogPostsEdges.length - 1].node.slug.current}`
+    const next = edge.next
+      ? `${edge.next.slug.current}`
+      : `${blogPostsEdges[0].node.slug.current}`
+
+    const nextPost = {
+      url: `${base}${next}`
+    }
+
+    const prevPost = {
+      url: `${base}${prev}`
+    }
+
+    reporter.info(`Creating post page: ${path}`)
+    createPage({
+      path,
+      component: require.resolve('./src/templates/post.js'),
+      context: { id, absolutePath, nextPost, prevPost }
+    })
+  })
+}
+
 async function createProjectPages(graphql, actions, reporter) {
   const { createPage } = actions
   const result = await graphql(`
@@ -157,6 +218,7 @@ async function createProductPages(graphql, actions, reporter) {
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   await createProjectPages(graphql, actions, reporter)
+  await createBlogPages(graphql, actions, reporter)
   await createProductPages(graphql, actions, reporter)
 }
 

@@ -1,0 +1,68 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.Post {
+  position: relative;
+}
+
+.Hero {
+  margin: 0 auto;
+}
+
+.MultiImage {
+  padding-bottom: 100% !important;
+
+  @include mq($breakpoint-tablet) {
+    padding-bottom: 25% !important;
+  }
+}
+
+.Content {
+  max-width: 65ch;
+  margin: 0 auto;
+  padding-top: spacing(2);
+
+  & * {
+    font-weight: 300;
+  }
+
+  @include mq($breakpoint-tablet) {
+    padding-top: spacing(3 );
+  }
+}
+
+.Body {
+  padding-left: spacing(1);
+  padding-right: spacing(1);
+}
+
+.Navigation {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: spacing(2) 0;
+
+  a {
+    display: flex;
+    align-items: center;
+    color: $color-primary-black;
+
+    font-size: spacing(3);
+
+    &:first-child svg {
+      margin-right: spacing(0.5);
+    }
+    &:last-child svg {
+      margin-left: spacing(0.5);
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-primary-accent;
+    }
+
+    @include mq($breakpoint-tablet) {
+      font-size: spacing(4);
+    }
+  }
+}

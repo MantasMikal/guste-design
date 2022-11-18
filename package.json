@@ -22,8 +22,8 @@
     "postinstall": "lerna bootstrap",
     "sanity-deploy": "lerna run sanity-deploy",
     "start": "lerna run empty-cache && lerna run start --parallel",
-    "start-web": "cd web && npm run start",
-    "start-studio": "cd studio && npm run start"
+    "start:web": "cd web && npm run start",
+    "start:studio": "cd studio && npm run start"
   },
   "devDependencies": {
     "lerna": "^5.0.0"

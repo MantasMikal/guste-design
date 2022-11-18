@@ -25,7 +25,7 @@ const MultiImage = ({ images, skipAmount = 12, ratio = 1, ...other }) => {
   }
 }
 
-const Multi = ({ images, skipAmount, ratio, ...other }) => {
+const Multi = ({ images, skipAmount, ratio, className, ...other }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [move, setMove] = useState(skipAmount)
 
@@ -40,7 +40,7 @@ const Multi = ({ images, skipAmount, ratio, ...other }) => {
   }
   const isActive = (i, id) => i === id || (i === 0 && i !== id)
   return (
-    <ResponsiveMedia ratio={ratio} onMouseMove={handleHover}>
+    <ResponsiveMedia className={className} ratio={ratio} onMouseMove={handleHover}>
       {images &&
         images.length > 0 &&
         images.map((img, i) => (
