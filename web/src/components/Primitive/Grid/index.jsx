@@ -21,6 +21,7 @@ const Grid = ({ id, title, options, itemOptions, centered, children }) => {
           dangerouslySetInnerHTML={{
             __html: `<style> 
             #${id} {
+              display: grid;
               margin: ${options.margin || '0'};
               grid-row-gap: ${options.gridRowGap || '8px'};
               grid-column-gap: ${options.gridColumnGap || '8px'};
