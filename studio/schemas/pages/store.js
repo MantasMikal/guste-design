@@ -9,6 +9,11 @@ export default {
       title: "Banner",
       type: "banner",
     },
+    {
+      name: "body",
+      title: "Body",
+      type: "blockContent",
+    },
   ],
   preview: {
     prepare() {

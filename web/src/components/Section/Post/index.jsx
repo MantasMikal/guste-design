@@ -9,12 +9,11 @@ import SmartLink from 'Primitive/SmartLink'
 import MultiImage from 'Common/MultiImage'
 
 import styles from './Post.module.scss'
+import Type from 'Primitive/Type'
 
 const Post = ({ title, mainImages, _rawBody, prev, next }) => {
-  console.log('🚀 ~ file: index.jsx ~ line 14 ~ Post ~ mainImages', mainImages)
   return (
     <Container as="section" className={styles.Post}>
-      {/* <PageTitle title={title} /> */}
       <div className={styles.Hero}>
         <MultiImage
           className={styles.MultiImage}
@@ -23,6 +22,7 @@ const Post = ({ title, mainImages, _rawBody, prev, next }) => {
         />
       </div>
       <div className={styles.Content}>
+        <Type className={styles.Title} size="baseLarge">{title}</Type>
         <BlockContent className={styles.Body} blocks={_rawBody} />
         <div className={styles.Navigation}>
           {prev && (

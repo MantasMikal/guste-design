@@ -25,6 +25,7 @@ const StorePage = () => {
               }
             }
           }
+          _rawBody(resolveReferences: { maxDepth: 10 })
         }
         products: allShopifyProduct(
           sort: { fields: [createdAt], order: DESC }

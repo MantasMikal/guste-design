@@ -9,7 +9,7 @@ import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './MultiImage.module.scss'
 
-const MultiImage = ({ images, skipAmount = 12, ratio = 1, ...other }) => {
+const MultiImage = ({ images, skipAmount = 10, ratio = 1, ...other }) => {
   const isSSR = typeof window === 'undefined'
   const isTouch =
     !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
@@ -31,7 +31,7 @@ const Multi = ({ images, skipAmount, ratio, className, ...other }) => {
 
   // Decrease counter on mouse move and change images
   const handleHover = () => {
-    setMove((prevState) => prevState - 1)
+    setMove((prevState) => prevState - 0.5)
     if (move <= 0) {
       const imageIdx = currentIndex < images?.length - 1 ? currentIndex + 1 : 0
       setCurrentIndex(imageIdx)

@@ -15,7 +15,7 @@ import IconButton from 'Primitive/IconButton'
 import { FaHeart } from 'react-icons/fa'
 
 const Store = ({ products, page }) => {
-  const { banner } = page
+  const { banner, _rawBody } = page
   const allCategories = useMemo(
     () => ['All', ...getAllProductCategories(products)],
     [products]
@@ -69,6 +69,7 @@ const Store = ({ products, page }) => {
         </div>
       </div>
       <Banner {...banner} className={styles.Banner} />
+      {_rawBody && <BlockContent blocks={_rawBody} /> }
       <GridLayout
         customGridClass={styles.Grid}
         items={filteredProducts.map((product) => (
