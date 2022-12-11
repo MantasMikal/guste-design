@@ -13,6 +13,7 @@ import Banner from 'Common/Banner'
 import styles from './Store.module.scss'
 import IconButton from 'Primitive/IconButton'
 import { FaHeart } from 'react-icons/fa'
+import BlockContent from 'Common/BlockContent'
 
 const Store = ({ products, page }) => {
   const { banner, _rawBody } = page
