@@ -151,6 +151,9 @@ export default {
     },
     {
       type: "newsletterSignup"
+    },
+    {
+      type: "container"
     }
   ],
 };

@@ -13,6 +13,7 @@ import createSlideshow from './components/createSlideshow'
 import createMediaComponent from './components/createMedia'
 import createLine from './components/createLine'
 import createNewsletterSignup from './components/createNewsletterSignup'
+import createContainer from './components/createContainer'
 
 import styles from './BlockContent.module.scss'
 
@@ -46,7 +47,7 @@ const serializers = (baseFontSize) => ({
       switch (props.node.style) {
         case 'title':
           return (
-            <Type as="h2" size="display" light  padded>
+            <Type as="h2" size="display" light padded>
               {props.children}
             </Type>
           )
@@ -125,18 +126,21 @@ const serializers = (baseFontSize) => ({
     },
     newsletterSignup(props) {
       return createNewsletterSignup(props.node)
+    },
+    container(props) {
+      return createContainer(props.node)
     }
   }
 })
 
 const BlockContent = ({ blocks, baseFontSize, className, style }) => (
-  <div style={style}> <BaseBlockContent
-    className={classNames(styles.BlockContent, className)}
-    blocks={blocks}
-    serializers={serializers(baseFontSize)}
-  />
+  <div style={style}>
+    <BaseBlockContent
+      className={classNames(styles.BlockContent, className)}
+      blocks={blocks}
+      serializers={serializers(baseFontSize)}
+    />
   </div>
- 
 )
 
 export default BlockContent

@@ -17,6 +17,11 @@ export default {
       type: 'text',
     },
     {
+      name: 'readTime',
+      title: 'Read Time',
+      type: 'number',
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

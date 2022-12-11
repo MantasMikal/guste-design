@@ -18,21 +18,44 @@
   }
 }
 
+.Intro {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 65ch;
+  margin: 0 auto;
+  border-bottom: $border-standard;
+  padding-bottom: spacing(2);
+  margin-bottom: spacing(2);
+}
+
+
+.InfoWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: spacing(2);
+  flex-wrap: wrap;
+}
+
+.InfoText {
+  font-weight: 300;
+}
+
 .Title {
   padding-bottom: spacing(2);
   font-weight: 400;
 }
 
 .Content {
-  max-width: 65ch;
-  margin: 0 auto;
-  padding-top: spacing(2);
-  padding-left: spacing(1);
-  padding-right: spacing(1);
-
   & p {
     font-weight: 300;
   }
+}
+
+.PostWrapper {
+  padding-top: spacing(2);
+  padding-left: spacing(1);
+  padding-right: spacing(1);
 
   @include mq($breakpoint-tablet) {
     padding-top: spacing(3);
@@ -67,5 +90,17 @@
     @include mq($breakpoint-tablet) {
       font-size: spacing(4);
     }
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Intro {
+    position: relative;
+    // display: grid;
+    // grid-template-columns: 1fr 65ch 1fr;
+    // max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    // flex-direction: column-reverse;
   }
 }

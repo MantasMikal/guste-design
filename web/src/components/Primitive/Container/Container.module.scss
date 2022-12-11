@@ -60,6 +60,10 @@
   max-width: spacing(60);
 }
 
+.prose {
+  max-width: 65ch;
+}
+
 .hideOverflow {
   overflow: hidden;
 }

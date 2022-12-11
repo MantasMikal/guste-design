@@ -45,6 +45,8 @@ const Image = ({
           imgStyle={imgStyle}
           image={imageData}
           alt={altText}
+          objectPosition="center"
+          objectFit='cover'
           {...other}
         />
       </ResponsiveMedia>

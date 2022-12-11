@@ -19,6 +19,7 @@ import contentBlock from "./objects/contentBlock";
 import section from "./objects/section";
 import openGraph from "./objects/openGraph";
 import banner from "./objects/banner";
+import container from "./objects/container";
 
 import contact from "./pages/contact";
 import home from "./pages/home";
@@ -75,7 +76,8 @@ export default createSchema({
     servicesPage,
     projectSlideshow,
     newsletter,
-    post
+    post,
+    container,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
   ]),
