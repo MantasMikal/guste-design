@@ -29,7 +29,7 @@ const createFigure = (figure) => {
         className: 'image-hover'
       })}
       key={figure._key}
-      style={{ maxWidth: maxWidth, marginBottom: '10px', marginLeft: 'auto', marginRight: 'auto' }}
+      style={{ maxWidth: maxWidth, marginBottom: '10px' }}
     >
       {imageURL || !isZoomable ? imgCmp : <Zoomable>{imgCmp}</Zoomable>}
     </WrapperEl>
