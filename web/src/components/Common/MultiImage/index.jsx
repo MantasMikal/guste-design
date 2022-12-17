@@ -9,7 +9,7 @@ import ResponsiveMedia from 'Primitive/ResponsiveMedia'
 
 import styles from './MultiImage.module.scss'
 
-const MultiImage = ({ images, skipAmount = 10, ratio = 1, ...other }) => {
+const MultiImage = ({ images, skipAmount = 10, ratio = 1, className, ...other }) => {
   const isSSR = typeof window === 'undefined'
   const isTouch =
     !isSSR && matchMedia('(hover: none), (pointer: coarse)').matches
@@ -17,10 +17,10 @@ const MultiImage = ({ images, skipAmount = 10, ratio = 1, ...other }) => {
   if (images?.length === 0) return null
 
   if (isTouch || images?.length === 1) {
-    return <Image image={images[0]} ratio={ratio} {...other} />
+    return <Image image={images[0]} ratio={ratio} wrapperClassName={className} {...other} />
   } else {
     return (
-      <Multi images={images} skipAmount={skipAmount} ratio={ratio} {...other} />
+      <Multi images={images} skipAmount={skipAmount} ratio={ratio} {...other} className={className} />
     )
   }
 }

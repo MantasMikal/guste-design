@@ -7,14 +7,20 @@
 
 .Hero {
   margin: 0 auto;
+  border: $border-standard;
+}
+
+.MultiImage :global(.gatsby-image-wrapper) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .MultiImage {
-  padding-bottom: 100% !important;
-  border: $border-standard;
-
-  @include mq($breakpoint-tablet) {
-    padding-bottom: 25% !important;
+  // padding-bottom: 100%;
+  @include mq(null, $breakpoint-tablet) {
+    padding-bottom: 50% !important;
   }
 }
 

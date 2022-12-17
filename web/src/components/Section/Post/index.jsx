@@ -17,7 +17,7 @@ const Post = ({ title, mainImages, readTime, publishedAt, _rawBody, prev, next }
       <div className={styles.Hero}>
         <MultiImage
           className={styles.MultiImage}
-          ratio={4 / 16}
+          ratio={5 / 16}
           images={mainImages}
         />
       </div>

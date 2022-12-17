@@ -14,6 +14,7 @@ const Image = ({
   image,
   ratio,
   imgWrapperStyle,
+  wrapperClassName,
   width,
   imgStyle,
   alt,
@@ -39,7 +40,7 @@ const Image = ({
 
   if (ratio) {
     return (
-      <ResponsiveMedia ratio={ratio}>
+      <ResponsiveMedia ratio={ratio} className={wrapperClassName}>
         <GatsbyImage
           style={imgWrapperStyle}
           imgStyle={imgStyle}
