@@ -42,7 +42,6 @@ const useSpawnGugisWhenInactive = ({ delay, inactiveTime, max }) => {
     }
 
     const inactiveTimeout = setTimeout(() => {
-      console.log('Inactive')
       setIsInactive(true)
     }, inactiveTime)
 

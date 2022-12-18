@@ -10,8 +10,6 @@ function useScript(body,  id) {
       // Fetch existing script element by id
       // It may have been added by another instance of this hook
       let script = document.getElementById(id)
-      console.log("🚀 ~ file: useScript.js ~ line 12 ~ useEffect ~ script", script)
-      console.log("🚀 ~ file: useScript.js ~ line 16 ~ useScript ~ script", script)
 
       if (!script) {
         // Create script

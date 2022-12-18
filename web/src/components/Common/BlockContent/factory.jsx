@@ -7,7 +7,6 @@ import createMedia from './components/createMedia'
  * Used to create components coming from CMS
  */
 export default function createComponents(components) {
-  console.log("🚀 ~ file: factory.jsx ~ line 10 ~ createComponents ~ components", components)
   if (!components) {
     return <> </>
   }

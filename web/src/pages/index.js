@@ -36,7 +36,6 @@ const IndexPage = (props) => {
   }
 
   const home = (data || {}).home
-  console.log('home', home)
   const site = (data || {}).site
 
   if (!home) {
