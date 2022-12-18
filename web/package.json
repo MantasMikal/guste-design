@@ -48,7 +48,7 @@
 		"gatsby-plugin-sass": "^6.3.1",
 		"gatsby-plugin-sharp": "^5.3.2",
 		"gatsby-plugin-use-query-params": "^1.0.1",
-		"gatsby-source-instagram-all": "^5.2.3",
+		"gatsby-source-instagram-all": "^5.2.4",
 		"gatsby-source-sanity": "^7.6.1",
 		"gatsby-source-shopify": "^8.3.2",
 		"gatsby-transformer-sharp": "^5.3.1",
