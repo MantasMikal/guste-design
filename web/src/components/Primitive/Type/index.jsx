@@ -17,6 +17,7 @@ export const sizes = [
   'baseSmall',
   'base',
   'small',
+  'tiny',
 ]
 
 /**

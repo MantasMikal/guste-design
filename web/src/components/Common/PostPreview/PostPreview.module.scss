@@ -14,10 +14,29 @@
   }
 }
 
-.Title {
+.ImageWrapper {
+  position: relative;
+}
+
+.Category {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  border: $border-standard;
+  padding: spacing(0.5);
+  background: $color-common-white;
+  color: $color-common-black;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: spacing(0.5);
   border-bottom: $border-standard;
-  padding-bottom: spacing(1);
   margin-bottom: spacing(0.5);
+  padding-bottom: spacing(1);
 }
 
 .Description {

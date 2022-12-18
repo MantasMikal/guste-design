@@ -24,6 +24,27 @@
   }
 }
 
+.Sell {
+  display: flex;
+  flex-direction: column;
+}
+
+.Category {
+  display: block;
+  border: $border-standard;
+  padding: spacing(0.5);
+  background: $color-common-white;
+  color: $color-common-black;
+  flex-grow: 0;
+  margin-right: auto;
+  margin-bottom: spacing(1);
+
+  &:hover,
+  &:focus {
+    background: $color-primary-accent;
+  }
+}
+
 .Intro {
   position: relative;
   display: grid;

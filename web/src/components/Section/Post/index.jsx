@@ -11,7 +11,17 @@ import styles from './Post.module.scss'
 import Type from 'Primitive/Type'
 import { formatDate } from 'libs/helpers'
 
-const Post = ({ title, mainImages, readTime, publishedAt, _rawBody, prev, next }) => {
+const Post = ({
+  title,
+  mainImages,
+  readTime,
+  publishedAt,
+  _rawBody,
+  categories,
+  prev,
+  next
+}) => {
+  const mainCategory = categories[0].title
   return (
     <Container as="section" className={styles.Post}>
       <div className={styles.Hero}>
@@ -24,6 +34,12 @@ const Post = ({ title, mainImages, readTime, publishedAt, _rawBody, prev, next }
       <div className={styles.PostWrapper}>
         <div className={styles.Intro}>
           <Container className={styles.Sell} center size="prose">
+            <SmartLink
+              className={styles.Category}
+              href={`/blog?category=${mainCategory}`}
+            >
+              <Type size="small">#{mainCategory}</Type>
+            </SmartLink>
             <Type as="h1" className={styles.Title} size="baseLarge">
               {title}
             </Type>

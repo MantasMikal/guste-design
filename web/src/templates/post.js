@@ -14,6 +14,10 @@ export const query = graphql`
       publishedAt
       description
       title
+      readTime
+      categories {
+        title
+      }
       slug {
         current
       }

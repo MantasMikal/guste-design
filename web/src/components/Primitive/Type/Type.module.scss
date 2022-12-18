@@ -118,6 +118,15 @@
   }
 }
 
+.tiny {
+  font-weight: 400;
+  font-size: spacing(1.5);
+  line-height: spacing(1.7);
+  @include mq($breakpoint-tablet) {
+    font-size: spacing(1.7);
+    line-height: spacing(1.9);
+  }
+}
 
 .italic {
   font-style: italic;
