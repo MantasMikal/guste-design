@@ -1,4 +1,3 @@
-import S from "@sanity/desk-tool/structure-builder";
 import {
   GoChecklist as ApprovedIcon,
   GoEye as ReviewIcon,
@@ -10,8 +9,6 @@ import {
   FaImage as GalleryIcon 
 } from 'react-icons/fa'
 
-import PreviewIFrame from "../components/previewIFrame";
-
 export const icons = {
   GalleryIcon,
   ApprovedIcon,
@@ -20,7 +17,7 @@ export const icons = {
   AllIcon,
 };
 
-const gallery = S.listItem()
+const gallery = (S) => S.listItem()
   .title("Gallery")
   .icon(GalleryIcon)
   .child(
@@ -43,7 +40,7 @@ const gallery = S.listItem()
                 S.document()
                   .documentId(documentId)
                   .schemaType("galleryPost")
-                  .views([S.view.form(), PreviewIFrame()])
+                  .views([S.view.form()])
               )
           ),
         S.documentTypeListItem("galleryPost")

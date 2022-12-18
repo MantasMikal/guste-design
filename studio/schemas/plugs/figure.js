@@ -10,34 +10,26 @@ export default {
       name: 'imageURL',
       title: 'URL',
       type: 'string',
-      options: {
-        isHighlighted: true,
-      },
+      
     },
     {
       name: "alt",
       title: "Alternative text (for screen readers)",
       type: "string",
-      options: {
-        isHighlighted: true,
-      },
+      
     },
     {
       name: "caption",
       title: "Caption",
       type: "string",
-      options: {
-        isHighlighted: true,
-      },
+      
     },
 
     {
       name: "isZoomable",
       title: "Can be zoomed?",
       type: "boolean",
-      options: {
-        isHighlighted: true,
-      },
+      
     },
     {
       name: "border",
@@ -45,9 +37,7 @@ export default {
       type: "boolean",
       description:
         "Adds border around the image",
-      options: {
-        isHighlighted: true,
-      },
+      
     },
     {
       name: "maxWidth",
@@ -55,9 +45,7 @@ export default {
       type: "number",
       description:
         "(Optional) Set if you want to force maximum width to an image or make it smaller or larger. Default maximum width is 800px",
-      options: {
-        isHighlighted: true,
-      },
+      
     },
   ],
   initialValue: {

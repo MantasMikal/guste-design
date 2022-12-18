@@ -1,4 +1,3 @@
-import S from "@sanity/desk-tool/structure-builder";
 import {
   GoChecklist as ApprovedIcon,
   GoEye as ReviewIcon,
@@ -10,7 +9,6 @@ import {
   GiMoebiusTriangle as BlogIcon
 } from "react-icons/gi"
 
-import PreviewIFrame from "../components/previewIFrame";
 
 export const icons = {
   BlogIcon,
@@ -20,7 +18,7 @@ export const icons = {
   AllIcon,
 };
 
-const projects = S.listItem()
+const projects = (S) => S.listItem()
   .title("Projects")
   .icon(BlogIcon)
   .child(
@@ -43,7 +41,7 @@ const projects = S.listItem()
                 S.document()
                   .documentId(documentId)
                   .schemaType("project")
-                  .views([S.view.form(), PreviewIFrame()])
+                  .views([S.view.form()])
               )
           ),
         S.documentTypeListItem("project")

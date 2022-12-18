@@ -1,4 +1,3 @@
-import S from "@sanity/desk-tool/structure-builder";
 import { MdSettings, MdHome, MdInfoOutline } from "react-icons/md";
 import { FaBriefcase, FaPhone, FaStore } from "react-icons/fa";
 import { GrDocumentText } from "react-icons/gr";
@@ -26,7 +25,7 @@ const hiddenTypes = [
   "post"
 ];
 
-export default () =>
+export default S =>
   S.list()
     .title("Content")
     .items([
@@ -136,10 +135,13 @@ export default () =>
             ])
         )
         .icon(GrDocumentText),
-      projects,
-      posts,
-      gallery,
+      projects(S),
+      posts(S),
+      gallery(S),
       ...S.documentTypeListItems().filter(
         listItem => !hiddenTypes.includes(listItem.getId())
       )
     ]);
+
+export const defaultDocumentNodeResolver = S =>
+  S.document().views([S.view.form()]);
