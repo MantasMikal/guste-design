@@ -2,6 +2,7 @@
 @import '_backline-mixins';
 
 .Container {
+  display: block;
   width: 100%;
   clear: both;
 }

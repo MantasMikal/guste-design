@@ -17,6 +17,7 @@ import styles from './Product.module.scss'
  */
 const Product = ({ product, similarProducts, page }) => {
   const { title } = product
+  console.log("🚀 ~ file: index.jsx:20 ~ Product ~ product", product)
   const { _rawInformation } = page
   return (
     <Container className={styles.Product} as="section">

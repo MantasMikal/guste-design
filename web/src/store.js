@@ -32,11 +32,11 @@ export const createStore = () =>
               favorites: [favorite, ...favorites]
             }
           }),
-        doesExist: (id) => {
+        isFavorite: (id) => {
           const index = findItemById(id, get().favorites)
           return index > -1
         },
-        removeAll: () => set({ favorites: new Set() })
+        removeAllFavorites: () => set({ favorites: new Set() })
       }),
       {
         name: 'APP', // unique name

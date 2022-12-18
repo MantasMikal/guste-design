@@ -64,7 +64,7 @@ export const query = graphql`
           value
         }
       }
-      priceRange {
+      priceRangeV2 {
         minVariantPrice {
           amount
           currencyCode
@@ -74,6 +74,7 @@ export const query = graphql`
           currencyCode
         }
       }
+
 
       media {
         ... on ShopifyMediaImage {

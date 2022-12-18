@@ -25,7 +25,7 @@ const ProductDetails = ({ product, className }) => {
     productType,
     maxQuantity = 10,
     variants: [initialVariant],
-    priceRange: { minVariantPrice }
+    priceRangeV2: { minVariantPrice }
   } = product
 
   const images = media?.map((img) => img?.image).filter(Boolean)
