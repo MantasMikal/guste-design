@@ -23,7 +23,7 @@ const ProductDetails = ({ product, className }) => {
     variants,
     descriptionHtml,
     productType,
-    maxQuantity = 10,
+    totalInventory,
     variants: [initialVariant],
     priceRangeV2: { minVariantPrice }
   } = product
@@ -168,6 +168,7 @@ const ProductDetails = ({ product, className }) => {
                 onClick={() =>
                   setQuantity(parseInt(quantity > 1 ? quantity - 1 : 1))
                 }
+                disabled={quantity <= 1}
                 customIcon={<HiOutlineMinus />}
               />
               <TextControl
@@ -177,12 +178,12 @@ const ProductDetails = ({ product, className }) => {
                 onChange={handleQuantityChange}
                 value={quantity}
                 min={1}
-                max={10}
+                max={totalInventory}
               />
               <IconButton
                 onClick={() => setQuantity(parseInt(quantity + 1))}
                 customIcon={<HiOutlinePlus />}
-                disabled={quantity >= maxQuantity}
+                disabled={quantity >= totalInventory}
               />
             </div>
           </div>

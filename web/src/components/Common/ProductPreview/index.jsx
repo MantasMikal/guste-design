@@ -13,7 +13,16 @@ import styles from './ProductPreview.module.scss'
 import { getCurrencySymbol } from 'libs/helpers'
 
 const ProductPreview = (props) => {
-  const { id, media, title, handle, variants, className, priceRangeV2 } = props
+  const {
+    id,
+    media,
+    title,
+    handle,
+    variants,
+    className,
+    priceRangeV2,
+    totalInventory
+  } = props
   const { toggleFavorite, isFavorite } = useStore((state) => state, shallow)
 
   const images = media?.map((img) => img?.preview?.image).filter(Boolean)
@@ -34,7 +43,9 @@ const ProductPreview = (props) => {
       images,
       title,
       handle,
-      variants
+      variants,
+      priceRangeV2,
+      totalInventory
     })
   }
   return (
@@ -54,7 +65,9 @@ const ProductPreview = (props) => {
       <MultiImage images={images?.slice(0, 2)} alt={title} layout="fullWidth" />
       <Type size="title" className={styles.Details}>
         <h3 className={styles.Title}>{title}</h3>
-        <div className={styles.Price}>{formattedPrice}</div>
+        <div className={styles.Price}>
+          {totalInventory > 0 ? formattedPrice : 'SOLD OUT'}
+        </div>
       </Type>
     </SmartLink>
   )

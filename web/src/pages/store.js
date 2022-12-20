@@ -57,8 +57,11 @@ const StorePage = () => {
                   }
                 }
               }
+              totalInventory
               variants {
                 price
+                inventoryQuantity
+                availableForSale
               }
               priceRangeV2 {
                 maxVariantPrice {

@@ -64,6 +64,7 @@ export const query = graphql`
           value
         }
       }
+      totalInventory
       priceRangeV2 {
         minVariantPrice {
           amount

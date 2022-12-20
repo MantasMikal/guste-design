@@ -150,16 +150,17 @@ async function createProductPages(graphql, actions, reporter) {
               weightUnit
               weight
             }
+            totalInventory
             priceRangeV2 {
-                maxVariantPrice {
-                  amount
-                  currencyCode
-                }
-                minVariantPrice {
-                  amount
-                  currencyCode
-                }
+              maxVariantPrice {
+                amount
+                currencyCode
               }
+              minVariantPrice {
+                amount
+                currencyCode
+              }
+            }
             id
             title
             description

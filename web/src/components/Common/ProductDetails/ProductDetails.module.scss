@@ -79,7 +79,8 @@ div.Description {
     }
 
     &:disabled {
-      background-color: $color-common-grey75;
+      background-color: $color-common-grey85;
+      cursor: not-allowed;
     }
   }
 }
