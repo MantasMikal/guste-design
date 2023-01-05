@@ -44,6 +44,15 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         </Link>
         <Link
           className={styles.NavLink}
+          to="/blog"
+          iconWidth={24}
+          iconHeight={24}
+          icon="arrow"
+        >
+          Blog
+        </Link>
+        <Link
+          className={styles.NavLink}
           to="/gallery"
           iconWidth={24}
           iconHeight={24}
@@ -60,15 +69,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         >
           Projects
         </Link>
-        <Link
-          className={styles.NavLink}
-          to="/blog"
-          iconWidth={24}
-          iconHeight={24}
-          icon="arrow"
-        >
-          Blog
-        </Link>
+
         <Link
           className={styles.NavLink}
           to="/services"

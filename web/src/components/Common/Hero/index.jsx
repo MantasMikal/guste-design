@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useState, useCallback } from 'react'
 import { string } from 'prop-types'
-import { useSpring, to, config } from 'react-spring'
-import { VscDebugRestart } from 'react-icons/vsc'
+import { useSpring, to } from 'react-spring'
 import { RiRestartLine } from 'react-icons/ri'
 import { GrClear } from 'react-icons/gr'
 import classNames from 'classnames'
@@ -29,7 +28,7 @@ const COLORS = [
 
 const instructionTextMap = {
   0: 'Pick a color',
-  1: 'You know what to do next ;)',
+  1: 'Color your identity - reinvent yourself.',
   2: ''
 }
 
