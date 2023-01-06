@@ -1,0 +1,76 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ImageHero {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: $border-standard;
+  margin-bottom: spacing(1);
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.Title {
+  padding-bottom: spacing(2);
+}
+
+.MobileImage,
+.DesktopImage {
+  object-fit: cover;
+}
+
+.MobileImage :global(.gatsby-image-wrapper),
+.DesktopImage :global(.gatsby-image-wrapper) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.MobileImage {
+  display: block;
+}
+
+.DesktopImage {
+  display: none;
+}
+
+.Container {
+  position: absolute;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 1;
+}
+
+@include mq($breakpoint-tablet) {
+  .MobileImage {
+    display: none;
+  }
+
+  .DesktopImage {
+    display: block;
+  }
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .Title {
+    font-size: spacing(5);
+    line-height: spacing(5.5);
+    padding-bottom: spacing(3);
+  }
+}

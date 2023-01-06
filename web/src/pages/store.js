@@ -80,6 +80,7 @@ const StorePage = () => {
     `
   )
   const productNodes = products ? mapEdgesToNodes(products) : []
+  console.log('Page')
   return (
     <StoreContextProvider>
       <Layout>

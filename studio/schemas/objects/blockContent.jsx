@@ -154,6 +154,9 @@ export default {
     },
     {
       type: "container"
+    },
+    {
+      type: 'hero'
     }
   ],
 };

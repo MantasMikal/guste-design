@@ -14,6 +14,7 @@ import createMediaComponent from './components/createMedia'
 import createLine from './components/createLine'
 import createNewsletterSignup from './components/createNewsletterSignup'
 import createContainer from './components/createContainer'
+import createHero from './components/createHero'
 
 import styles from './BlockContent.module.scss'
 
@@ -129,6 +130,9 @@ const serializers = (baseFontSize) => ({
     },
     container(props) {
       return createContainer(props.node)
+    },
+    hero(props) {
+      return createHero(props.node)
     }
   }
 })

@@ -13,6 +13,7 @@ import section from "./objects/section";
 import openGraph from "./objects/openGraph";
 import banner from "./objects/banner";
 import container from "./objects/container";
+import hero from "./objects/hero";
 
 import contact from "./pages/contact";
 import home from "./pages/home";
@@ -66,4 +67,5 @@ export default [
     newsletter,
     post,
     container,
+    hero
   ]
