@@ -67,12 +67,12 @@ button.Clear {
   }
 }
 
-button.Restart  {
+button.Restart {
   &.showIntro {
-  .Tooltip {
-    animation: fadeOut 1s 1s $easing-standard;
+    .Tooltip {
+      animation: fadeOut 1s 1s $easing-standard;
+    }
   }
-}
 
   &:hover,
   &:focus {
@@ -89,7 +89,6 @@ button.Clear {
     }
   }
 
-
   &:hover,
   &:focus {
     svg {
@@ -102,7 +101,8 @@ button.Clear {
 .Instructions {
   text-align: right;
   padding-right: spacing(1);
-  height: 20px;
+  max-width: 70vw;
+  margin-left: auto;
 }
 
 .Tools {
@@ -128,7 +128,7 @@ button.Clear {
     transform: scale(0.9);
     opacity: 1;
   }
-  70%{
+  70% {
     transform: scale(1);
     opacity: 1;
   }
