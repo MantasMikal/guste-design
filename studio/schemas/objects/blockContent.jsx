@@ -157,6 +157,12 @@ export default {
     },
     {
       type: 'hero'
-    }
+    },
+    {
+      type: 'customGrid'
+    },
+    {
+      type: 'banner'
+    },
   ],
 };

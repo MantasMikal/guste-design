@@ -85,10 +85,6 @@ a.Favorites {
   }
 }
 
-.Banner {
-  margin-bottom: spacing(1);
-}
-
 @include mq($breakpoint-tabletLandscape) {
   .FloatingControls {
     bottom: unset;

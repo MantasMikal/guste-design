@@ -69,7 +69,6 @@ const Store = ({ products, page }) => {
           />
         </div>
       </div>
-      <Banner {...banner} className={styles.Banner} />
       {_rawBody && <BlockContent blocks={_rawBody} /> }
       <GridLayout
         customGridClass={styles.Grid}

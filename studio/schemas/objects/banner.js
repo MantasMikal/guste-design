@@ -29,10 +29,10 @@ export default {
       description: "description",
       image: "desktopImages",
     },
-    prepare({ description = "Banner", images }) {
+    prepare({ description = "Banner", image }) {
       return {
         title: description,
-        media: images[0],
+        media: image[0],
       };
     },
   },

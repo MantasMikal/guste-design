@@ -8,6 +8,11 @@ export default {
   },
   fields: [
     {
+      name: "title",
+      title: "Title (For convenience)",
+      type: "string"
+    },
+    {
       name: "contentBlock",
       title: "Content Block",
       type: "blockContent",
@@ -57,7 +62,7 @@ export default {
     },
   ],
   select: {
-    title: "contentBlock",
+    title: "title",
   },
   preview: {
     prepare({ title = "Content Block" }) {

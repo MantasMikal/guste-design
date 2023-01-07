@@ -14,6 +14,8 @@ import openGraph from "./objects/openGraph";
 import banner from "./objects/banner";
 import container from "./objects/container";
 import hero from "./objects/hero";
+import customGrid from "./objects/customGrid";
+import card from "./objects/card";
 
 import contact from "./pages/contact";
 import home from "./pages/home";
@@ -67,5 +69,7 @@ export default [
     newsletter,
     post,
     container,
-    hero
+    hero,
+    customGrid,
+    card,
   ]

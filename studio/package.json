@@ -24,11 +24,13 @@
     "@sanity/ui": "^1.0.2",
     "@sanity/vision": "^3.0.6",
     "color-picker": "^0.0.1",
+    "lodash.get": "^4.4.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.7.1",
     "sanity": "^3.0.6",
+    "sanity-plugin-dashboard-widget-netlify": "^2.0.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

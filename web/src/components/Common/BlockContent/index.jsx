@@ -15,8 +15,10 @@ import createLine from './components/createLine'
 import createNewsletterSignup from './components/createNewsletterSignup'
 import createContainer from './components/createContainer'
 import createHero from './components/createHero'
+import createCustomGrid from './components/createCustomGrid'
 
 import styles from './BlockContent.module.scss'
+import createBanner from './components/createBanner'
 
 const serializers = (baseFontSize) => ({
   marks: {
@@ -133,6 +135,15 @@ const serializers = (baseFontSize) => ({
     },
     hero(props) {
       return createHero(props.node)
+    },
+    customGrid(props) {
+      return createCustomGrid(props.node)
+    },
+    banner(props) {
+      return createBanner(props.node)
+    },
+    productSlideshow(props) {
+      return createMediaComponent(props.node)
     }
   }
 })

@@ -5,6 +5,7 @@
   display: block;
   position: relative;
   border: $border-standard;
+  margin-bottom: spacing(1);
 }
 
 .DesktopImage {
@@ -19,6 +20,14 @@
   @include mq($breakpoint-mobileLandscape) {
     display: none;
   }
+}
+
+.MobileImage :global(.gatsby-image-wrapper),
+.DesktopImage :global(.gatsby-image-wrapper) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 

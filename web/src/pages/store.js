@@ -11,21 +11,7 @@ const StorePage = () => {
     graphql`
       query {
         page: sanityStorePage(_id: { regex: "/(drafts.|)storePage/" }) {
-          banner {
-            mobileImages {
-              asset {
-                url
-                _id
-              }
-            }
-            desktopImages {
-              asset {
-                url
-                _id
-              }
-            }
-          }
-          _rawBody(resolveReferences: { maxDepth: 10 })
+          _rawBody(resolveReferences: { maxDepth: 20 })
         }
         products: allShopifyProduct(
           sort: { fields: [createdAt], order: DESC }
