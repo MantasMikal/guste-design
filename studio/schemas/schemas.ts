@@ -40,6 +40,9 @@ import shopifyProductVariant from "./objects/shopifyProductVariant";
 import imageWithProductHotspots from "./objects/imageWithProductHotspots";
 import linkExternal from "./annotations/linkExternal";
 import linkInternal from "./annotations/linkInternal";
+import spot from "./objects/spot";
+import priceRange from "./objects/priceRange";
+import inventory from "./objects/inventory";
 
 const objects = [
   blockContent,
@@ -61,7 +64,10 @@ const objects = [
   productWithVariant,
   proxyString,
   shopifyProduct,
-  shopifyProductVariant
+  shopifyProductVariant,
+  spot,
+  priceRange,
+  inventory
 ];
 
 import contact from "./pages/contact";
@@ -92,6 +98,7 @@ import returns from "./pages/returns";
 import servicesPage from "./pages/servicesPage";
 import projectSlideshow from "./plugs/projectSlideshow";
 import newsletter from "./plugs/newsletter";
+
 
 const plugs = [
   figure,

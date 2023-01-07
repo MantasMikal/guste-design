@@ -1,4 +1,4 @@
-import {defineField} from 'sanity'
+import { defineField } from 'sanity'
 
 export default defineField({
   name: 'shopifyProduct',
@@ -123,22 +123,7 @@ export default defineField({
     defineField({
       name: 'priceRange',
       title: 'Price range',
-      type: 'object',
-      options: {
-        columns: 2,
-      },
-      fields: [
-        {
-          name: 'minVariantPrice',
-          title: 'Min variant price',
-          type: 'number',
-        },
-        {
-          name: 'maxVariantPrice',
-          title: 'Max variant price',
-          type: 'number',
-        },
-      ],
+      type: 'priceRange'
     }),
     // Preview Image URL
     defineField({
@@ -154,8 +139,6 @@ export default defineField({
       type: 'array',
       of: [
         {
-          name: 'option',
-          title: 'Option',
           type: 'productOption',
         },
       ],
@@ -171,7 +154,7 @@ export default defineField({
           title: 'Variant',
           type: 'reference',
           weak: true,
-          to: [{type: 'productVariant'}],
+          to: [{ type: 'productVariant' }],
         },
       ],
     }),
