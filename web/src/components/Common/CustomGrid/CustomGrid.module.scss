@@ -1,9 +1,12 @@
 @import 'settings';
 @import '_backline-mixins';
 
-.CustomGrid {
-  display: grid;
+.GridWrapper {
   margin-bottom: spacing(1);
+}
+
+.Grid {
+  display: grid;
 }
 
 .fiveItem {

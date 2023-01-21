@@ -23,7 +23,7 @@ export default {
     },
     {
       name: "title",
-      title: "Title (For convenience)",
+      title: "Title",
       type: "string"
     }
   ],

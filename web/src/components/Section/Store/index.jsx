@@ -8,7 +8,6 @@ import GridLayout from 'Primitive/GridLayout'
 import PageTitle from 'Common/PageTitle'
 import CategoryPicker from 'Common/CategoryPicker'
 import CartButton from 'Common/CartButton'
-import Banner from 'Common/Banner'
 
 import styles from './Store.module.scss'
 import IconButton from 'Primitive/IconButton'
@@ -69,7 +68,8 @@ const Store = ({ products, page }) => {
           />
         </div>
       </div>
-      {_rawBody && !queryCat && <BlockContent blocks={_rawBody} /> }
+      {_rawBody && !queryCat && <BlockContent blocks={_rawBody} />}
+      <PageTitle title={activeCategory === 'All' ? 'All products' : activeCategory} />
       <GridLayout
         customGridClass={styles.Grid}
         items={filteredProducts.map((product) => (
