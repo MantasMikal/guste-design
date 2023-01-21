@@ -69,7 +69,7 @@ const Store = ({ products, page }) => {
           />
         </div>
       </div>
-      {_rawBody && <BlockContent blocks={_rawBody} /> }
+      {_rawBody && !queryCat && <BlockContent blocks={_rawBody} /> }
       <GridLayout
         customGridClass={styles.Grid}
         items={filteredProducts.map((product) => (
