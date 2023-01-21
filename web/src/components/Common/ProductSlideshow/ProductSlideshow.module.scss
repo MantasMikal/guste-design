@@ -1,0 +1,59 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.ProductSlideshow {
+  display: block;
+  border: $border-standard;
+}
+
+.Slide {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 4/1;
+  
+  &:hover {
+    background-color: transparent;
+    text-decoration-color: $color-common-black !important;
+    .Title {
+      text-decoration: none;
+      background-color: $color-primary-accent;
+      transition: $easing-standard $duration-short;
+      text-decoration-color: $color-common-black !important;
+    }
+  }
+}
+
+.ProductImage {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+
+  & > div {
+    height: 100%;
+  }
+}
+
+.Details {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.Title {
+  margin-top: auto;
+  margin-bottom: 0;
+  padding: spacing(1);
+  color: $color-common-black;
+  background-color: $color-common-white;
+  border: 2px solid $color-common-black;
+  text-decoration-color: $color-common-black;
+  border-left: 0;
+  border-bottom: 0;
+}

@@ -80,6 +80,15 @@ export default S =>
                     .documentId("storePage")
                 )
                 .icon(FaStore),
+                S.listItem()
+                .title("Store Products")
+                .child(
+                  S.editor()
+                    .id("storeProductPage")
+                    .schemaType("storeProductPage")
+                    .documentId("storeProductPage")
+                )
+                .icon(FaStore),
               S.listItem()
                 .title("Base product")
                 .child(

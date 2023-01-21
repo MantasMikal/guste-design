@@ -28,7 +28,7 @@ export function getGalleryUrl(slug) {
 }
 
 export function getProductUrl(slug) {
-  return `/store/${slug.current || slug}/`
+  return `/store/products/${slug.current || slug}/`
 }
 
 export function buildImageObj(source) {

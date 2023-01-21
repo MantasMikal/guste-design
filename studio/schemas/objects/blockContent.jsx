@@ -164,5 +164,8 @@ export default {
     {
       type: 'banner'
     },
+    {
+      type: 'productSlideshow'
+    }
   ],
 };

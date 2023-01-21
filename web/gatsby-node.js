@@ -207,7 +207,7 @@ async function createProductPages(graphql, actions, reporter) {
   productEdges.forEach((edge) => {
     const id = edge.node.id
     const handle = edge.node.handle
-    const path = `/store/${handle}/`
+    const path = `/store/products/${handle}/`
     reporter.info(`Creating product page: ${path}`)
 
     const similarProducts = getProductsWithCategories(

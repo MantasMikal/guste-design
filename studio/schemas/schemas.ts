@@ -44,6 +44,7 @@ import spot from "./objects/spot";
 import priceRange from "./objects/priceRange";
 import inventory from "./objects/inventory";
 
+
 const objects = [
   blockContent,
   blockText,
@@ -67,7 +68,7 @@ const objects = [
   shopifyProductVariant,
   spot,
   priceRange,
-  inventory
+  inventory,
 ];
 
 import contact from "./pages/contact";
@@ -75,7 +76,7 @@ import home from "./pages/home";
 import store from "./pages/store";
 import aboutPage from "./pages/aboutPage";
 import productPage from "./pages/productPage";
-
+import storeProducts from "./pages/storeProducts";
 
 const pages = [
   contact,
@@ -84,7 +85,8 @@ const pages = [
   aboutPage,
   productPage,
   returns,
-  servicesPage
+  servicesPage,
+  storeProducts,
 ];
 
 import figure from "./plugs/figure";
@@ -98,7 +100,7 @@ import returns from "./pages/returns";
 import servicesPage from "./pages/servicesPage";
 import projectSlideshow from "./plugs/projectSlideshow";
 import newsletter from "./plugs/newsletter";
-
+import productSlideshow from "./plugs/productSlideshow";
 
 const plugs = [
   figure,
@@ -109,7 +111,8 @@ const plugs = [
   location,
   line,
   projectSlideshow,
-  newsletter
+  newsletter,
+  productSlideshow
 ];
 
 export default [

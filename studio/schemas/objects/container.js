@@ -32,10 +32,10 @@ export default {
       },
     },
   ],
-  select: {
-    title: "title",
-  },
   preview: {
+    select: {
+      title: "title",
+    },
     prepare({ title = "Container" }) {
       return {
         title,

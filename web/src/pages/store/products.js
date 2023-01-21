@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { mapEdgesToNodes } from '../libs/helpers'
-import Seo from '../components/seo'
-import Layout from '../containers/MainLayout'
+import { mapEdgesToNodes } from '../../libs/helpers'
+import Seo from '../../components/seo'
+import Layout from '../../containers/MainLayout'
 import Store from 'Section/Store'
 import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
 
@@ -10,7 +10,7 @@ const StorePage = () => {
   const { products, page } = useStaticQuery(
     graphql`
       query {
-        page: sanityStorePage(_id: { regex: "/(drafts.|)storePage/" }) {
+        page: sanityStoreProductPage(_id: { regex: "/(drafts.|)storeProductPage/" }) {
           _rawBody(resolveReferences: { maxDepth: 20 })
         }
         products: allShopifyProduct(
@@ -66,12 +66,11 @@ const StorePage = () => {
     `
   )
   const productNodes = products ? mapEdgesToNodes(products) : []
-  console.log('Page')
   return (
     <StoreContextProvider>
       <Layout>
         <Seo
-          title="Store"
+          title="All Products"
           description="Gusté merges art & design to add a personal touch to your home."
         />
         {productNodes && <Store products={productNodes} page={page} />}
