@@ -27,8 +27,8 @@ const COLORS = [
 ]
 
 const instructionTextMap = {
-  0: 'Pick a color',
-  1: 'Color your identity - reinvent yourself.',
+  0: 'Pick a color.',
+  1: 'Color your identity.',
   2: ''
 }
 
@@ -41,7 +41,7 @@ const Hero = () => {
     config: { mass: 1, tension: 350, friction: 15, precision: 0.1 }
   }))
   const [partColors, setPartColors] = useLocalStorage('colors', {
-    ...defaultColors
+    ...clearedColors
   })
 
   const onMove = useCallback(
