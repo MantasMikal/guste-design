@@ -110,7 +110,8 @@ module.exports = {
     `gatsby-transformer-sharp`,
     'gatsby-plugin-use-query-params',
     'gatsby-plugin-advanced-sitemap',
-    'gatsby-plugin-robots-txt'
+    'gatsby-plugin-robots-txt',
+    'gatsby-plugin-remove-serviceworker'
     // 'gatsby-plugin-offline',
     // {
     //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
