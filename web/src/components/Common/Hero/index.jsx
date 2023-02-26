@@ -41,7 +41,7 @@ const Hero = () => {
     config: { mass: 1, tension: 350, friction: 15, precision: 0.1 }
   }))
   const [partColors, setPartColors] = useLocalStorage('colors', {
-    ...clearedColors
+    ...defaultColors
   })
 
   const onMove = useCallback(
