@@ -5,7 +5,6 @@ import { useSpring, to } from 'react-spring'
 import { RiRestartLine } from 'react-icons/ri'
 import { GrClear } from 'react-icons/gr'
 import classNames from 'classnames'
-import useLocalStorage from 'hooks/useLocalStorage'
 import Container from 'Primitive/Container'
 import GugisHead from 'Common/GugisHead'
 import ColorPalette from 'Common/ColorPalette'
@@ -14,6 +13,10 @@ import { defaultColors, clearedColors } from 'Common/GugisHead/defaultColors'
 import styles from './Hero.module.scss'
 import ButtonBase from 'Primitive/ButtonBase'
 import Type from 'Primitive/Type'
+import { useEffect } from 'react'
+import Pointer from 'Common/GugisHead/Pointer'
+import SmartLink from 'Primitive/SmartLink'
+import { NavigationContext } from 'Context/NavigationContext'
 
 const COLORS = [
   '#FFE000',
@@ -33,14 +36,17 @@ const instructionTextMap = {
 }
 
 const Hero = () => {
+  const {setContactModalOpen} = React.useContext(NavigationContext)
   const [instructionStep, setInstructionStep] = useState(0)
+  const [reveal, setReveal] = useState(false)
   const [currentColor, setCurrentColor] = useState('white')
   const [{ st, xy }, set] = useSpring(() => ({
     st: 0,
     xy: [0, 0],
     config: { mass: 1, tension: 350, friction: 15, precision: 0.1 }
   }))
-  const [partColors, setPartColors] = useLocalStorage('colors', {
+  const [partColors, setPartColors] = useState({
+    initialized: false,
     ...defaultColors
   })
 
@@ -52,11 +58,13 @@ const Hero = () => {
   )
 
   const pupilInterp = to([st, xy], (o, xy) => {
-    return `translate(${xy[0] / 25},${xy[1] / 20 + o / 8})`
+    return `translate(${-xy[0] / 25},${xy[1] / 20 + o / 8})`
   })
 
   const handleCurrentColorChange = (color) => {
-    instructionStep === 0 && setInstructionStep(1)
+    if(instructionStep === 0) {
+      setInstructionStep(1)
+    } 
     setCurrentColor(color)
   }
 
@@ -78,6 +86,16 @@ const Hero = () => {
     setPartColors(clearedColors)
   }
 
+  useEffect(() => {
+    {
+      const timeout = setTimeout(() => {
+        setReveal(true)
+        handleClear()
+      }, 2000)
+      return () => clearTimeout(timeout)
+    }
+  }, [])
+
   return (
     <div
       className={styles.Hero}
@@ -88,14 +106,11 @@ const Hero = () => {
         onMove(e)
       }}
     >
-      <div
-        id="cursor"
-        className={styles.Cursor}
-        style={{
-          backgroundColor: currentColor
-        }}
-      />
+      <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
       <div className={styles.ToolBar}>
+        <div className={styles.Title}>
+          <h1>Brand Identity Design + Original Art with Personality</h1>
+        </div>
         <div className={styles.Tools}>
           <ButtonBase
             className={classNames(
@@ -125,16 +140,31 @@ const Hero = () => {
           />
         </div>
         <Type size="base" className={styles.Instructions}>
-          {instructionTextMap[instructionStep]}
+        &nbsp;{instructionTextMap[instructionStep]}
         </Type>
       </div>
       <Container size="wide" gutter center>
         <div className={styles.HeadWrapper}>
           <GugisHead
+            className={classNames(reveal && styles.reveal)}
             pupilInterp={pupilInterp}
             partColors={partColors}
             handleColorChange={handleColorChange}
           />
+        </div>
+        <div className={styles.DescriptionWrapper}>
+        <Type as="p" className={styles.Description}>
+          Discover what type Of character you are. What type of message you want
+          to communicate. Identify patterns, values and activities that reflects
+          you.
+          <br />
+          Color your identity.
+        </Type>
+        <SmartLink onClick={() => setContactModalOpen(true)} className={styles.ConnectButton}>
+          <Type size="base" as="span">
+            Connect
+          </Type>
+        </SmartLink>
         </div>
       </Container>
     </div>

@@ -1,19 +1,20 @@
-import React, { cloneElement, useState } from 'react'
+import React, { cloneElement } from 'react'
 import { node } from 'prop-types'
 
 import ContactSection from './Contact'
+import { NavigationContext } from 'Context/NavigationContext'
 
 const Contact = ({ trigger, ...other }) => {
-  const [open, toggleOpen] = useState(false)
+  const {isContactModalOpen, setContactModalOpen} = React.useContext(NavigationContext)
 
   const handleToggleOpen = () => {
-    toggleOpen(!open)
+    setContactModalOpen(!isContactModalOpen)
   }
 
   return (
     <>
       {cloneElement(trigger, { onClick: handleToggleOpen })}
-      <ContactSection open={open} onClose={handleToggleOpen} {...other} />
+      <ContactSection open={isContactModalOpen} onClose={handleToggleOpen} {...other} />
     </>
   )
 }

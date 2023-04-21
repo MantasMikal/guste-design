@@ -9,13 +9,14 @@ const GugisHead = ({
   pupilInterp,
   partColors = defaultColors,
   handleColorChange,
+  className,
   ...props
 }) => {
   const [isWide, setWide] = useState(false)
 
   return (
     <svg
-      className={classNames(styles.GugisHead)}
+      className={classNames(styles.GugisHead, className)}
       viewBox="0 0 1500 1500"
       {...props}
     >

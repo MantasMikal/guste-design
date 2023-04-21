@@ -14,22 +14,94 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 50vh;
   position: relative;
-  @include mq($breakpoint-tablet) {
-    height: 85vh;
+  @include mq($breakpoint-tabletLandscape) {
+    height: 73vh;
     top: -25px;
+  }
+}
+
+.Title {
+  padding: spacing(2);
+  border-bottom: $border-standard;
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  @include mq($breakpoint-tablet) {
+    padding: spacing(2) spacing(5);
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+
+.DescriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  left: 0;
+  padding-bottom: spacing(2);
+  gap: 1rem;
+
+  @include mq($breakpoint-mobileLarge) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    position: absolute;
+    align-items: flex-end;
+    bottom: 0rem;
+    padding: 0 spacing(2) spacing(2) spacing(2);
+  }
+}
+
+.Description {
+  @include mq($breakpoint-tabletLandscape) {
+    max-width: 28%;
+  }
+}
+
+.ConnectButton {
+  shape-outside: circle();
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: $border-standard;
+  width: 8rem;
+  height: 8rem;
+  text-transform: uppercase;
+  display: none;
+
+  transition: 0.2s $easing-standard;
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+    transition: 0.2s $easing-standard;
+  }
+
+  @include mq($breakpoint-mobileLarge) {
+    display: flex;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    max-width: 28%;
   }
 }
 
 .Cursor {
   position: absolute;
-  width: spacing(1.5);
-  height: spacing(1.5);
-  border: $border-standard;
-  border-radius: 50%;
+  width: spacing(5);
+  height: spacing(5);
   z-index: 100;
   pointer-events: none;
+  transform: translateY(-60%) translateX(2px);
 
   @media (hover: none) {
     display: none;
@@ -116,6 +188,11 @@ button.Clear {
 
 .ColorPalette {
   transform: translate(0, -2px);
+}
+
+.reveal {
+  transition: $easing-standard 1s;
+  transform: rotateY(540deg);
 }
 
 @keyframes spin {
