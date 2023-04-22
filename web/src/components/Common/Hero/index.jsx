@@ -109,7 +109,7 @@ const Hero = () => {
       <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>
-          <h1>Brand Identity Design + Original Art with Personality</h1>
+          <h1>Brand Identity Design & Original Art with personality.</h1>
         </div>
         <div className={styles.Tools}>
           <ButtonBase
@@ -153,12 +153,10 @@ const Hero = () => {
           />
         </div>
         <div className={styles.DescriptionWrapper}>
-        <Type as="p" className={styles.Description}>
-          Discover what type Of character you are. What type of message you want
-          to communicate. Identify patterns, values and activities that reflects
-          you.
-          <br />
-          Color your identity.
+        <Type size="baseSmall" as="p" className={styles.Description}>
+        Discover what type of character you are. What type of message you want to communicate. Identify patterns, values and activities that reflect you.
+        <br/>
+        Color your identity.
         </Type>
         <SmartLink onClick={() => setContactModalOpen(true)} className={styles.ConnectButton}>
           <Type size="base" as="span">
