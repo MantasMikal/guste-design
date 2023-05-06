@@ -82,7 +82,7 @@
   text-transform: uppercase;
   display: none;
   pointer-events: all;
-  z-index: 10;
+  z-index: 100;
   
   transition: 0.2s $easing-standard;
   &:hover,
