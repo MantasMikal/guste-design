@@ -6,10 +6,8 @@
   border: $border-standard;
   @media (hover: hover) {
     &:hover {
-      .Details {
-        background-color: $color-primary-accent;
-        transition: $duration-shorter $easing-standard;
-      }
+      background-color: $color-primary-accent;
+      transition: $duration-shorter $easing-standard;
     }
   }
 }
