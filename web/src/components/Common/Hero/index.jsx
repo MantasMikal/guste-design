@@ -36,7 +36,7 @@ const instructionTextMap = {
 }
 
 const Hero = () => {
-  const {setContactModalOpen} = React.useContext(NavigationContext)
+  const { setContactModalOpen } = React.useContext(NavigationContext)
   const [instructionStep, setInstructionStep] = useState(0)
   const [reveal, setReveal] = useState(false)
   const [currentColor, setCurrentColor] = useState('white')
@@ -62,9 +62,9 @@ const Hero = () => {
   })
 
   const handleCurrentColorChange = (color) => {
-    if(instructionStep === 0) {
+    if (instructionStep === 0) {
       setInstructionStep(1)
-    } 
+    }
     setCurrentColor(color)
   }
 
@@ -140,7 +140,7 @@ const Hero = () => {
           />
         </div>
         <Type size="base" className={styles.Instructions}>
-        &nbsp;{instructionTextMap[instructionStep]}
+          &nbsp;{instructionTextMap[instructionStep]}
         </Type>
       </div>
       <Container size="wide" gutter center>
@@ -153,16 +153,20 @@ const Hero = () => {
           />
         </div>
         <div className={styles.DescriptionWrapper}>
-        <Type size="baseSmall" as="p" className={styles.Description}>
-        Discover what type of character you are. What type of message you want to communicate. Identify patterns, values and activities that reflect you.
-        <br/>
-        Color your identity.
-        </Type>
-        <SmartLink onClick={() => setContactModalOpen(true)} className={styles.ConnectButton}>
-          <Type size="base" as="span">
-            Connect
+          <Type size="baseSmall" as="p" className={styles.Description}>
+            Color the avatar of your target audience. Gusté creates authentic
+            brand identities that reflect your brand's target audience and their
+            values, while infusing joy into living and working spaces through
+            original art.
           </Type>
-        </SmartLink>
+          <SmartLink
+            onClick={() => setContactModalOpen(true)}
+            className={styles.ConnectButton}
+          >
+            <Type size="base" as="span">
+              Connect
+            </Type>
+          </SmartLink>
         </div>
       </Container>
     </div>
