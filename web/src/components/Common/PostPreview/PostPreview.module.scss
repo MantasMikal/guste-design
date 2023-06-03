@@ -2,7 +2,8 @@
 @import '_backline-mixins';
 
 .PostPreview {
-  display: block;
+  display: flex;
+  flex-direction: column;
   border: $border-standard;
   @media (hover: hover) {
     &:hover {
@@ -14,6 +15,13 @@
 
 .ImageWrapper {
   position: relative;
+}
+
+.ImageWrapper :global(.gatsby-image-wrapper) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .Category {
@@ -47,6 +55,7 @@
   border-top: $border-standard;
   transition: $duration-shorter $easing-standard;
   text-transform: uppercase;
+  flex-grow: 1;
 
   & > * + * {
     padding-top: spacing(0.5);
