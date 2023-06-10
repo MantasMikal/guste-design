@@ -116,8 +116,8 @@ const LayoutContainer = (props) => {
   const [showNav, setShowNav] = useState(false)
   const { objects } = useSpawnGugisWhenInactive({
     delay: 1000,
-    inactiveTime: 1000 * 60,
-    max: 100
+    inactiveTime: 1000 * 60, // 1 minute,
+    max: 50
   })
 
   function handleShowNav() {

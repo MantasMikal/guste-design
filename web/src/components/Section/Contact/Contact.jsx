@@ -5,7 +5,7 @@ import FocusTrap from 'focus-trap-react'
 import useEscapeKey from 'hooks/useEscapeKey'
 import useOutsideClick from 'hooks/useOutsideClick'
 
-import { FaLinkedinIn, FaPinterest, FaPinterestP } from 'react-icons/fa'
+import { FaLinkedinIn, FaPinterestP } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import { HiOutlineMail } from 'react-icons/hi'
 import { SiBehance } from 'react-icons/si'
