@@ -154,8 +154,6 @@ const Hero = () => {
         </div>
         <div className={styles.DescriptionWrapper}>
           <Type size="baseSmall" as="p" className={styles.Description}>
-            Color the your target avatar.
-            <br />
             Gusté creates brand identities that
             reflect your target audience's values for standout success, while
             infusing joy into living spaces through original art for a curious
