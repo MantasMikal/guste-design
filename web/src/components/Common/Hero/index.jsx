@@ -109,7 +109,7 @@ const Hero = () => {
       <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>
-          <h1>Brand Identity Design & Original Art with personality.</h1>
+          <h1>Brand identity design & original art with personality.</h1>
         </div>
         <div className={styles.Tools}>
           <ButtonBase
@@ -154,10 +154,9 @@ const Hero = () => {
         </div>
         <div className={styles.DescriptionWrapper}>
           <Type size="baseSmall" as="p" className={styles.Description}>
-            Gusté creates brand identities that
-            reflect your target audience's values for standout success, while
-            infusing joy into living spaces through original art for a curious
-            life.
+            Want to elevate your identity? Upgrade your dream vision with
+            personality-filled designs that resonate both with you and your
+            audience.
           </Type>
           <SmartLink
             onClick={() => setContactModalOpen(true)}
