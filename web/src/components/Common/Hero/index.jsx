@@ -17,6 +17,7 @@ import { useEffect } from 'react'
 import Pointer from 'Common/GugisHead/Pointer'
 import SmartLink from 'Primitive/SmartLink'
 import { NavigationContext } from 'Context/NavigationContext'
+import { StaticImage } from 'gatsby-plugin-image'
 
 const COLORS = [
   '#FFE000',
@@ -106,6 +107,7 @@ const Hero = () => {
         onMove(e)
       }}
     >
+      <StaticImage src={'./sky.jpg'} className={styles.BgImage} placeholder="blurred" layout='fullWidth' objectFit='cover' />
       <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>

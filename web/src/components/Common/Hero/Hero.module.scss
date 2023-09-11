@@ -10,6 +10,19 @@
   margin-bottom: spacing(1);
 }
 
+.BgImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.ToolBar {
+  position: relative;
+  z-index: 1;
+}
+
 .HeadWrapper {
   display: flex;
   justify-content: center;
@@ -26,6 +39,7 @@
 .Title {
   padding: spacing(2);
   border-bottom: $border-standard;
+  z-index: 1;
 
   h1 {
     font-size: 1.5rem;
@@ -40,6 +54,7 @@
 }
 
 .DescriptionWrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -49,6 +64,7 @@
   padding-bottom: spacing(4);
   gap: 1rem;
   pointer-events: none;
+  z-index: 1;
 
   @include mq($breakpoint-mobileLarge) {
     flex-direction: row;
