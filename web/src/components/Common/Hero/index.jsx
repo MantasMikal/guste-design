@@ -109,6 +109,7 @@ const Hero = () => {
     >
       <div className={styles.BgImage}>
         <StaticImage
+          className={styles.BgImageInner}
           src={'./sky.jpg'}
           placeholder="blurred"
           layout="fullWidth"
