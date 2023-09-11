@@ -16,6 +16,10 @@
   height: 100%;
   top: 0;
   left: 0;
+
+  .gatsby-image-wrapper {
+    height: 100%;
+  }
 }
 
 .ToolBar {
@@ -239,3 +243,4 @@ button.Clear {
     opacity: 0;
   }
 }
+  
