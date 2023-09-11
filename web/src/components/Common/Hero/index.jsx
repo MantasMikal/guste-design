@@ -107,7 +107,14 @@ const Hero = () => {
         onMove(e)
       }}
     >
-      <StaticImage src={'./sky.jpg'} className={styles.BgImage} placeholder="blurred" layout='fullWidth' objectFit='cover' />
+      <div className={styles.BgImage}>
+        <StaticImage
+          src={'./sky.jpg'}
+          placeholder="blurred"
+          layout="fullWidth"
+          objectFit="cover"
+        />
+      </div>
       <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>
