@@ -6,7 +6,8 @@ var config = {
     bgColor: "#ffffff",
     themeColor: "#ffffff",
     favIcon: "src/assets/favicon.png",
-    description: "Gusté is a brand identity designer and artist focusing on logo and identity design, packaging as well as original art creation.",
+    description:
+      "GUSTÉ.DESIGN | Brand identity design & original art with personality. Want to elevate your identity? Upgrade your dream vision with personality-filled designs.",
   },
   project: {
     projectId: "uq1ipftd",

@@ -47,7 +47,7 @@ const PostPage = () => {
     <Layout>
       <Seo
         title="Blog"
-        description="Illustration | Logo & Brand Identity | Packaging | Web Design"
+        description="Strong identity, guided by core values, shapes the future."
       />
       {postNodes && <Posts posts={postNodes} />}
     </Layout>

@@ -72,7 +72,7 @@ const StorePage = () => {
       <Layout>
         <Seo
           title="Store"
-          description="Gusté merges art & design to add a personal touch to your home."
+          description="An eclectic collection of original paintings & art prints."
         />
         {productNodes && <Store products={productNodes} page={page} />}
       </Layout>
