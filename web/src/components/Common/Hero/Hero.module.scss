@@ -68,7 +68,7 @@
   padding-bottom: spacing(4);
   gap: 1rem;
   pointer-events: none;
-  z-index: 1;
+  z-index: 10;
 
   @include mq($breakpoint-mobileLarge) {
     flex-direction: row;
