@@ -36,6 +36,13 @@
   }
 }
 
+.InstagramPost :global(.gatsby-image-wrapper) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .Body {
   margin-bottom: spacing(1);
 }
