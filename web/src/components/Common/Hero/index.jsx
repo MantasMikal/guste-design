@@ -165,8 +165,7 @@ const Hero = () => {
         <div className={styles.DescriptionWrapper}>
           <Type size="baseSmall" as="p" className={styles.Description}>
             Want to elevate your identity? Upgrade your dream vision with
-            personality-filled designs that resonate both with you and your
-            audience.
+            personality-filled designs.
           </Type>
           <SmartLink
             onClick={() => setContactModalOpen(true)}
