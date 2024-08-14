@@ -1,0 +1,30 @@
+@import 'settings';
+@import '_backline-mixins';
+
+.InstagramPosts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: spacing(1);
+}
+
+.InstagramPost {
+  border: $border-standard;
+  display: block;
+
+  & > div:first-child {
+    display: block;
+  }
+}
+
+.InstagramPost :global(.gatsby-image-wrapper) {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@include mq($breakpoint-tabletLandscape) {
+  .InstagramPosts {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

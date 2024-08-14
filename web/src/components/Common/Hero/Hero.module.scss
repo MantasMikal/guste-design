@@ -65,7 +65,7 @@
   justify-content: space-between;
   width: 100%;
   left: 0;
-  padding-bottom: spacing(4);
+  padding-bottom: spacing(2);
   gap: 1rem;
   pointer-events: none;
   z-index: 10;
@@ -75,11 +75,18 @@
     align-items: center;
   }
 
+  @include mq($breakpoint-tablet) {
+    padding: 0 spacing(4) spacing(5) spacing(3);
+  }
+
   @include mq($breakpoint-tabletLandscape) {
     position: absolute;
     align-items: flex-end;
     bottom: 0rem;
-    padding: 0 spacing(4) spacing(4) spacing(4);
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    padding: 0 spacing(4) spacing(5) spacing(5);
   }
 }
 
@@ -103,7 +110,7 @@
   display: none;
   pointer-events: all;
   z-index: 10;
-  
+
   transition: 0.2s $easing-standard;
   &:hover,
   &:focus {
