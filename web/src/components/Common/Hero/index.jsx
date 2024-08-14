@@ -119,7 +119,7 @@ const Hero = () => {
       <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>
-          <h1>Brand identity design & original art with personality.</h1>
+          <h1>Graphic design and illustration services.</h1>
         </div>
         <div className={styles.Tools}>
           <ButtonBase

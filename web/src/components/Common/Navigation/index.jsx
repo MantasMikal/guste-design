@@ -42,7 +42,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
         >
           About
         </Link>
-        <Link
+        {/* <Link
           className={styles.NavLink}
           to="/blog"
           iconWidth={24}
@@ -50,8 +50,8 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           icon="arrow"
         >
           Blog
-        </Link>
-        <Link
+        </Link> */}
+        {/* <Link
           className={styles.NavLink}
           to="/gallery"
           iconWidth={24}
@@ -59,7 +59,7 @@ const Navigation = ({ onHideNav, onShowNav, showNav, siteTitle, id }) => {
           icon="grid"
         >
           Gallery
-        </Link>
+        </Link> */}
         <Link
           className={styles.NavLink}
           to="/projects"

@@ -72,13 +72,13 @@ const Contact = ({ onClose, open }) => {
                 >
                   <FaLinkedinIn size="2em" />
                 </SmartLink>
-                <SmartLink
+                {/* <SmartLink
                   href="https://www.pinterest.com/gustedesign"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <FaPinterestP size="1.8em" />
-                </SmartLink>
+                </SmartLink> */}
               </div>
             </div>
           </div>
