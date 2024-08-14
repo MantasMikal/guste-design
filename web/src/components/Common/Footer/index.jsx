@@ -2,9 +2,8 @@ import React from 'react'
 
 import SmartLink from 'Primitive/SmartLink'
 import Container from 'Primitive/Container'
-import { FaLinkedinIn, FaPinterest, FaPinterestP } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
-import { HiOutlineMail } from 'react-icons/hi'
 import { SiBehance } from 'react-icons/si'
 
 import styles from './Footer.module.scss'
@@ -58,13 +57,13 @@ const Footer = ({ shippingAndReturns }) => {
         >
           <FaLinkedinIn size="1.4em" />
         </SmartLink>
-        <SmartLink
+        {/* <SmartLink
           href="https://www.pinterest.com/gustedesign/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <FaPinterestP size="1.4em" />
-        </SmartLink>
+        </SmartLink> */}
       </div>
       <SmartLink
         href="https://github.com/MantasMikal"
