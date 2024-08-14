@@ -6,7 +6,7 @@
   position: relative;
   overflow: hidden;
   border: $border-standard;
-  background-color: #fafafa;
+  background-color: $color-primary-light-blue;
   margin-bottom: spacing(1);
 }
 
@@ -103,7 +103,7 @@
   display: none;
   pointer-events: all;
   z-index: 10;
-  
+
   transition: 0.2s $easing-standard;
   &:hover,
   &:focus {
@@ -121,13 +121,18 @@
 }
 
 .Cursor {
-  position: absolute;
-  width: spacing(5);
-  height: spacing(5);
-  z-index: 100;
-  pointer-events: none;
-  transform: translateY(-60%) translateX(2px);
+  --circle-size: 30px;
 
+  position: absolute;
+  height: var(--circle-size);
+  width: var(--circle-size);
+  border: 3px solid $color-common-black;
+  border-radius: 100%;
+  top: calc(var(--circle-size) / 2 * -1 + -62px);
+  left: calc(var(--circle-size) / 2 * -1 + -10px);
+  pointer-events: none;
+
+  z-index: 1000;
   @media (hover: none) {
     display: none;
   }

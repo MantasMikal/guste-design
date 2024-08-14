@@ -18,6 +18,7 @@ import Pointer from 'Common/GugisHead/Pointer'
 import SmartLink from 'Primitive/SmartLink'
 import { NavigationContext } from 'Context/NavigationContext'
 import { StaticImage } from 'gatsby-plugin-image'
+import { useBouncyMouse } from './use-bouncy-mouse'
 
 const COLORS = [
   '#FFE000',
@@ -38,6 +39,7 @@ const instructionTextMap = {
 
 const Hero = () => {
   const { setContactModalOpen } = React.useContext(NavigationContext)
+  const { onMouseMove } = useBouncyMouse('cursor')
   const [instructionStep, setInstructionStep] = useState(0)
   const [reveal, setReveal] = useState(false)
   const [currentColor, setCurrentColor] = useState('white')
@@ -101,13 +103,11 @@ const Hero = () => {
     <div
       className={styles.Hero}
       onMouseMove={(e) => {
-        const cursor = document && document.getElementById('cursor')
-        cursor.style.left = `${e.pageX - 15}px`
-        cursor.style.top = `${e.pageY - 67}px`
+        onMouseMove(e)
         onMove(e)
       }}
     >
-      {/* <div className={styles.BgImage}>
+      <div className={styles.BgImage}>
         <StaticImage
           className={styles.BgImageInner}
           src={'./sky.jpg'}
@@ -115,8 +115,13 @@ const Hero = () => {
           layout="fullWidth"
           objectFit="cover"
         />
-      </div> */}
-      <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
+      </div>
+      {/* <Pointer id="cursor" className={styles.Cursor} fill={currentColor} /> */}
+      <div
+        id="cursor"
+        style={{ background: currentColor }}
+        className={styles.Cursor}
+      />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>
           <h1>Graphic design and illustration services.</h1>
@@ -164,8 +169,8 @@ const Hero = () => {
         </div>
         <div className={styles.DescriptionWrapper}>
           <Type size="baseSmall" as="p" className={styles.Description}>
-            Want to elevate your identity? <br />
-            Upgrade your dream vision with personality-filled designs.
+            Want to elevate your identity? Upgrade your dream vision with
+            personality-filled designs.
           </Type>
           <SmartLink
             onClick={() => setContactModalOpen(true)}
