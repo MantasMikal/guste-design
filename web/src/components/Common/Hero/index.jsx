@@ -107,7 +107,7 @@ const Hero = () => {
         onMove(e)
       }}
     >
-      <div className={styles.BgImage}>
+      {/* <div className={styles.BgImage}>
         <StaticImage
           className={styles.BgImageInner}
           src={'./sky.jpg'}
@@ -115,7 +115,7 @@ const Hero = () => {
           layout="fullWidth"
           objectFit="cover"
         />
-      </div>
+      </div> */}
       <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>
@@ -164,8 +164,8 @@ const Hero = () => {
         </div>
         <div className={styles.DescriptionWrapper}>
           <Type size="baseSmall" as="p" className={styles.Description}>
-            Want to elevate your identity? Upgrade your dream vision with
-            personality-filled designs.
+            Want to elevate your identity? <br />
+            Upgrade your dream vision with personality-filled designs.
           </Type>
           <SmartLink
             onClick={() => setContactModalOpen(true)}
