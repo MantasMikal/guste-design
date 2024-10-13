@@ -12,7 +12,10 @@ import CartButton from 'Common/CartButton'
 import styles from './Store.module.scss'
 import IconButton from 'Primitive/IconButton'
 import { FaHeart } from 'react-icons/fa'
+import { TbColumns1, TbColumns2 } from "react-icons/tb";
 import BlockContent from 'Common/BlockContent'
+import classNames from 'classnames'
+
 
 const Store = ({ products, page }) => {
   const { banner, _rawBody } = page
@@ -21,6 +24,7 @@ const Store = ({ products, page }) => {
     [products]
   )
   const [activeCategory, setActiveCategory] = useState(allCategories[0])
+  const [isGridView, setIsGridView] = useState(false)
   const [queryCat, setQueryCat] = useQueryParam('category', StringParam)
 
   useEffect(() => {
@@ -51,6 +55,12 @@ const Store = ({ products, page }) => {
         <div className={styles.FloatingControls}>
           <div className={styles.ControlsWrapper}>
             <IconButton
+              className={styles.GridToggle}
+              small
+              onClick={() => setIsGridView(!isGridView)}
+              customIcon={isGridView ? <TbColumns1 size="1em" /> : <TbColumns2 size="1em" />}
+            />
+            <IconButton
               small
               className={styles.Favorites}
               customIcon={<FaHeart size="1em" />}
@@ -71,7 +81,9 @@ const Store = ({ products, page }) => {
       {_rawBody && !queryCat && <BlockContent blocks={_rawBody} />}
       <PageTitle title={activeCategory === 'All' ? 'All products' : activeCategory} />
       <GridLayout
-        customGridClass={styles.Grid}
+        customGridClass={classNames(styles.Grid, {
+          [styles.MobileGrid]: isGridView
+        })}
         items={filteredProducts.map((product) => (
           <ProductPreview
             key={product.id}

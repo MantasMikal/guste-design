@@ -9,6 +9,28 @@
   position: relative;
 }
 
+.Grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  @include mq($breakpoint-mobileLandscape) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mq($breakpoint-tabletLandscape) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include mq($breakpoint-desktopLarge) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  &.MobileGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .FloatingControls {
   position: fixed;
   right: spacing(1);
@@ -70,6 +92,21 @@ a.Favorites {
   }
 }
 
+.GridToggle {
+  position: relative;
+  border: $border-standard;
+  border-right: none;
+  background-color: $color-common-white;
+  height: 1.9rem;
+  width: calc(1.9rem + 0.5px);
+  left: 0px;
+
+  &:hover,
+  &:focus {
+    background-color: $color-primary-accent;
+  }
+}
+
 .Cart {
   position: relative;
 
@@ -85,13 +122,18 @@ a.Favorites {
   }
 }
 
+@include mq($breakpoint-mobileLandscape) {
+  .GridToggle {
+    display: none;
+  }
+}
+
 @include mq($breakpoint-tabletLandscape) {
   .FloatingControls {
     bottom: unset;
     display: flex;
     top: spacing(7.5);
   }
-
   .CategoryPicker {
     top: 0px;
   }

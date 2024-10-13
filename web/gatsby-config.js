@@ -4,6 +4,7 @@ const config = require('../config')
 const { projectId, dataset } = config.project
 
 module.exports = {
+  trailingSlash: 'ignore',
   siteMetadata: {
     title: config.site.siteTitle,
     siteUrl: config.site.siteUrl,
