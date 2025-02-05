@@ -51,7 +51,7 @@
 		"gatsby-plugin-use-query-params": "^1.0.1",
 		"gatsby-source-instagram-all": "^5.2.4",
 		"gatsby-source-sanity": "^7.6.1",
-		"gatsby-source-shopify": "^8.3.2",
+		"gatsby-source-shopify": "^9.0.0",
 		"gatsby-transformer-sharp": "^5.3.1",
 		"keen-slider": "^6.8.5",
 		"lodash.find": "^4.6.0",
