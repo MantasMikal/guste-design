@@ -93,12 +93,12 @@ module.exports = {
         display: 'standalone'
       }
     },
-    {
-      resolve: `gatsby-source-instagram-all`,
-      options: {
-        access_token: process.env.INSTAGRAM_TOKEN
-      }
-    },
+    // {
+    //   resolve: `gatsby-source-instagram-all`,
+    //   options: {
+    //     access_token: process.env.INSTAGRAM_TOKEN
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {

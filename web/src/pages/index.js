@@ -23,19 +23,19 @@ export const query = graphql`
         description
       }
     }
-    instagram: allInstagramContent(limit: 4) {
-      edges {
-        node {
-          caption
-          media_url
-          localFile {
-            childImageSharp {
-              gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-            }
-          }
-        }
-      }
-    }
+    # instagram: allInstagramContent(limit: 4) {
+    #   edges {
+    #     node {
+    #       caption
+    #       media_url
+    #       localFile {
+    #         childImageSharp {
+    #           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+    #         }
+    #       }
+    #     }
+    #   }
+    # }
   }
 `
 
@@ -52,7 +52,7 @@ const IndexPage = (props) => {
 
   const home = (data || {}).home
   const site = (data || {}).site
-  const instagram = (data || {}).instagram
+  // const instagram = (data || {}).instagram
 
   if (!home) {
     throw new Error(
@@ -63,7 +63,7 @@ const IndexPage = (props) => {
   const { hero, title, subtitle, _rawSections } = home
   const { openGraph } = site
   const { description } = openGraph
-  const instagramPosts = mapEdgesToNodes(instagram || [])
+  // const instagramPosts = mapEdgesToNodes(instagram || [])
 
   return (
     <Layout>
@@ -77,7 +77,7 @@ const IndexPage = (props) => {
         _rawSections.map((section) => (
           <BlockContent blocks={section.body} key={section._id} />
         ))}
-      <InstagramPosts posts={instagramPosts} />
+      {/* <InstagramPosts posts={instagramPosts} /> */}
     </Layout>
   )
 }

@@ -21,19 +21,19 @@ const AboutPage = () => {
             }
           }
         }
-        instagram: allInstagramContent(limit: 4) {
-          edges {
-            node {
-              caption
-              media_url
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
-                }
-              }
-            }
-          }
-        }
+        # instagram: allInstagramContent(limit: 4) {
+        #   edges {
+        #     node {
+        #       caption
+        #       media_url
+        #       localFile {
+        #         childImageSharp {
+        #           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        #         }
+        #       }
+        #     }
+        #   }
+        # }
       }
     `
   )
@@ -49,7 +49,7 @@ const AboutPage = () => {
       <Seo title="About" description='On a mission to elevate identities that shape a brighter tomorrow.' slug="/about" />
       <About
         {...page}
-        instagramPosts={instagram && mapEdgesToNodes(instagram)}
+        // instagramPosts={instagram && mapEdgesToNodes(instagram)}
       />
     </Layout>
   )
