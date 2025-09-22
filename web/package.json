@@ -65,7 +65,7 @@
 		"react-medium-image-zoom": "^4.4.3",
 		"react-scroll-percentage": "^4.2.0",
 		"react-spring": "^9.6.1",
-		"shopify-buy": "^2.17.1",
+		"shopify-buy": "^3.0.7",
 		"use-query-params": "^1.2.3",
 		"zustand": "4.1.5"
 	},
