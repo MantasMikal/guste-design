@@ -93,12 +93,6 @@ module.exports = {
         display: 'standalone'
       }
     },
-    // {
-    //   resolve: `gatsby-source-instagram-all`,
-    //   options: {
-    //     access_token: process.env.INSTAGRAM_TOKEN
-    //   }
-    // },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
@@ -113,12 +107,5 @@ module.exports = {
     'gatsby-plugin-advanced-sitemap',
     'gatsby-plugin-robots-txt',
     'gatsby-plugin-remove-serviceworker'
-    // 'gatsby-plugin-offline',
-    // {
-    //   resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
-    //   options: {
-    //     devMode: true
-    //   }
-    // }
   ]
 }
