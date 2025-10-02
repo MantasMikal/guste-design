@@ -9,11 +9,8 @@ import Gallery from 'Section/Gallery'
 const GalleryPage = (props) => {
   const { gallery } = useStaticQuery(
     graphql`
-      query {
-        gallery: allSanityGalleryPost(
-          limit: 100
-          sort: { fields: [publishedAt], order: DESC }
-        ) {
+      {
+        gallery: allSanityGalleryPost(limit: 100, sort: { publishedAt: DESC }) {
           edges {
             node {
               id
@@ -39,7 +36,7 @@ const GalleryPage = (props) => {
 
   return (
     <Layout>
-      <Seo title="Gallery" description='Merging craft and creativity.' />
+      <Seo title="Gallery" description="Merging craft and creativity." />
       {galleryNodes && <Gallery posts={galleryNodes} />}
     </Layout>
   )

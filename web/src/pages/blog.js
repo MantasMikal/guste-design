@@ -9,11 +9,8 @@ import Posts from 'Section/Posts'
 const PostPage = () => {
   const { posts } = useStaticQuery(
     graphql`
-      query {
-        posts: allSanityPost(
-          limit: 100
-          sort: { fields: [publishedAt], order: DESC }
-        ) {
+      {
+        posts: allSanityPost(limit: 100, sort: { publishedAt: DESC }) {
           edges {
             node {
               id

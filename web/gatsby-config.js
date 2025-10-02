@@ -76,8 +76,7 @@ module.exports = {
         storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
         password: process.env.SHOPIFY_APP_PASSWORD,
         downloadImages: true,
-        paginationSize: 30,
-        verbose: true
+        salesChannel: 'gustedesign',
       }
     },
     {

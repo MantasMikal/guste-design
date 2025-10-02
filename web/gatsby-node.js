@@ -125,6 +125,7 @@ async function createProjectPages(graphql, actions, reporter) {
 
 async function createProductPages(graphql, actions, reporter) {
   const { createPage } = actions
+
   const result = await graphql(`
     {
       products: allShopifyProduct {
@@ -135,11 +136,6 @@ async function createProductPages(graphql, actions, reporter) {
               compareAtPrice
               id
               price
-              # priceV2 {
-              #   amount
-              #   currencyCode
-              # }
-              requiresShipping
               selectedOptions {
                 name
                 value
@@ -147,8 +143,6 @@ async function createProductPages(graphql, actions, reporter) {
               shopifyId
               sku
               title
-              weightUnit
-              weight
             }
             totalInventory
             priceRangeV2 {

@@ -9,13 +9,11 @@ import StoreContextProvider from 'Context/StoreContext/StoreContextProvider'
 const StorePage = () => {
   const { products, page } = useStaticQuery(
     graphql`
-      query {
+      {
         page: sanityStorePage(_id: { regex: "/(drafts.|)storePage/" }) {
           _rawBody(resolveReferences: { maxDepth: 20 })
         }
-        products: allShopifyProduct(
-          sort: { fields: [createdAt], order: DESC }
-        ) {
+        products: allShopifyProduct(sort: { createdAt: DESC }) {
           edges {
             node {
               id

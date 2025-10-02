@@ -9,11 +9,8 @@ import Projects from 'Section/Projects'
 const ProjectPage = () => {
   const { projects } = useStaticQuery(
     graphql`
-      query {
-        projects: allSanityProject(
-          limit: 100
-          sort: { fields: [publishedAt], order: DESC }
-        ) {
+      {
+        projects: allSanityProject(limit: 100, sort: { publishedAt: DESC }) {
           edges {
             node {
               id
@@ -44,7 +41,10 @@ const ProjectPage = () => {
 
   return (
     <Layout>
-      <Seo title="Projects" description='Purposeful visuals for sustainability, wellness & creativity.' />
+      <Seo
+        title="Projects"
+        description="Purposeful visuals for sustainability, wellness & creativity."
+      />
       {projectNodes && <Projects projects={projectNodes} />}
     </Layout>
   )
