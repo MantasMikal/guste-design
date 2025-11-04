@@ -189,12 +189,12 @@ const ProductDetails = ({ product, className }) => {
           </div>
         )}
         <ButtonStandard
-          disabled={!available || adding}
+          disabled={true || adding}
           className={styles.BuyButton}
           onClick={handleAddToCart}
         >
           {/* Store is closed. Contact me! */}
-          {!available ? 'SOLD OUT' : isAddedToCart ? 'Added!' : 'Add to cart'}
+          {true ? 'SOLD OUT' : isAddedToCart ? 'Added!' : 'Add to cart'}
         </ButtonStandard>
         <div className={styles.Description}>
           <Prose dangerousHtml={descriptionHtml} />
