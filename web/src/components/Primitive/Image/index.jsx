@@ -25,8 +25,10 @@ const Image = ({
   let imageData = {}
 
   if (image.localFile) {
+    if (!image.localFile.childImageSharp) return null
     imageData = image.localFile.childImageSharp.gatsbyImageData
   } else if (image.localImage) {
+    if (!image.localImage.childImageSharp) return null
     imageData = image.localImage.childImageSharp.gatsbyImageData
   } else {
     imageData = getGatsbyImageData(
