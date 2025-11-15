@@ -25,7 +25,6 @@ const Product = ({ product, similarProducts, page }) => {
       </PageTitle>
       <ProductDetails product={product} className={styles.ProductDetails} />
       <Stack>
-        {/* <PageTitle title="Information" as="h3" /> */}
         <BlockContent blocks={_rawInformation} />
         <PageTitle title="Similar art" as="h3" />
         <div className={styles.SimilarProductGrid}>
