@@ -63,6 +63,14 @@
   }
 }
 
+.Email {
+  color: $color-primary-white;
+  &:hover,
+  &:focus {
+    color: $color-primary-accent;
+  }
+}
+
 @keyframes modal-fade-in {
   100% {
     opacity: 1;

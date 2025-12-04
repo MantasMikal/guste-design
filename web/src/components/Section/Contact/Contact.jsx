@@ -34,7 +34,6 @@ const Contact = ({ onClose, open }) => {
       as="aside"
       role="contact"
       aria-modal="true"
-      tabIndex="-1"
     >
       <FocusTrap>
         <div className={styles.Background}>
@@ -80,6 +79,13 @@ const Contact = ({ onClose, open }) => {
                   <FaPinterestP size="1.8em" />
                 </SmartLink> */}
               </div>
+              <SmartLink
+                className={styles.Email}
+                href="mailto:hi@guste.design"
+                size="titleLarge"
+              >
+                hi@guste.design
+              </SmartLink>
             </div>
           </div>
         </div>
