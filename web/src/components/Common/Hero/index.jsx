@@ -38,9 +38,9 @@ const instructionTextMap = {
 
 const Hero = () => {
   const { setContactModalOpen } = React.useContext(NavigationContext)
-  const [instructionStep, setInstructionStep] = useState(0)
+  const [instructionStep, setInstructionStep] = useState(1)
   const [reveal, setReveal] = useState(false)
-  const [currentColor, setCurrentColor] = useState('white')
+  const [currentColor, setCurrentColor] = useState(COLORS[0])
   const [previewColor, setPreviewColor] = useState(null)
   const [isClicking, setIsClicking] = useState(false)
   const [{ st, xy }, set] = useSpring(() => ({
