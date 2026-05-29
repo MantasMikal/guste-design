@@ -74,6 +74,6 @@
 		"gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
 		"prettier": "^2.8.1",
 		"prop-types": "^15.8.1",
-		"sass": "^1.57.0"
+		"sass": "1.57.0"
 	}
 }
