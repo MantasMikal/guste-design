@@ -116,6 +116,7 @@
   &:focus {
     transform: scale(1.01);
     transition: 0.2s $easing-standard;
+    background-color: $color-primary-accent;
   }
 
   @include mq($breakpoint-mobileLarge) {
