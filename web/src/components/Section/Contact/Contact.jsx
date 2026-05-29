@@ -8,7 +8,7 @@ import useOutsideClick from 'hooks/useOutsideClick'
 import { FaLinkedinIn, FaPinterestP } from 'react-icons/fa'
 import { GrInstagram } from 'react-icons/gr'
 import { HiOutlineMail } from 'react-icons/hi'
-import { SiBehance } from 'react-icons/si'
+import { SiBehance, SiSubstack } from 'react-icons/si'
 
 import SmartLink from 'Primitive/SmartLink'
 import Container from 'Primitive/Container'
@@ -70,6 +70,14 @@ const Contact = ({ onClose, open }) => {
                   rel="noopener noreferrer"
                 >
                   <FaLinkedinIn size="2em" />
+                </SmartLink>
+                <SmartLink
+                  href="https://gustedesign.substack.com/?utm_campaign=profile_chips"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Subscribe to our newsletter on Substack"
+                >
+                  <SiSubstack size="1.55em" />
                 </SmartLink>
                 {/* <SmartLink
                   href="https://www.pinterest.com/gustedesign"
