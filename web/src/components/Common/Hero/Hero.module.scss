@@ -8,6 +8,9 @@
   border: $border-standard;
   background-color: #fafafa;
   margin-bottom: spacing(1);
+
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .BgImage {
@@ -135,10 +138,16 @@
   z-index: 100;
   pointer-events: none;
   transform: translateY(-60%) translateX(2px);
+  transform-origin: 35% 55%;
+  transition: transform 0.12s $easing-standard;
 
   @media (hover: none) {
     display: none;
   }
+}
+
+.Cursor.clicking {
+  transform: translateY(-60%) translateX(2px) rotate(-22deg);
 }
 
 .Tooltip {

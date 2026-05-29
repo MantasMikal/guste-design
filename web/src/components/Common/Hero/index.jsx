@@ -41,6 +41,8 @@ const Hero = () => {
   const [instructionStep, setInstructionStep] = useState(0)
   const [reveal, setReveal] = useState(false)
   const [currentColor, setCurrentColor] = useState('white')
+  const [previewColor, setPreviewColor] = useState(null)
+  const [isClicking, setIsClicking] = useState(false)
   const [{ st, xy }, set] = useSpring(() => ({
     st: 0,
     xy: [0, 0],
@@ -106,6 +108,9 @@ const Hero = () => {
         cursor.style.top = `${e.pageY - 67}px`
         onMove(e)
       }}
+      onMouseDown={() => setIsClicking(true)}
+      onMouseUp={() => setIsClicking(false)}
+      onMouseLeave={() => setIsClicking(false)}
     >
       {/* <div className={styles.BgImage}>
         <StaticImage
@@ -116,7 +121,11 @@ const Hero = () => {
           objectFit="cover"
         />
       </div> */}
-      <Pointer id="cursor" className={styles.Cursor} fill={currentColor} />
+      <Pointer
+        id="cursor"
+        className={classNames(styles.Cursor, isClicking && styles.clicking)}
+        fill={previewColor || currentColor}
+      />
       <div className={styles.ToolBar}>
         <div className={styles.Title}>
           <h1>Graphic design and illustration services.</h1>
@@ -146,6 +155,7 @@ const Hero = () => {
             className={styles.ColorPalette}
             colors={COLORS}
             onColorClick={handleCurrentColorChange}
+            onColorHover={setPreviewColor}
             activeColor={currentColor}
           />
         </div>
@@ -159,6 +169,7 @@ const Hero = () => {
             className={classNames(reveal && styles.reveal)}
             pupilInterp={pupilInterp}
             partColors={partColors}
+            currentColor={currentColor}
             handleColorChange={handleColorChange}
           />
         </div>
