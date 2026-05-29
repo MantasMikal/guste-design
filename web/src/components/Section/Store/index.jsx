@@ -33,7 +33,9 @@ const Store = ({ products, page }) => {
 
   const filteredProducts =
     activeCategory === 'All'
-      ? products
+      ? products.filter(
+          (product) => product.productType?.trim().toLowerCase() !== 'archive'
+        )
       : filterByCategory(products, activeCategory)
 
   const handleCategorySelect = (category) => {
@@ -127,12 +129,7 @@ const getAllProductCategories = (products) => {
   let categories = []
   for (let i = 0; i < products.length; i++) {
     let category = products[i].productType?.trim()
-    if (
-      category &&
-      category.toLowerCase() !== 'archive' &&
-      !categories.includes(category)
-    )
-      categories.push(category)
+    if (category && !categories.includes(category)) categories.push(category)
   }
   return categories
 }
