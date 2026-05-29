@@ -43,6 +43,10 @@ const serializers = (baseFontSize) => ({
           </SmartLink>
         )
       )
+    },
+    textColor: ({ mark, children }) => {
+      const hex = mark && mark.color && mark.color.hex
+      return hex ? <span style={{ color: hex }}>{children}</span> : children
     }
   },
   types: {

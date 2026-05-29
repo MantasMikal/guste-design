@@ -3,7 +3,13 @@ import {
   FaExternalLinkSquareAlt,
   FaLine,
 } from "react-icons/fa";
+import { MdFormatColorText } from "react-icons/md";
 import React from "react";
+
+const TextColorRender = (props) => {
+  const hex = props?.value?.color?.hex;
+  return <span style={{ color: hex || "inherit" }}>{props.children}</span>;
+};
 
 const baseLargeFontRender = (props) => {
   return (
@@ -124,6 +130,23 @@ export default {
                 type: "boolean",
               },
             ],
+          },
+          {
+            title: "Text Color",
+            name: "textColor",
+            type: "object",
+            icon: MdFormatColorText,
+            fields: [
+              {
+                title: "Color",
+                name: "color",
+                type: "color",
+                options: { disableAlpha: true },
+              },
+            ],
+            components: {
+              annotation: TextColorRender,
+            },
           },
         ],
       },
